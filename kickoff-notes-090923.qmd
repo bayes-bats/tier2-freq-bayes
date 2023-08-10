@@ -1,6 +1,45 @@
 ---
 title: "Tier 2: Kick-Off Meeting (09 August 2023)"
+subtitle: "Attendees: Stefani, Zach, Mine"
 format: html
 editor: visual
 ---
+
+## Goals
+**Primary:** 
+
+  - For NSF: capacity building is key; building community, giving to STEM ed. community 
+  - Provide resources we can use in our own classes (and by extension, for colleagues), including but not limited to: handouts, PowerPoints, .qmd files, etc.; something that's easily accessible 
+
+**Secondary:** 
+
+  - Publication(s) describing what we come up with 
+  - Collect some data on students - activity relation on how students felt about activities (requires IRB - should be exempt)
+  - Instructor manual that aligns with students activities
+  - Continued collaboration after Tier 2 is complete
+
+## Expectations
+- Monthly meetings with Mine
+- Weekly meetings for Stefani and Zach (tentative)
+- Deliverables submitted per dates outlined in timeline
+
+## Meetings
+Once a month. Tentatively have 2 meetings set up: 1 in mid-September (Tuesday, 12 @ 10a MST), the other at the end of September (Tuesday, 26 @ 10a MST). Will decide as we get closer which one we decide to use. Also need to iron out everyone's academic calendar for the purposes of meeting and developing workplan.
+
+## Deadlines
+See the [Bayes BATS Tier 2 timeline](https://bayes-bats.github.io/tier2-schedule/#office-hours). First deadline is our detailed work plan, which Zach and Stefani will put together. They agreed to revisit proposal and start crafting timeline, with first cut due 25 August (meeting again @ 1p MST). Will regroup and iron things out. 
+
+Priorities for workplan <kbd>&rarr;</kbd> put this in a table, Gantt chart, etc.:
+
+  - ID dataset(s)
+  - Outline student artifacts (high-level)
+  - Create weekly milestones
+
+  
+
+
+
+
+
+
 
