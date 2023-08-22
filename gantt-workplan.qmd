@@ -1,0 +1,32 @@
+---
+title: "Tier 2 Gantt Chart & Work Plan"
+subtitle: "Stefani Langehennig & Zach del Rosario"
+format: html
+editor: visual
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+
+library(plan)
+
+project <- read.csv("gantt.csv", header = TRUE, sep = ",")
+
+```
+
+```{r, echo=FALSE}
+
+gt_object <- read.gantt("gantt.csv") 
+
+plot(gt_object,event.label='Submit Final Materials',event.time='2023-12-01',
+     col.event=c("red"),
+     col.done=c("blue"),
+     col.notdone=c("darkgreen"),
+     main="Tier 2: Freq-Bayes Gantt Chart"
+     )
+
+legend("topright", pch=22, pt.cex=2, cex=0.9, pt.bg=c("blue", "darkgreen"),
+     border="black",
+     legend=c("Completed", "Incomplete"), bg="white", xpd=TRUE)
+```
+
