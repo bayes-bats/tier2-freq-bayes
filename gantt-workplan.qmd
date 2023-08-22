@@ -1,5 +1,5 @@
 ---
-title: "Tier 2 Gantt Chart & Work Plan"
+title: "Tier 2 Work Plan"
 subtitle: "Stefani Langehennig & Zach del Rosario"
 format: html
 editor: visual
@@ -13,6 +13,16 @@ library(plan)
 project <- read.csv("gantt.csv", header = TRUE, sep = ",")
 
 ```
+
+Here is the tentative table containing activity descriptions, as well as anticipated start and end dates.
+
+```{r, echo=FALSE, results='asis'}
+library(knitr)
+kable(project[,1:4])
+
+```
+
+We will update the following Gantt chart an necessary as we complete various tasks outlined in the above work plan. 
 
 ```{r, echo=FALSE}
 
