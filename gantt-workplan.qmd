@@ -35,11 +35,31 @@ kable(project[,1:4])
 
 We will update the following Gantt chart an necessary as we complete various tasks outlined in the above work plan.
 
-```{r, echo=FALSE}
 
-gt_object <- read.gantt("gantt.csv") 
+```{r}
+g <- new("gantt")
+g <- ganttAddTask(g, "Work Plan")
+g <- ganttAddTask(g, "ID Datasets","2023-08-09","2023-08-25", done=80)
+g <- ganttAddTask(g, "Draft context one-pager","2023-08-25","2023-09-01",done=0)
+g <- ganttAddTask(g, "Progress Report 1")
+g <- ganttAddTask(g, "Finalize context one-pager", "2023-09-01", "2023-09-30", done=0)
+g <- ganttAddTask(g, "Draft introductory discussion activity", "2023-09-01", "2023-09-22", done=0)
+g <- ganttAddTask(g, "Finalize introductory discussion activity", "2023-09-22", "2023-09-30", done=0)
+g <- ganttAddTask(g, "Draft conclusion discussion activity", "2023-09-01", "2023-09-22", done=0)
+g <- ganttAddTask(g, "Finalize conclusion discussion activity", "2023-09-22", "2023-09-30", done=0)
+g <- ganttAddTask(g, "Draft Bayesian + frequentist framework one-pager", "2023-09-01", "2023-09-30", done=0)
+g <- ganttAddTask(g, "Progress Report 2")
+g <- ganttAddTask(g, "Finalize Bayesian + frequentist framework one-pager", "2023-10-01", "2023-10-20", done=0)
+g <- ganttAddTask(g, "Draft interactive applied activity in R", "2023-10-01", "2023-10-31", done=0)
+g <- ganttAddTask(g, "Final Materials Submission")
+g <- ganttAddTask(g, "Finalize interactive applied activity in R", "2023-11-01", "2023-11-24", done=0)
+g <- ganttAddTask(g, "Finalize all student artifacts", "2023-11-01", "2023-11-24", done=0)
+g <- ganttAddTask(g, "Develop video presentation", "2023-11-24", "2023-11-30", done=0)
+g <- ganttAddTask(g, "Conference prep", "2024-01-05", "2024-02-24", done=0)
 
-plot(gt_object,event.label='Submit Final Materials',event.time='2023-12-01',
+
+plot(g, ylabel=list(font=ifelse(is.na(g[["start"]]), 2, 1)),
+     event.label='Submit Final Materials',event.time='2023-12-01',
      col.event=c("red"),
      col.done=c("blue"),
      col.notdone=c("darkgreen"),
@@ -49,4 +69,6 @@ plot(gt_object,event.label='Submit Final Materials',event.time='2023-12-01',
 legend("topright", pch=22, pt.cex=2, cex=0.9, pt.bg=c("blue", "darkgreen"),
      border="black",
      legend=c("Completed", "Incomplete"), bg="white", xpd=TRUE)
+
+
 ```
