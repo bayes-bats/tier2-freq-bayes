@@ -4,4 +4,4 @@
 3,Bayesian + frequentist one-pager,Document facilitating conceptual understanding/comparison of Bayesian + frequentist frameworks. In .qmd format.,Explain,
 4,Closing discussion activity,Discussion questions to gauge impressions/understanding on differences between two frameworks. In .qmd format.,Evaluate,
 5,Dataset,Common dataset to be used across activities. Provided in .csv format.,Explore,
-6,Interactive R notebook activity,"Scaffolded set of activities, including: wrangling, initial modelling, diagnostics, predictions, recommendations. In .qmd format.",Elaborate,
+6,Interactive applied activity in R,"Scaffolded set of activities, including: wrangling, initial modelling, diagnostics, predictions, recommendations. In .qmd format.",Elaborate,
