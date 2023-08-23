@@ -9,18 +9,25 @@ editor: visual
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 
 library(plan)
+library(dplyr)
 
-project <- read.csv("gantt.csv", header = TRUE, sep = ",")
+project <- read.csv("artifacts.csv", header = TRUE, sep = ",")
+
+project <- project %>%
+  rename("5E Model Phase" = X5E.Model.Phase)
 
 ```
+## Proposed Student Artifacts
 
-Here is the tentative table containing activity descriptions, as well as anticipated start and end dates.
+Here is the tentative table containing the details for the student artifacts we will create.
 
 ```{r, echo=FALSE, results='asis'}
 library(knitr)
 kable(project[,1:4])
 
 ```
+
+## Proposed Timeline
 
 We will update the following Gantt chart an necessary as we complete various tasks outlined in the above work plan. 
 
