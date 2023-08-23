@@ -16,7 +16,11 @@ project <- read.csv("artifacts.csv", header = TRUE, sep = ",")
 project <- project %>%
   rename("5E Model Phase" = X5E.Model.Phase)
 
+### when ready to create .pdf
+#renderthis::to_pdf("gantt-workplan.html")
+
 ```
+
 ## Proposed Student Artifacts
 
 Here is the tentative table containing the details for the student artifacts we will create.
@@ -29,7 +33,7 @@ kable(project[,1:4])
 
 ## Proposed Timeline
 
-We will update the following Gantt chart an necessary as we complete various tasks outlined in the above work plan. 
+We will update the following Gantt chart an necessary as we complete various tasks outlined in the above work plan.
 
 ```{r, echo=FALSE}
 
@@ -46,4 +50,3 @@ legend("topright", pch=22, pt.cex=2, cex=0.9, pt.bg=c("blue", "darkgreen"),
      border="black",
      legend=c("Completed", "Incomplete"), bg="white", xpd=TRUE)
 ```
-
