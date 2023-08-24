@@ -23,7 +23,7 @@ project <- project %>%
 
 ## Proposed Student Artifacts
 
-Here is the tentative table containing the details for the student artifacts we will create.
+Here is the tentative table containing the details for the student artifacts we will create. Each artifact has a description of what it is, followed by the 5E instructional model phase in which the artifact falls. Finally, the table contains the approximate time allotted for each activity, as well as which milestone by which it needs to be completed. 
 
 ```{r, echo=FALSE, results='asis'}
 library(knitr)
