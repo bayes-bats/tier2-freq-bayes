@@ -1,6 +1,7 @@
 ---
 title: "Tier 2 Work Plan"
 subtitle: "Stefani Langehennig & Zach del Rosario"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 format: html
 editor: visual
 ---
@@ -14,7 +15,8 @@ library(dplyr)
 project <- read.csv("artifacts.csv", header = TRUE, sep = ",")
 
 project <- project %>%
-  rename("5E Model Phase" = X5E.Model.Phase)
+  rename("5E Model Phase" = X5E.Model.Phase,
+         "Time Allotted" = Time.Allotted)
 
 ### when ready to create .pdf
 #renderthis::to_pdf("gantt-workplan.html")
@@ -23,17 +25,25 @@ project <- project %>%
 
 ## Proposed Student Artifacts
 
-Here is the tentative table containing the details for the student artifacts we will create. Each artifact has a description of what it is, followed by the 5E instructional model phase in which the artifact falls. Finally, the table contains the approximate time allotted for each activity, as well as which milestone by which it needs to be completed. 
+The table below contains the details for the student artifacts we plan to create. Each artifact has a description of what it is, followed by the 5E instructional model phase in which the artifact falls. Finally, the table contains the approximate time allotted for each activity, as well as the milestone by which it needs to be completed. 
+
+The following abbreviations indicate which milestone the artifacts will be completed:
+
+- **WP** = Work Plan
+- **PR1** = Progress Report 1
+- **PR2** = Progress Report 2
+- **FMS** = Final Materials Submission
+
 
 ```{r, echo=FALSE, results='asis'}
 library(knitr)
-kable(project[,1:4])
+kable(project[,1:6])
 
 ```
 
 ## Proposed Timeline
 
-We will update the following Gantt chart an necessary as we complete various tasks outlined in the above work plan.
+The Gantt chart visually represents each of the tasks needed to complete the artifacts from above. We will update and/or modify the Gantt chart as necessary when we complete various tasks outlined in the above work plan.
 
 
 ```{r, echo=FALSE}
