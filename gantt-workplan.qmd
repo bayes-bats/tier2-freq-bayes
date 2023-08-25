@@ -72,14 +72,14 @@ font <- ifelse(is.na(g[["start"]]), 2, 1)
 
 plot(g, ylabels=list(font=font),
      event.label='Submit Final Materials',event.time='2023-12-01',
-     col.event=c("red"),
-     col.done=c("blue"),
-     col.notdone=c("darkgreen"),
+     col.event=c("firebrick2"),
+     col.done=c("steelblue3"),
+     col.notdone=c("palegreen3"),
      cex.main=1,
      main="Tier 2: Freq-Bayes Gantt Chart",
      )
 
-legend("topright", pch=22, pt.cex=2, cex=0.6, pt.bg=c("blue", "darkgreen"),
+legend("topright", pch=22, pt.cex=2, cex=0.6, pt.bg=c("steelblue3", "palegreen3"),
      border="black",
      legend=c("Completed", "Incomplete"), bg="white", xpd=TRUE)
 
