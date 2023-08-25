@@ -25,7 +25,7 @@ project <- project %>%
 
 ## Proposed Student Artifacts
 
-The table below contains the details for the student artifacts we plan to create. Each artifact has a description of what it is, followed by the 5E instructional model phase in which the artifact falls. Finally, the table contains the approximate time allotted for each activity, as well as the milestone by which it needs to be completed. 
+The table below illustrates the student artifacts we will create. Each artifact has a description of what it is, followed by the 5E instructional model phase in which the artifact falls. The table also contains the approximate time allotted for each activity, as well as the milestone by which the artifact needs to be completed. 
 
 The following abbreviations indicate which milestone the artifacts will be completed:
 
@@ -33,7 +33,6 @@ The following abbreviations indicate which milestone the artifacts will be compl
 - **PR1** = Progress Report 1
 - **PR2** = Progress Report 2
 - **FMS** = Final Materials Submission
-
 
 ```{r, echo=FALSE, results='asis'}
 library(knitr)
@@ -43,7 +42,7 @@ kable(project[,1:6])
 
 ## Proposed Timeline
 
-The Gantt chart visually represents each of the tasks needed to complete the artifacts from above. We will update and/or modify the Gantt chart as necessary when we complete various tasks outlined in the above work plan.
+The Gantt chart visually represents each of the tasks needed to complete the proposed artifacts, alongside the milestone it falls under (WP, PR1, PR2, and FMS). While not shown in the table above, we have also incorporated time into our Gantt chart to account for conference preparation should we be accepted into Tier 3 of the Bayes BATS program.
 
 
 ```{r, echo=FALSE}
@@ -84,3 +83,27 @@ legend("topright", pch=22, pt.cex=2, cex=0.6, pt.bg=c("steelblue3", "palegreen3"
      legend=c("Completed", "Incomplete"), bg="white", xpd=TRUE)
 
 ```
+
+
+## Meeting Times
+The proposed timeline does not currently showcase meeting times for the activity-creating team, nor does it show other meetings that will occur (such as office hours and mentor meetings). We envision the following cadence for recurring meetings:
+
+- Weekly and/or bi-weekly meetings for the activity-creating team
+- Monthly meetings with mentor 
+- Office hours 
+  - 07 September 2023 with Monika (10-11a EST)
+  - 15 September 2023 with Mine (1130a-1230p EST)
+  - 22 September 2023 with Amy (130-230p EST)
+  - October and November TBD
+
+
+
+
+
+
+
+
+
+
+
+
