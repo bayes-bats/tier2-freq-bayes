@@ -27,7 +27,7 @@ project <- project %>%
 
 The table below illustrates the student artifacts we will create. Each artifact has a description of what it is, followed by the 5E instructional model phase in which the artifact falls. The table also contains the approximate time allotted for each activity, as well as the milestone by which the artifact needs to be completed. 
 
-The following abbreviations indicate which milestone the artifacts will be completed:
+The following abbreviations indicate milestones in the work plan:
 
 - **WP** = Work Plan
 - **PR1** = Progress Report 1
