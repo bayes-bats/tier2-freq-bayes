@@ -48,7 +48,7 @@ The dataset used in analysis is crucial to the success of the proposed activity;
 
 **Primary constraint: Supports differential conclusions**
 
-The primary constraint for the activity dataset is that it can be used to demonstrate different analysis outcomes under Frequentist vs Bayesian approaches. While one could concievably "engineer" this outcome for many datasets, our hope is that this differential seem authentic to students. A credible difference in analysis outcomes will best illustrate the importance of analytic assumptions---our key learning objective.
+The primary constraint for the activity dataset is that it can be used to demonstrate different analysis outcomes under Frequentist vs. Bayesian approaches. While one could conceivably "engineer" this outcome for many datasets, our hope is that this differential seems authentic to students. A credible difference in analysis outcomes will best illustrate the importance of analytic assumptions---our key learning objective.
 
 **Additional objectives**
 
