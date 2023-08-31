@@ -3,7 +3,7 @@ title: "Tier 2 Work Plan"
 subtitle: "Stefani Langehennig & Zach del Rosario"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 format: html
-editor: visual
+editor: source
 ---
 
 This document defines our work plan for Tier 2 of the Bayes BATS program. We describe the specific student-facing artifacts to be designed, a timeline for the proposed work, and details on meeting times among relevant parties (Stefani, Zach, and the BATS co-PIs).
