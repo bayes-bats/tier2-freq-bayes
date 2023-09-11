@@ -1,0 +1,126 @@
+---
+title: "CEJS Dataset"
+format: html
+---
+
+See [Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/)
+
+# Setup
+
+```{r}
+library(tidyverse)
+
+filename <- "../data/1.0-communities.csv"
+```
+
+
+```{r}
+df_raw <- read_csv(filename)
+```
+
+
+```{r}
+df_data <- 
+  df_raw %>%
+  janitor::clean_names()
+
+df_data %>% 
+  glimpse()
+```
+
+# EDA
+
+## Black or African American
+
+### **Energy burden
+
+> Average annual energy costs divided by household income
+
+
+```{r}
+df_data %>% 
+  ggplot(aes(
+    percent_black_or_african_american_alone,
+    energy_burden_percentile
+  )) +
+  geom_hex() +
+  geom_smooth()
+```
+
+- this is definitely *sustainability related*
+
+**Inferential questions**:
+- what is the likely trend for percent hispanic, given percent black?
+- what is the likely trend for pm2.5, given energy burden?
+
+### *Poverty line
+
+```{r}
+df_data %>% 
+  ggplot(aes(percent_black_or_african_american_alone, adjusted_percent_of_individuals_below_200_percent_federal_poverty_line_percentile)) +
+  geom_hex() +
+  geom_smooth()
+```
+
+
+### *Unemployment
+
+```{r}
+df_data %>% 
+  ggplot(aes(
+    percent_black_or_african_american_alone,
+    unemployment_percent_percentile,
+  )) +
+  geom_hex() +
+  geom_smooth()
+```
+
+##### Mass. only
+
+```{r}
+df_data %>% 
+  
+  ggplot(aes(
+    percent_black_or_african_american_alone,
+    unemployment_percent_percentile,
+  )) +
+  geom_point(
+    data = . %>% 
+    filter(str_detect(state_territory, "Massachusetts"))
+  ) +
+  geom_smooth(method = "lm") +
+  geom_smooth(
+    data = . %>% 
+    filter(str_detect(state_territory, "Massachusetts")),
+    linetype = "dotted",
+    method = "lm"
+  )
+
+```
+
+- We might be able to do inference from one state (sample) to the full country (population)
+
+
+### ()pm2.5
+
+```{r}
+df_data %>% 
+  ggplot(aes(
+    percent_black_or_african_american_alone,
+    pm2_5_in_the_air_percentile
+  )) +
+  geom_hex() +
+  geom_smooth()
+```
+
+### ()Flood risk
+
+```{r}
+df_data %>% 
+  ggplot(aes(
+    percent_black_or_african_american_alone,
+    share_of_properties_at_risk_of_flood_in_30_years_percentile
+  )) +
+  geom_hex() +
+  geom_smooth()
+```
