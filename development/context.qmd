@@ -60,9 +60,45 @@ colnames(df_data)
 
 ```
 
-You will notice that we have eliminated spaces and other formats so our columns are now easier to work with. Next, let's conduct EDA to better understand our variables of interest, `energy_burden_percentile` and `percent_black_or_african_american_alone`.
+You will notice that we have eliminated spaces and other formats so our columns are now easier to work with. Next, let's conduct EDA to better understand our variables of interest, `energy_burden_percentile` and `percent_black_or_african_american_alone`. 
 
-\[descriptive stats of those variables to follow\]
+## Exploratory Data Analysis (EDA)
+
+To begin, let's subset our data so we can get our descriptive statistics for our variables of interest. 
+
+```{r}
+# Subset full dataframe 
+df_small <- 
+  df_data %>% 
+  select(energy_burden_percentile, percent_black_or_african_american_alone)
+
+# Take a look at the subset of data
+glimpse(df_small)
+
+```
+Let's use this subset to get our measures of spread and central tendency. 
+
+```{r}
+summary(df_small)
+```
+::: {.callout-tip title="Descriptive Statistics"}
+What are some take-aways from our descriptive statistics for our variables of interest? Anything concerning or interesting?
+:::
+
+
+Next, we can plot the percent of Black or African-Americans against the energy burden percentile to see if there is a negative or positive trend between the two variables. 
+
+```{r}
+#| warning: false
+
+df_small %>% 
+  ggplot(aes(
+    percent_black_or_african_american_alone,
+    energy_burden_percentile
+  )) +
+  geom_hex() +
+  geom_smooth()
+```
 
 ## Challenge
 

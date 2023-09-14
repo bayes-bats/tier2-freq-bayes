@@ -110,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="dataset" class="level2">
 <h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
-<p>The data used for this analysis comes from the <a href="https://screeningtool.geoplatform.gov/en/downloads">CEJS website</a>. The columns (or variables) we are most interested in are:</p>
+<p>The data used for this analysis comes from the <a href="https://screeningtool.geoplatform.gov/en/downloads">CEJS website</a>. The columns (“variables”) we are most interested in are:</p>
 <ul>
 <li>The <em>energy burden percentile</em>, which captures the percentile of energy cost as well as energy-related pollution within a census tract.</li>
 <li>The <em>percent of African-American or Black alone</em>, which captures the percent of African-American or Black individuals in a census tract.</li>
@@ -160,7 +160,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You will notice that we have eliminated spaces and other formats so our columns are now easier to work with. Next, let’s conduct EDA to better understand our variables of interest, <code>energy_burden_percentile</code> and <code>percent_black_or_african_american_alone</code>.</p>
-<p>[descriptive stats of those variables to follow]</p>
+</section>
+<section id="exploratory-data-analysis-eda" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)</h2>
+<p>To begin, let’s subset our data so we can get our descriptive statistics for our variables of interest.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Subset full dataframe </span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df_small <span class="ot">&lt;-</span> </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  df_data <span class="sc">%&gt;%</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(energy_burden_percentile, percent_black_or_african_american_alone)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Take a look at the subset of data</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(df_small)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 74,134
+Columns: 2
+$ energy_burden_percentile                &lt;dbl&gt; 49, 6, 68, 63, 38, 57, 72, 46,…
+$ percent_black_or_african_american_alone &lt;dbl&gt; 0.07, 0.57, 0.24, 0.05, 0.18, …</code></pre>
+</div>
+</div>
+<p>Let’s use this subset to get our measures of spread and central tendency.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df_small)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> energy_burden_percentile percent_black_or_african_american_alone
+ Min.   :  0.00           Min.   :0.0000                         
+ 1st Qu.: 24.00           1st Qu.:0.0100                         
+ Median : 49.00           Median :0.0400                         
+ Mean   : 49.55           Mean   :0.1341                         
+ 3rd Qu.: 75.00           3rd Qu.:0.1500                         
+ Max.   :100.00           Max.   :1.0000                         
+ NA's   :1054             NA's   :745                            </code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Descriptive Statistics">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Descriptive Statistics
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What are some take-aways from our descriptive statistics for our variables of interest? Anything concerning or interesting?</p>
+</div>
+</div>
+<p>Next, we can plot the percent of Black or African-Americans against the energy burden percentile to see if there is a negative or positive trend between the two variables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df_small <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    percent_black_or_african_american_alone,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    energy_burden_percentile</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hex</span>() <span class="sc">+</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="context_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
 </section>
 <section id="challenge" class="level2">
 <h2 class="anchored" data-anchor-id="challenge">Challenge</h2>
