@@ -1,6 +1,6 @@
 ---
 title: "Sustainability Trends Among Disadvantaged Communities"
-subtitle: "Exploring the Climate and Economic Justice Screening Tool (CEJS) Data"
+subtitle: "Exploring the Climate and Economic Justice Screening Tool (CEJST) Data"
 format: html
 author: "Zach del Rosario & Stefani Langehennig"
 ---
@@ -9,9 +9,10 @@ author: "Zach del Rosario & Stefani Langehennig"
 ## Overview
 As climate change continues to impact the world in which we live, numerous initiatives have been started to better understand the influence it has on individuals and communities. One of those initiatives stems directly from an Executive Order (EO) issued by President Joe Biden in January 2021. The EO resulted in the Council on Environmental Quality creating a tool by which the public can track various burdens across a number of communities. The primary aim of the tool is identify and subsequently help communities disadvantaged by these burdens in government social programs. 
 
-[The Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/) (CEJS) is the result of the EO. While the tool established by the Council on Environmental Quality covers a number of burdens (health, transportation, and workforce development, for example), this activity will focus on the sustainability aspects of the tool, including climate change, energy, and legacy pollution burdens on communities. 
+[The Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/) (CEJST) is the result of the EO. While the tool established by the Council on Environmental Quality covers a number of burdens (health, transportation, and workforce development, for example), this activity will focus on the sustainability aspects of the tool, including climate change, energy, and legacy pollution burdens on communities. 
 
-Info here on the activity and what's to follow.
+For this activity, we are going to use the CEJST data to explore whether the energy burden percentile increases as the share of population of African-Americans in a Census tract increases.
+
 
 ## Dataset
 The data used for this analysis comes from the [CEJS website](https://screeningtool.geoplatform.gov/en/downloads). 
@@ -56,7 +57,7 @@ colnames(df_data)
 
 ```
 
-You will notice that we have eliminated spaces and other formats so our columns are now easier to work with. The next thing we need to do is identify our primary variables of interest for our analyses. 
+You will notice that we have eliminated spaces and other formats so our columns are now easier to work with. The next thing we need to do is identify our primary variables of interest for our analyses and take a look at them.
 
 
 [descriptive stats of those variables to follow]
