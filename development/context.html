@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Sustainability Trends Among Disadvantaged Communities</h1>
-<p class="subtitle lead">Exploring the Climate and Economic Justice Screening Tool (CEJS) Data</p>
+<p class="subtitle lead">Exploring the Climate and Economic Justice Screening Tool (CEJST) Data</p>
 </div>
 
 
@@ -105,12 +105,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <p>As climate change continues to impact the world in which we live, numerous initiatives have been started to better understand the influence it has on individuals and communities. One of those initiatives stems directly from an Executive Order (EO) issued by President Joe Biden in January 2021. The EO resulted in the Council on Environmental Quality creating a tool by which the public can track various burdens across a number of communities. The primary aim of the tool is identify and subsequently help communities disadvantaged by these burdens in government social programs.</p>
-<p><a href="https://screeningtool.geoplatform.gov/en/">The Climate and Economic Justice Screening Tool</a> (CEJS) is the result of the EO. While the tool established by the Council on Environmental Quality covers a number of burdens (health, transportation, and workforce development, for example), this activity will focus on the sustainability aspects of the tool, including climate change, energy, and legacy pollution burdens on communities.</p>
-<p>Info here on the activity and what’s to follow.</p>
+<p><a href="https://screeningtool.geoplatform.gov/en/">The Climate and Economic Justice Screening Tool</a> (CEJST) is the result of the EO. While the tool established by the Council on Environmental Quality covers a number of burdens (health, transportation, and workforce development, for example), this activity will focus on the sustainability aspects of the tool, including climate change, energy, and legacy pollution burdens on communities.</p>
+<p>For this activity, we are going to use the CEJST data to explore whether the energy burden percentile increases as the share of population of African-Americans in a census tract increases.</p>
 </section>
 <section id="dataset" class="level2">
 <h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
-<p>The data used for this analysis comes from the <a href="https://screeningtool.geoplatform.gov/en/downloads">CEJS website</a>.</p>
+<p>The data used for this analysis comes from the <a href="https://screeningtool.geoplatform.gov/en/downloads">CEJS website</a>. The columns (or variables) we are most interested in are:</p>
+<ul>
+<li>The <em>energy burden percentile</em>, which captures the percentile of energy cost as well as energy-related pollution within a census tract.</li>
+<li>The <em>percent of African-American or Black alone</em>, which captures the percent of African-American or Black individuals in a census tract.</li>
+</ul>
 <p>First, we will load our data and clean up the variable names using the various packages available to us in the <code>tidyverse</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import tidyverse</span></span>
@@ -155,7 +159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Check out new column names only</span></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(df_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>You will notice that we have eliminated spaces and other formats so our columns are now easier to work with. The next thing we need to do is identify our primary variables of interest for our analyses.</p>
+<p>You will notice that we have eliminated spaces and other formats so our columns are now easier to work with. Next, let’s conduct EDA to better understand our variables of interest, <code>energy_burden_percentile</code> and <code>percent_black_or_african_american_alone</code>.</p>
 <p>[descriptive stats of those variables to follow]</p>
 </section>
 <section id="challenge" class="level2">

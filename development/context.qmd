@@ -5,17 +5,20 @@ format: html
 author: "Zach del Rosario & Stefani Langehennig"
 ---
 
-
 ## Overview
-As climate change continues to impact the world in which we live, numerous initiatives have been started to better understand the influence it has on individuals and communities. One of those initiatives stems directly from an Executive Order (EO) issued by President Joe Biden in January 2021. The EO resulted in the Council on Environmental Quality creating a tool by which the public can track various burdens across a number of communities. The primary aim of the tool is identify and subsequently help communities disadvantaged by these burdens in government social programs. 
 
-[The Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/) (CEJST) is the result of the EO. While the tool established by the Council on Environmental Quality covers a number of burdens (health, transportation, and workforce development, for example), this activity will focus on the sustainability aspects of the tool, including climate change, energy, and legacy pollution burdens on communities. 
+As climate change continues to impact the world in which we live, numerous initiatives have been started to better understand the influence it has on individuals and communities. One of those initiatives stems directly from an Executive Order (EO) issued by President Joe Biden in January 2021. The EO resulted in the Council on Environmental Quality creating a tool by which the public can track various burdens across a number of communities. The primary aim of the tool is identify and subsequently help communities disadvantaged by these burdens in government social programs.
 
-For this activity, we are going to use the CEJST data to explore whether the energy burden percentile increases as the share of population of African-Americans in a Census tract increases.
+[The Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/) (CEJST) is the result of the EO. While the tool established by the Council on Environmental Quality covers a number of burdens (health, transportation, and workforce development, for example), this activity will focus on the sustainability aspects of the tool, including climate change, energy, and legacy pollution burdens on communities.
 
+For this activity, we are going to use the CEJST data to explore whether the energy burden percentile increases as the share of population of African-Americans in a census tract increases.
 
 ## Dataset
-The data used for this analysis comes from the [CEJS website](https://screeningtool.geoplatform.gov/en/downloads). 
+
+The data used for this analysis comes from the [CEJS website](https://screeningtool.geoplatform.gov/en/downloads). The columns ("variables") we are most interested in are:
+
+-   The *energy burden percentile*, which captures the percentile of energy cost as well as energy-related pollution within a census tract.
+-   The *percent of African-American or Black alone*, which captures the percent of African-American or Black individuals in a census tract. 
 
 First, we will load our data and clean up the variable names using the various packages available to us in the `tidyverse`.
 
@@ -37,7 +40,7 @@ df_raw <- read_csv(filename)
 head(df_raw)
 ```
 
-Upon first glance, we can see the column names may need to be changed because there are spaces, slashes, etc. in them. Once we have the data loaded, we can use the `janitor` package to clean up the names of our columns so they are easier to read and use in our analyses. 
+Upon first glance, we can see the column names may need to be changed because there are spaces, slashes, etc. in them. Once we have the data loaded, we can use the `janitor` package to clean up the names of our columns so they are easier to read and use in our analyses.
 
 ```{r}
 #| warning: false
@@ -57,13 +60,10 @@ colnames(df_data)
 
 ```
 
-You will notice that we have eliminated spaces and other formats so our columns are now easier to work with. The next thing we need to do is identify our primary variables of interest for our analyses and take a look at them.
+You will notice that we have eliminated spaces and other formats so our columns are now easier to work with. Next, let's conduct EDA to better understand our variables of interest, `energy_burden_percentile` and `percent_black_or_african_american_alone`.
 
-
-[descriptive stats of those variables to follow]
+\[descriptive stats of those variables to follow\]
 
 ## Challenge
+
 Given the current status of sustainability trends among disadvantaged communities, we are going to explore...
-
-
-
