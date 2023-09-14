@@ -11,7 +11,7 @@ As climate change continues to impact the world in which we live, numerous initi
 
 [The Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/) (CEJST) is the result of the EO. While the tool established by the Council on Environmental Quality covers a number of burdens (health, transportation, and workforce development, for example), this activity will focus on the sustainability aspects of the tool, including climate change, energy, and legacy pollution burdens on communities.
 
-For this activity, we are going to use the CEJST data to explore whether the energy burden percentile increases as the share of population of African-Americans in a census tract increases.
+For this activity, we are going to use the CEJST data to explore whether there is a relationship between the energy burden percentile in census tracts and the share of population of Blacks or African-Americans in census tracts. Below, we will explore the dataset, as well as our variables of interest, in-depth. 
 
 ## Dataset
 
@@ -81,7 +81,7 @@ Let's use this subset to get our measures of spread and central tendency.
 ```{r}
 summary(df_small)
 ```
-::: {.callout-tip title="Descriptive Statistics"}
+::: {.callout-note icon=false title="Synthesizing Descriptive Statistics"}
 What are some take-aways from our descriptive statistics for our variables of interest? Anything concerning or interesting?
 :::
 
@@ -91,15 +91,28 @@ Next, we can plot the percent of Black or African-Americans against the energy b
 ```{r}
 #| warning: false
 
-df_small %>% 
+# Plot relationship
+p <- df_small %>% 
   ggplot(aes(
     percent_black_or_african_american_alone,
     energy_burden_percentile
   )) +
   geom_hex() +
+  xlab("% Black or African-American in Census Tract") + 
+  ylab("Energy Burden Percentile in Census Tract") +
   geom_smooth()
+
+# Remove legend
+p + theme(legend.position = "none") 
+
 ```
 
-## Challenge
+As the figure shows, there is a positive relationship between the percent of Black or African-Americans living in a census tract and the energy burden percentile in the respective census tract. 
 
-Given the current status of sustainability trends among disadvantaged communities, we are going to explore...
+::: {.callout-note icon=false title="Visualizing Variables of Interest"}
+What other ways might we choose to visualize our variables of interest? Is there anything else concerning or interesting based on our visualizations?
+:::
+
+## Next Steps
+
+We now have a good grasp on our data and the relationship between the percent of Black or African-Americans living in a census tract and the energy burden percentile in the census tract. Next, we will use these data to test hypotheses in both a frequentist and Bayesian framework and compare the two approaches. 
