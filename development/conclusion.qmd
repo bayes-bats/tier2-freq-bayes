@@ -1,5 +1,8 @@
 ---
-title: "conclusion"
+title: "Activity Wrap-Up"
+subtitle: "Comparing Frequentist and Bayesian Approaches"
 format: html
+author: "Zach del Rosario & Stefani Langehennig"
 ---
 
+## Conclusion
