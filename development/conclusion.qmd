@@ -6,3 +6,11 @@ author: "Zach del Rosario & Stefani Langehennig"
 ---
 
 ## Conclusion
+
+In this activity, ...
+
+[what the activity was / overview of what they learned]
+
+## Differences between Frequentist & Bayeisan Approaches
+
+[discussion questions here highlighting the comparison]
