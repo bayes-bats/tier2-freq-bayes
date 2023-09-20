@@ -11,5 +11,7 @@ author: "Zach del Rosario & Stefani Langehennig"
 
 ## Links to docs
 
-[test run](HOLD.qmd)
+[test run](/tier2-freq-bayes/development/context.html)
+
+
 
