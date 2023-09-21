@@ -13,5 +13,6 @@ author: "Zach del Rosario & Stefani Langehennig"
 
 [test run](/tier2-freq-bayes/development/context.html)
 
+{{< include tier2-freq-bayes/development/context.qmd >}}
 
 
