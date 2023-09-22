@@ -1,5 +1,16 @@
 ---
-title: "conclusion"
+title: "Activity Wrap-Up"
+subtitle: "Comparing Frequentist and Bayesian Approaches"
 format: html
+author: "Zach del Rosario & Stefani Langehennig"
 ---
 
+## Conclusion
+
+In this activity, ...
+
+[what the activity was / overview of what they learned]
+
+## Differences between Frequentist & Bayeisan Approaches
+
+[discussion questions here highlighting the comparison and seeing what they took away from the activity]

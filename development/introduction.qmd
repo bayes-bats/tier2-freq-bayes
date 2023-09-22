@@ -1,5 +1,25 @@
 ---
-title: "introduction"
+title: "Introduction to Different Statistical Paradigms"
+subtitle: "Comparing Frequentist and Bayesian Approaches"
 format: html
+author: "Zach del Rosario & Stefani Langehennig"
 ---
 
+## Introduction
+
+[purpose of the activity]
+
+## Before We Begin...
+
+-   What do you remember about analyzing a dataset with statistics?
+-   What do you know about frequentist and Bayesian statistics?
+
+#### Overview of Frequentist Framework
+
+[Brief overview of frequentist statistics - is this even possible?!]
+
+#### Overview of Bayesian Framework
+
+[Brief overview of Bayesian statistics - is this even possible?!]
+
+**NOTE** most of these differences will be covered in one-pager, so we may be able to eliminate these two sections and just focus on introducing the activity. We can follow the introduction by walking through what the entire activity will include, much like we did in our proposal.
