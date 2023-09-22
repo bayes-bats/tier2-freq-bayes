@@ -18,7 +18,7 @@ library(dplyr)
 
 ## Updated Gantt Chart
 
-Below is the updated Gantt chart we proposed as part of our overall work plan. To date, we completed progress on the artifacts we planned to for the submission of Progress Report 1. 
+Below is the updated Gantt chart we proposed as part of our overall work plan. To date, we completed progress on the artifacts we planned to for the submission of Progress Report 1. Links to those artifacts are provided below.
 
 ```{r, echo=FALSE}
 g <- new("gantt")
