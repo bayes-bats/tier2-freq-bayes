@@ -5,14 +5,61 @@ format: html
 author: "Zach del Rosario & Stefani Langehennig"
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+
+library(plan)
+library(dplyr)
+```
+
 ## Overview
 
 ## Updated Gantt Chart
+
+Below is the updated Gantt chart we proposed as part of our overall work plan. To date, we completed progress on the artifacts we planned to for the submission of Progress Report 1. 
+
+```{r, echo=FALSE}
+g <- new("gantt")
+g <- ganttAddTask(g, "Work Plan")
+g <- ganttAddTask(g, "ID datasets","2023-08-09","2023-08-25", done=100)
+g <- ganttAddTask(g, "Draft context 1-pager","2023-08-25","2023-09-01",done=90)
+g <- ganttAddTask(g, "Progress Report 1")
+g <- ganttAddTask(g, "Finalize context 1-pager", "2023-09-01", "2023-09-30", done=50)
+g <- ganttAddTask(g, "Draft intro. discussion", "2023-09-01", "2023-09-22", done=50)
+g <- ganttAddTask(g, "Finalize intro. discussion", "2023-09-22", "2023-09-30", done=0)
+g <- ganttAddTask(g, "Draft conclusion discussion", "2023-09-01", "2023-09-22", done=25)
+g <- ganttAddTask(g, "Finalize conclusion discussion", "2023-09-22", "2023-09-30", done=0)
+g <- ganttAddTask(g, "Draft Bayes-freq. framework 1-pager", "2023-09-01", "2023-09-30", done=25)
+g <- ganttAddTask(g, "Progress Report 2")
+g <- ganttAddTask(g, "Finalize Bayes-freq. framework 1-pager", "2023-10-01", "2023-10-20", done=0)
+g <- ganttAddTask(g, "Draft applied R activity", "2023-10-01", "2023-10-31", done=25)
+g <- ganttAddTask(g, "Final Materials Submission")
+g <- ganttAddTask(g, "Finalize applied R activity", "2023-11-01", "2023-11-24", done=0)
+g <- ganttAddTask(g, "Finalize all student artifacts", "2023-11-01", "2023-11-24", done=0)
+g <- ganttAddTask(g, "Develop video presentation", "2023-11-24", "2023-11-30", done=0)
+g <- ganttAddTask(g, "Conference prep", "2024-01-05", "2024-02-24", done=0)
+
+
+font <- ifelse(is.na(g[["start"]]), 2, 1)
+
+plot(g, ylabels=list(font=font),
+     event.label='Submit Final Materials',event.time='2023-12-01',
+     col.event=c("firebrick2"),
+     col.done=c("steelblue3"),
+     col.notdone=c("palegreen3"),
+     cex.main=1,
+     main="Tier 2: Freq-Bayes Gantt Chart",
+     )
+
+legend("topright", pch=22, pt.cex=2, cex=0.6, pt.bg=c("steelblue3", "palegreen3"),
+     border="black",
+     legend=c("Completed", "Incomplete"), bg="white", xpd=TRUE)
+
+```
 
 ## Links to docs
 
 [test run](/tier2-freq-bayes/development/context.html)
 
-{{< include tier2-freq-bayes/development/context.qmd >}}
 
 
