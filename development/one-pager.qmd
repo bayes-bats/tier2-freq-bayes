@@ -1,8 +1,9 @@
 ---
 title: "Comparing Different Statistical Paradigms"
-subtitle: "One-Page Reference Guide"
+subtitle: "Critical Differences Reference Guide"
 format: html
 author: "Zach del Rosario & Stefani Langehennig"
 ---
 
 ## Overview
+

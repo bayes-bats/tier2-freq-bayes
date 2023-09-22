@@ -5,14 +5,71 @@ format: html
 author: "Zach del Rosario & Stefani Langehennig"
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+
+library(plan)
+library(dplyr)
+```
+
 ## Overview
+
+
 
 ## Updated Gantt Chart
 
-## Links to docs
+Below is the updated Gantt chart we proposed as part of our overall work plan. To date, we completed progress on the artifacts we planned to for the submission of Progress Report 1. 
 
-[test run](/tier2-freq-bayes/development/context.html)
+```{r, echo=FALSE}
+g <- new("gantt")
+g <- ganttAddTask(g, "Work Plan")
+g <- ganttAddTask(g, "ID datasets","2023-08-09","2023-08-25", done=100)
+g <- ganttAddTask(g, "Draft context 1-pager","2023-08-25","2023-09-01",done=90)
+g <- ganttAddTask(g, "Progress Report 1")
+g <- ganttAddTask(g, "Finalize context 1-pager", "2023-09-01", "2023-09-30", done=50)
+g <- ganttAddTask(g, "Draft intro. discussion", "2023-09-01", "2023-09-22", done=75)
+g <- ganttAddTask(g, "Finalize intro. discussion", "2023-09-22", "2023-09-30", done=25)
+g <- ganttAddTask(g, "Draft conclusion discussion", "2023-09-01", "2023-09-22", done=25)
+g <- ganttAddTask(g, "Finalize conclusion discussion", "2023-09-22", "2023-09-30", done=0)
+g <- ganttAddTask(g, "Draft Bayes-freq. framework 1-pager", "2023-09-01", "2023-09-30", done=75)
+g <- ganttAddTask(g, "Progress Report 2")
+g <- ganttAddTask(g, "Finalize Bayes-freq. framework 1-pager", "2023-10-01", "2023-10-20", done=0)
+g <- ganttAddTask(g, "Draft applied R activity", "2023-10-01", "2023-10-31", done=25)
+g <- ganttAddTask(g, "Final Materials Submission")
+g <- ganttAddTask(g, "Finalize applied R activity", "2023-11-01", "2023-11-24", done=0)
+g <- ganttAddTask(g, "Finalize all student artifacts", "2023-11-01", "2023-11-24", done=0)
+g <- ganttAddTask(g, "Develop video presentation", "2023-11-24", "2023-11-30", done=0)
+g <- ganttAddTask(g, "Conference prep", "2024-01-05", "2024-02-24", done=0)
 
-{{< include tier2-freq-bayes/development/context.qmd >}}
+
+font <- ifelse(is.na(g[["start"]]), 2, 1)
+
+plot(g, ylabels=list(font=font),
+     event.label='Submit Final Materials',event.time='2023-12-01',
+     col.event=c("firebrick2"),
+     col.done=c("steelblue3"),
+     col.notdone=c("palegreen3"),
+     cex.main=1,
+     main="Tier 2: Freq-Bayes Gantt Chart",
+     )
+
+legend("topright", pch=22, pt.cex=2, cex=0.6, pt.bg=c("steelblue3", "palegreen3"),
+     border="black",
+     legend=c("Completed", "Incomplete"), bg="white", xpd=TRUE)
+
+```
+
+## Completed Artifacts
+
+* [Dataset: The Climate and Economic Justice Screening Tool (CEJST)](https://screeningtool.geoplatform.gov/en/)
+* [Context One-Pager](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/context.qmd)
+* [Introduction Discussion](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/introduction.qmd)
+* [Conclusion Discussion](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/conclusion.qmd)
+* [Critical Differences One-Pager](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/one-pager.qmd)
 
 
+## Next Steps
+
+As we move into the second phase of creating our activity and its associated artifacts, the primary area of focus will be on drafting the applied `R` activity. We are currently in the process of developing a [series of prototypes](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/communities.qmd) using the CEJST data. 
+
+Once we finalize which prototype we want to use for our activity, we will refine it and flesh it out so that it is ready for student consumption. In addition to drafting the applied `R` activity, we will also finalize the [Critical Differences One-Pager](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/one-pager.qmd) so that it aligns with the application portion of our activity. 
