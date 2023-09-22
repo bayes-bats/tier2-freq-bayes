@@ -1,6 +1,6 @@
 ---
-title: "Progress Report 1"
-subtitle: "Bayes BATS Tier-2"
+title: "Progress Report 1: Bayes BATS Tier-2"
+subtitle: "Activity: Comparing Frequentist and Bayesian Approaches"
 format: html
 author: "Zach del Rosario & Stefani Langehennig"
 ---
@@ -14,11 +14,11 @@ library(dplyr)
 
 ## Overview
 
-
+Our aim for Progress Report 1 was to complete a number of "starter" artifacts ahead of creating what we believe is the heart of our activity - an application in `R` showing the comparison between Bayesian and frequentist hypothesis testing. Our rationale for doing so was simple: having a dataset in hand, alongside some context for that dataset, would set the stage for the application to come. As well, we created introductory and concluding discussion artifacts, as these helped frame our own thinking ahead of implementing our applied comparison activity using Bayesian and frequentist approaches.
 
 ## Updated Gantt Chart
 
-Below is the updated Gantt chart we proposed as part of our overall work plan. To date, we completed progress on the artifacts we planned to for the submission of Progress Report 1. 
+Below is the updated Gantt chart we proposed as part of our overall work plan. To date, we completed progress on the artifacts we planned to for the submission of Progress Report 1. Links to those artifacts are provided below.
 
 ```{r, echo=FALSE}
 g <- new("gantt")
@@ -62,14 +62,14 @@ legend("topright", pch=22, pt.cex=2, cex=0.6, pt.bg=c("steelblue3", "palegreen3"
 ## Completed Artifacts
 
 * [Dataset: The Climate and Economic Justice Screening Tool (CEJST)](https://screeningtool.geoplatform.gov/en/)
-* [Context One-Pager](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/context.qmd)
+* [Context Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/context.qmd)
+* [Critical Differences Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/one-pager.qmd)
 * [Introduction Discussion](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/introduction.qmd)
 * [Conclusion Discussion](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/conclusion.qmd)
-* [Critical Differences One-Pager](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/one-pager.qmd)
 
 
 ## Next Steps
 
-As we move into the second phase of creating our activity and its associated artifacts, the primary area of focus will be on drafting the applied `R` activity. We are currently in the process of developing a [series of prototypes](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/communities.qmd) using the CEJST data. 
+As we move into the second phase of creating our activity and its associated artifacts, the primary area of focus will be on drafting the applied `R` activity. We are currently in the process of developing a [series of prototypes](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/communities.qmd) using the CEJST data. Our hope is to build a [main activity](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/activity-main.qmd) based on the prototyping that we will then finalize in the final phase of our activity development.
 
-Once we finalize which prototype we want to use for our activity, we will refine it and flesh it out so that it is ready for student consumption. In addition to drafting the applied `R` activity, we will also finalize the [Critical Differences One-Pager](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/one-pager.qmd) so that it aligns with the application portion of our activity. 
+Once we finalize which prototype we want to use for our main activity, we will refine it so that it is ready for student consumption. In addition to drafting the applied `R` activity, we will also finalize the [Critical Differences Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/one-pager.qmd) so that it aligns with the application portion of our activity. We anticipate having both of these steps (drafting the applied activity and finalizing the differences reference guide) complete by the time Progress Report 2 is due on 01 November.
