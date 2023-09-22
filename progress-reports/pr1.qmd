@@ -2,7 +2,9 @@
 title: "Progress Report 1: Bayes BATS Tier-2"
 subtitle: "Activity: Comparing Frequentist and Bayesian Approaches"
 format: html
-author: "Zach del Rosario & Stefani Langehennig"
+author: 
+  - name: Stefani Langehennig
+  - name: Zach del Rosario
 ---
 
 ```{r setup, include=FALSE}

@@ -2,7 +2,9 @@
 title: "Sustainability Trends Among Disadvantaged Communities"
 subtitle: "Exploring the Climate and Economic Justice Screening Tool (CEJST) Data"
 format: html
-author: "Zach del Rosario & Stefani Langehennig"
+author: 
+  - name: Stefani Langehennig
+  - name: Zach del Rosario
 ---
 
 ## Overview

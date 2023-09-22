@@ -2,7 +2,9 @@
 title: "Introduction to Different Statistical Paradigms"
 subtitle: "Comparing Frequentist and Bayesian Approaches"
 format: html
-author: "Zach del Rosario & Stefani Langehennig"
+author: 
+  - name: Stefani Langehennig
+  - name: Zach del Rosario
 ---
 
 ## Introduction

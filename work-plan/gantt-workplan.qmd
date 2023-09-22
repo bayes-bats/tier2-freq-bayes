@@ -1,6 +1,8 @@
 ---
 title: "Tier 2 Work Plan"
-subtitle: "Stefani Langehennig & Zach del Rosario"
+author: 
+  - name: Stefani Langehennig
+  - name: Zach del Rosario
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 format: html
 editor: source
