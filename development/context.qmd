@@ -60,7 +60,14 @@ colnames(df_data)
 
 ```
 
-You will notice that we have eliminated spaces and other formats so our columns are now easier to work with. Next, let's conduct EDA to better understand our variables of interest, `energy_burden_percentile` and `percent_black_or_african_american_alone`. 
+You will notice that we have eliminated spaces and other formats so our columns are now easier to work with. We will focus on a few columns in this dataset:
+
+- `census_tract_2010_id`: Each row in this dataset corresponds to a *census tract*; this is a small geographic region of the U.S. chosen to represent a consistent number of persons. Census tracts contain about 4000 people, though may contain as few as 1200 and as many as 8000 people.
+- `percent_black_or_african_american_alone`: This reports the percent of people in the census tract who are Black or African American.
+- `energy_burden_percentile`: This reports the **percentile** of energy burden for each census tract. Energy burden is computed as the average annual cost of energy divided by the average household income within the census tract---this is a measure of how "burdened" a household is by energy expenses. A larger energy burden means a household needs to spend more of its income on energy bills.
+  - The percentile is then computed as the *ordering* of energy burden values for each census tract: The 0th percentile corresponds to the smallest value of energy burden, while the 100th percentile corresponds to the largest value of energy burden.
+
+Next, let's conduct EDA to better understand our variables of interest, `energy_burden_percentile` and `percent_black_or_african_american_alone`. 
 
 ## Exploratory Data Analysis (EDA)
 
