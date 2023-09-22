@@ -34,6 +34,44 @@ df_data %>%
 
 # EDA
 
+## 1D EDA
+
+### Percentiles
+
+Some of the percentiles are suspicious!
+
+```{r}
+df_data %>% 
+  ggplot(aes(energy_burden_percentile)) +
+  geom_histogram(bins = 100)
+```
+
+- Percentiles should be uniformly distributed; however, this is anything but uniform
+
+```{r, fig.height = 18}
+df_data %>% 
+  select(matches("*_percentile$")) %>% 
+  pivot_longer(
+    cols = everything(),
+    names_pattern = "(.*)_(percentile)$",
+    names_to = c("quantity", ".value")
+  ) %>% 
+  
+  ggplot(aes(percentile)) +
+  geom_histogram(bins = 100) +
+  facet_wrap(~quantity, scales = "free_y", ncol = 3) +
+  theme_minimal() +
+  theme(
+    strip.text.x = element_text(size = 14),
+    axis.text = element_text(size = 16),
+    axis.title = element_text(size = 18),
+  )
+ 
+ggsave("percentiles.png", bg = "white") 
+```
+
+- some of the percentiles follow a uniform distribution, while others do not!
+
 ## Black or African American
 
 ### **Energy burden
@@ -74,6 +112,46 @@ df_data %>%
     filter(str_detect(state_territory, "Massachusetts")),
     linetype = "dotted",
     method = "lm"
+  )
+```
+
+
+#### All states
+
+```{r, fig.width=10}
+df_data %>% 
+  
+  ggplot(aes(
+    percent_black_or_african_american_alone,
+    energy_burden_percentile
+  )) +
+  geom_point(size = 0.1) +
+  geom_smooth(method = "lm") +
+  facet_wrap(~state_territory) +
+  theme_minimal() +
+  labs(
+    x = "Percent Black",
+    y = "Energy Burden Percentile",
+  )
+```
+
+#### Selected states
+
+```{r, fig.width=10}
+df_data %>% 
+  filter(state_territory %in% c("Florida", "Massachusetts", "Georgia", "Maine")) %>% 
+  
+  ggplot(aes(
+    percent_black_or_african_american_alone,
+    energy_burden_percentile
+  )) +
+  geom_point(size = 0.1) +
+  geom_smooth(method = "lm") +
+  facet_wrap(~state_territory) +
+  theme_minimal() +
+  labs(
+    x = "Percent Black",
+    y = "Energy Burden Percentile",
   )
 ```
 
@@ -262,24 +340,24 @@ df_data %>%
 
 - The model agrees with a simple linear regression on the data
 
-## Model: Based on overconfident prior
+## Colorado: Bayesian failure
 
-One might expect that the patterns due to racism persist across other indicators. Setting an "overconfident" prior based on this "transportability" hypothesis will lead to poor inference.
+One might expect that the patterns due to racism persist across states. I developed the following prior based on fitting a bayesian model on the Massachusetts data.
 
 ```{r}
 #|cache: true
-model_pm25 <- stan_glm(
+model_CO <- stan_glm(
   data = df_data %>% 
     filter(
-      str_detect(state_territory, "Massachusetts"),
+      str_detect(state_territory, "Colorado"),
       !is.na(percent_black_or_african_american_alone)
-    ) %>% 
-    slice_sample(n = 100), # Take a random subsample
+    ),
+    # slice_sample(n = 100), # Take a random subsample
   # Likelihood model
-  formula = pm2_5_in_the_air_percentile ~ percent_black_or_african_american_alone,
+  formula = energy_burden_percentile ~ percent_black_or_african_american_alone,
   family = gaussian,           # link function
   # Prior model, use the Stan defaults for dispersion
-  # Use an "overconfident" prior for the slope, based on the energy burden posterior
+  # Use an "overconfident" prior for the slope, based on the energy burden posterior for MA
   prior = normal(50, 5),
   prior_intercept = normal(51, 1),
   # Numerical parameters
@@ -294,14 +372,14 @@ model_pm25 <- stan_glm(
 
 ```{r}
 # Effective sample size ratio and Rhat
-neff_ratio(model_pm25)
-rhat(model_pm25)
+neff_ratio(model_CO)
+rhat(model_CO)
 ```
 
 
 
 ```{r fig.width=12}
-mcmc_trace(model_pm25, size = 0.1)
+mcmc_trace(model_CO, size = 0.1)
 ```
 
 - No signs of a MCMC pathologies
@@ -309,16 +387,16 @@ mcmc_trace(model_pm25, size = 0.1)
 ### Posterior analysis
 
 ```{r fig.width=12, fig.height=6}
-mcmc_dens_overlay(model_pm25)
+mcmc_dens_overlay(model_CO)
 ```
 
 
 ```{r}
-df_model_pm25 <- 
-  model_pm25 %>% 
+df_model_CO <- 
+  model_CO %>% 
   as_tibble()
 
-df_model_pm25 %>% 
+df_model_CO %>% 
   ggplot(aes(`(Intercept)`, percent_black_or_african_american_alone)) +
   geom_density2d() +
   labs(
@@ -331,23 +409,139 @@ df_model_pm25 %>%
 
 ```{r}
 df_data %>% 
-  filter(str_detect(state_territory, "Massachusetts")) %>% 
+  filter(str_detect(state_territory, "Colorado")) %>% 
   
   ggplot(aes(
     x = percent_black_or_african_american_alone,
-    y = pm2_5_in_the_air_percentile
+    y = energy_burden_percentile
   )) +
   geom_count() +
   geom_line(
     data = . %>% 
       filter(!is.na(percent_black_or_african_american_alone)) %>% 
       select(percent_black_or_african_american_alone) %>% 
-      tidybayes::add_fitted_draws(model_pm25, n = 100),
+      tidybayes::add_fitted_draws(model_CO, n = 100),
     aes(y = .value, group = .draw), 
     alpha = 0.15,
     color = "cyan"
   ) +
-  geom_smooth(method = "lm", se = FALSE, color = "salmon")
+  geom_smooth(method = "lm", se = FALSE, color = "salmon") +
+  geom_smooth(se = FALSE, color = "salmon")
 ```
 
-- The Bayesian model strongly disagrees with a simple linear regression on the data, due to the overconfident prior
+- The Bayesian model strongly disagrees with a simple linear regression on the data and the general pattern, due to the overconfident prior
+
+## Florida: Bayesian success
+
+### Subsample
+
+```{r}
+set.seed(101)
+
+df_fl <- 
+  df_data %>% 
+  filter(state_territory == "Florida") %>% 
+  slice_sample(n = 25)
+
+df_fl %>% 
+  ggplot(aes(
+    x = percent_black_or_african_american_alone,
+    y = energy_burden_percentile
+  )) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  geom_smooth(
+    data = df_data %>% 
+      filter(state_territory == "Florida"),
+    method = "lm"
+  )
+```
+
+
+### Fit model
+
+```{r}
+#|cache: true
+model_FL <- stan_glm(
+  data = df_fl,
+  # Likelihood model
+  formula = energy_burden_percentile ~ percent_black_or_african_american_alone,
+  family = gaussian,           # link function
+  # Prior model, use the Stan defaults for dispersion
+  # Use an "overconfident" prior for the slope, based on the energy burden posterior for MA
+  prior = normal(50, 5),
+  prior_intercept = normal(51, 1),
+  # Numerical parameters
+  chains = 4, 
+  iter = 5000*2, # to account for 50% burn-in
+  seed = 84735,  # the BAYES seed!
+  refresh = FALSE
+) 
+```
+
+### Diagnostics
+
+```{r}
+# Effective sample size ratio and Rhat
+neff_ratio(model_FL)
+rhat(model_FL)
+```
+
+
+
+```{r fig.width=12}
+mcmc_trace(model_FL, size = 0.1)
+```
+
+- No signs of a MCMC pathologies
+
+### Posterior analysis
+
+```{r fig.width=12, fig.height=6}
+mcmc_dens_overlay(model_FL)
+```
+
+
+```{r}
+df_model_FL <- 
+  model_FL %>% 
+  as_tibble()
+
+df_model_FL %>% 
+  ggplot(aes(`(Intercept)`, percent_black_or_african_american_alone)) +
+  geom_density2d() +
+  labs(
+    x = "Intercept",
+    y = "Slope",
+  )
+```
+
+### Cf. against data
+
+```{r}
+df_data %>% 
+  filter(
+    str_detect(state_territory, "Florida"),
+    # 0 < percent_black_or_african_american_alone
+  ) %>% 
+  
+  ggplot(aes(
+    x = percent_black_or_african_american_alone,
+    y = energy_burden_percentile
+  )) +
+  geom_count() +
+  geom_line(
+    data = . %>% 
+      filter(!is.na(percent_black_or_african_american_alone)) %>% 
+      select(percent_black_or_african_american_alone) %>% 
+      tidybayes::add_fitted_draws(model_FL, n = 100),
+    aes(y = .value, group = .draw), 
+    alpha = 0.15,
+    color = "cyan"
+  ) +
+  geom_smooth(method = "lm", se = TRUE, color = "salmon") +
+  geom_smooth(data = df_fl, method = "lm", se = TRUE, color = "salmon")
+  # geom_smooth(se = TRUE, color = "salmon")
+```
+
+- The Bayesian model agrees with a regression on the full Florida dataset

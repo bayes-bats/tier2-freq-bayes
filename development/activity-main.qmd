@@ -27,9 +27,11 @@ df_data <-
   janitor::clean_names()
 ```
 
+# Overview
+
 ```{r}
 df_data %>% 
-  filter(state_territory %in% c("Minnesota", "Florida", "Massachusetts", "Colorado")) %>% 
+  filter(state_territory %in% c("Florida", "Massachusetts", "Colorado")) %>% 
   
   ggplot(aes(
     percent_black_or_african_american_alone,
@@ -43,7 +45,7 @@ df_data %>%
     linetype = "dotted",
     method = "lm"
   ) +
-  facet_wrap(~state_territory) +
+  facet_wrap(~state_territory, ncol = 2) +
   theme_minimal() +
   labs(
     x = "Percent Black",
@@ -51,6 +53,8 @@ df_data %>%
   )
 ```
 
+- Colorado has a negative trend, but this is borderline (confidence band admits a flat line)
+- Wyoming has a negative trend, but this might be due to a single outlier
 
 
 ```{r fig1}
