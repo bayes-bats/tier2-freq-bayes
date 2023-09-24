@@ -1,0 +1,469 @@
+---
+title: "CEJS Activity"
+format: html
+---
+
+
+
+```{r setup}
+#| include: false
+#| echo: false
+library(tidyverse)
+library(rstanarm)
+library(bayesplot)
+library(broom.mixed)
+
+filename <- "../data/1.0-communities.csv"
+```
+
+```{r wrangling}
+#| include: false
+#| echo: false
+df_raw <- read_csv(filename)
+df_data <- 
+  df_raw %>%
+  janitor::clean_names()
+```
+
+# Overview
+
+(Preview the overview figure)
+
+```{r fig-overview}
+#| warning: false
+#| echo: false
+#| fig-align: center
+#| fig-height: 8
+df_data %>% 
+  filter(state_territory %in% c("Florida", "Massachusetts", "Colorado")) %>% 
+  
+  ggplot(aes(
+    percent_black_or_african_american_alone,
+    energy_burden_percentile
+  )) +
+  geom_point(size = 0.1) +
+  geom_smooth(method = "lm") +
+  facet_wrap(~state_territory, ncol = 2) +
+  scale_x_continuous(labels = scales::percent) +
+  theme_minimal() +
+  labs(
+    x = "Percent Black Census Tract",
+    y = "Energy Burden Percentile",
+  )
+```
+
+- Florida and Massachusetts have a clear positive trend; this is evidence of inequitable outcomes
+- Colorado has a negative trend; this is a surprising result
+
+# Analyze a Bayesian Model
+
+(Introduce the Bayesian model)
+
+\[ B = m P + b, \]
+
+where $B$ is the energy burden percentile, $P$ is the percent black, $m$ is the slope parameter, and $b$ is the intercept parameter.
+
+```{r fit-MA}
+#| include: false
+#| echo: false
+#| cache: true
+model_MA <- stan_glm(
+  data = df_data %>% 
+    filter(
+      str_detect(state_territory, "Massachusetts"),
+      !is.na(percent_black_or_african_american_alone)
+    ),
+  # Likelihood model
+  formula = energy_burden_percentile ~ percent_black_or_african_american_alone,
+  family = gaussian,           # link function
+  # Prior model, use the Stan defaults
+  # Numerical parameters
+  chains = 4, 
+  iter = 5000*2, # to account for 50% burn-in
+  seed = 84735,  # the BAYES seed!
+  refresh = FALSE
+) 
+```
+
+## Study the posterior distribution
+
+(Introduce the posterior)
+
+```{r posteriors-MA}
+#| warning: false
+#| echo: false
+#| fig-align: center
+#| fig-height: 8
+df_model_MA <- 
+  model_MA %>% 
+  as_tibble() %>% 
+  select(Intercept = `(Intercept)`, Slope = percent_black_or_african_american_alone)
+
+df_model_MA %>% 
+  pivot_longer(
+    c(Intercept, Slope),
+    names_to = "parameter",
+    values_to = "x"
+  ) %>% 
+  
+  ggplot(aes(x)) +
+  geom_density() +
+  facet_wrap(~parameter) +
+  theme_minimal() +
+  labs(
+    x = "Parameter Value",
+    y = "Density",
+  )
+```
+
+## Study the posterior predictions
+
+(Describe posterior predictions)
+
+```{r}
+#| warning: false
+#| echo: false
+#| fig-align: center
+#| fig-height: 8
+df_data %>% 
+  filter(str_detect(state_territory, "Massachusetts")) %>% 
+  
+  ggplot(aes(
+    x = percent_black_or_african_american_alone,
+    y = energy_burden_percentile
+  )) +
+  geom_line(
+    data = . %>% 
+      filter(!is.na(percent_black_or_african_american_alone)) %>% 
+      select(percent_black_or_african_american_alone) %>% 
+      tidybayes::add_fitted_draws(model_MA, n = 1000),
+    aes(y = .value, group = .draw), 
+    alpha = 0.01,
+    linewidth = 2.0,
+    color = "blue"
+  ) +
+  geom_point(size = 0.1) +
+  scale_x_continuous(labels = scales::percent) +
+  theme_minimal() +
+  labs(
+    x = "Percent Black Census Tract",
+    y = "Energy Burden Percentile",
+  )
+```
+
+- How well do the posterior predictions agree with the data?
+
+# Colorado
+
+## Set a prior
+
+(Which of the following best matches the MA posterior?)
+
+```{r}
+#| warning: false
+#| echo: false
+#| fig-align: center
+#| fig-height: 8
+mean_opt1 <- 10
+sd_opt1 <- 4.7
+mean_opt2 <- 52
+sd_opt2 <- 4.7
+mean_opt3 <- 52
+sd_opt3 <- 8.2
+  
+tibble(Slope = seq(-10, 80, length.out = 200)) %>% 
+  mutate(
+    d_1 = dnorm(Slope, mean = mean_opt1, sd = sd_opt1),
+    d_2 = dnorm(Slope, mean = mean_opt2, sd = sd_opt2),
+    d_3 = dnorm(Slope, mean = mean_opt3, sd = sd_opt3),
+  ) %>% 
+  pivot_longer(
+    cols = matches("d_\\d"),
+    names_sep = "_",
+    names_to = c(".value", "Option")
+  ) %>% 
+
+  ggplot(aes(Slope)) +
+  geom_density(
+    data = df_model_MA,
+    mapping = aes(y = ..density..),
+  ) +
+  geom_line(aes(y = d, color = Option)) +
+  facet_grid(~Option, labeller = label_both) +
+  theme_minimal() +
+  guides(color = "none") +
+  labs(
+    y = "Density"
+  )
+```
+
+## Study the posterior predictions
+
+```{r}
+#| include: false
+#| echo: false
+#|cache: true
+model_CO1 <- stan_glm(
+  data = df_data %>% 
+    filter(
+      str_detect(state_territory, "Colorado"),
+      !is.na(percent_black_or_african_american_alone)
+    ),
+  # Likelihood model
+  formula = energy_burden_percentile ~ percent_black_or_african_american_alone,
+  family = gaussian,           # link function
+  # Use parameter set 1
+  prior = normal(mean_opt1, sd_opt1),
+  # Use an "overconfident" prior for the intercept, based on the energy burden posterior for MA
+  prior_intercept = normal(51, 1),
+  # Numerical parameters
+  chains = 4, 
+  iter = 5000*2, # to account for 50% burn-in
+  seed = 84735,  # the BAYES seed!
+  refresh = FALSE
+) 
+
+model_CO2 <- stan_glm(
+  data = df_data %>% 
+    filter(
+      str_detect(state_territory, "Colorado"),
+      !is.na(percent_black_or_african_american_alone)
+    ),
+  # Likelihood model
+  formula = energy_burden_percentile ~ percent_black_or_african_american_alone,
+  family = gaussian,           # link function
+  # Use parameter set 2
+  prior = normal(mean_opt2, sd_opt2),
+  # Use an "overconfident" prior for the intercept, based on the energy burden posterior for MA
+  prior_intercept = normal(51, 1),
+  # Numerical parameters
+  chains = 4, 
+  iter = 5000*2, # to account for 50% burn-in
+  seed = 84735,  # the BAYES seed!
+  refresh = FALSE
+) 
+
+model_CO3 <- stan_glm(
+  data = df_data %>% 
+    filter(
+      str_detect(state_territory, "Colorado"),
+      !is.na(percent_black_or_african_american_alone)
+    ),
+  # Likelihood model
+  formula = energy_burden_percentile ~ percent_black_or_african_american_alone,
+  family = gaussian,           # link function
+  # Use parameter set 3
+  prior = normal(mean_opt3, sd_opt3),
+  # Use an "overconfident" prior for the intercept, based on the energy burden posterior for MA
+  prior_intercept = normal(51, 1),
+  # Numerical parameters
+  chains = 4, 
+  iter = 5000*2, # to account for 50% burn-in
+  seed = 84735,  # the BAYES seed!
+  refresh = FALSE
+) 
+```
+
+
+```{r}
+#| warning: false
+#| echo: false
+#| fig-align: center
+#| fig-height: 8
+df_data %>% 
+  filter(str_detect(state_territory, "Colorado")) %>% 
+  
+  ggplot(aes(
+    x = percent_black_or_african_american_alone,
+    y = energy_burden_percentile
+  )) +
+  geom_line(
+    data = . %>% 
+      filter(!is.na(percent_black_or_african_american_alone)) %>% 
+      select(percent_black_or_african_american_alone) %>% 
+      tidybayes::add_fitted_draws(model_CO1, n = 1000) %>% 
+      mutate(Option = "1"),
+    aes(y = .value, group = .draw, color = Option), 
+    alpha = 0.01,
+    linewidth = 2.0,
+  ) +
+  geom_line(
+    data = . %>% 
+      filter(!is.na(percent_black_or_african_american_alone)) %>% 
+      select(percent_black_or_african_american_alone) %>% 
+      tidybayes::add_fitted_draws(model_CO2, n = 1000) %>% 
+      mutate(Option = "2"),
+    aes(y = .value, group = .draw, color = Option), 
+    alpha = 0.01,
+    linewidth = 2.0,
+  ) +
+  geom_line(
+    data = . %>% 
+      filter(!is.na(percent_black_or_african_american_alone)) %>% 
+      select(percent_black_or_african_american_alone) %>% 
+      tidybayes::add_fitted_draws(model_CO3, n = 1000) %>% 
+      mutate(Option = "3"),
+    aes(y = .value, group = .draw, color = Option), 
+    alpha = 0.01,
+    linewidth = 2.0,
+  ) +
+  
+  geom_point(size = 0.1) +
+  facet_grid(~Option, labeller = label_both) +
+  scale_x_continuous(labels = scales::percent) +
+  theme_minimal() +
+  guides(color = "none") +
+  labs(
+    x = "Percent Black Census Tract",
+    y = "Energy Burden Percentile",
+    title = "Colorado"
+  )
+```
+
+- The posterior predictions do not match the data well, due to the overconfident prior
+
+# Florida 
+
+## Deal with Limited Data
+
+(Spin a yarn about how FL might redact their data)
+
+```{r}
+#| warning: false
+#| echo: false
+#| fig-align: center
+#| fig-height: 8
+set.seed(101)
+
+df_fl <- 
+  df_data %>% 
+  filter(state_territory == "Florida") %>% 
+  slice_sample(n = 25)
+
+df_fl %>% 
+  ggplot(aes(
+    percent_black_or_african_american_alone,
+    energy_burden_percentile
+  )) +
+  geom_point(size = 1.0) +
+  geom_smooth(method = "lm") +
+  scale_x_continuous(labels = scales::percent) +
+  theme_minimal() +
+  labs(
+    x = "Percent Black Census Tract",
+    y = "Energy Burden Percentile",
+  )
+```
+
+- Given the limited data, we can't confidently conclude that there is a positive slope
+
+## Study the posterior predictions
+
+```{r}
+#| include: false
+#| echo: false
+#|cache: true
+model_FL1 <- stan_glm(
+  data = df_fl,
+  # Likelihood model
+  formula = energy_burden_percentile ~ percent_black_or_african_american_alone,
+  family = gaussian,           # link function
+  # Use parameter set 1
+  prior = normal(mean_opt1, sd_opt1),
+  # Use an "overconfident" prior for the intercept, based on the energy burden posterior for MA
+  prior_intercept = normal(51, 1),
+  # Numerical parameters
+  chains = 4, 
+  iter = 5000*2, # to account for 50% burn-in
+  seed = 84735,  # the BAYES seed!
+  refresh = FALSE
+) 
+
+model_FL2 <- stan_glm(
+  data = df_fl,
+  # Likelihood model
+  formula = energy_burden_percentile ~ percent_black_or_african_american_alone,
+  family = gaussian,           # link function
+  # Use parameter set 2
+  prior = normal(mean_opt2, sd_opt2),
+  # Use an "overconfident" prior for the intercept, based on the energy burden posterior for MA
+  prior_intercept = normal(51, 1),
+  # Numerical parameters
+  chains = 4, 
+  iter = 5000*2, # to account for 50% burn-in
+  seed = 84735,  # the BAYES seed!
+  refresh = FALSE
+) 
+
+model_FL3 <- stan_glm(
+  data = df_fl,
+  # Likelihood model
+  formula = energy_burden_percentile ~ percent_black_or_african_american_alone,
+  family = gaussian,           # link function
+  # Use parameter set 3
+  prior = normal(mean_opt3, sd_opt3),
+  # Use an "overconfident" prior for the intercept, based on the energy burden posterior for MA
+  prior_intercept = normal(51, 1),
+  # Numerical parameters
+  chains = 4, 
+  iter = 5000*2, # to account for 50% burn-in
+  seed = 84735,  # the BAYES seed!
+  refresh = FALSE
+) 
+```
+
+
+```{r}
+#| warning: false
+#| echo: false
+#| fig-align: center
+#| fig-height: 8
+df_fl %>% 
+  ggplot(aes(
+    x = percent_black_or_african_american_alone,
+    y = energy_burden_percentile
+  )) +
+  geom_line(
+    data = . %>% 
+      filter(!is.na(percent_black_or_african_american_alone)) %>% 
+      select(percent_black_or_african_american_alone) %>% 
+      tidybayes::add_fitted_draws(model_FL1, n = 1000) %>% 
+      mutate(Option = "1"),
+    aes(y = .value, group = .draw, color = Option), 
+    alpha = 0.01,
+    linewidth = 2.0,
+  ) +
+  geom_line(
+    data = . %>% 
+      filter(!is.na(percent_black_or_african_american_alone)) %>% 
+      select(percent_black_or_african_american_alone) %>% 
+      tidybayes::add_fitted_draws(model_FL2, n = 1000) %>% 
+      mutate(Option = "2"),
+    aes(y = .value, group = .draw, color = Option), 
+    alpha = 0.01,
+    linewidth = 2.0,
+  ) +
+  geom_line(
+    data = . %>% 
+      filter(!is.na(percent_black_or_african_american_alone)) %>% 
+      select(percent_black_or_african_american_alone) %>% 
+      tidybayes::add_fitted_draws(model_FL3, n = 1000) %>% 
+      mutate(Option = "3"),
+    aes(y = .value, group = .draw, color = Option), 
+    alpha = 0.01,
+    linewidth = 2.0,
+  ) +
+  
+  geom_point(size = 0.1) +
+  facet_grid(~Option, labeller = label_both) +
+  scale_x_continuous(labels = scales::percent) +
+  theme_minimal() +
+  guides(color = "none") +
+  labs(
+    x = "Percent Black Census Tract",
+    y = "Energy Burden Percentile",
+    title = "Florida, Limited Data"
+  )
+```
+
+- With the prior, we can confidently conclude there is a positive slope
