@@ -9,3 +9,6 @@ author:
 
 ## Overview
 
+Below is a reference guide for the critical differences between Bayesians and frequentist. 
+
+

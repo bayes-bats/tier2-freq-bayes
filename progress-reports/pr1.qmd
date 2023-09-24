@@ -75,3 +75,16 @@ legend("topright", pch=22, pt.cex=2, cex=0.6, pt.bg=c("steelblue3", "palegreen3"
 As we move into the second phase of creating our activity and its associated artifacts, the primary area of focus will be on drafting the applied `R` activity. We are currently in the process of developing a [series of prototypes](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/communities.qmd) using the CEJST data. Our hope is to build a [main activity](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/activity-main.qmd) based on the prototyping that we will then finalize in the final phase of our activity development.
 
 Once we finalize which prototype we want to use for our main activity, we will refine it so that it is ready for student consumption. In addition to drafting the applied `R` activity, we will also finalize the [Critical Differences Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/one-pager.qmd) so that it aligns with the application portion of our activity. We anticipate having both of these steps (drafting the applied activity and finalizing the differences reference guide) complete by the time Progress Report 2 is due on 01 November.
+
+## Meeting Times
+
+The cadence for meetings has not changed between our work plan submission and Progress Report 1, thus we will keep meeting based on the following:
+
+-   Weekly and/or bi-weekly meetings for the activity-creating team
+-   Monthly meetings with mentor (Mine)
+-   Office hours
+    -   03 October 2023 with Monika (10-11a EST)
+    -   16 October 2023 with Amy (2-3p EST)
+    -   26 October 2023 with Mine (1-2p EST)
+    -   November (TBD)
+
