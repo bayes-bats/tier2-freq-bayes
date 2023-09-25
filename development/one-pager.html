@@ -36,6 +36,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="one-pager_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="one-pager_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -71,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<h2 class="anchored" data-anchor-id="overview">Overview<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></h2>
 <p>Below is a reference guide for the critical differences between Bayesians and frequentist.</p>
 <ul>
 <li><a href="#tbl-fixed">Table&nbsp;1</a> illustrates the differences in thinking between fixed variables</li>
@@ -83,6 +85,10 @@ ul.task-list li input[type="checkbox"] {
 <div id="tbl-fixed" class="anchored">
 <table class="table">
 <caption>Table&nbsp;1: Fixed Variable</caption>
+<colgroup>
+<col style="width: 56%">
+<col style="width: 43%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Frequentist</th>
@@ -91,16 +97,12 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>A</td>
-<td></td>
+<td>Data are a IID random sample from a continuous stream</td>
+<td>Data are observed, thus fixed by the sample generated</td>
 </tr>
 <tr class="even">
-<td>E</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>A</td>
-<td></td>
+<td>Parameters are fixed by nature</td>
+<td>Parameters are unknown and described distributionally</td>
 </tr>
 </tbody>
 </table>
@@ -108,6 +110,10 @@ ul.task-list li input[type="checkbox"] {
 <div id="tbl-prob" class="anchored">
 <table class="table">
 <caption>Table&nbsp;2: Interpretation of Probability</caption>
+<colgroup>
+<col style="width: 56%">
+<col style="width: 43%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Frequentist</th>
@@ -116,16 +122,12 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>A</td>
-<td></td>
+<td>Probability is observed result from an infinite series of trials performed under identical conditions</td>
+<td>Probability is the researcher/observer “degree of belief” before or after the data are observed</td>
 </tr>
 <tr class="even">
-<td>E</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>A</td>
-<td></td>
+<td>Probabilistic quantity of interest is Pr(data <span class="math inline">\(|\)</span> H0)</td>
+<td>Probabilistic quantity of interest is Pr(<span class="math inline">\(\theta\)</span> <span class="math inline">\(|\)</span> data)</td>
 </tr>
 </tbody>
 </table>
@@ -133,6 +135,10 @@ ul.task-list li input[type="checkbox"] {
 <div id="tbl-summ" class="anchored">
 <table class="table">
 <caption>Table&nbsp;3: Model Summaries</caption>
+<colgroup>
+<col style="width: 56%">
+<col style="width: 43%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Frequentist</th>
@@ -141,16 +147,16 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>A</td>
-<td></td>
+<td>Point estimates and standard errors</td>
+<td>Descriptions of the posterior distribution such as means and quantiles</td>
 </tr>
 <tr class="even">
-<td>E</td>
-<td></td>
+<td>95% confidence intervals indicating that 19/20 times the interval covers the true parameter value</td>
+<td>Highest posterior density intervals indicating region of highest posterior probability</td>
 </tr>
 <tr class="odd">
-<td>A</td>
 <td></td>
+<td>1−<span class="math inline">\(\alpha\)</span>% of most likely parameter values fall within a 1−<span class="math inline">\(\alpha\)</span> HPD</td>
 </tr>
 </tbody>
 </table>
@@ -158,6 +164,10 @@ ul.task-list li input[type="checkbox"] {
 <div id="tbl-inf" class="anchored">
 <table class="table">
 <caption>Table&nbsp;4: General Inference</caption>
+<colgroup>
+<col style="width: 56%">
+<col style="width: 43%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Frequentist</th>
@@ -166,15 +176,15 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>A</td>
-<td></td>
+<td>Deduction from Pr(data <span class="math inline">\(|\)</span> H0), by setting <span class="math inline">\(\alpha\)</span> in advance</td>
+<td>Induction from Pr(<span class="math inline">\(\theta\)</span> <span class="math inline">\(|\)</span> data), starting with Pr(<span class="math inline">\(\theta\)</span>)</td>
 </tr>
 <tr class="even">
-<td>E</td>
-<td></td>
+<td>Accept H1 if Pr(data <span class="math inline">\(|\)</span> H0) &lt; <span class="math inline">\(\alpha\)</span></td>
+<td>1−<span class="math inline">\(\alpha\)</span>% of most likely parameter values fall within a 1−<span class="math inline">\(\alpha\)</span> HPD</td>
 </tr>
 <tr class="odd">
-<td>A</td>
+<td>Accept H0 if Pr(data <span class="math inline">\(|\)</span> H0) ≥ <span class="math inline">\(\alpha\)</span></td>
 <td></td>
 </tr>
 </tbody>
@@ -183,6 +193,10 @@ ul.task-list li input[type="checkbox"] {
 <div id="tbl-qual" class="anchored">
 <table class="table">
 <caption>Table&nbsp;5: Quality Checks</caption>
+<colgroup>
+<col style="width: 56%">
+<col style="width: 43%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Frequentist</th>
@@ -191,23 +205,29 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td>A</td>
-<td></td>
+<td>Calculation of Type I and II errors</td>
+<td>Posterior predictive checks</td>
 </tr>
 <tr class="even">
-<td>E</td>
-<td></td>
+<td>Sometimes: effect size and/or power</td>
+<td>Sensitivity to forms of the prior</td>
 </tr>
 <tr class="odd">
-<td>A</td>
-<td></td>
+<td>Usually: fixation with small differences in p-values despite large measurement error in many (social) sciences relative to other scientific disciplines</td>
+<td>Bayes factors, BIC, DIC</td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
 
-</main>
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p> These tables were borrowed and adapted with permission from Dr.&nbsp;Jeff Harden of the University of Notre Dame.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

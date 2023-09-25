@@ -7,7 +7,7 @@ author:
   - name: Zach del Rosario
 ---
 
-## Overview
+## Overview^[ These tables were borrowed and adapted with permission from Dr. Jeff Harden of the University of Notre Dame.]
 
 Below is a reference guide for the critical differences between Bayesians and frequentist. 
 
@@ -20,45 +20,44 @@ Below is a reference guide for the critical differences between Bayesians and fr
 
 | Frequentist | Bayesian | 
 |-------------|----------|
-| A           | 
-| E           | 
-| A           |
+| Data are a IID random sample from a continuous stream | Data are observed, thus fixed by the sample generated
+| Parameters are fixed by nature | Parameters are unknown and described distributionally
+
 
 : Fixed Variable {#tbl-fixed}
 
 
 | Frequentist | Bayesian | 
 |-------------|----------|
-| A           | 
-| E           | 
-| A           |
+| Probability is observed result from an infinite series of trials performed under identical conditions | Probability is the researcher/observer "degree of belief" before or after the data are observed 
+| Probabilistic quantity of interest is Pr(data $|$  H0) | Probabilistic quantity of interest is Pr($\theta$ $|$ data)
 
 : Interpretation of Probability {#tbl-prob}
 
 
 | Frequentist | Bayesian | 
 |-------------|----------|
-| A           | 
-| E           | 
-| A           |
+| Point estimates and standard errors | Descriptions of the posterior distribution such as means and quantiles
+| 95% confidence intervals indicating that 19/20 times the interval covers the true parameter value | Highest posterior density intervals indicating region of highest posterior probability
+|           | 1−$\alpha$% of most likely parameter values fall within a 1−$\alpha$ HPD
 
 : Model Summaries {#tbl-summ}
 
 
 | Frequentist | Bayesian | 
 |-------------|----------|
-| A           | 
-| E           | 
-| A           |
+| Deduction from Pr(data $|$ H0), by setting $\alpha$ in advance | Induction from Pr($\theta$ $|$ data), starting with Pr($\theta$) 
+| Accept H1 if Pr(data $|$ H0) < $\alpha$ | 1−$\alpha$% of most likely parameter values fall within a 1−$\alpha$ HPD
+| Accept H0 if Pr(data $|$ H0) ≥ $\alpha$|
 
 : General Inference {#tbl-inf}
 
 
 | Frequentist | Bayesian | 
 |-------------|----------|
-| A           | 
-| E           | 
-| A           |
+| Calculation of Type I and II errors | Posterior predictive checks
+| Sometimes: effect size and/or power | Sensitivity to forms of the prior
+| Usually: fixation with small differences in p-values despite large measurement error in many (social) sciences relative to other scientific disciplines | Bayes factors, BIC, DIC
 
 : Quality Checks {#tbl-qual}
 
