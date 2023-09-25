@@ -9,7 +9,7 @@ author:
 
 ## Overview^[ These tables were borrowed and adapted with permission from Dr. Jeff Harden of the University of Notre Dame.]
 
-Below is a reference guide for the critical differences between Bayesians and frequentist. 
+Below is a reference guide for the critical differences between Bayesians and frequentists. 
 
 - @tbl-fixed illustrates the differences in thinking between fixed variables
 - @tbl-prob illustrates the differences in thinking on how to interpret probabilities
