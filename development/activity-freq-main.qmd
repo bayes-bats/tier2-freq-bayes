@@ -54,7 +54,7 @@ df_data %>%
   )
 ```
 
--   Florida and Massachusetts have a clear positive trend; this is evidence of inequitable outcomes
+-   Florida and Massachusetts have a clear positive trend; this is evidence of inequitable outcomes 
 -   Colorado has a negative trend; this is a surprising result
 
 # Analyze a Frequentist Model
