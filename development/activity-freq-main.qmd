@@ -3,7 +3,11 @@ title: "CEJS Activity"
 format: html
 ---
 
+<!-- solution-begin -->
+These are instructor notes; they will be removed from the student-facing assignment file.
 
+This is the **Frequentist** form of the activity.
+<!-- solution-end -->
 
 ```{r setup}
 #| include: false
@@ -116,6 +120,10 @@ df_model_MA %>%
 ```
 
 - Do the CI exclude zero?
+
+## Assessing confidence
+
+TODO teach students how to do this through an example
 
 ## Study the MLE predictions
 

@@ -3,7 +3,11 @@ title: "CEJS Activity"
 format: html
 ---
 
+<!-- solution-begin -->
+These are instructor notes; they will be removed from the student-facing assignment file.
 
+This is the **Bayesian** form of the activity.
+<!-- solution-end -->
 
 ```{r setup}
 #| include: false
@@ -115,6 +119,16 @@ df_model_MA %>%
     y = "Density",
   )
 ```
+
+::: {.callout-note icon=false title="Synthesizing Descriptive Statistics"}
+Which model parameter describes the **trend** of the energy burden? What does the posterior say about that parameter value?
+:::
+
+The posterior distribution helps us determine **how confident** we should be in conclusions drawn from the model.
+
+## Assessing confidence
+
+TODO teach students how to do this through an example
 
 ## Study the posterior predictions
 
@@ -320,7 +334,13 @@ df_data %>%
   )
 ```
 
-- The posterior predictions do not match the data well, due to the overconfident prior
+::: {.callout-note icon=false title="Synthesizing Descriptive Statistics"}
+What does the model suggest about the trend of energy burden with percent Black in Colorado? How confident are you in your conclusion?
+:::
+
+<!-- solution-begin -->
+The posterior predictions do not match the data well, due to the overconfident prior. This is a contrast with the Frequentist approach.
+<!-- solution-end -->
 
 # Florida 
 
@@ -466,4 +486,10 @@ df_fl %>%
   )
 ```
 
+::: {.callout-note icon=false title="Synthesizing Descriptive Statistics"}
+What does the model suggest about the trend of energy burden with percent Black in Florida? How confident are you in your conclusion?
+:::
+
+<!-- solution-begin -->
 - With the prior, we can confidently conclude there is a positive slope
+<!-- solution-end -->
