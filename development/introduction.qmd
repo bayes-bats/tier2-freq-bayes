@@ -9,19 +9,24 @@ author:
 
 ## Introduction
 
-[purpose of the activity]
+This activity is all about *statistical inference* and *statistical assumptions*.
 
 ## Before We Begin...
 
--   What do you remember about analyzing a dataset with statistics?
--   What do you know about frequentist and Bayesian statistics?
+Ask yourself the following questions:
 
-#### Overview of Frequentist Framework
+::: {.callout-note icon=false title="Warmup Questions"}
+- What do you remember about analyzing a dataset with statistics?
+- What do you know about frequentist and Bayesian statistics? (*Note*: It's ok if you don't know what this means!)
+:::
 
-[Brief overview of frequentist statistics - is this even possible?!]
+Discuss these questions with the people at your table.
 
-#### Overview of Bayesian Framework
+## The Big Idea: Inference
 
-[Brief overview of Bayesian statistics - is this even possible?!]
+Statistical inference is drawing conclusions about **data we haven't seen** using **only the data that are available.** As a simple example, if we're interested in the energy burden pattern in Colorado but we only have data from Massachusetts, we should be careful when trying to use the MA data to predict patterns in CO. Crucially, **the assumptions we make for inference will strongly affect the conclusions we make.** 
 
-**NOTE** most of these differences will be covered in one-pager, so we may be able to eliminate these two sections and just focus on introducing the activity. We can follow the introduction by walking through what the entire activity will include, much like we did in our proposal.
+::: {.callout-note icon=false title="All models are wrong...."}
+All statistical analyses involve making assumptions---we'll practice making and assessing statistical assumptions in this activity.
+:::
+
