@@ -11,4 +11,56 @@ author:
 
 Below is a reference guide for the critical differences between Bayesians and frequentist. 
 
+- @tbl-fixed illustrates the differences in thinking between fixed variables
+- @tbl-prob illustrates the differences in thinking on how to interpret probabilities
+- @tbl-summ illustrates the differences in how to summarize models
+- @tbl-inf illustrates the differences in thinking on general inference 
+- @tbl-qual illustrates the differences in assessing model performance
+
+
+| Frequentist | Bayesian | 
+|-------------|----------|
+| A           | 
+| E           | 
+| A           |
+
+: Fixed Variable {#tbl-fixed}
+
+
+| Frequentist | Bayesian | 
+|-------------|----------|
+| A           | 
+| E           | 
+| A           |
+
+: Interpretation of Probability {#tbl-prob}
+
+
+| Frequentist | Bayesian | 
+|-------------|----------|
+| A           | 
+| E           | 
+| A           |
+
+: Model Summaries {#tbl-summ}
+
+
+| Frequentist | Bayesian | 
+|-------------|----------|
+| A           | 
+| E           | 
+| A           |
+
+: General Inference {#tbl-inf}
+
+
+| Frequentist | Bayesian | 
+|-------------|----------|
+| A           | 
+| E           | 
+| A           |
+
+: Quality Checks {#tbl-qual}
+
+
 
