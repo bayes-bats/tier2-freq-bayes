@@ -4,10 +4,10 @@ format: html
 ---
 
 <!-- solution-begin -->
+
 These are instructor notes; they will be removed from the student-facing assignment file.
 
-This is the **Frequentist** form of the activity.
-<!-- solution-end -->
+This is the **Frequentist** form of the activity. <!-- solution-end -->
 
 ```{r setup}
 #| include: false
@@ -54,8 +54,8 @@ df_data %>%
   )
 ```
 
-- Florida and Massachusetts have a clear positive trend; this is evidence of inequitable outcomes
-- Colorado has a negative trend; this is a surprising result
+-   Florida and Massachusetts have a clear positive trend; this is evidence of inequitable outcomes
+-   Colorado has a negative trend; this is a surprising result
 
 # Analyze a Frequentist Model
 
@@ -119,7 +119,7 @@ df_model_MA %>%
   knitr::kable()
 ```
 
-- Do the CI exclude zero?
+-   Do the CI exclude zero?
 
 ## Assessing confidence
 
@@ -180,7 +180,7 @@ df_MA_pred %>%
   )
 ```
 
-- How well do the posterior predictions agree with the data?
+-   How well do the posterior predictions agree with the data?
 
 # Colorado
 
@@ -238,7 +238,7 @@ df_model_CO %>%
   knitr::kable()
 ```
 
-- Do the CI exclude zero?
+-   Do the CI exclude zero?
 
 ## Study the MLE predictions
 
@@ -295,9 +295,9 @@ df_CO_pred %>%
   )
 ```
 
-- How well do the posterior predictions agree with the data?
+-   How well do the posterior predictions agree with the data?
 
-# Florida 
+# Florida
 
 ## Deal with Limited Data
 
@@ -328,8 +328,6 @@ df_FL %>%
     y = "Energy Burden Percentile",
   )
 ```
-
-
 
 ```{r fit-FL}
 #| include: false
@@ -376,7 +374,7 @@ df_model_FL %>%
   knitr::kable()
 ```
 
-- Do the CI exclude zero?
+-   Do the CI exclude zero?
 
 ## Study the MLE predictions
 
@@ -433,4 +431,4 @@ df_FL_pred %>%
   )
 ```
 
-- How well do the posterior predictions agree with the data?
+-   How well do the posterior predictions agree with the data?
