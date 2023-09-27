@@ -11,6 +11,10 @@ author:
 
 This activity is all about *statistical inference* and *statistical assumptions*.
 
+## Learning Objectives
+
+By the end of the activity, ...
+
 ## Before We Begin...
 
 Ask yourself the following questions:
