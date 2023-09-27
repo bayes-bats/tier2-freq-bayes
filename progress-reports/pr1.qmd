@@ -64,15 +64,15 @@ legend("topright", pch=22, pt.cex=2, cex=0.6, pt.bg=c("steelblue3", "palegreen3"
 ## Completed Artifacts
 
 * [Dataset: The Climate and Economic Justice Screening Tool (CEJST)](https://screeningtool.geoplatform.gov/en/)
-* [Context Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/context.qmd)
-* [Critical Differences Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/one-pager.qmd)
-* [Introduction Discussion](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/introduction.qmd)
-* [Conclusion Discussion](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/conclusion.qmd)
+* [Context Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/00-context.qmd)
+* [Introduction Discussion](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/01-introduction.qmd)
+* [Critical Differences Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-one-pager.qmd)
+* [Conclusion Discussion](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/04-conclusion.qmd)
 
 
 ## Next Steps
 
-As we move into the second phase of creating our activity and its associated artifacts, the primary area of focus will be on drafting the applied `R` activity. We are currently in the process of developing a [series of prototypes](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/communities.qmd) using the CEJST data. We have also started iterating on our main activity, which includes an [analysis using the Bayesian approach](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/activity-bayes-main.qmd) and an [analysis using the frequentist approach](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/activity-freq-main.qmd). These analyses come to contrasting conclusions, thus highlighting the comparative differences between the two approaches.
+As we move into the second phase of creating our activity and its associated artifacts, the primary area of focus will be on drafting the applied `R` activity. We are currently in the process of developing a [series of prototypes](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/communities.qmd) using the CEJST data. We have also started iterating on our main activity, which includes an [analysis using the Bayesian approach](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02b-activity-bayes-main.qmd) and an [analysis using the frequentist approach](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02a-activity-freq-main.qmd). These analyses come to contrasting conclusions, thus highlighting the comparative differences between the two approaches.
 
 
 Once we finalize our steps for the main applied activity, we will refine it so that it is ready for student consumption. In addition to drafting the applied `R` activity, we will also finalize the [Critical Differences Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/one-pager.qmd) so that it aligns with the application portion of our activity. We anticipate having both of these steps (drafting the applied activity and finalizing the differences reference guide) complete by the time Progress Report 2 is due on 01 November.
