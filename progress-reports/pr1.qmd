@@ -1,5 +1,5 @@
 ---
-title: "Progress Report 1: Bayes BATS Tier-2"
+title: "Progress Report 1: Bayes BATS Tier 2"
 subtitle: "Activity: Comparing Frequentist and Bayesian Approaches"
 format: html
 author: 
