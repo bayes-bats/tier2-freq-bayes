@@ -74,6 +74,13 @@ legend("topright", pch=22, pt.cex=2, cex=0.6, pt.bg=c("steelblue3", "palegreen3"
 
 As we move into the second phase of creating our activity and its associated artifacts, the primary area of focus will be on drafting the applied `R` activity. We are currently in the process of developing a [series of prototypes](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/communities.qmd) using the CEJST data. We have also started iterating on our main activity, which includes an [analysis using the Bayesian approach](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02b-activity-bayes-main.qmd) and an [analysis using the frequentist approach](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02a-activity-freq-main.qmd). These analyses come to contrasting conclusions, thus highlighting the comparative differences between the two approaches.
 
+In a meeting (2023-09-26), Mine gave us the following feedback on the activity, which we will incorporate in the next phase of work:
+
+- Clearly articular learning objectives for faculty, and communicate these to students. In particular, this will help with measuring outcomes for educational research.
+  - We will also ensure that at least one learning objective focuses on the "scientific question," rather than focusing only on statistical questions.
+- Emphasize that "there are no bad priors."
+- Give students a way to pick their own prior. Specifically, to allow students to pick a U.S. State they think makes for a reasonable comparison with the target for inference (either Colorado or Florida).
+- Document the model limitations for faculty, and possibly for students. Namely, the linear model assumes independence of the slope and intercept parameters in the prior.
 
 Once we finalize our steps for the main applied activity, we will refine it so that it is ready for student consumption. In addition to drafting the applied `R` activity, we will also finalize the [Critical Differences Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/one-pager.qmd) so that it aligns with the application portion of our activity. We anticipate having both of these steps (drafting the applied activity and finalizing the differences reference guide) complete by the time Progress Report 2 is due on 01 November.
 
