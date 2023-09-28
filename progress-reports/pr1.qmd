@@ -20,23 +20,25 @@ Our aim for Progress Report 1 was to complete a number of "starter" artifacts ah
 
 ## Updated Gantt Chart
 
-Below is the updated Gantt chart we proposed as part of our overall work plan. To date, we completed progress on the artifacts we planned to for the submission of Progress Report 1. Links to those artifacts are provided below.
+To date, we completed progress on almost all of the artifacts we planned to for the submission of Progress Report 1. Links to those artifacts are provided below. The exception is the [Conclusion Discussion artifact](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/04-conclusion.qmd). After our monthly meeting with Mine, we have a few things to consider in terms of assessing students' understanding of the two approaches in our conclusion, so we have pushed this artifact to Progress Report 2's due date. This change is shown in the updated Gantt chart. Finally, while we allocated the drafting of the applied `R` activity to Progress Report 2, we got a jump start on those materials, discussed more below. 
+
 
 ```{r, echo=FALSE}
 g <- new("gantt")
 g <- ganttAddTask(g, "Work Plan")
 g <- ganttAddTask(g, "ID datasets","2023-08-09","2023-08-25", done=100)
-g <- ganttAddTask(g, "Draft context 1-pager","2023-08-25","2023-09-01",done=90)
+g <- ganttAddTask(g, "Draft context 1-pager","2023-08-25","2023-09-01",done=100)
 g <- ganttAddTask(g, "Progress Report 1")
-g <- ganttAddTask(g, "Finalize context 1-pager", "2023-09-01", "2023-09-30", done=50)
-g <- ganttAddTask(g, "Draft intro. discussion", "2023-09-01", "2023-09-22", done=75)
-g <- ganttAddTask(g, "Finalize intro. discussion", "2023-09-22", "2023-09-30", done=25)
+g <- ganttAddTask(g, "Finalize context 1-pager", "2023-09-01", "2023-09-30", done=100)
+g <- ganttAddTask(g, "Draft intro. discussion", "2023-09-01", "2023-09-22", done=100)
+g <- ganttAddTask(g, "Finalize intro. discussion", "2023-09-22", "2023-09-30", done=75)
 g <- ganttAddTask(g, "Draft conclusion discussion", "2023-09-01", "2023-09-22", done=25)
-g <- ganttAddTask(g, "Finalize conclusion discussion", "2023-09-22", "2023-09-30", done=0)
-g <- ganttAddTask(g, "Draft Bayes-freq. framework 1-pager", "2023-09-01", "2023-09-30", done=75)
+g <- ganttAddTask(g, "Draft Bayes-freq. framework 1-pager", "2023-09-01", "2023-09-30", done=100)
+g <- ganttAddTask(g, "Submit Tier 3 Proposal", "2023-09-23", "2023-09-30", done=100)
 g <- ganttAddTask(g, "Progress Report 2")
 g <- ganttAddTask(g, "Finalize Bayes-freq. framework 1-pager", "2023-10-01", "2023-10-20", done=0)
-g <- ganttAddTask(g, "Draft applied R activity", "2023-10-01", "2023-10-31", done=25)
+g <- ganttAddTask(g, "Draft applied R activity", "2023-10-01", "2023-10-31", done=50)
+g <- ganttAddTask(g, "Finalize conclusion discussion", "2023-09-22", "2023-09-30", done=0)
 g <- ganttAddTask(g, "Final Materials Submission")
 g <- ganttAddTask(g, "Finalize applied R activity", "2023-11-01", "2023-11-24", done=0)
 g <- ganttAddTask(g, "Finalize all student artifacts", "2023-11-01", "2023-11-24", done=0)
@@ -66,15 +68,12 @@ legend("topright", pch=22, pt.cex=2, cex=0.6, pt.bg=c("steelblue3", "palegreen3"
 * [Dataset: The Climate and Economic Justice Screening Tool (CEJST)](https://screeningtool.geoplatform.gov/en/)
 * [Context Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/00-context.qmd)
 * [Introduction Discussion](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/01-introduction.qmd)
-* [Critical Differences Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-one-pager.qmd)
-* [Conclusion Discussion](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/04-conclusion.qmd)
-
 
 ## Next Steps
 
 As we move into the second phase of creating our activity and its associated artifacts, the primary area of focus will be on drafting the applied `R` activity. We are currently in the process of developing a [series of prototypes](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/communities.qmd) using the CEJST data. We have also started iterating on our main activity, which includes an [analysis using the Bayesian approach](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02b-activity-bayes-main.qmd) and an [analysis using the frequentist approach](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02a-activity-freq-main.qmd). These analyses come to contrasting conclusions, thus highlighting the comparative differences between the two approaches.
 
-In a meeting (2023-09-26), Mine gave us the following feedback on the activity, which we will incorporate in the next phase of work:
+In our monthly meeting (2023-09-26), Mine gave us the following feedback on the activity, which we will incorporate in the next phase of work:
 
 - Clearly articular learning objectives for faculty, and communicate these to students. In particular, this will help with measuring outcomes for educational research.
   - We will also ensure that at least one learning objective focuses on the "scientific question," rather than focusing only on statistical questions.
@@ -82,7 +81,7 @@ In a meeting (2023-09-26), Mine gave us the following feedback on the activity, 
 - Give students a way to pick their own prior. Specifically, to allow students to pick a U.S. State they think makes for a reasonable comparison with the target for inference (either Colorado or Florida).
 - Document the model limitations for faculty, and possibly for students. Namely, the linear model assumes independence of the slope and intercept parameters in the prior.
 
-Once we finalize our steps for the main applied activity, we will refine it so that it is ready for student consumption. In addition to drafting the applied `R` activity, we will also finalize the [Critical Differences Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/one-pager.qmd) so that it aligns with the application portion of our activity. We anticipate having both of these steps (drafting the applied activity and finalizing the differences reference guide) complete by the time Progress Report 2 is due on 01 November.
+Once we finalize our steps for the main applied activity, we will refine it so that it is ready for student consumption. In addition to drafting the applied `R` activity, we will also finalize the [Critical Differences Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/one-pager.qmd) so that it aligns with the application portion of our activity. We will also finalize the  [Conclusion Discussion](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/04-conclusion.qmd). We anticipate completing these three artifacts by the time Progress Report 2 is due on 01 November.
 
 ## Meeting Times
 
