@@ -18,3 +18,7 @@ Files:
 A paper activity that gives students an experience thinking like a Frequentist or Bayesian.
 
 1. 
+
+TODO
+- (SL) Review activity braindumps, articulate the big pieces in this ROS doc, suggest edits
+- (ZDR) Review LO's, add instructor details, suggest edits
