@@ -12,8 +12,7 @@ Files:
 * Activity (Elaborate)
 
 Files:
-- `02a`
-- `02b`
+- `02a-activity-freq-main.qmd`
 
 A paper activity that gives students an experience thinking like a Frequentist or Bayesian.
 
