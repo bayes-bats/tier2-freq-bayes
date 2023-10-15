@@ -121,7 +121,7 @@ df_model_MA %>%
 ```
 
 ::: {.callout-note icon=false title="Synthesizing Descriptive Statistics"}
-Which model parameter describes the **trend** of the energy burden? What does the posterior say about that parameter value?
+Which model parameter describes the **trend** of the energy burden? What does the posterior say about that parameter value? 
 :::
 
 The posterior distribution helps us determine **how confident** we should be in conclusions drawn from the model.
