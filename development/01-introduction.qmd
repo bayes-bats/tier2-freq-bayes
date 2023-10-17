@@ -23,6 +23,7 @@ By the end of the activity, you should be able to:
 
  
 <!-- solution-begin  -->
+
 By the end of the activity, you should be able to:
 
 1. Evaluate multiple hypotheses using inferential statistical results.
@@ -32,7 +33,7 @@ By the end of the activity, you should be able to:
   - We ask students to think critically about *why* patterns of inequality do---or do not---appear in different states. E.g., what is different about policy in Colorado vs Florida?
 3. State the primary statistical assumptions for Frequentist and Bayesian inference, and understand how they can lead to different conclusions.
   - We will focus on the inclusion of a prior and its interaction with small/large sample size. A prior is particularly useful when we have limited data. The prior becomes less important when we have a large dataset.
-  
+
 <!-- solution-end  -->
 
 ## Before We Begin...
@@ -66,8 +67,27 @@ Hypotheses, on the other hand, tend to be closed-ended, articulating a certain r
   
 Note that this hypothesis is succinct and testable with the data we have. It is also directly related to our more general research question. 
 
+## Paradigms in Statistical Inference
+
+There are a few different ways to draw conclusions about questions we have using data. We will focus on two inferential perspectives in this class: _Frequentist_ and _Bayesian_. Let's discuss the critical differences between the two paradigms with the [Critical Differences Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-one-pager.qmd).
+
+::: {.callout-note icon=false title="Frequentist & Bayesian Statistical Inference"}
+How are Frequentist and Bayesian approaches similar? How are they different?
+:::
+
 ## Next Steps
 
-We are going to develop a research question and hypotheses and then test them on the CEJST data using methods of statistical inference. Once we have done that, we are going to compare and discuss the results to see if they align with our expectations based on the approach we took and assumptions we made. 
+Given the context we have on sustainability trends among disadvantaged communities using just a few of the variables in the CEJST dataset, we can develop a research question and hypotheses to test using methods of statistical inference:
+
+__Research Question:__ 
+
+  | _Do Black Americans experience a disproportionate level of energy expenditure?_
+
+__Hypothesis:__
+
+  | _As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases)._
+
+
+Next, we are going to test our hypothesis and answer our research question using the CEJST dataset. We will compare and discuss the results of our analyses using Frequentist and Bayesian methods to see if they align with our expectations based on the approach we took and assumptions we made. 
 
 
