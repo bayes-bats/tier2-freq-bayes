@@ -1,22 +1,28 @@
+## Context
 
-* Context
+  a. File: 00-context.qmd
+  b. Aims: Explore in 5E model. Introduce students to data they will be using in activities and get them thinking about potential questions they may ask of/answer with the data using statistical inference
+  c. Cadence: Instructor walks through context document and discusses each section with them
 
-Files: `00-context.qmd`
 
-* Introduction (Explain?)
+## Activity Introduction
+  a. Files: 01-introduction-qmd, 03-one-pager.qmd
+  b. Aims: Engage and Explain in 5E model. Introduce students to statistical inference broadly defined, the learning objectives for the activity, and the high-level critical differences in frequentist/Bayesian approaches 
+  c. Cadence: Instructor walks them through first sections with introduction/LO's and then provides warmup questions (7-10 minutes of discussion time among groups). Groups can share what they know and instructor shares high-level one pager document on differences between statistical inference paradigms. Instructor then finishes discussion with sections on research questions and hypotheses. 
 
-Files: 
-- `01-introduction.qmd`
-- `03-one-pager.qmd` (Explain)
 
-* Activity (Elaborate)
+## Activity
+  a. Files:
+  b. Aims: Elaborate in 5E model.
+  c. Cadence:
 
-Files:
-- `02a-activity-freq-main.qmd`
 
-A paper activity that gives students an experience thinking like a Frequentist or Bayesian.
+## Activity Closing
+  a. File: 04-conclusion-qmd
+  b. Aims: Evaluate in 5E model. 
+  c. Cadence:  Instructor facilitates a group discussion and comparison of frequentist/Bayesian approaches. Carefully engineer a controversy to further engage students, and to highlight the importance of assumptions to statistical conclusions.
 
-1. 
+---
 
 TODO
 - (SL) Review activity braindumps, articulate the big pieces in this ROS doc, suggest edits
