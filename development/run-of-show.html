@@ -352,55 +352,118 @@ display: none;
 </div>
 
 
-<div id="context" class="section level2">
-<h2>Context</h2>
+<div id="context" class="section level3">
+<h3>Context</h3>
 <ol style="list-style-type: lower-alpha">
-<li>File: 00-context.qmd</li>
-<li>Aims: Explore in 5E model. Introduce students to data they will be
-using in activities and get them thinking about potential questions they
-may ask of/answer with the data using statistical inference</li>
-<li>Cadence: Instructor walks through context document and discusses
-each section with them</li>
+<li><strong>File</strong>: <code>00-context.qmd</code></li>
+<li><strong>Aims</strong>: <em>Explore in 5E model</em>. Introduce
+students to data they will be using in activities and get them thinking
+about potential questions they may ask of/answer with the data using
+methods of statistical inference</li>
+<li><strong>Cadence</strong>: Instructor walks through context document
+and discusses each section with them, focusing on the trends in the
+data</li>
 </ol>
 </div>
-<div id="activity-introduction" class="section level2">
-<h2>Activity Introduction</h2>
+<div id="activity-introduction" class="section level3">
+<h3>Activity Introduction</h3>
 <ol style="list-style-type: lower-alpha">
-<li>Files: 01-introduction-qmd, 03-one-pager.qmd</li>
-<li>Aims: Engage and Explain in 5E model. Introduce students to
-statistical inference broadly defined, the learning objectives for the
-activity, and the high-level critical differences in
-frequentist/Bayesian approaches</li>
-<li>Cadence: Instructor walks them through first sections with
-introduction/LO’s and then provides warmup questions (7-10 minutes of
-discussion time among groups). Groups can share what they know and
-instructor shares high-level one pager document on differences between
-statistical inference paradigms. Instructor then finishes discussion
-with sections on research questions and hypotheses.</li>
+<li><strong>Files</strong>: <code>01-introduction.qmd</code>,
+<code>03-one-pager.qmd</code></li>
+<li><strong>Aims</strong>: <em>Engage and Explain in 5E model</em>.
+Introduce students to statistical inference broadly defined, the
+learning objectives for the activity, and the high-level critical
+differences in Frequentist/Bayesian approaches</li>
+<li><strong>Cadence</strong>: Instructor walks them through first
+sections with introduction/LO’s and then provides warmup questions (7-10
+minutes of discussion time among groups). Groups can share what they
+know and instructor shares high-level one pager document on differences
+between statistical inference paradigms. Instructor then finishes
+discussion with sections on research questions and hypotheses</li>
 </ol>
 </div>
-<div id="activity" class="section level2">
-<h2>Activity</h2>
+<div id="activity" class="section level3">
+<h3>Activity</h3>
 <ol style="list-style-type: lower-alpha">
-<li>Files:</li>
-<li>Aims: Elaborate in 5E model.</li>
-<li>Cadence:</li>
+<li><strong>Files</strong>: <code>02a-activity-freq-main.qmd</code>,
+<code>02b-activity-bayes-main.qmd</code></li>
+<li><strong>Aims</strong>: <em>Elaborate in 5E model.</em> Apply the
+concepts covered in introduction and one-pager. Depending on which
+analysis they received, groups should be able to assess and synthesize
+output from models and make conclusions related to the research question
+and hypotheses.<br />
+</li>
+<li><strong>Cadence</strong>: Instructor introduces completed applied
+activities to groups (each group receives either Frequentist or Bayesian
+analysis). Groups use Tables 3 (Model Summaries) and 4 (General
+Inference) from critical differences one-pager to synthesize results.
+Focus will be on:
+<ul>
+<li>Model summaries:
+<ul>
+<li>Assess Estimates (point estimates for Frequentists / means,
+quantiles for Bayesians)</li>
+<li>Assess confidence (CIs for Frequentists / posterior distribution for
+Bayesians)</li>
+</ul></li>
+<li>General inference:
+<ul>
+<li>Assess predictions (predicted values for Frequentists / posterior
+predictions for Bayesians)</li>
+<li>Assess results relative to null: does this support our claims
+(research Q/hypothesis)?</li>
+</ul></li>
+</ul></li>
 </ol>
 </div>
-<div id="activity-closing" class="section level2">
-<h2>Activity Closing</h2>
+<div id="activity-closing" class="section level3">
+<h3>Activity Closing</h3>
 <ol style="list-style-type: lower-alpha">
-<li>File: 04-conclusion-qmd</li>
-<li>Aims: Evaluate in 5E model.</li>
-<li>Cadence: Instructor facilitates a group discussion and comparison of
-frequentist/Bayesian approaches. Carefully engineer a controversy to
-further engage students, and to highlight the importance of assumptions
-to statistical conclusions.</li>
+<li><strong>Files</strong>: <code>04-conclusion.qmd</code>,
+<code>03-one-pager.qmd</code></li>
+<li><strong>Aims</strong>: <em>Evaluate in 5E model</em>. Students
+should be able to articulate, through debate/discussion, the differences
+between the approaches. Highlight difference in starting assumptions and
+conclusions, despite groups using the same data</li>
+<li><strong>Cadence</strong>: Instructor facilitates a group discussion
+and comparison of Frequentist/Bayesian approaches. Carefully engineer a
+controversy to further engage students, and highlight the importance of
+assumptions to statistical conclusions using the critical differences
+one-pager as a guide</li>
 </ol>
 <hr />
-<p>TODO - (SL) Review activity braindumps, articulate the big pieces in
-this ROS doc, suggest edits - (ZDR) Review LO’s, add instructor details,
-suggest edits</p>
+<p>TODO</p>
+<ul>
+<li>(SL) Review activity braindumps, articulate the big pieces in this
+ROS doc, suggest edits – DONE</li>
+<li>(ZDR) Review LO’s, add instructor details, suggest edits – DONE</li>
+</ul>
+<hr />
+<p>FOR DISCUSSION</p>
+<ul>
+<li>Critical differences one-pager: introduce all of it during
+introduction or only introduce the pieces they’ll need to focus on for
+applied activity (e.g., model summaries and general inference)? My
+inclination is to introduce all of it at once and then focus them on a
+subset of it for the activity. When activity is done and they come back
+together for closing discussion, they can focus on the entire thing
+again. - <strong>need to decide if we provide paired down one-pager or
+give them beefy one</strong></li>
+<li>Applied activities:
+<ul>
+<li>We do all coding and provide analyses outputs for them</li>
+<li>Keep it to two states - <strong>need to decide on what these will
+be</strong></li>
+<li>Keep comparison narrow - have each group compare Model Summaries and
+General Inference (Tables 3 and 4 in one-pager) relative to the analysis
+they received - <strong>need to confirm this will be our
+scope</strong></li>
+<li>Decide on model specification choices - do we let students choose
+priors? How do we make a similar choice in Frequentist activity? -
+<strong>need to iron out model inputs/outputs</strong> (more to come
+over the next 6 weeks)</li>
+</ul></li>
+</ul>
 </div>
 
 
