@@ -24,6 +24,32 @@ By the end of the activity, you should be able to:
 5. Explain the primary differences between frequentist and Bayesian approaches for statistical inference.
 6. Describe the primary statistical assumptions for both the frequentist and Bayesian approaches.
  
+<!-- solution-begin  -->
+By the end of the activity, you should be able to:
+
+1. Create hypotheses that apply to real-world situations and are testable with data and inferential statistics.
+   - (Seems broader than what we can accomplish with a paper activity. We're going to give students fixed hypotheses, but let them analyze the data)
+2. Analyze your hypotheses using inferential statistics.
+   - (Yup!)
+3. Evaluate the outcomes of your analyses using what you know about inferential statistics and their respective assumptions.
+   - (Can we merge this with 2?)
+4. Explain the real-world findings of your analyses, noting how they may differ depending on the approach you used. 
+   - (This is great!)
+5. Explain the primary differences between frequentist and Bayesian approaches for statistical inference.
+   - 
+6. Describe the primary statistical assumptions for both the frequentist and Bayesian approaches.
+   - (This feels like a more specific description of 5)
+   
+I took a stab at consolidating and elaborating on the LOs, with some notes for instructors:
+
+1. Evaluate multiple hypotheses using inferential statistical results.
+  - The hypotheses we consider in this activity concern patterns of inequality: Do Black Americans experience a disproportionate level of energy expenditure?
+  - The inference we consider is across U.S. States: Do patterns of inequality persist across states? What do we conclude when we have limited data?
+2. Connect your evaluation of hypotheses with real-world factors.
+  - We ask students to think critically about *why* patterns of inequality do---or do not---appear in different states. E.g., what is different about policy in Colorado vs Florida?
+3. State the primary statistical assumptions for Frequentist and Bayesian inference, and understand how they can lead to different conclusions.
+  - We will focus on the inclusion of a prior and its interaction with small/large sample size. A prior is particularly useful when we have limited data. The prior becomes less important when we have a large dataset.
+<!-- solution-end  -->
 
 ## Before We Begin...
 
