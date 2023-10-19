@@ -4,10 +4,10 @@ format: html
 ---
 
 <!-- solution-begin -->
+
 These are instructor notes; they will be removed from the student-facing assignment file.
 
-This is the **Bayesian** form of the activity.
-<!-- solution-end -->
+This is the **Bayesian** form of the activity. <!-- solution-end -->
 
 ```{r setup}
 #| include: false
@@ -57,8 +57,8 @@ df_data %>%
   )
 ```
 
-- Florida and Massachusetts have a clear positive trend; this is evidence of inequitable outcomes
-- Colorado has a negative trend; this is a surprising result
+-   Florida and Massachusetts have a clear positive trend; this is evidence of inequitable outcomes
+-   Colorado has a negative trend; this is a surprising result
 
 # Analyze a Bayesian Model
 
@@ -68,26 +68,33 @@ df_data %>%
 
 where $B$ is the energy burden percentile, $P$ is the percent Black, $m$ is the slope parameter, $b$ is the intercept parameter, and $\epsilon$ is a *residual* term that represents factors not accounted in the model. The residual term is assumed to be normally distributed $\epsilon \sim N(0, \sigma^2)$ with an unknown parameter $\sigma^2$. All three parameters have a prior distribution, which we must specify
 
-\[\begin{aligned} m \sim N(\mu_m, \sigma_m^2), \\ b \sim N(\mu_b, \sigma_b^2), \\ \sigma^2 \sim ??? \end{aligned},\]
+\[
+
+```{=tex}
+\begin{aligned} m \sim N(\mu_m, \sigma_m^2), \\ b \sim N(\mu_b, \sigma_b^2), \\ \sigma^2 \sim ??? \end{aligned}
+```
+,\]
 
 where $m, b, \sigma^2$ are independent.
 
 <!-- solution-begin -->
-::: {.callout-note icon=false title="Instructor Note: Model Assumptions"}
+
+::: {.callout-note icon="false" title="Instructor Note: Model Assumptions"}
 Note that this model makes a number of important assumptions, which students may identify and question. We recommend validating student input, but try to maintain a focus on the assumptions that are aligned with the lesson's learning objectives. We enumerate important model assumptions, ramifications, and relevance to learning objectives here:
 
-- The responses $B_i$ are independent when conditioned on the percent Black $P$. 
-  - This is almost surely not true as there are a variety of other factors that affect one's energy burden, such as State-level economic policies. These other factors are not entirely captured in our lone predictor ($P$), which may manifest as association between the observed responses ($B_i$). This will lead to an *omitted variable bias* in our estimates.
-  - While omitted variable bias is an important consideration, it is outside the learning objectives in this lesson since this assumption is shared between the Frequentist and Bayesian approaches.
-- The structure of the response is linear; that is $B = m P + b + \epsilon$.
-  - This discounts the possibility of nonlinearity; for instance, there could be little change in the mean energy burden at small percent Black, but much larger change at higher values.
-  - While the structure of the response is an important consideration, it is outside the learning objectives in this lesson since this assumption is shared between the Frequentist and Bayesian approaches.
-- Residuals are normally distributed $\epsilon \sim N(0, \sigma^2)$ with constant $\sigma^2$.
-  - This will never be exactly true, which we can check by inspecting the residuals. This assumptions has implications for our predictive uncertainty; for instance, assuming a constant $\sigma^2$ discounts the possibility of heteroskedasticity. 
-  - While the residual distribution is an important consideration, it is outside the learning objectives in this lesson since this assumption is shared between the Frequentist and Bayesian approaches.
-- The intercept $b$ and slope $m$ parameters are treated as random variables with a distribution that represents our state of knowledge.
-  - This is a fundamental component of the Bayesian approach, and hence is directly related to the lesson's learning objectives.
+-   The responses $B_i$ are independent when conditioned on the percent Black $P$.
+    -   This is almost surely not true as there are a variety of other factors that affect one's energy burden, such as State-level economic policies. These other factors are not entirely captured in our lone predictor ($P$), which may manifest as association between the observed responses ($B_i$). This will lead to an *omitted variable bias* in our estimates.
+    -   While omitted variable bias is an important consideration, it is outside the learning objectives in this lesson since this assumption is shared between the Frequentist and Bayesian approaches.
+-   The structure of the response is linear; that is $B = m P + b + \epsilon$.
+    -   This discounts the possibility of nonlinearity; for instance, there could be little change in the mean energy burden at small percent Black, but much larger change at higher values.
+    -   While the structure of the response is an important consideration, it is outside the learning objectives in this lesson since this assumption is shared between the Frequentist and Bayesian approaches.
+-   Residuals are normally distributed $\epsilon \sim N(0, \sigma^2)$ with constant $\sigma^2$.
+    -   This will never be exactly true, which we can check by inspecting the residuals. This assumptions has implications for our predictive uncertainty; for instance, assuming a constant $\sigma^2$ discounts the possibility of heteroskedasticity.
+    -   While the residual distribution is an important consideration, it is outside the learning objectives in this lesson since this assumption is shared between the Frequentist and Bayesian approaches.
+-   The intercept $b$ and slope $m$ parameters are treated as random variables with a distribution that represents our state of knowledge.
+    -   This is a fundamental component of the Bayesian approach, and hence is directly related to the lesson's learning objectives.
 :::
+
 <!-- solution-end -->
 
 ```{r fit-MA}
@@ -143,8 +150,8 @@ df_model_MA %>%
   )
 ```
 
-::: {.callout-note icon=false title="Synthesizing Descriptive Statistics"}
-Which model parameter describes the **trend** of the energy burden? What does the posterior say about that parameter value? 
+::: {.callout-note icon="false" title="Synthesizing Descriptive Statistics"}
+Which model parameter describes the **trend** of the energy burden? What does the posterior say about that parameter value?
 :::
 
 The posterior distribution helps us determine **how confident** we should be in conclusions drawn from the model. The next exercise will help you assess confidence in results based on the fitted model.
@@ -183,20 +190,28 @@ tibble(x = seq(-25, +75, length.out = 200)) %>%
 
 *TODO* separate prompts and solutions
 
-- Roughly, what fraction of *Posterior Distribution A* is greater than zero?
-  - Precisely 57.93%, so roughly 60%
-- Roughly, what fraction of *Posterior Distribution B* is greater than zero?
-  - Precisely 89.44%, so roughly 90%
-- Roughly, what fraction of *Posterior Distribution C* is greater than zero?
-  - Essentially 100%
-- Which posterior gives the *highest probability* that the slope parameter is positive? How can you tell?
-  - Posterior C, as the probability is essentially 100% (as we identified above).
-- How does the slope parameter relate to our hypothesis? As a reminder, our hypothesis is:
-  
-  | _As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases)._
-  
-  - The slope parameter is directly related to our hypothesis. A positive slope is in agreement with our hypothesis.
-  
+-   Roughly, what fraction of *Posterior Distribution A* is greater than zero?
+
+    -   Precisely 57.93%, so roughly 60%
+
+-   Roughly, what fraction of *Posterior Distribution B* is greater than zero?
+
+    -   Precisely 89.44%, so roughly 90%
+
+-   Roughly, what fraction of *Posterior Distribution C* is greater than zero?
+
+    -   Essentially 100%
+
+-   Which posterior gives the *highest probability* that the slope parameter is positive? How can you tell?
+
+    -   Posterior C, as the probability is essentially 100% (as we identified above).
+
+-   How does the slope parameter relate to our hypothesis? As a reminder, our hypothesis is:
+
+    | *As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).*
+
+    -   The slope parameter is directly related to our hypothesis. A positive slope is in agreement with our hypothesis.
+
 Let's return to the posterior from our model for the Massachusetts data.
 
 ```{r}
@@ -218,9 +233,9 @@ df_model_MA %>%
 
 *TODO* separate prompts and solutions
 
-- For Massachusetts, does the model support or contradict our hypothesis? As a reminder, our hypothesis is:
-  
-  | _As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases)._
+-   For Massachusetts, does the model support or contradict our hypothesis? As a reminder, our hypothesis is:
+
+    | *As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).*
 
 ## Study the posterior predictions
 
@@ -257,7 +272,7 @@ df_data %>%
   )
 ```
 
-- How well do the posterior predictions agree with the data?
+-   How well do the posterior predictions agree with the data?
 
 # State-based priors
 
@@ -285,7 +300,6 @@ sd_Slope_MA <-
   pull(Slope) %>% 
   sd()
 ```
-
 
 ```{r fit-MN}
 #| include: false
@@ -332,7 +346,6 @@ sd_Slope_MN <-
   sd()
 ```
 
-
 ```{r fit-NH}
 #| include: false
 #| echo: false
@@ -378,7 +391,6 @@ sd_Slope_NH <-
   sd()
 ```
 
-
 ```{r}
 #| warning: false
 #| echo: false
@@ -411,9 +423,7 @@ tibble(x = seq(-100, 100, length.out = 500)) %>%
   )
 ```
 
-
 # Colorado
-
 
 <!-- solution-begin -->
 ## (PREP) Print CO results
@@ -642,17 +652,17 @@ p_CO_NH_predict + p_CO_NH_posterior
 
 ## Study the results
 
-::: {.callout-note icon=false title="Studying Model Results"}
+::: {.callout-note icon="false" title="Studying Model Results"}
 What does the model suggest about the trend of energy burden with percent Black in Colorado? How confident are you in your conclusion?
 :::
 
 <!-- solution-begin -->
-- For the MA-based prior, the posterior predictions do not match the data well. The posterior is extremely confident in a positive slope, which agrees with our hypothesis.
-- For the MN-based prior, the posterior predictions do match the data well. The posterior is extremely confident in a negative slope, which contradicts our hypothesis.
-- For the NH-based prior, the posterior predictions do match the data well. The posterior is quite confident in a negative slope, which contradicts our hypothesis.
-<!-- solution-end -->
 
-# Florida 
+-   For the MA-based prior, the posterior predictions do not match the data well. The posterior is extremely confident in a positive slope, which agrees with our hypothesis.
+-   For the MN-based prior, the posterior predictions do match the data well. The posterior is extremely confident in a negative slope, which contradicts our hypothesis.
+-   For the NH-based prior, the posterior predictions do match the data well. The posterior is quite confident in a negative slope, which contradicts our hypothesis. <!-- solution-end -->
+
+# Florida
 
 ## Deal with Limited Data
 
@@ -685,121 +695,77 @@ df_fl %>%
   )
 ```
 
-- Given the limited data, we can't confidently conclude that there is a positive slope
+-   Given the limited data, we can't confidently conclude that there is a positive slope
 
-## Study the posterior predictions
+
+<!-- solution-begin -->
+## (PREP) Print CO results
+
+Print the following three graphs and place them in envelopes labelled for the State-based prior.
 
 ```{r}
 #| include: false
 #| echo: false
 #|cache: true
-model_FL1 <- stan_glm(
+model_FL_MA <- stan_glm(
   data = df_fl,
   # Likelihood model
   formula = energy_burden_percentile ~ percent_black_or_african_american_alone,
   family = gaussian,           # link function
-  # Use parameter set 1
-  prior = normal(mean_opt1, sd_opt1),
-  # Use an "overconfident" prior for the intercept, based on the energy burden posterior for MA
-  prior_intercept = normal(51, 1),
+  # Slope prior
+  prior = normal(mean_Slope_MA, sd_Slope_MA),
+  # Intercept prior
+  prior_intercept = normal(mean_Intercept_MA, sd_Intercept_MA),
   # Numerical parameters
   chains = 4, 
   iter = 5000*2, # to account for 50% burn-in
   seed = 84735,  # the BAYES seed!
   refresh = FALSE
-) 
+)
 
-model_FL2 <- stan_glm(
+model_FL_MN <- stan_glm(
   data = df_fl,
   # Likelihood model
   formula = energy_burden_percentile ~ percent_black_or_african_american_alone,
   family = gaussian,           # link function
-  # Use parameter set 2
-  prior = normal(mean_opt2, sd_opt2),
-  # Use an "overconfident" prior for the intercept, based on the energy burden posterior for MA
-  prior_intercept = normal(51, 1),
+  # Slope prior
+  prior = normal(mean_Slope_MN, sd_Slope_MN),
+  # Intercept prior
+  prior_intercept = normal(mean_Intercept_MN, sd_Intercept_MN),
   # Numerical parameters
   chains = 4, 
   iter = 5000*2, # to account for 50% burn-in
   seed = 84735,  # the BAYES seed!
   refresh = FALSE
-) 
+)
 
-model_FL3 <- stan_glm(
+model_FL_NH <- stan_glm(
   data = df_fl,
   # Likelihood model
   formula = energy_burden_percentile ~ percent_black_or_african_american_alone,
   family = gaussian,           # link function
-  # Use parameter set 3
-  prior = normal(mean_opt3, sd_opt3),
-  # Use an "overconfident" prior for the intercept, based on the energy burden posterior for MA
-  prior_intercept = normal(51, 1),
+  # Slope prior
+  prior = normal(mean_Slope_NH, sd_Slope_NH),
+  # Intercept prior
+  prior_intercept = normal(mean_Intercept_NH, sd_Intercept_NH),
   # Numerical parameters
   chains = 4, 
   iter = 5000*2, # to account for 50% burn-in
   seed = 84735,  # the BAYES seed!
   refresh = FALSE
-) 
+)
 ```
 
 
-```{r}
-#| warning: false
-#| echo: false
-#| fig-align: center
-#| fig-height: 8
-df_fl %>% 
-  ggplot(aes(
-    x = percent_black_or_african_american_alone,
-    y = energy_burden_percentile
-  )) +
-  geom_line(
-    data = . %>% 
-      filter(!is.na(percent_black_or_african_american_alone)) %>% 
-      select(percent_black_or_african_american_alone) %>% 
-      tidybayes::add_fitted_draws(model_FL1, n = 1000) %>% 
-      mutate(Option = "1"),
-    aes(y = .value, group = .draw, color = Option), 
-    alpha = 0.01,
-    linewidth = 2.0,
-  ) +
-  geom_line(
-    data = . %>% 
-      filter(!is.na(percent_black_or_african_american_alone)) %>% 
-      select(percent_black_or_african_american_alone) %>% 
-      tidybayes::add_fitted_draws(model_FL2, n = 1000) %>% 
-      mutate(Option = "2"),
-    aes(y = .value, group = .draw, color = Option), 
-    alpha = 0.01,
-    linewidth = 2.0,
-  ) +
-  geom_line(
-    data = . %>% 
-      filter(!is.na(percent_black_or_african_american_alone)) %>% 
-      select(percent_black_or_african_american_alone) %>% 
-      tidybayes::add_fitted_draws(model_FL3, n = 1000) %>% 
-      mutate(Option = "3"),
-    aes(y = .value, group = .draw, color = Option), 
-    alpha = 0.01,
-    linewidth = 2.0,
-  ) +
-  
-  geom_point(size = 0.1) +
-  facet_grid(~Option, labeller = label_both) +
-  scale_x_continuous(labels = scales::percent) +
-  theme_minimal() +
-  guides(color = "none") +
-  labs(
-    x = "Percent Black Census Tract",
-    y = "Energy Burden Percentile",
-    title = "Florida, Limited Data"
-  )
-```
+TODO generate 3 figs for FL
+<!-- solution-begin -->
 
-::: {.callout-note icon=false title="Synthesizing Descriptive Statistics"}
+## Study the posterior predictions
+
+::: {.callout-note icon="false" title="Synthesizing Descriptive Statistics"}
 What does the model suggest about the trend of energy burden with percent Black in Florida? How confident are you in your conclusion?
 :::
 
 <!-- solution-begin -->
-- With the prior, we can confidently conclude there is a positive slope
-<!-- solution-end -->
+
+-   With the prior, we can confidently conclude there is a positive slope <!-- solution-end -->
