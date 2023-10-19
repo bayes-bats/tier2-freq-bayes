@@ -194,7 +194,7 @@ tibble(x = seq(-25, +75, length.out = 200)) %>%
 - Which posterior gives the *highest probability* that the slope parameter is positive? How can you tell?
   - Posterior C, as the probability is essentially 100% (as we identified above).
   
-**General inference* 
+**General inference** 
   
 - How does the slope parameter relate to our hypothesis? As a reminder, our hypothesis is:
   
