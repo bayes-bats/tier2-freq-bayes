@@ -1,4 +1,4 @@
----
+  ---
 title: "Introduction to Different Statistical Paradigms"
 subtitle: "Comparing Frequentist and Bayesian Approaches"
 format: html

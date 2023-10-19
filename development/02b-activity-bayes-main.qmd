@@ -190,28 +190,25 @@ tibble(x = seq(-25, +75, length.out = 200)) %>%
 
 *TODO* separate prompts and solutions
 
--   Roughly, what fraction of *Posterior Distribution A* is greater than zero?
+**Model summaries**
 
-    -   Precisely 57.93%, so roughly 60%
-
--   Roughly, what fraction of *Posterior Distribution B* is greater than zero?
-
-    -   Precisely 89.44%, so roughly 90%
-
--   Roughly, what fraction of *Posterior Distribution C* is greater than zero?
-
-    -   Essentially 100%
-
--   Which posterior gives the *highest probability* that the slope parameter is positive? How can you tell?
-
-    -   Posterior C, as the probability is essentially 100% (as we identified above).
-
--   How does the slope parameter relate to our hypothesis? As a reminder, our hypothesis is:
-
-    | *As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).*
-
-    -   The slope parameter is directly related to our hypothesis. A positive slope is in agreement with our hypothesis.
-
+- Roughly, what fraction of *Posterior Distribution A* is greater than zero?
+  - Precisely 57.93%, so roughly 60%
+- Roughly, what fraction of *Posterior Distribution B* is greater than zero?
+  - Precisely 89.44%, so roughly 90%
+- Roughly, what fraction of *Posterior Distribution C* is greater than zero?
+  - Essentially 100%
+- Which posterior gives the *highest probability* that the slope parameter is positive? How can you tell?
+  - Posterior C, as the probability is essentially 100% (as we identified above).
+  
+**General inference** 
+  
+- How does the slope parameter relate to our hypothesis? As a reminder, our hypothesis is:
+  
+  | _As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases)._
+  
+  - The slope parameter is directly related to our hypothesis. A positive slope is in agreement with our hypothesis.
+  
 Let's return to the posterior from our model for the Massachusetts data.
 
 ```{r}
