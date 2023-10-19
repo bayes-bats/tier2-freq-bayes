@@ -183,6 +183,8 @@ tibble(x = seq(-25, +75, length.out = 200)) %>%
 
 *TODO* separate prompts and solutions
 
+**Model summaries**
+
 - Roughly, what fraction of *Posterior Distribution A* is greater than zero?
   - Precisely 57.93%, so roughly 60%
 - Roughly, what fraction of *Posterior Distribution B* is greater than zero?
@@ -191,6 +193,9 @@ tibble(x = seq(-25, +75, length.out = 200)) %>%
   - Essentially 100%
 - Which posterior gives the *highest probability* that the slope parameter is positive? How can you tell?
   - Posterior C, as the probability is essentially 100% (as we identified above).
+  
+**General inference* 
+  
 - How does the slope parameter relate to our hypothesis? As a reminder, our hypothesis is:
   
   | _As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases)._
