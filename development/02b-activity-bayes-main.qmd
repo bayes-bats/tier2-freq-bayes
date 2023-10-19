@@ -63,9 +63,31 @@ df_data %>%
 
 (Introduce the Bayesian model)
 
-\[ B = m P + b, \]
+\[ B = m P + b + \epsilon, \]
 
-where $B$ is the energy burden percentile, $P$ is the percent black, $m$ is the slope parameter, and $b$ is the intercept parameter.
+where $B$ is the energy burden percentile, $P$ is the percent Black, $m$ is the slope parameter, $b$ is the intercept parameter, and $\epsilon$ is a *residual* term that represents factors not accounted in the model. The residual term is assumed to be normally distributed $\epsilon \sim N(0, \sigma^2)$ with an unknown parameter $\sigma^2$. All three parameters have a prior distribution, which we must specify
+
+\[\begin{aligned} m \sim N(\mu_m, \sigma_m^2), \\ b \sim N(\mu_b, \sigma_b^2), \\ \sigma^2 \sim ??? \end{aligned},\]
+
+where $m, b, \sigma^2$ are independent.
+
+<!-- solution-begin -->
+::: {.callout-note icon=false title="Instructor Note: Model Assumptions"}
+Note that this model makes a number of important assumptions, which students may identify and question. We recommend validating student input, but try to maintain a focus on the assumptions that are aligned with the lesson's learning objectives. We enumerate important model assumptions, ramifications, and relevance to learning objectives here:
+
+- The responses $B_i$ are independent when conditioned on the percent Black $P$. 
+  - This is almost surely not true as there are a variety of other factors that affect one's energy burden, such as State-level economic policies. These other factors are not entirely captured in our lone predictor ($P$), which may manifest as association between the observed responses ($B_i$). This will lead to an *omitted variable bias* in our estimates.
+  - While omitted variable bias is an important consideration, it is outside the learning objectives in this lesson since this assumption is shared between the Frequentist and Bayesian approaches.
+- The structure of the response is linear; that is $B = m P + b + \epsilon$.
+  - This discounts the possibility of nonlinearity; for instance, there could be little change in the mean energy burden at small percent Black, but much larger change at higher values.
+  - While the structure of the response is an important consideration, it is outside the learning objectives in this lesson since this assumption is shared between the Frequentist and Bayesian approaches.
+- Residuals are normally distributed $\epsilon \sim N(0, \sigma^2)$ with constant $\sigma^2$.
+  - This will never be exactly true, which we can check by inspecting the residuals. This assumptions has implications for our predictive uncertainty; for instance, assuming a constant $\sigma^2$ discounts the possibility of heteroskedasticity. 
+  - While the residual distribution is an important consideration, it is outside the learning objectives in this lesson since this assumption is shared between the Frequentist and Bayesian approaches.
+- The intercept $b$ and slope $m$ parameters are treated as random variables with a distribution that represents our state of knowledge.
+  - This is a fundamental component of the Bayesian approach, and hence is directly related to the lesson's learning objectives.
+:::
+<!-- solution-end -->
 
 ```{r fit-MA}
 #| include: false
