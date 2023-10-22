@@ -15,6 +15,8 @@ library(dplyr)
 ```
 
 ## Overview
+The second phase of creating our activity focused primarily on drafting the applied `R` activity. We began building the framework for the applied activity ahead of Progress Report 1 and have made considerable progress on it since then. Links to the applied activity and other artifacts are below in @sec-artifacts, Completed Artifacts.
+
 
 ## Updated Gantt Chart
 
@@ -26,13 +28,13 @@ g <- ganttAddTask(g, "Draft context 1-pager","2023-08-25","2023-09-01",done=100)
 g <- ganttAddTask(g, "Progress Report 1")
 g <- ganttAddTask(g, "Finalize context 1-pager", "2023-09-01", "2023-09-30", done=100)
 g <- ganttAddTask(g, "Draft intro. discussion", "2023-09-01", "2023-09-22", done=100)
-g <- ganttAddTask(g, "Finalize intro. discussion", "2023-09-22", "2023-09-30", done=75)
+g <- ganttAddTask(g, "Finalize intro. discussion", "2023-09-22", "2023-09-30", done=100)
 g <- ganttAddTask(g, "Draft conclusion discussion", "2023-09-01", "2023-09-22", done=25)
 g <- ganttAddTask(g, "Draft Bayes-freq. framework 1-pager", "2023-09-01", "2023-09-30", done=100)
 g <- ganttAddTask(g, "Submit Tier 3 Proposal", "2023-09-23", "2023-09-30", done=100)
 g <- ganttAddTask(g, "Progress Report 2")
-g <- ganttAddTask(g, "Finalize Bayes-freq. framework 1-pager", "2023-10-01", "2023-10-20", done=0)
-g <- ganttAddTask(g, "Draft applied R activity", "2023-10-01", "2023-10-31", done=50)
+g <- ganttAddTask(g, "Finalize Bayes-freq. framework 1-pager", "2023-10-01", "2023-10-20", done=50)
+g <- ganttAddTask(g, "Draft applied R activity", "2023-10-01", "2023-10-31", done=85)
 g <- ganttAddTask(g, "Finalize conclusion discussion", "2023-09-22", "2023-09-30", done=0)
 g <- ganttAddTask(g, "Final Materials Submission")
 g <- ganttAddTask(g, "Finalize applied R activity", "2023-11-01", "2023-11-24", done=0)
@@ -58,10 +60,15 @@ legend("topright", pch=22, pt.cex=2, cex=0.6, pt.bg=c("steelblue3", "palegreen3"
 
 ```
 
-## Completed Artifacts
+## Completed Artifacts {#sec-artifacts}
 
 
 ## Next Steps
+
+As we move into the second phase of creating our activity and its associated artifacts, the primary area of focus will be on drafting the applied `R` activity. We are currently in the process of developing a [series of prototypes](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/communities.qmd) using the CEJST data. We have also started iterating on our main activity, which includes an [analysis using the Bayesian approach](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02b-activity-bayes-main.qmd) and an [analysis using the frequentist approach](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02a-activity-freq-main.qmd). These analyses come to contrasting conclusions, thus highlighting the comparative differences between the two approaches.
+
+In our monthly meeting (2023-09-26), Mine gave us the following feedback on the activity, which we will incorporate in the next phase of work:
+
 
 ## Meeting Times
 
