@@ -15,7 +15,11 @@ library(dplyr)
 ```
 
 ## Overview
-The second phase of creating our activity focused primarily on drafting the applied `R` activity. We began building the framework for the applied activity ahead of Progress Report 1 and have made considerable progress on it since then. Links to the applied activity and other artifacts are below in @sec-artifacts, Completed Artifacts.
+The second phase of creating our activity focused primarily on drafting the applied `R` activity. We began building the framework for the applied activity ahead of Progress Report 1 and have made considerable progress on it since then. Links to the applied activity and other artifacts are below in @sec-artifacts, **Artifacts**.
+
+Highlights from this phase:
+- Completion of both the Context and Introductory documents, which now include clear learning objectives, instructor solutions/guidelines, and more information on statistical inference
+- 
 
 
 ## Updated Gantt Chart
@@ -60,14 +64,21 @@ legend("topright", pch=22, pt.cex=2, cex=0.6, pt.bg=c("steelblue3", "palegreen3"
 
 ```
 
-## Completed Artifacts {#sec-artifacts}
+## Artifacts {#sec-artifacts}
 
+###### Completed
+* [Critical Differences Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-one-pager-main.qmd)
+* [Conclusion Discussion](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/04-conclusion-main.qmd)
+
+###### In-Progress
+* [Applied Activity using the Bayesian approach](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02b-activity-bayes-main.qmd)
+* [Applied Activity using the Frequentist approach](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02a-activity-freq-main.qmd)
 
 ## Next Steps
 
-As we move into the second phase of creating our activity and its associated artifacts, the primary area of focus will be on drafting the applied `R` activity. We are currently in the process of developing a [series of prototypes](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/communities.qmd) using the CEJST data. We have also started iterating on our main activity, which includes an [analysis using the Bayesian approach](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02b-activity-bayes-main.qmd) and an [analysis using the frequentist approach](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02a-activity-freq-main.qmd). These analyses come to contrasting conclusions, thus highlighting the comparative differences between the two approaches.
 
-In our monthly meeting (2023-09-26), Mine gave us the following feedback on the activity, which we will incorporate in the next phase of work:
+
+In our monthly meeting (2023-10-19), Mine gave us the following feedback on the activity, which we will incorporate in the next phase of work:
 
 
 ## Meeting Times
