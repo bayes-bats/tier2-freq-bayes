@@ -7,6 +7,13 @@ author:
   - name: Zach del Rosario
 ---
 
+<!-- solution-begin  -->
+
+Reference for conceptual discussion: https://www.bayesrulesbook.com/chapter-11#ch-11-2-predictors
+
+<!-- solution-end  -->
+
+
 ## Conclusion
 
 In this activity, ...
@@ -16,3 +23,10 @@ In this activity, ...
 ## Differences between Frequentist & Bayeisan Approaches
 
 [discussion questions here highlighting the comparison and seeing what they took away from the activity]
+
+## Conceptual Discussion
+
+
+
+
+
