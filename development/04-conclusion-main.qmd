@@ -24,7 +24,13 @@ In this activity, ...
 
 [discussion questions here highlighting the comparison and seeing what they took away from the activity]
 
-## Conceptual Discussion
+## Conceptual Discussion/Debate
+
+Ideas we can build on:
+
+- How do our modeling choices affect our outcomes of interest based on the assumptions we know about both approaches? Are the results for our hypotheses different?
+- How do we interpret the coefficients ($\beta_0$ and $\beta_1$) in both the Frequentist and Bayesian models?
+- How might we improve our model based on what we know about **model summaries** and **general inference** for both approaches?
 
 
 
