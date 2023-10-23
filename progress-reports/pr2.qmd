@@ -24,6 +24,7 @@ Highlights from this phase:
 - Created a ["Run of Show"](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/run-of-show.md) document that helps instructors facilitate the activity, as well as helped us organize our thinking around how the activity will be run
 - Submitted abstracts for our project to social science-oriented conferences so we can utilize Tier 3 funding 
   - Stefani submitted to the [Midwest Political Science Association's (MPSA)](https://www.mpsanet.org/) annual meeting and the [Conference on Policy Process Research (COPPR)](https://policyprocessresearch.org/about/)) annual meeting
+- Reached out to Tier 2 participants to gauge interest in participating in a topic-contributed session at [JSM](https://ww2.amstat.org/meetings/jsm/2024/) with Zach on Bayesian teaching
 
 
 ## Updated Gantt Chart
