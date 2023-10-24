@@ -38,7 +38,7 @@ g <- ganttAddTask(g, "Progress Report 1")
 g <- ganttAddTask(g, "Finalize context 1-pager", "2023-09-01", "2023-09-30", done=100)
 g <- ganttAddTask(g, "Draft intro. discussion", "2023-09-01", "2023-09-22", done=100)
 g <- ganttAddTask(g, "Finalize intro. discussion", "2023-09-22", "2023-09-30", done=100)
-g <- ganttAddTask(g, "Draft conclusion discussion", "2023-09-01", "2023-09-22", done=25)
+g <- ganttAddTask(g, "Draft conclusion discussion", "2023-09-01", "2023-09-22", done=50)
 g <- ganttAddTask(g, "Draft Bayes-freq. framework 1-pager", "2023-09-01", "2023-09-30", done=100)
 g <- ganttAddTask(g, "Submit Tier 3 Proposal", "2023-09-23", "2023-09-30", done=100)
 g <- ganttAddTask(g, "Progress Report 2")
@@ -92,5 +92,7 @@ In our monthly meeting (2023-10-19), Mine gave us the following feedback on the 
 -   Weekly and/or bi-weekly meetings for the activity-creating team
 -   Monthly meetings with mentor (Mine)
 -   Office hours
-    -   November (TBD)
+    -   02 November 2023 with Mine (2-3p EST)
+    -   13 November 2023 with Amy (2-3p EST)
+    -   29 November 2023 with Monika (11a-12p EST)
 
