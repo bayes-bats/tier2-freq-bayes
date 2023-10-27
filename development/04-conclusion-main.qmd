@@ -22,6 +22,8 @@ In this activity, ...
 
 ## Differences between Frequentist & Bayeisan Approaches
 
+Some of you received the Frequentist analysis, while others received the Bayesian analysis. With the remainder of class time, separate into groups of 2-3 people and discuss the following:
+
 [discussion questions here highlighting the comparison and seeing what they took away from the activity]
 
 ## Conceptual Discussion/Debate
