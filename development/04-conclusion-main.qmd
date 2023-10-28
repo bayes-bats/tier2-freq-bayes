@@ -14,11 +14,21 @@ Reference for conceptual discussion: https://www.bayesrulesbook.com/chapter-11#c
 <!-- solution-end  -->
 
 
-## Conclusion
+## Activity Overview
 
-In this activity, ...
+In this activity, we learned more about *statistical inference* and *statistical assumptions* through the lenses of Frequentists and Bayesians. We used the [CEJST dataset](https://screeningtool.geoplatform.gov/en/) to understand general trends around sustainability and disadvantaged communities, as well as crafted specific research questions or hypotheses that we would like to rigorously test with the data we have. Our research question asked:
 
-[what the activity was / overview of what they learned]
+  | _Do Black Americans experience a disproportionate level of energy expenditure?_
+
+And our primary hypothesis we wanted to answer is:
+
+  | _As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases)._
+  
+To test this, we focused on the Energy Burden Percentile as our dependent variable and Percent Black Census Tract as our primary independent variable in our models. We examined some descriptive statistics to get a better sense of the trends in our data and to help us better understand the relationship between these two variables. 
+
+Our initial exploration found that there is a clear positive trends between the population of Black Americans and the level of energy burden in their respective Census tract for Florida and Massachusetts. However, Colorado has a negative trends, which is somewhat surprising. The results from our exploratory analysis suggests there are inequitable outcomes between the states.
+
+Based on these preliminary trends, we next used statistical inference to answer our questions. Some students received an analysis completed in the Frequentist framework, while some students received an analysis completed in the Bayesian framework.
 
 ## Differences between Frequentist & Bayeisan Approaches
 
