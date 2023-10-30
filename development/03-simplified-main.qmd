@@ -1,0 +1,50 @@
+---
+title: "Key Ideas"
+format: html
+author: 
+  - name: Stefani Langehennig
+  - name: Zach del Rosario
+---
+
+## Overview
+
+<!-- solution-begin -->
+- This summarizes two points from the 03-one-pager-main.qmd document
+- It does not mention two statistical paradigms, so as not to draw too much attention to Frequentist vs Bayes... yet!
+<!-- solution-end -->
+
+*General Inference*: Inference is all about *cautiously* answering questions about a larger dataset while only having access to a smaller dataset. For instance, we may be interested in national trends, but may only have access to data from a handful of U.S. states. 
+
+To perform inference we must: 
+
+1. Translate our question into a mathematical form,
+2. fit the model using a dataset, then
+3. interpret the results in terms of our original question.
+
+In order to accomplish (1), we must make a number of *assumptions*. Different statistical approaches use different assumptions....
+
+<!-- solution-begin -->
+
+The Frequentist and Bayesian approaches make very different assumptions about the nature of probability and models. One important distinction is that Frequentists make a *hard, binary decision* when performing a hypothesis test, while Bayesians only every *quantify a degree of belief* in a hypothesis.
+
+| Frequentist | Bayesian | 
+|-------------|----------|
+| Deduction from Pr(data $|$ H0), by setting $\alpha$ in advance | Induction from Pr($\theta$ $|$ data), starting with Pr($\theta$) 
+| Accept H1 if Pr(data $|$ H0) < $\alpha$ | 1−$\alpha$% of most likely parameter values fall within a 1−$\alpha$ HPD
+| Accept H0 if Pr(data $|$ H0) ≥ $\alpha$|
+
+<!-- solution-end -->
+
+*Model Summaries*: Statistical models are complex objects, so we use *model summaries* to help make sense of them.
+
+<!-- solution-begin -->
+
+Frequentist and Bayesian models are constructed from different assumptions, so their model summaries are quite different. Frequentist summaries are often presented as point estimates and confidence intervals. While Bayesians also present posterior estimates and intervals, they more typically study the entire posterior distribution.
+
+| Frequentist | Bayesian | 
+|-------------|----------|
+| Point estimates and standard errors | Descriptions of the posterior distribution such as means and quantiles
+| 95% confidence intervals indicating that 19/20 times the interval covers the true parameter value | Highest posterior density intervals indicating region of highest posterior probability
+|           | 1−$\alpha$% of most likely parameter values fall within a 1−$\alpha$ HPD
+
+<!-- solution-end -->
