@@ -79,6 +79,7 @@ legend("topright", pch=22, pt.cex=2, cex=0.6, pt.bg=c("steelblue3", "palegreen3"
 ###### In-Progress
 * [Applied Activity using the Bayesian approach](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02b-activity-bayes-main.qmd)
 * [Applied Activity using the Frequentist approach](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02a-activity-freq-main.qmd)
+* [Key Ideas 1-pager](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-simplified-main.qmd) (Simplified version of Critical Differences document, intended as student-facing handout)
 
 ## Next Steps
 
