@@ -15,13 +15,13 @@ library(dplyr)
 ```
 
 ## Overview
-The second phase of creating our activity focused primarily on drafting the applied `R` activity. We began building the framework for the activity ahead of Progress Report 1 and have made considerable progress on it since then. Links to the applied activity and other artifacts are below in @sec-artifacts, **Artifacts**.
+The second phase of creating our activity focused primarily on drafting the applied `R` activity. We began building the framework for the activity ahead of Progress Report 1 and have made considerable progress on it since then. We completed the drafting phase for the applied `R` activity and provide links for both analyses, as well as other completed artifacts, below in @sec-artifacts  **Artifacts**.
 
 Highlights from this phase:
 
 - Amended both the [Context](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/00-context-main.qmd) and [Introductory](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/01-introduction-main.qmd) documents based on Mine's feedback, which now include clear learning objectives, instructor solutions/guidelines, and more information on statistical inference
 - Emphasized there are no "bad priors" during the applied activity, as well as built in the option of letting students pick their own prior during the Bayesian activity
-- Created a ["Run of Show"](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/run-of-show.md) document that helps instructors facilitate the activity, as well as helped us organize our thinking around how the activity will be run
+- Created a ["Run of Show"](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/run-of-show.md) document that helps instructors facilitate the activity, as well as helped us organize our thinking around how the activity will be conducted
 - Submitted abstracts for our project to social science-oriented conferences so we can utilize Tier 3 funding 
   - Stefani submitted to the [Midwest Political Science Association's (MPSA)](https://www.mpsanet.org/) annual meeting and the [Conference on Policy Process Research (COPPR)](https://policyprocessresearch.org/about/)) annual meeting
 - Reached out to Tier 2 participants to gauge interest in participating in a topic-contributed session at [JSM](https://ww2.amstat.org/meetings/jsm/2024/) with Zach on Bayesian teaching.
@@ -39,12 +39,12 @@ g <- ganttAddTask(g, "Progress Report 1")
 g <- ganttAddTask(g, "Finalize context 1-pager", "2023-09-01", "2023-09-30", done=100)
 g <- ganttAddTask(g, "Draft intro. discussion", "2023-09-01", "2023-09-22", done=100)
 g <- ganttAddTask(g, "Finalize intro. discussion", "2023-09-22", "2023-09-30", done=100)
-g <- ganttAddTask(g, "Draft conclusion discussion", "2023-09-01", "2023-09-22", done=60)
+g <- ganttAddTask(g, "Draft conclusion discussion", "2023-09-01", "2023-09-22", done=100)
 g <- ganttAddTask(g, "Draft Bayes-freq. framework 1-pager", "2023-09-01", "2023-09-30", done=100)
 g <- ganttAddTask(g, "Submit Tier 3 Proposal", "2023-09-23", "2023-09-30", done=100)
 g <- ganttAddTask(g, "Progress Report 2")
-g <- ganttAddTask(g, "Finalize Bayes-freq. framework 1-pager", "2023-10-01", "2023-10-20", done=50)
-g <- ganttAddTask(g, "Draft applied R activity", "2023-10-01", "2023-10-31", done=85)
+g <- ganttAddTask(g, "Finalize Bayes-freq. framework 1-pager", "2023-10-01", "2023-10-20", done=100)
+g <- ganttAddTask(g, "Draft applied R activity", "2023-10-01", "2023-10-31", done=100)
 g <- ganttAddTask(g, "Finalize conclusion discussion", "2023-09-22", "2023-09-30", done=25)
 g <- ganttAddTask(g, "Final Materials Submission")
 g <- ganttAddTask(g, "Finalize applied R activity", "2023-11-01", "2023-11-24", done=0)
@@ -88,6 +88,12 @@ In our monthly meeting (2023-10-19), Mine gave us the following feedback on the 
 
 - Change the framing of how the data were collected for the applied `R` activity to say we accessed one's states data at one point in time and then Colorado data came in, then New Hampshire, etc. This helps us get around the population assumption.
 - Consider how we visualize and discuss the posterior density in the applied `R` activity, as this may confuse students who think it is a sampling distribution.
+
+In addition to addressing this feedback, we will do the following ahead of the last Progress Report submission due date:
+
+1. Finalize the applied `R` activity
+2. Review and finalize all student artifacts
+3. Develop our video presentation
 
 
 ## Meeting Times
