@@ -45,7 +45,7 @@ g <- ganttAddTask(g, "Submit Tier 3 Proposal", "2023-09-23", "2023-09-30", done=
 g <- ganttAddTask(g, "Progress Report 2")
 g <- ganttAddTask(g, "Finalize Bayes-freq. framework 1-pager", "2023-10-01", "2023-10-20", done=100)
 g <- ganttAddTask(g, "Draft applied R activity", "2023-10-01", "2023-10-31", done=100)
-g <- ganttAddTask(g, "Finalize conclusion discussion", "2023-09-22", "2023-09-30", done=25)
+g <- ganttAddTask(g, "Finalize conclusion discussion", "2023-09-22", "2023-09-30", done=100)
 g <- ganttAddTask(g, "Final Materials Submission")
 g <- ganttAddTask(g, "Finalize applied R activity", "2023-11-01", "2023-11-24", done=0)
 g <- ganttAddTask(g, "Finalize all student artifacts", "2023-11-01", "2023-11-24", done=0)
@@ -91,8 +91,8 @@ In our monthly meeting (2023-10-19), Mine gave us the following feedback on the 
 
 In addition to addressing this feedback, we will do the following ahead of the last Progress Report submission due date:
 
-1. Finalize the applied `R` activity
-2. Review and finalize all student artifacts
+1. Finalize the applied `R` activity, 
+2. Review and finalize all student artifacts, including facilitator guidance
 3. Develop our video presentation
 
 
