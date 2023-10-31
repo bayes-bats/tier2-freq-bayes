@@ -69,7 +69,7 @@ Note that this hypothesis is succinct and testable with the data we have. It is 
 
 ## Paradigms in Statistical Inference
 
-There are a few different ways to draw conclusions about questions we have using data. We will focus on two inferential perspectives in this class: _Frequentist_ and _Bayesian_. Let's discuss the critical differences between the two paradigms with the [Critical Differences Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-simplified-main.qmd).
+There are a few different ways to draw conclusions about questions we have using data. We will focus on two inferential perspectives in this class: _Frequentist_ and _Bayesian_. Let's discuss the critical differences between the two paradigms with the [Critical Differences Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-one-pager-main.qmd).
 
 ::: {.callout-note icon=false title="Frequentist & Bayesian Statistical Inference"}
 How are Frequentist and Bayesian approaches similar? How are they different?

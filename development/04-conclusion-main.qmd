@@ -32,7 +32,7 @@ Based on these preliminary trends, we used statistical inference to answer our q
 
 ## Differences between Frequentist & Bayeisan Approaches
 
-With the remainder of class time, separate into groups of 2-3 people, where each group should have at least 1 person who did the Frequentist analysis and 1 person who did the Bayesian analysis. Using the [Context Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-simplified-main.qmd), discuss the following:
+With the remainder of class time, separate into groups of 2-3 people, where each group should have at least 1 person who did the Frequentist analysis and 1 person who did the Bayesian analysis. Using the [Context Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-one-pager-main.qmd), discuss the following:
 
 - How do our modeling choices affect our outcomes of interest based on the assumptions we know about both approaches? Are the results for our hypothesis different? If so, how?
 - How do we interpret the coefficients ($\beta_0$ and $\beta_1$) in both the Frequentist and Bayesian models?
