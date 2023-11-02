@@ -36,6 +36,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="04-conclusion-main_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="04-conclusion-main_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -70,14 +72,54 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>In this activity, …</p>
-<p>[what the activity was / overview of what they learned]</p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>In this activity, we learned more about <em>statistical inference</em> and <em>statistical assumptions</em> through the lenses of Frequentists and Bayesians. We used the <a href="https://screeningtool.geoplatform.gov/en/">CEJST dataset</a> to understand general trends around sustainability and disadvantaged communities, as well as crafted specific research questions or hypotheses that we would like to rigorously test with the data we have. Our research question asked:</p>
+<p>| <em>Do Black Americans experience a disproportionate level of energy expenditure?</em></p>
+<p>And our primary hypothesis we wanted to answer is:</p>
+<p>| <em>As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).</em></p>
+<p>To test this, we focused on the Energy Burden Percentile as our dependent variable and Percent Black Census Tract as our primary independent variable in our models. We examined some descriptive statistics to get a better sense of the trends in our data and to help us better understand the relationship between these two variables.</p>
+<p>Our initial data exploration found that there is a clear positive trend between the population of Black Americans and the level of energy burden in their respective Census tract for Florida and Massachusetts. However, Colorado has a negative trend, which is somewhat surprising given the results of the other two states. The results from our exploratory analysis suggests there are inequitable outcomes between the states.</p>
+<p>Based on these preliminary trends, we used statistical inference to answer our questions. Some students received an analysis completed in the Frequentist framework, while some students received an analysis completed in the Bayesian framework.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Questions for the Class">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Questions for the Class
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Did you find support for or against our hypothesis?</li>
+<li>How would you answer our research question now that we have analyzed the data?</li>
+<li>What can we conclude about the relationship between sustainability and disadvantaged communities? What might you recommend from a policy-making perspective?</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="differences-between-frequentist-bayeisan-approaches" class="level2">
 <h2 class="anchored" data-anchor-id="differences-between-frequentist-bayeisan-approaches">Differences between Frequentist &amp; Bayeisan Approaches</h2>
-<p>[discussion questions here highlighting the comparison and seeing what they took away from the activity]</p>
+<p>With the remainder of class time, separate into groups of 2-3 people, where each group should have at least 1 person who did the Frequentist analysis and 1 person who did the Bayesian analysis. Using the <a href="https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-one-pager-main.qmd">Context Reference Guide</a>, discuss the following:</p>
+<ul>
+<li>How do our modeling choices affect our outcomes of interest based on the assumptions we know about both approaches? Are the results for our hypothesis different? If so, how?</li>
+<li>How do we interpret the coefficients (<span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span>) in both the Frequentist and Bayesian models?</li>
+<li>How might we improve our model based on what we know from our <strong>model summaries</strong> and <strong>general inference</strong> for both approaches?</li>
+</ul>
+<p>Jot down 2-3 sentences for each question, as well as any remaining questions or concerns you have about conducting your analyses using one of the two approaches.</p>
+<!-- solution-begin  -->
+<ul>
+<li>Note: Reference for conceptual discussion: https://www.bayesrulesbook.com/chapter-11#ch-11-2-predictors</li>
+<li>At the end of the discussion, if time, have the groups share what they came up with based on their answers.</li>
+<li>This should be a lively debate facilitated by the instructor; students will debate who is “correct”</li>
+<li>Instructor should highlight the differences between their analyses.
+<ul>
+<li>All students started with an identical dataset and framing questions; it is the difference in their starting assumptions (i.e., a frequentist or Bayesian approach) that results in different conclusions.</li>
+<li>Takeaway point: controversy isn’t resolved, however statistical results are conditional on the assumptions chosen for the analysis and implies that choosing appropriate assumptions is critical to a sound analysis</li>
+</ul></li>
+</ul>
+<!-- solution-end  -->
 </section>
 
 </main>

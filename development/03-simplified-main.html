@@ -9,7 +9,7 @@
 <meta name="author" content="Stefani Langehennig">
 <meta name="author" content="Zach del Rosario">
 
-<title>introduction-main</title>
+<title>Key Ideas</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,17 +25,19 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="01-introduction-main_files/libs/clipboard/clipboard.min.js"></script>
-<script src="01-introduction-main_files/libs/quarto-html/quarto.js"></script>
-<script src="01-introduction-main_files/libs/quarto-html/popper.min.js"></script>
-<script src="01-introduction-main_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="01-introduction-main_files/libs/quarto-html/anchor.min.js"></script>
-<link href="01-introduction-main_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="01-introduction-main_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="01-introduction-main_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="01-introduction-main_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="01-introduction-main_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="03-simplified-main_files/libs/clipboard/clipboard.min.js"></script>
+<script src="03-simplified-main_files/libs/quarto-html/quarto.js"></script>
+<script src="03-simplified-main_files/libs/quarto-html/popper.min.js"></script>
+<script src="03-simplified-main_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="03-simplified-main_files/libs/quarto-html/anchor.min.js"></script>
+<link href="03-simplified-main_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="03-simplified-main_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="03-simplified-main_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="03-simplified-main_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="03-simplified-main_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -47,8 +49,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to Different Statistical Paradigms</h1>
-<p class="subtitle lead">Comparing Frequentist and Bayesian Approaches</p>
+<h1 class="title">Key Ideas</h1>
 </div>
 
 
@@ -70,113 +71,80 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>This activity is all about <em>statistical inference</em> and <em>statistical assumptions</em>. Both are important when you have data and want to use that data to help you better understand some phenomenon about the world. For example, in our <a href="https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/00-context-main.qmd">Context Reference Guide</a> using the CEJST dataset, we used data to understand general trends around sustainability and disadvantaged communities. However, at this point, we have not crafted specific research questions or hypotheses that we would like to rigorously test with the data we have. Nor do we know, with any degree of certainty, how “correct” the trends are that we saw in our data or all the ways that this trend could have occurred.</p>
-<p>There are a few different ways that we can test our hypotheses using methods of statistical inference. Statistical inference allows us to take some data, create a model, and make sense of the complex world around us. Each method has a set of assumptions built into it, which influences the approach you take to answer your research questions, as well as the way you interpret your findings. In the activity that follows, you will have the opportunity to use methods of statistical inference to answer a research question and explain, based on the set of assumpted baked into your approach, your ultimate findings.</p>
-</section>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
-<p>By the end of the activity, you should be able to:</p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<!-- solution-begin -->
+<ul>
+<li>This summarizes two points from the 03-one-pager-main.qmd document</li>
+<li>It does not mention two statistical paradigms, so as not to draw too much attention to Frequentist vs Bayes… yet! <!-- solution-end --></li>
+</ul>
+<p><em>General Inference</em>: Inference is all about <em>cautiously</em> answering questions about a larger dataset while only having access to a smaller dataset. For instance, we may be interested in national trends, but may only have access to data from a handful of U.S. states.</p>
+<p>To perform inference we must:</p>
 <ol type="1">
-<li>Evaluate multiple hypotheses using inferential statistical results</li>
-<li>Connect your evaluation of hypotheses with real-world factors</li>
-<li>State the primary statistical assumptions for Frequentist and Bayesian inference, and understand how they can lead to different conclusions</li>
+<li>Translate our question into a mathematical form,</li>
+<li>fit the model using a dataset, then</li>
+<li>interpret the results in terms of our original question.</li>
 </ol>
-<!-- solution-begin  -->
-<p>By the end of the activity, you should be able to:</p>
-<ol type="1">
-<li>Evaluate multiple hypotheses using inferential statistical results.</li>
-</ol>
-<ul>
-<li>The hypotheses we consider in this activity concern patterns of inequality: Do Black Americans experience a disproportionate level of energy expenditure?</li>
-<li>The inference we consider is across U.S. States: Do patterns of inequality persist across states? What do we conclude when we have limited data?</li>
-</ul>
-<ol start="2" type="1">
-<li>Connect your evaluation of hypotheses with real-world factors.</li>
-</ol>
-<ul>
-<li>We ask students to think critically about <em>why</em> patterns of inequality do—or do not—appear in different states. E.g., what is different about policy in Colorado vs Florida?</li>
-</ul>
-<ol start="3" type="1">
-<li>State the primary statistical assumptions for Frequentist and Bayesian inference, and understand how they can lead to different conclusions.</li>
-</ol>
-<ul>
-<li>We will focus on the inclusion of a prior and its interaction with small/large sample size. A prior is particularly useful when we have limited data. The prior becomes less important when we have a large dataset.</li>
-</ul>
-<!-- solution-end  -->
-</section>
-<section id="before-we-begin" class="level2">
-<h2 class="anchored" data-anchor-id="before-we-begin">Before We Begin…</h2>
-<p>Ask yourself the following questions:</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Warmup Questions">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warmup Questions
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>What do you remember about analyzing a dataset with statistics?</li>
-<li>What do you know about frequentist and Bayesian statistics? (<em>Note</em>: It’s okay if you don’t know what this means!)</li>
-</ul>
-</div>
-</div>
-<p>Discuss these questions with the people at your table.</p>
-</section>
-<section id="the-big-idea-inference" class="level2">
-<h2 class="anchored" data-anchor-id="the-big-idea-inference">The Big Idea: Inference</h2>
-<p>Statistical inference is drawing conclusions about <strong>data we haven’t seen</strong> using <strong>only the data that are available.</strong> As a simple example, if we’re interested in the energy burden pattern in Colorado but we only have data from Massachusetts, we should be careful when trying to use the MA data to predict patterns in CO. Crucially, <strong>the assumptions we make for inference will strongly affect the conclusions we make.</strong></p>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="All models are wrong....">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-All models are wrong….
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>All statistical analyses involve making assumptions—we’ll practice making and assessing statistical assumptions in this activity.</p>
-</div>
-</div>
-</section>
-<section id="crafting-research-questions-hypotheses" class="level2">
-<h2 class="anchored" data-anchor-id="crafting-research-questions-hypotheses">Crafting Research Questions &amp; Hypotheses</h2>
-<p>Ahead of using data and statistical inference, we usually create theory-based <em>research questions</em> and <em>hypotheses</em> that help guide what we expect to find. Both are focused on an aspect of the world that we want to know more about. However, research questions tend to be open-ended, allowing for discussion on what the outcome might be and what might explain it. For example, a research question about sustainability and diverse communities may look like this:</p>
-<p>| <em>Why does the projected flood risk vary among different communities in U.S. Census tracts?</em></p>
-<p>Hypotheses, on the other hand, tend to be closed-ended, articulating a certain relationship between an outcome and the things that influence that outcome. For example, one of the testable hypotheses stemming from the research question on projected flood risk may be:</p>
-<p>| <em>As the population density of Hispanic communities increases (decreases), the projected flood risk increases (decreases).</em></p>
-<p>Note that this hypothesis is succinct and testable with the data we have. It is also directly related to our more general research question.</p>
-</section>
-<section id="paradigms-in-statistical-inference" class="level2">
-<h2 class="anchored" data-anchor-id="paradigms-in-statistical-inference">Paradigms in Statistical Inference</h2>
-<p>There are a few different ways to draw conclusions about questions we have using data. We will focus on two inferential perspectives in this class: <em>Frequentist</em> and <em>Bayesian</em>. Let’s discuss the critical differences between the two paradigms with the <a href="https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-one-pager-main.qmd">Critical Differences Reference Guide</a>.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Frequentist &amp; Bayesian Statistical Inference">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Frequentist &amp; Bayesian Statistical Inference
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>How are Frequentist and Bayesian approaches similar? How are they different?</p>
-</div>
-</div>
-</section>
-<section id="next-steps" class="level2">
-<h2 class="anchored" data-anchor-id="next-steps">Next Steps</h2>
-<p>Given the context we have on sustainability trends among disadvantaged communities using just a few of the variables in the CEJST dataset, we can develop a research question and hypotheses to test using methods of statistical inference:</p>
-<p><strong>Research Question:</strong></p>
-<p>| <em>Do Black Americans experience a disproportionate level of energy expenditure?</em></p>
-<p><strong>Hypothesis:</strong></p>
-<p>| <em>As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).</em></p>
-<p>Next, we are going to test our hypothesis and answer our research question using the CEJST dataset. We will compare and discuss the results of our analyses using Frequentist and Bayesian methods to see if they align with our expectations based on the approach we took and assumptions we made.</p>
+<p>In order to accomplish (1), we must make a number of <em>assumptions</em>. Different statistical approaches use different assumptions….</p>
+<!-- solution-begin -->
+<p>The Frequentist and Bayesian approaches make very different assumptions about the nature of probability and models. One important distinction is that Frequentists make a <em>hard, binary decision</em> when performing a hypothesis test, while Bayesians only every <em>quantify a degree of belief</em> in a hypothesis.</p>
+<table class="table">
+<colgroup>
+<col style="width: 56%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Frequentist</th>
+<th>Bayesian</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Deduction from Pr(data <span class="math inline">\(|\)</span> H0), by setting <span class="math inline">\(\alpha\)</span> in advance</td>
+<td>Induction from Pr(<span class="math inline">\(\theta\)</span> <span class="math inline">\(|\)</span> data), starting with Pr(<span class="math inline">\(\theta\)</span>)</td>
+</tr>
+<tr class="even">
+<td>Accept H1 if Pr(data <span class="math inline">\(|\)</span> H0) &lt; <span class="math inline">\(\alpha\)</span></td>
+<td>1−<span class="math inline">\(\alpha\)</span>% of most likely parameter values fall within a 1−<span class="math inline">\(\alpha\)</span> HPD</td>
+</tr>
+<tr class="odd">
+<td>Accept H0 if Pr(data <span class="math inline">\(|\)</span> H0) ≥ <span class="math inline">\(\alpha\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- solution-end -->
+<p><em>Model Summaries</em>: Statistical models are complex objects, so we use <em>model summaries</em> to help make sense of them.</p>
+<!-- solution-begin -->
+<p>Frequentist and Bayesian models are constructed from different assumptions, so their model summaries are quite different. Frequentist summaries are often presented as point estimates and confidence intervals. While Bayesians also present posterior estimates and intervals, they more typically study the entire posterior distribution.</p>
+<table class="table">
+<colgroup>
+<col style="width: 56%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Frequentist</th>
+<th>Bayesian</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Point estimates and standard errors</td>
+<td>Descriptions of the posterior distribution such as means and quantiles</td>
+</tr>
+<tr class="even">
+<td>95% confidence intervals indicating that 19/20 times the interval covers the true parameter value</td>
+<td>Highest posterior density intervals indicating region of highest posterior probability</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>1−<span class="math inline">\(\alpha\)</span>% of most likely parameter values fall within a 1−<span class="math inline">\(\alpha\)</span> HPD</td>
+</tr>
+</tbody>
+</table>
+<!-- solution-end -->
 </section>
 
 </main>

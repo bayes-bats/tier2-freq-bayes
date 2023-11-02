@@ -15,6 +15,18 @@ library(dplyr)
 ```
 
 ## Overview
+The second phase of creating our activity focused primarily on drafting the applied `R` activity. We began building the framework for the activity ahead of Progress Report 1 and have made considerable progress on it since then. We completed the drafting phase for the applied `R` activity and provide links for both analyses, as well as other completed artifacts, below in @sec-artifacts  **Artifacts**.
+
+Highlights from this phase:
+
+- Amended both the [Context](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/00-context-main.qmd) and [Introductory](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/01-introduction-main.qmd) documents based on Mine's feedback, which now include clear learning objectives, instructor solutions/guidelines, and more information on statistical inference
+- Emphasized there are no "bad priors" during the applied activity, as well as built in the option of letting students pick their own prior during the Bayesian activity
+- Created a ["Run of Show"](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/run-of-show.md) document that helps instructors facilitate the activity, as well as helped us organize our thinking around how the activity will be conducted
+- Submitted abstracts for our project to social science-oriented conferences so we can utilize Tier 3 funding 
+  - Stefani submitted to the [Midwest Political Science Association's (MPSA)](https://www.mpsanet.org/) annual meeting and the [Conference on Policy Process Research (COPPR)](https://policyprocessresearch.org/about/)) annual meeting
+- Reached out to Tier 2 participants to gauge interest in participating in a topic-contributed session at [JSM](https://ww2.amstat.org/meetings/jsm/2024/) with Zach on Bayesian teaching.
+  - Organizing speakers & discussants with [this document](https://docs.google.com/document/d/17D3WhugPz_rITEY9bIY-YSAYVZ9ih0vp5-qclGbLOU0/edit#heading=h.cjyhxefq76rw).
+
 
 ## Updated Gantt Chart
 
@@ -26,14 +38,14 @@ g <- ganttAddTask(g, "Draft context 1-pager","2023-08-25","2023-09-01",done=100)
 g <- ganttAddTask(g, "Progress Report 1")
 g <- ganttAddTask(g, "Finalize context 1-pager", "2023-09-01", "2023-09-30", done=100)
 g <- ganttAddTask(g, "Draft intro. discussion", "2023-09-01", "2023-09-22", done=100)
-g <- ganttAddTask(g, "Finalize intro. discussion", "2023-09-22", "2023-09-30", done=75)
-g <- ganttAddTask(g, "Draft conclusion discussion", "2023-09-01", "2023-09-22", done=25)
+g <- ganttAddTask(g, "Finalize intro. discussion", "2023-09-22", "2023-09-30", done=100)
+g <- ganttAddTask(g, "Draft conclusion discussion", "2023-09-01", "2023-09-22", done=100)
 g <- ganttAddTask(g, "Draft Bayes-freq. framework 1-pager", "2023-09-01", "2023-09-30", done=100)
 g <- ganttAddTask(g, "Submit Tier 3 Proposal", "2023-09-23", "2023-09-30", done=100)
 g <- ganttAddTask(g, "Progress Report 2")
-g <- ganttAddTask(g, "Finalize Bayes-freq. framework 1-pager", "2023-10-01", "2023-10-20", done=0)
-g <- ganttAddTask(g, "Draft applied R activity", "2023-10-01", "2023-10-31", done=50)
-g <- ganttAddTask(g, "Finalize conclusion discussion", "2023-09-22", "2023-09-30", done=0)
+g <- ganttAddTask(g, "Finalize Bayes-freq. framework 1-pager", "2023-10-01", "2023-10-20", done=100)
+g <- ganttAddTask(g, "Draft applied R activity", "2023-10-01", "2023-10-31", done=100)
+g <- ganttAddTask(g, "Finalize conclusion discussion", "2023-09-22", "2023-09-30", done=100)
 g <- ganttAddTask(g, "Final Materials Submission")
 g <- ganttAddTask(g, "Finalize applied R activity", "2023-11-01", "2023-11-24", done=0)
 g <- ganttAddTask(g, "Finalize all student artifacts", "2023-11-01", "2023-11-24", done=0)
@@ -58,10 +70,37 @@ legend("topright", pch=22, pt.cex=2, cex=0.6, pt.bg=c("steelblue3", "palegreen3"
 
 ```
 
-## Completed Artifacts
+## Artifacts {#sec-artifacts}
 
+###### Completed
+* [Critical Differences Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-one-pager-main.qmd)
+* [Conclusion Discussion](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/04-conclusion-main.qmd)
+
+###### In-Progress
+* [Applied Activity using the Bayesian approach](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02b-activity-bayes-main.qmd)
+* [Applied Activity using the Frequentist approach](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02a-activity-freq-main.qmd)
+* [Key Ideas 1-pager](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-simplified-main.qmd) (Simplified version of Critical Differences document, intended as student-facing handout)
 
 ## Next Steps
 
+
+In our monthly meeting (2023-10-19), Mine gave us the following feedback on the activity, which we will incorporate in the next phase of work:
+
+- Change the framing of how the data were collected for the applied `R` activity to say we accessed one's states data at one point in time and then Colorado data came in, then New Hampshire, etc. This helps us get around the population assumption.
+- Consider how we visualize and discuss the posterior density in the applied `R` activity, as this may confuse students who think it is a sampling distribution.
+
+In addition to addressing this feedback, we will do the following ahead of the last Progress Report submission due date:
+
+1. Finalize the applied `R` activity, 
+2. Review and finalize all student artifacts, including facilitator guidance
+3. Develop our video presentation
+
+
 ## Meeting Times
+-   Weekly and/or bi-weekly meetings for the activity-creating team
+-   Monthly meetings with mentor (Mine)
+-   Office hours
+    -   02 November 2023 with Mine (2-3p EST)
+    -   13 November 2023 with Amy (2-3p EST)
+    -   29 November 2023 with Monika (11a-12p EST)
 
