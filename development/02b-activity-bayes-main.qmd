@@ -4,10 +4,12 @@ format: html
 ---
 
 <!-- solution-begin -->
-
+::: {.callout-note icon="false" title="Instructor Note: Introduction"}
 These are instructor notes; they will be removed from the student-facing assignment file.
 
-This is the **Bayesian** form of the activity. <!-- solution-end -->
+This is the **Bayesian** form of the activity.
+:::
+<!-- solution-end -->
 
 ```{r setup}
 #| include: false
@@ -19,6 +21,9 @@ library(broom.mixed)
 library(patchwork)
 
 filename <- "../data/1.0-communities.csv"
+
+mean_Intercept_GLOBAL <- 50
+sd_Intercept_GLOBAL <- 12.5
 ```
 
 ```{r wrangling}
@@ -40,7 +45,7 @@ df_data <-
 #| fig-align: center
 #| fig-height: 8
 df_data %>% 
-  filter(state_territory %in% c("Florida", "Massachusetts", "Colorado")) %>% 
+  filter(state_territory == "Massachusetts") %>% 
   
   ggplot(aes(
     percent_black_or_african_american_alone,
@@ -57,8 +62,7 @@ df_data %>%
   )
 ```
 
--   Florida and Massachusetts have a clear positive trend; this is evidence of inequitable outcomes
--   Colorado has a negative trend; this is a surprising result
+- TODO
 
 # Analyze a Bayesian Model
 
@@ -150,10 +154,6 @@ df_model_MA %>%
   )
 ```
 
-::: {.callout-note icon="false" title="Synthesizing Descriptive Statistics"}
-Which model parameter describes the **trend** of the energy burden? What does the posterior say about that parameter value?
-:::
-
 The posterior distribution helps us determine **how confident** we should be in conclusions drawn from the model. The next exercise will help you assess confidence in results based on the fitted model.
 
 ## Assessing confidence
@@ -188,18 +188,32 @@ tibble(x = seq(-25, +75, length.out = 200)) %>%
   )
 ```
 
-*TODO* separate prompts and solutions
-
 **Model summaries**
 
+<!-- task-begin -->
+::: {.callout-note icon=false title="Questions for the Class"}
+- Roughly, what fraction of *Posterior Distribution A* is greater than zero?
+  - (Write your response here):
+- Roughly, what fraction of *Posterior Distribution B* is greater than zero?
+  - (Write your response here):
+- Roughly, what fraction of *Posterior Distribution C* is greater than zero?
+  - (Write your response here):
+- Which posterior gives the *highest confidence* (*highest probability*) that the slope parameter is positive? How can you tell?
+  - (Write your response here):
+:::
+<!-- task-end -->
+<!-- solution-begin -->
+::: {.callout-note icon=false title="Questions for the Class"}
 - Roughly, what fraction of *Posterior Distribution A* is greater than zero?
   - Precisely 57.93%, so roughly 60%
 - Roughly, what fraction of *Posterior Distribution B* is greater than zero?
   - Precisely 89.44%, so roughly 90%
 - Roughly, what fraction of *Posterior Distribution C* is greater than zero?
   - Essentially 100%
-- Which posterior gives the *highest probability* that the slope parameter is positive? How can you tell?
+- Which posterior gives the *highest confidence* (*highest probability*) that the slope parameter is positive? How can you tell?
   - Posterior C, as the probability is essentially 100% (as we identified above).
+:::  
+<!-- solution-end -->
   
 **General inference** 
   
@@ -207,7 +221,16 @@ tibble(x = seq(-25, +75, length.out = 200)) %>%
   
   | _As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases)._
   
+<!-- task-begin -->
+
+  - (Write your response here):
+
+<!-- task-end -->
+<!-- solution-begin -->
+  
   - The slope parameter is directly related to our hypothesis. A positive slope is in agreement with our hypothesis.
+  
+<!-- solution-end -->
   
 Let's return to the posterior from our model for the Massachusetts data.
 
@@ -218,6 +241,7 @@ Let's return to the posterior from our model for the Massachusetts data.
 #| fig-height: 8
 df_model_MA %>% 
   ggplot(aes(Slope)) +
+  geom_vline(xintercept = 0, linetype = "dotted") +
   geom_density() +
   scale_x_continuous(limits = c(0, 100)) +
   theme_minimal() +
@@ -228,11 +252,22 @@ df_model_MA %>%
   )
 ```
 
-*TODO* separate prompts and solutions
-
--   For Massachusetts, does the model support or contradict our hypothesis? As a reminder, our hypothesis is:
+::: {.callout-note icon="false" title="Questions for the Class"}
+- For Massachusetts, does the fitted model support or contradict our hypothesis? As a reminder, our hypothesis is:
 
     | *As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).*
+    
+<!-- task-begin -->
+  - (Write your response here):
+- How confident are you in the model results?
+  - (Write your response here):
+<!-- task-end -->
+<!-- solution-begin -->
+  - The fitted model supports our hypothesis.
+- How confident are you in the model results?
+  - The model assigns a nearly 100% probability to a positive slope, which suggests a high confidence in a positive slope.
+<!-- solution-end -->
+:::
 
 ## Study the posterior predictions
 
@@ -258,7 +293,7 @@ df_data %>%
     aes(y = .value, group = .draw), 
     alpha = 0.01,
     linewidth = 2.0,
-    color = "blue"
+    color = "cyan"
   ) +
   geom_point(size = 0.1) +
   scale_x_continuous(labels = scales::percent) +
@@ -269,11 +304,152 @@ df_data %>%
   )
 ```
 
--   How well do the posterior predictions agree with the data?
+::: {.callout-note icon="false" title="Questions for the Class"}
+- How well do the posterior predictions (transparent blue lines) agree with the data (black dots)? Do they follow the same general trend as the data?
+<!-- task-begin -->
+  - (Write your response here):
+<!-- task-end -->
+<!-- solution-begin -->
+  - The posterior predictions tend to agree with the data.
+<!-- solution-end -->
+:::
 
-# State-based priors
+# The Prior Distribution
 
-(Introduce the idea of using a posterior as a new prior)
+Above, we glossed over how we arrive at a posterior distribution. In addition to the model specification, we must also provide a *prior distribution* for the model's parameters. In a Bayesian analysis the prior represents all of our *prior knowledge* about the problem.
+
+For instance, if we were confident that the slope of the Energy Burden vs Percent Black line is positive, we could represent that with a prior distribution that was tightly concentrated at a positive value (Case A below). If we were highly uncertain about the slope, we might represent this case with a prior distribution centered at zero with a very large standard deviation (Case B below).
+
+```{r}
+#| warning: false
+#| echo: false
+#| fig-align: center
+#| fig-height: 8
+slope_mean_A <- +75
+slope_mean_B <- 0
+slope_sd_A <- 5
+slope_sd_B <- 25
+
+df_MA_priors <- 
+  tibble(Slope = seq(-25, 100, length.out = 200)) %>% 
+  mutate(
+    d_A = dnorm(Slope, mean = slope_mean_A, sd = slope_sd_A),
+    d_B = dnorm(Slope, mean = slope_mean_B, sd = slope_sd_B),
+  ) %>% 
+  pivot_longer(
+    cols = contains("d_"),
+    names_sep = "_",
+    names_to = c(".value", "Case")
+  )
+  
+df_MA_priors %>% 
+  ggplot(aes(Slope, d, color = Case)) +
+  geom_line() +
+  theme_minimal() +
+  theme(legend.position = "bottom") +
+  labs(
+    x = "Slope Parameter",
+    y = "Prior Density"
+  )
+```
+
+## Fitting a model: Data + Prior = Posterior
+
+The mathematical details of fitting a Bayesian model is outside the scope of this activity. However, the basic "formula" is:
+
+\[ \text{Data} + \text{Model} = \text{Posterior} \]
+
+Note that the Model contains both the formula for the model $B = m P + b + \epsilon$ and the prior distribution for the parameters $m, b, \sigma^2$. With a small dataset the posterior distribution will largely depend on the prior. With a larger dataset, the posterior will depend more on the data.
+
+```{r}
+#| include: false
+#| echo: false
+#| cache: true
+model_MA_caseA <- stan_glm(
+  data = df_data %>% 
+    filter(
+      str_detect(state_territory, "Massachusetts"),
+      !is.na(percent_black_or_african_american_alone)
+    ),
+  # Likelihood model
+  formula = energy_burden_percentile ~ percent_black_or_african_american_alone,
+  family = gaussian,           # link function
+  # Slope prior
+  prior = normal(slope_mean_A, slope_sd_A),
+  # Intercept prior
+  prior_intercept = normal(mean_Intercept_GLOBAL, sd_Intercept_GLOBAL),
+  # Numerical parameters
+  chains = 4, 
+  iter = 5000*2, # to account for 50% burn-in
+  seed = 84735,  # the BAYES seed!
+  refresh = FALSE
+)
+
+model_MA_caseB <- stan_glm(
+  data = df_data %>% 
+    filter(
+      str_detect(state_territory, "Massachusetts"),
+      !is.na(percent_black_or_african_american_alone)
+    ),
+  # Likelihood model
+  formula = energy_burden_percentile ~ percent_black_or_african_american_alone,
+  family = gaussian,           # link function
+  # Slope prior
+  prior = normal(slope_mean_B, slope_sd_B),
+  # Intercept prior
+  prior_intercept = normal(mean_Intercept_GLOBAL, sd_Intercept_GLOBAL),
+  # Numerical parameters
+  chains = 4, 
+  iter = 5000*2, # to account for 50% burn-in
+  seed = 84735,  # the BAYES seed!
+  refresh = FALSE
+)
+```
+
+For instance, the following figure shows what happens when we use two different prior distributions for the slope when fitting the Massachusetts data:
+
+```{r}
+#| warning: false
+#| echo: false
+#| fig-align: center
+#| fig-height: 8
+df_model_MA_caseA <- 
+  model_MA_caseA %>% 
+  as_tibble() %>% 
+  select(Slope = percent_black_or_african_american_alone) %>% 
+  mutate(Case = "A", Distribution = "Posterior")
+
+df_model_MA_caseB <- 
+  model_MA_caseB %>% 
+  as_tibble() %>% 
+  select(Slope = percent_black_or_african_american_alone) %>% 
+  mutate(Case = "B", Distribution = "Posterior")
+
+bind_rows(df_model_MA_caseA, df_model_MA_caseB) %>% 
+  ggplot(aes(Slope, color = Case, linetype = Distribution)) +
+  geom_density() +
+  geom_line(
+    data = df_MA_priors %>% mutate(Distribution = "Prior"),
+    mapping = aes(y = d),
+  ) +
+  scale_linetype_manual(
+    values = c(
+      "Prior" = "dashed",
+      "Posterior" = "solid"
+    ) 
+  ) +
+  theme_minimal() +
+  theme(legend.position = "bottom") +
+  labs(
+    x = "Parameter Value",
+    y = "Posterior Density",
+  )
+```
+
+Note that the highly uncertain Case B is shifted quite a bit more (from prior to posterior) than the Case A results. If we were to obtain a larger and larger dataset, using either prior (Case A or B) would converge to the same posterior distribution.
+
+<!-- solution-begin -->
+## (PREP) Extract parameters
 
 ```{r prior-MA}
 #| include: false
@@ -388,6 +564,12 @@ sd_Slope_NH <-
   sd()
 ```
 
+<!-- solution-end -->
+
+## Three options
+
+Bayesian approaches to statistics are particularly useful when we have limited data, as they allow us to incorporate prior knowledge. For the rest of the activity we'll consider a scenario where our access to the CEJS data is limited: Suppose we are conducting our analysis while the data are actively being gathered. In this case, we may have access to the data for some states before others. In this context, we can conduct a *sequential* Bayesian analysis by using the posterior from one analysis as the prior for a new analysis.
+
 ```{r}
 #| warning: false
 #| echo: false
@@ -395,10 +577,6 @@ sd_Slope_NH <-
 #| fig-height: 8
 tibble(x = seq(-100, 100, length.out = 500)) %>% 
   mutate(
-    d_Intercept_MA = dnorm(x, mean = mean_Intercept_MA, sd = sd_Intercept_MA),
-    d_Intercept_MN = dnorm(x, mean = mean_Intercept_MN, sd = sd_Intercept_MN),
-    d_Intercept_NH = dnorm(x, mean = mean_Intercept_NH, sd = sd_Intercept_NH),
-    
     d_Slope_MA = dnorm(x, mean = mean_Slope_MA, sd = sd_Slope_MA),
     d_Slope_MN = dnorm(x, mean = mean_Slope_MN, sd = sd_Slope_MN),
     d_Slope_NH = dnorm(x, mean = mean_Slope_NH, sd = sd_Slope_NH),
@@ -412,13 +590,19 @@ tibble(x = seq(-100, 100, length.out = 500)) %>%
   ggplot(aes(x, d)) +
   geom_line() +
   geom_vline(xintercept = 0, linetype = "dotted") +
-  facet_grid(Parameter ~ State, scales = "free", labeller = label_both) +
+  facet_grid(. ~ State, scales = "free", labeller = label_both) +
   theme_minimal() +
   labs(
-    x = "Parameter Value",
-    y = "Prior Density"
+    x = "Slope Parameter",
+    y = "Posterior Density"
   )
 ```
+
+::: {.callout-note icon="false" title="Pick a State"}
+Study the posteriors above carefully; you will use this as a *prior distribution* for the slope for the rest of the activity. This means you will combine *new data* with a *prior distribution* to form a new *posterior distribution* for the model parameters. The *prior distribution* should reflect your beliefs about what you think the slope parameter should be.
+
+Pick *one state for your group*, then come ask the instructor for your chosen state's packet.
+:::
 
 # Colorado
 
@@ -443,7 +627,8 @@ model_CO_MA <- stan_glm(
   # Slope prior
   prior = normal(mean_Slope_MA, sd_Slope_MA),
   # Intercept prior
-  prior_intercept = normal(mean_Intercept_MA, sd_Intercept_MA),
+  # prior_intercept = normal(mean_Intercept_MA, sd_Intercept_MA),
+  prior_intercept = normal(mean_Intercept_GLOBAL, sd_Intercept_GLOBAL),
   # Numerical parameters
   chains = 4, 
   iter = 5000*2, # to account for 50% burn-in
@@ -463,7 +648,8 @@ model_CO_MN <- stan_glm(
   # Slope prior
   prior = normal(mean_Slope_MN, sd_Slope_MN),
   # Intercept prior
-  prior_intercept = normal(mean_Intercept_MN, sd_Intercept_MN),
+  # prior_intercept = normal(mean_Intercept_MN, sd_Intercept_MN),
+  prior_intercept = normal(mean_Intercept_GLOBAL, sd_Intercept_GLOBAL),
   # Numerical parameters
   chains = 4, 
   iter = 5000*2, # to account for 50% burn-in
@@ -483,7 +669,8 @@ model_CO_NH <- stan_glm(
   # Slope prior
   prior = normal(mean_Slope_NH, sd_Slope_NH),
   # Intercept prior
-  prior_intercept = normal(mean_Intercept_NH, sd_Intercept_NH),
+  # prior_intercept = normal(mean_Intercept_NH, sd_Intercept_NH),
+  prior_intercept = normal(mean_Intercept_GLOBAL, sd_Intercept_GLOBAL),
   # Numerical parameters
   chains = 4, 
   iter = 5000*2, # to account for 50% burn-in
@@ -533,6 +720,7 @@ p_CO_MA_posterior <-
   as_tibble() %>% 
   select(Slope = percent_black_or_african_american_alone) %>% 
   ggplot(aes(Slope)) +
+  geom_vline(xintercept = 0, linetype = "dotted") +
   geom_density() +
   theme_minimal() +
   labs(
@@ -584,6 +772,7 @@ p_CO_MN_posterior <-
   as_tibble() %>% 
   select(Slope = percent_black_or_african_american_alone) %>% 
   ggplot(aes(Slope)) +
+  geom_vline(xintercept = 0, linetype = "dotted") +
   geom_density() +
   theme_minimal() +
   labs(
@@ -635,6 +824,7 @@ p_CO_NH_posterior <-
   as_tibble() %>% 
   select(Slope = percent_black_or_african_american_alone) %>% 
   ggplot(aes(Slope)) +
+  geom_vline(xintercept = 0, linetype = "dotted") +
   geom_density() +
   theme_minimal() +
   labs(
@@ -657,7 +847,9 @@ What does the model suggest about the trend of energy burden with percent Black 
 
 -   For the MA-based prior, the posterior predictions do not match the data well. The posterior is extremely confident in a positive slope, which agrees with our hypothesis.
 -   For the MN-based prior, the posterior predictions do match the data well. The posterior is extremely confident in a negative slope, which contradicts our hypothesis.
--   For the NH-based prior, the posterior predictions do match the data well. The posterior is quite confident in a negative slope, which contradicts our hypothesis. <!-- solution-end -->
+-   For the NH-based prior, the posterior predictions do match the data well. The posterior is quite confident in a negative slope, which contradicts our hypothesis. 
+
+<!-- solution-end -->
 
 # Florida
 
@@ -712,7 +904,8 @@ model_FL_MA <- stan_glm(
   # Slope prior
   prior = normal(mean_Slope_MA, sd_Slope_MA),
   # Intercept prior
-  prior_intercept = normal(mean_Intercept_MA, sd_Intercept_MA),
+  # prior_intercept = normal(mean_Intercept_MA, sd_Intercept_MA),
+  prior_intercept = normal(mean_Intercept_GLOBAL, sd_Intercept_GLOBAL),
   # Numerical parameters
   chains = 4, 
   iter = 5000*2, # to account for 50% burn-in
@@ -728,7 +921,8 @@ model_FL_MN <- stan_glm(
   # Slope prior
   prior = normal(mean_Slope_MN, sd_Slope_MN),
   # Intercept prior
-  prior_intercept = normal(mean_Intercept_MN, sd_Intercept_MN),
+  # prior_intercept = normal(mean_Intercept_MN, sd_Intercept_MN),
+  prior_intercept = normal(mean_Intercept_GLOBAL, sd_Intercept_GLOBAL),
   # Numerical parameters
   chains = 4, 
   iter = 5000*2, # to account for 50% burn-in
@@ -744,7 +938,8 @@ model_FL_NH <- stan_glm(
   # Slope prior
   prior = normal(mean_Slope_NH, sd_Slope_NH),
   # Intercept prior
-  prior_intercept = normal(mean_Intercept_NH, sd_Intercept_NH),
+  # prior_intercept = normal(mean_Intercept_NH, sd_Intercept_NH),
+  prior_intercept = normal(mean_Intercept_GLOBAL, sd_Intercept_GLOBAL),
   # Numerical parameters
   chains = 4, 
   iter = 5000*2, # to account for 50% burn-in
@@ -753,8 +948,160 @@ model_FL_NH <- stan_glm(
 )
 ```
 
+### MA-based Prior
 
-TODO generate 3 figs for FL
+```{r}
+#| warning: false
+#| echo: false
+#| fig-align: center
+#| fig-height: 8
+p_FL_MA_predict <- 
+  df_fl %>% 
+  
+  ggplot(aes(
+    x = percent_black_or_african_american_alone,
+    y = energy_burden_percentile
+  )) +
+  geom_line(
+    data = . %>% 
+      filter(!is.na(percent_black_or_african_american_alone)) %>% 
+      select(percent_black_or_african_american_alone) %>% 
+      tidybayes::add_fitted_draws(model_FL_MA, n = 1000),
+    aes(y = .value, group = .draw), 
+    alpha = 0.01,
+    linewidth = 2.0,
+    color = "cyan",
+  ) +
+  
+  geom_point(size = 0.1) +
+  scale_x_continuous(labels = scales::percent) +
+  theme_minimal() +
+  guides(color = "none") +
+  labs(
+    x = "Percent Black Census Tract",
+    y = "Energy Burden Percentile",
+    title = "Florida, MA-based Prior"
+  )
+
+p_FL_MA_posterior <- 
+  model_FL_MA %>% 
+  as_tibble() %>% 
+  select(Slope = percent_black_or_african_american_alone) %>% 
+  ggplot(aes(Slope)) +
+  geom_vline(xintercept = 0, linetype = "dotted") +
+  geom_density() +
+  theme_minimal() +
+  labs(
+    x = "Slope Parameter",
+    y = "Posterior Density"
+  )
+
+p_FL_MA_predict + p_FL_MA_posterior 
+```
+
+### MN-based Prior
+
+```{r}
+#| warning: false
+#| echo: false
+#| fig-align: center
+#| fig-height: 8
+p_FL_MN_predict <- 
+  df_fl %>% 
+  
+  ggplot(aes(
+    x = percent_black_or_african_american_alone,
+    y = energy_burden_percentile
+  )) +
+  geom_line(
+    data = . %>% 
+      filter(!is.na(percent_black_or_african_american_alone)) %>% 
+      select(percent_black_or_african_american_alone) %>% 
+      tidybayes::add_fitted_draws(model_FL_MN, n = 1000),
+    aes(y = .value, group = .draw), 
+    alpha = 0.01,
+    linewidth = 2.0,
+    color = "cyan",
+  ) +
+  
+  geom_point(size = 0.1) +
+  scale_x_continuous(labels = scales::percent) +
+  theme_minimal() +
+  guides(color = "none") +
+  labs(
+    x = "Percent Black Census Tract",
+    y = "Energy Burden Percentile",
+    title = "Florida, MN-based Prior"
+  )
+
+p_FL_MN_posterior <- 
+  model_FL_MN %>% 
+  as_tibble() %>% 
+  select(Slope = percent_black_or_african_american_alone) %>% 
+  ggplot(aes(Slope)) +
+  geom_vline(xintercept = 0, linetype = "dotted") +
+  geom_density() +
+  theme_minimal() +
+  labs(
+    x = "Slope Parameter",
+    y = "Posterior Density"
+  )
+
+p_FL_MN_predict + p_FL_MN_posterior 
+```
+
+### NH-based Prior
+
+```{r}
+#| warning: false
+#| echo: false
+#| fig-align: center
+#| fig-height: 8
+p_FL_NH_predict <- 
+  df_fl %>% 
+  
+  ggplot(aes(
+    x = percent_black_or_african_american_alone,
+    y = energy_burden_percentile
+  )) +
+  geom_line(
+    data = . %>% 
+      filter(!is.na(percent_black_or_african_american_alone)) %>% 
+      select(percent_black_or_african_american_alone) %>% 
+      tidybayes::add_fitted_draws(model_FL_NH, n = 1000),
+    aes(y = .value, group = .draw), 
+    alpha = 0.01,
+    linewidth = 2.0,
+    color = "cyan",
+  ) +
+  
+  geom_point(size = 0.1) +
+  scale_x_continuous(labels = scales::percent) +
+  theme_minimal() +
+  guides(color = "none") +
+  labs(
+    x = "Percent Black Census Tract",
+    y = "Energy Burden Percentile",
+    title = "Florida, NH-based Prior"
+  )
+
+p_FL_NH_posterior <- 
+  model_FL_NH %>% 
+  as_tibble() %>% 
+  select(Slope = percent_black_or_african_american_alone) %>% 
+  ggplot(aes(Slope)) +
+  geom_vline(xintercept = 0, linetype = "dotted") +
+  geom_density() +
+  theme_minimal() +
+  labs(
+    x = "Slope Parameter",
+    y = "Posterior Density"
+  )
+
+p_FL_NH_predict + p_FL_NH_posterior 
+```
+
+
 <!-- solution-begin -->
 
 ## Study the posterior predictions
@@ -764,5 +1111,228 @@ What does the model suggest about the trend of energy burden with percent Black 
 :::
 
 <!-- solution-begin -->
+- With the MA-based prior, we would assign a high posterior probability to a positive slope
+- With the MN-based prior, we would assign a high posterior probability to a *negative* slope
+- With the NH-based prior, we would have an inconclusive analysis
+<!-- solution-end -->
 
--   With the prior, we can confidently conclude there is a positive slope <!-- solution-end -->
+# Full USA
+
+
+<!-- solution-begin -->
+
+## (PREP) Print USA Results
+
+Print the following three graphs and place them in envelopes labelled for the State-based prior.
+
+```{r}
+#| include: false
+#| echo: false
+#|cache: true
+# Random sample of valid observations
+df_USA <- 
+  df_data %>% 
+  filter(!is.na(percent_black_or_african_american_alone)) %>% 
+  slice_sample(n = 10000)
+
+model_USA_MA <- stan_glm(
+  data = df_USA,
+  # Likelihood model
+  formula = energy_burden_percentile ~ percent_black_or_african_american_alone,
+  family = gaussian,           # link function
+  # Slope prior
+  prior = normal(mean_Slope_MA, sd_Slope_MA),
+  # Intercept prior
+  # prior_intercept = normal(mean_Intercept_MA, sd_Intercept_MA),
+  prior_intercept = normal(mean_Intercept_GLOBAL, sd_Intercept_GLOBAL),
+  # Numerical parameters
+  chains = 4, 
+  iter = 5000*2, # to account for 50% burn-in
+  seed = 84735,  # the BAYES seed!
+  refresh = FALSE
+)
+
+model_USA_MN <- stan_glm(
+  data = df_USA,
+  # Likelihood model
+  formula = energy_burden_percentile ~ percent_black_or_african_american_alone,
+  family = gaussian,           # link function
+  # Slope prior
+  prior = normal(mean_Slope_MN, sd_Slope_MN),
+  # Intercept prior
+  # prior_intercept = normal(mean_Intercept_MN, sd_Intercept_MN),
+  prior_intercept = normal(mean_Intercept_GLOBAL, sd_Intercept_GLOBAL),
+  # Numerical parameters
+  chains = 4, 
+  iter = 5000*2, # to account for 50% burn-in
+  seed = 84735,  # the BAYES seed!
+  refresh = FALSE
+)
+
+model_USA_NH <- stan_glm(
+  data = df_USA,
+  # Likelihood model
+  formula = energy_burden_percentile ~ percent_black_or_african_american_alone,
+  family = gaussian,           # link function
+  # Slope prior
+  prior = normal(mean_Slope_NH, sd_Slope_NH),
+  # Intercept prior
+  # prior_intercept = normal(mean_Intercept_NH, sd_Intercept_NH),
+  prior_intercept = normal(mean_Intercept_GLOBAL, sd_Intercept_GLOBAL),
+  # Numerical parameters
+  chains = 4, 
+  iter = 5000*2, # to account for 50% burn-in
+  seed = 84735,  # the BAYES seed!
+  refresh = FALSE
+)
+```
+
+### MA-based Prior
+
+```{r}
+#| warning: false
+#| echo: false
+#| fig-align: center
+#| fig-height: 8
+p_USA_MA_predict <- 
+  df_data %>% 
+  
+  ggplot(aes(
+    x = percent_black_or_african_american_alone,
+    y = energy_burden_percentile
+  )) +
+  geom_line(
+    data = tibble(percent_black_or_african_american_alone = seq(0, 1, length.out = 100)) %>% 
+      tidybayes::add_fitted_draws(model_USA_MA, n = 1000),
+    aes(y = .value, group = .draw), 
+    alpha = 0.01,
+    linewidth = 2.0,
+    color = "cyan",
+  ) +
+  
+  geom_point(size = 0.1) +
+  scale_x_continuous(labels = scales::percent) +
+  theme_minimal() +
+  guides(color = "none") +
+  labs(
+    x = "Percent Black Census Tract",
+    y = "Energy Burden Percentile",
+    title = "Full USA, MA-based Prior"
+  )
+
+p_USA_MA_posterior <-
+  model_USA_MA %>%
+  as_tibble() %>%
+  select(Slope = percent_black_or_african_american_alone) %>%
+  ggplot(aes(Slope)) +
+  geom_vline(xintercept = 0, linetype = "dotted") +
+  geom_density() +
+  theme_minimal() +
+  labs(
+    x = "Slope Parameter",
+    y = "Posterior Density"
+  )
+
+p_USA_MA_predict + p_USA_MA_posterior
+```
+
+### MN-based Prior
+
+```{r}
+#| warning: false
+#| echo: false
+#| fig-align: center
+#| fig-height: 8
+p_USA_MN_predict <- 
+  df_data %>% 
+  
+  ggplot(aes(
+    x = percent_black_or_african_american_alone,
+    y = energy_burden_percentile
+  )) +
+  geom_line(
+    data = tibble(percent_black_or_african_american_alone = seq(0, 1, length.out = 100)) %>% 
+      tidybayes::add_fitted_draws(model_USA_MN, n = 1000),
+    aes(y = .value, group = .draw), 
+    alpha = 0.01,
+    linewidth = 2.0,
+    color = "cyan",
+  ) +
+  
+  geom_point(size = 0.1) +
+  scale_x_continuous(labels = scales::percent) +
+  theme_minimal() +
+  guides(color = "none") +
+  labs(
+    x = "Percent Black Census Tract",
+    y = "Energy Burden Percentile",
+    title = "Full USA, MN-based Prior"
+  )
+
+p_USA_MN_posterior <- 
+  model_USA_MN %>% 
+  as_tibble() %>% 
+  select(Slope = percent_black_or_african_american_alone) %>% 
+  ggplot(aes(Slope)) +
+  geom_vline(xintercept = 0, linetype = "dotted") +
+  geom_density() +
+  theme_minimal() +
+  labs(
+    x = "Slope Parameter",
+    y = "Posterior Density"
+  )
+
+p_USA_MN_predict + p_USA_MN_posterior 
+```
+
+### NH-based Prior
+
+```{r}
+#| warning: false
+#| echo: false
+#| fig-align: center
+#| fig-height: 8
+p_USA_NH_predict <- 
+  df_data %>% 
+  
+  ggplot(aes(
+    x = percent_black_or_african_american_alone,
+    y = energy_burden_percentile
+  )) +
+  geom_line(
+    data = tibble(percent_black_or_african_american_alone = seq(0, 1, length.out = 100)) %>% 
+      tidybayes::add_fitted_draws(model_USA_NH, n = 1000),
+    aes(y = .value, group = .draw), 
+    alpha = 0.01,
+    linewidth = 2.0,
+    color = "cyan",
+  ) +
+  
+  geom_point(size = 0.1) +
+  scale_x_continuous(labels = scales::percent) +
+  theme_minimal() +
+  guides(color = "none") +
+  labs(
+    x = "Percent Black Census Tract",
+    y = "Energy Burden Percentile",
+    title = "Full USA, NH-based Prior"
+  )
+
+p_USA_NH_posterior <- 
+  model_USA_NH %>% 
+  as_tibble() %>% 
+  select(Slope = percent_black_or_african_american_alone) %>% 
+  ggplot(aes(Slope)) +
+  geom_vline(xintercept = 0, linetype = "dotted") +
+  geom_density() +
+  theme_minimal() +
+  labs(
+    x = "Slope Parameter",
+    y = "Posterior Density"
+  )
+
+p_USA_NH_predict + p_USA_NH_posterior 
+```
+
+
+<!-- solution-end -->
