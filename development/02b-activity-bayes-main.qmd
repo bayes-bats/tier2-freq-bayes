@@ -49,7 +49,7 @@ Throughout this activity, you will be studying a statistical model fitted to dat
 #| warning: false
 #| echo: false
 #| fig-align: center
-#| fig-height: 8
+#| fig-height: 3
 #| fig-cap: CEJS data for Massachusetts.
 df_data %>% 
   filter(state_territory == "Massachusetts") %>% 
@@ -74,13 +74,13 @@ From this scatterplot, we can see that the energy burden seems to increase as th
 
 To analyze the dataset, we will use the following statistical model,
 
-B = m P + b + \epsilon
+$$ B = m P + b + \epsilon $$
 
 where $B$ is the energy burden percentile, $P$ is the percent Black, $m$ is the slope parameter, $b$ is the intercept parameter, and $\epsilon$ is a *residual* term that represents factors not accounted in the model. The residual term is assumed to be normally distributed $\epsilon \sim N(0, \sigma^2)$ with an unknown parameter $\sigma^2$. All three parameters have a prior distribution, defined via
 
-```{=tex}
+$$
 \begin{aligned} m \sim N(\mu_m, \sigma_m^2), \\ b \sim N(\mu_b, \sigma_b^2), \\ \sigma^2 \sim \text{Exponential}(1/s_y), \end{aligned}
-```
+$$
 
 where $m, b, \sigma^2$ are independent.[^autoscale] We will discuss how to set the prior through its parameter values $\mu_m, \mu_b, \sigma_m^2, \sigma_b^2$ later in this activity.
 
@@ -130,13 +130,13 @@ model_MA <- stan_glm(
 
 ## Study the posterior distribution
 
-Results from a Bayesian model take the form of a *posterior distribution* for the model parameters. The model has two parameters that are closely related to our hypothesis: The slow $m$ and intercept $b$ of the fitted line. "Fitting" the Bayesian model to the Massachusetts dataset will result in a posterior distribution for the parameters, with an example posterior given below:
+Results from a Bayesian model take the form of a *posterior distribution* for the model parameters. The model has two parameters that are closely related to our hypothesis: The slope $m$ and intercept $b$ of the fitted line. "Fitting" the Bayesian model to the Massachusetts dataset will result in a posterior distribution for the parameters, with an example posterior given below:
 
 ```{r posteriors-MA}
 #| warning: false
 #| echo: false
 #| fig-align: center
-#| fig-height: 8
+#| fig-height: 3
 df_model_MA <- 
   model_MA %>% 
   as_tibble() %>% 
@@ -169,7 +169,7 @@ Let's imagine three different posterior distributions for the posterior (margina
 #| warning: false
 #| echo: false
 #| fig-align: center
-#| fig-height: 8
+#| fig-height: 3
 tibble(x = seq(-25, +75, length.out = 200)) %>% 
   mutate(
     d_A = dnorm(x, mean =  1, sd =  5),
@@ -243,7 +243,7 @@ Let's return to the posterior from our model for the Massachusetts data and use 
 #| warning: false
 #| echo: false
 #| fig-align: center
-#| fig-height: 8
+#| fig-height: 3
 df_model_MA %>% 
   ggplot(aes(Slope)) +
   geom_vline(xintercept = 0, linetype = "dotted") +
@@ -282,7 +282,7 @@ Bayesian analysis does not produce a "best" line; rather, the posterior distribu
 #| warning: false
 #| echo: false
 #| fig-align: center
-#| fig-height: 8
+#| fig-height: 3
 df_data %>% 
   filter(str_detect(state_territory, "Massachusetts")) %>% 
   
@@ -331,7 +331,7 @@ For instance, if we were confident that the slope of the Energy Burden vs Percen
 #| warning: false
 #| echo: false
 #| fig-align: center
-#| fig-height: 8
+#| fig-height: 3
 slope_mean_A <- +75
 slope_mean_B <- 0
 slope_sd_A <- 5
@@ -419,7 +419,7 @@ For instance, the following figure shows what happens when we use two different 
 #| warning: false
 #| echo: false
 #| fig-align: center
-#| fig-height: 8
+#| fig-height: 3
 df_model_MA_caseA <- 
   model_MA_caseA %>% 
   as_tibble() %>% 
@@ -454,9 +454,6 @@ bind_rows(df_model_MA_caseA, df_model_MA_caseB) %>%
 ```
 
 Note that the highly uncertain Case B is shifted quite a bit more (from prior to posterior) than the Case A results. If we were to obtain a larger and larger dataset, using either prior (Case A or B) would converge to the same posterior distribution.
-
-<!-- solution-begin -->
-## (PREP) Extract parameters
 
 ```{r prior-MA}
 #| include: false
@@ -571,8 +568,6 @@ sd_Slope_NH <-
   sd()
 ```
 
-<!-- solution-end -->
-
 ## Three options
 
 Bayesian approaches to statistics are particularly useful when we have limited data, as they allow us to incorporate prior knowledge. For the rest of the activity we'll consider a scenario where our access to the CEJS data is limited: Suppose we are conducting our analysis while the data are actively being gathered. In this case, we may have access to the data for some states before others. In this context, we can conduct a *sequential* Bayesian analysis by using the posterior from one analysis as the prior for a new analysis.
@@ -581,7 +576,7 @@ Bayesian approaches to statistics are particularly useful when we have limited d
 #| warning: false
 #| echo: false
 #| fig-align: center
-#| fig-height: 8
+#| fig-height: 3
 tibble(x = seq(-100, 100, length.out = 500)) %>% 
   mutate(
     d_Slope_MA = dnorm(x, mean = mean_Slope_MA, sd = sd_Slope_MA),
@@ -692,7 +687,7 @@ model_CO_NH <- stan_glm(
 #| warning: false
 #| echo: false
 #| fig-align: center
-#| fig-height: 8
+#| fig-height: 3
 p_CO_MA_predict <- 
   df_data %>% 
   filter(str_detect(state_territory, "Colorado")) %>% 
@@ -744,7 +739,7 @@ p_CO_MA_predict + p_CO_MA_posterior
 #| warning: false
 #| echo: false
 #| fig-align: center
-#| fig-height: 8
+#| fig-height: 3
 p_CO_MN_predict <- 
   df_data %>% 
   filter(str_detect(state_territory, "Colorado")) %>% 
@@ -796,7 +791,7 @@ p_CO_MN_predict + p_CO_MN_posterior
 #| warning: false
 #| echo: false
 #| fig-align: center
-#| fig-height: 8
+#| fig-height: 3
 p_CO_NH_predict <- 
   df_data %>% 
   filter(str_detect(state_territory, "Colorado")) %>% 
@@ -867,7 +862,7 @@ In some cases, we may find that gathering more data is simply not possible. Let'
 #| warning: false
 #| echo: false
 #| fig-align: center
-#| fig-height: 8
+#| fig-height: 3
 set.seed(101)
 
 df_fl <- 
@@ -958,7 +953,7 @@ model_FL_NH <- stan_glm(
 #| warning: false
 #| echo: false
 #| fig-align: center
-#| fig-height: 8
+#| fig-height: 3
 p_FL_MA_predict <- 
   df_fl %>% 
   
@@ -1009,7 +1004,7 @@ p_FL_MA_predict + p_FL_MA_posterior
 #| warning: false
 #| echo: false
 #| fig-align: center
-#| fig-height: 8
+#| fig-height: 3
 p_FL_MN_predict <- 
   df_fl %>% 
   
@@ -1060,7 +1055,7 @@ p_FL_MN_predict + p_FL_MN_posterior
 #| warning: false
 #| echo: false
 #| fig-align: center
-#| fig-height: 8
+#| fig-height: 3
 p_FL_NH_predict <- 
   df_fl %>% 
   
@@ -1201,7 +1196,7 @@ model_USA_NH <- stan_glm(
 #| warning: false
 #| echo: false
 #| fig-align: center
-#| fig-height: 8
+#| fig-height: 3
 p_USA_MA_predict <- 
   df_data %>% 
   
@@ -1250,7 +1245,7 @@ p_USA_MA_predict + p_USA_MA_posterior
 #| warning: false
 #| echo: false
 #| fig-align: center
-#| fig-height: 8
+#| fig-height: 3
 p_USA_MN_predict <- 
   df_data %>% 
   
@@ -1299,7 +1294,7 @@ p_USA_MN_predict + p_USA_MN_posterior
 #| warning: false
 #| echo: false
 #| fig-align: center
-#| fig-height: 8
+#| fig-height: 3
 p_USA_NH_predict <- 
   df_data %>% 
   
