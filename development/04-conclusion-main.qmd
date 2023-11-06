@@ -32,6 +32,49 @@ Based on these preliminary trends, we used statistical inference to answer our q
 
 ## Differences between Frequentist & Bayeisan Approaches
 
+There are key differences between Frequentist and Bayesian approaches. In the activity, we focused on model summaries and general inference.
+
+**General Inference**
+
+For general inference, we are concerned with answering questions about a _larger_ dataset, while only having access to a _smaller_ dataset.
+
+1. Translate our question into a mathematical model*
+2. Fit the model using data
+3. Interpret model results in terms of our question
+
+
+| Frequentist | Bayesian | 
+|-------------|----------|
+| Provides: Pr(data $|$ hypothesis) | Provides: Pr(hypothesis $|$ data) |
+| Decision based on hard cut-off | Decision based on posterior distribution |
+
+**Model Summaries**
+
+Statistical models are complex objects, so we use _model summaries_ to help.
+
+Statistical models represent the _uncertainty due to limited data_.
+
+Some common summaries:
+
+
+|Point estimate | Uncertainty | Interval|
+|---------------|-------------|---------|
+|42             |4            |(42 +/- 2x4) = (34, 50) |
+
+Here are the differences in how Frequentists and Bayesians get model summaries:
+
+
+| Frequentist | Bayesian | 
+|-------------|----------|
+| Maximum likelihood estimate | Maximum of the posterior density |
+| Standard error | Posterior standard deviation |
+| Confidence interval | Credible interval |
+
+
+
+
+### Applying the Differences
+
 With the remainder of class time, separate into groups of 2-3 people, where each group should have at least 1 person who did the Frequentist analysis and 1 person who did the Bayesian analysis. Using the [Critical Differences Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-one-pager-main.qmd), discuss the following:
 
 - How do our modeling choices affect our outcomes of interest based on the assumptions we know about both approaches? Are the results for our hypothesis different? If so, how?
@@ -39,6 +82,8 @@ With the remainder of class time, separate into groups of 2-3 people, where each
 - How might we improve our model based on what we know from our **model summaries** and **general inference** for both approaches?
 
 Jot down 2-3 sentences for each question, as well as any remaining questions or concerns you have about conducting your analyses using one of the two approaches.
+
+$*$ Requires assumptions!
 
 <!-- solution-begin  -->
 
