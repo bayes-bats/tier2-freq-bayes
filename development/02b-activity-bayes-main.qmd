@@ -3,6 +3,12 @@ title: "CEJS Activity"
 format: html
 ---
 
+Armed with all of that background knowledge on the CEJS dataset and on statistical inference, we can proceed with a detailed analysis of the data. In particular, we are interested in assessing the following hypothesis:
+
+  | _As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases)._
+
+In this part of the session you will interpret results from a statistical model fitted to datasets from different U.S. States.
+ 
 <!-- solution-begin -->
 ::: {.callout-note icon="false" title="Instructor Note: Introduction"}
 These are instructor notes; they will be removed from the student-facing assignment file.
@@ -37,13 +43,14 @@ df_data <-
 
 # Overview
 
-(Preview the overview figure)
+Throughout this activity, you will be studying a statistical model fitted to data from the CEJS dataset. As a reminder, we are interested in the `Energy Burden Percentile` (higher values correspond to a higher burden) and the `Percent Black Census Tract` (which measures the number of people in a region who are Black).
 
 ```{r fig-overview}
 #| warning: false
 #| echo: false
 #| fig-align: center
 #| fig-height: 8
+#| fig-cap: CEJS data for Massachusetts.
 df_data %>% 
   filter(state_territory == "Massachusetts") %>% 
   
@@ -52,7 +59,6 @@ df_data %>%
     energy_burden_percentile
   )) +
   geom_point(size = 0.1) +
-  geom_smooth(method = "lm") +
   facet_wrap(~state_territory, ncol = 2) +
   scale_x_continuous(labels = scales::percent) +
   theme_minimal() +
@@ -62,24 +68,23 @@ df_data %>%
   )
 ```
 
-- TODO
+From this scatterplot, we can see that the energy burden seems to increase as the percent Black increases. However, we can make this rough observation more formal by using a statistical model.
 
 # Analyze a Bayesian Model
 
-(Introduce the Bayesian model)
+To analyze the dataset, we will use the following statistical model,
 
-\[ B = m P + b + \epsilon, \]
+B = m P + b + \epsilon
 
-where $B$ is the energy burden percentile, $P$ is the percent Black, $m$ is the slope parameter, $b$ is the intercept parameter, and $\epsilon$ is a *residual* term that represents factors not accounted in the model. The residual term is assumed to be normally distributed $\epsilon \sim N(0, \sigma^2)$ with an unknown parameter $\sigma^2$. All three parameters have a prior distribution, which we must specify
-
-\[
+where $B$ is the energy burden percentile, $P$ is the percent Black, $m$ is the slope parameter, $b$ is the intercept parameter, and $\epsilon$ is a *residual* term that represents factors not accounted in the model. The residual term is assumed to be normally distributed $\epsilon \sim N(0, \sigma^2)$ with an unknown parameter $\sigma^2$. All three parameters have a prior distribution, defined via
 
 ```{=tex}
-\begin{aligned} m \sim N(\mu_m, \sigma_m^2), \\ b \sim N(\mu_b, \sigma_b^2), \\ \sigma^2 \sim ??? \end{aligned}
+\begin{aligned} m \sim N(\mu_m, \sigma_m^2), \\ b \sim N(\mu_b, \sigma_b^2), \\ \sigma^2 \sim \text{Exponential}(1/s_y), \end{aligned}
 ```
-,\]
 
-where $m, b, \sigma^2$ are independent.
+where $m, b, \sigma^2$ are independent.[^autoscale] We will discuss how to set the prior through its parameter values $\mu_m, \mu_b, \sigma_m^2, \sigma_b^2$ later in this activity.
+
+[^autoscale]: Note that $s_y$ is determined based on the standard deviation in the observed data. This is a way of *autoscaling* the prior.
 
 <!-- solution-begin -->
 
@@ -125,7 +130,7 @@ model_MA <- stan_glm(
 
 ## Study the posterior distribution
 
-(Introduce the posterior)
+Results from a Bayesian model take the form of a *posterior distribution* for the model parameters. The model has two parameters that are closely related to our hypothesis: The slow $m$ and intercept $b$ of the fitted line. "Fitting" the Bayesian model to the Massachusetts dataset will result in a posterior distribution for the parameters, with an example posterior given below:
 
 ```{r posteriors-MA}
 #| warning: false
@@ -232,7 +237,7 @@ tibble(x = seq(-25, +75, length.out = 200)) %>%
   
 <!-- solution-end -->
   
-Let's return to the posterior from our model for the Massachusetts data.
+Let's return to the posterior from our model for the Massachusetts data and use the same reasoning as above to make sense of the results.
 
 ```{r}
 #| warning: false
@@ -271,7 +276,7 @@ df_model_MA %>%
 
 ## Study the posterior predictions
 
-(Describe posterior predictions)
+Bayesian analysis does not produce a "best" line; rather, the posterior distribution implies a *family* of lines (each with a different chance). We call this the *posterior predictive distribution*. For instance, the following visualizes the posterior predictive distribution of lines against the Massachusetts data. This object appears as a "cone" with darker regions corresponding to lines with higher probability (density).
 
 ```{r}
 #| warning: false
@@ -293,7 +298,7 @@ df_data %>%
     aes(y = .value, group = .draw), 
     alpha = 0.01,
     linewidth = 2.0,
-    color = "cyan"
+    color = "blue"
   ) +
   geom_point(size = 0.1) +
   scale_x_continuous(labels = scales::percent) +
@@ -303,6 +308,8 @@ df_data %>%
     y = "Energy Burden Percentile",
   )
 ```
+
+We can use this kind of plot (predictions against observed data) as a way to sanity check the model. You'll do this in the following questions.
 
 ::: {.callout-note icon="false" title="Questions for the Class"}
 - How well do the posterior predictions (transparent blue lines) agree with the data (black dots)? Do they follow the same general trend as the data?
@@ -316,7 +323,7 @@ df_data %>%
 
 # The Prior Distribution
 
-Above, we glossed over how we arrive at a posterior distribution. In addition to the model specification, we must also provide a *prior distribution* for the model's parameters. In a Bayesian analysis the prior represents all of our *prior knowledge* about the problem.
+Above, we glossed over how we arrive at a posterior distribution. In addition to the equation for the line we must also provide a *prior distribution* for the model's parameters. In a Bayesian analysis the prior represents all of our *prior knowledge* about the problem.
 
 For instance, if we were confident that the slope of the Energy Burden vs Percent Black line is positive, we could represent that with a prior distribution that was tightly concentrated at a positive value (Case A below). If we were highly uncertain about the slope, we might represent this case with a prior distribution centered at zero with a very large standard deviation (Case B below).
 
@@ -355,7 +362,7 @@ df_MA_priors %>%
 
 ## Fitting a model: Data + Prior = Posterior
 
-The mathematical details of fitting a Bayesian model is outside the scope of this activity. However, the basic "formula" is:
+The mathematical details of fitting a Bayesian model are outside the scope of this activity. However, the basic "formula" is:
 
 \[ \text{Data} + \text{Model} = \text{Posterior} \]
 
@@ -614,7 +621,7 @@ Print the following three graphs and place them in envelopes labelled for the St
 ```{r}
 #| include: false
 #| echo: false
-#|cache: true
+#| cache: true
 model_CO_MA <- stan_glm(
   data = df_data %>% 
     filter(
@@ -702,7 +709,7 @@ p_CO_MA_predict <-
     aes(y = .value, group = .draw), 
     alpha = 0.01,
     linewidth = 2.0,
-    color = "cyan",
+    color = "blue",
   ) +
   
   geom_point(size = 0.1) +
@@ -754,7 +761,7 @@ p_CO_MN_predict <-
     aes(y = .value, group = .draw), 
     alpha = 0.01,
     linewidth = 2.0,
-    color = "cyan",
+    color = "blue",
   ) +
   
   geom_point(size = 0.1) +
@@ -806,7 +813,7 @@ p_CO_NH_predict <-
     aes(y = .value, group = .draw), 
     alpha = 0.01,
     linewidth = 2.0,
-    color = "cyan",
+    color = "blue",
   ) +
   
   geom_point(size = 0.1) +
@@ -840,22 +847,21 @@ p_CO_NH_predict + p_CO_NH_posterior
 ## Study the results
 
 ::: {.callout-note icon="false" title="Studying Model Results"}
-What does the model suggest about the trend of energy burden with percent Black in Colorado? How confident are you in your conclusion?
+- What does the model suggest about the trend of energy burden with percent Black in Colorado? 
+  - (Write your response here):
+- How confident are you in your conclusion?
+  - (Write your response here):
 :::
 
 <!-- solution-begin -->
-
 -   For the MA-based prior, the posterior predictions do not match the data well. The posterior is extremely confident in a positive slope, which agrees with our hypothesis.
 -   For the MN-based prior, the posterior predictions do match the data well. The posterior is extremely confident in a negative slope, which contradicts our hypothesis.
 -   For the NH-based prior, the posterior predictions do match the data well. The posterior is quite confident in a negative slope, which contradicts our hypothesis. 
-
 <!-- solution-end -->
 
 # Florida
 
-## Deal with Limited Data
-
-(Spin a yarn about how FL might redact their data)
+In some cases, we may find that gathering more data is simply not possible. Let's suppose that, for some reason, Florida is unwilling to provide all of their energy burden data. Therefore, we must figure out what to do with only $n=25$ observations:
 
 ```{r}
 #| warning: false
@@ -875,7 +881,6 @@ df_fl %>%
     energy_burden_percentile
   )) +
   geom_point(size = 1.0) +
-  geom_smooth(method = "lm") +
   scale_x_continuous(labels = scales::percent) +
   theme_minimal() +
   labs(
@@ -884,18 +889,17 @@ df_fl %>%
   )
 ```
 
--   Given the limited data, we can't confidently conclude that there is a positive slope
-
+Given the limited data, our results will depend much more strongly on our prior distribution.
 
 <!-- solution-begin -->
-## (PREP) Print CO results
+## (PREP) Print FL results
 
 Print the following three graphs and place them in envelopes labelled for the State-based prior.
 
 ```{r}
 #| include: false
 #| echo: false
-#|cache: true
+#| cache: true
 model_FL_MA <- stan_glm(
   data = df_fl,
   # Likelihood model
@@ -970,7 +974,7 @@ p_FL_MA_predict <-
     aes(y = .value, group = .draw), 
     alpha = 0.01,
     linewidth = 2.0,
-    color = "cyan",
+    color = "blue",
   ) +
   
   geom_point(size = 0.1) +
@@ -1021,7 +1025,7 @@ p_FL_MN_predict <-
     aes(y = .value, group = .draw), 
     alpha = 0.01,
     linewidth = 2.0,
-    color = "cyan",
+    color = "blue",
   ) +
   
   geom_point(size = 0.1) +
@@ -1072,7 +1076,7 @@ p_FL_NH_predict <-
     aes(y = .value, group = .draw), 
     alpha = 0.01,
     linewidth = 2.0,
-    color = "cyan",
+    color = "blue",
   ) +
   
   geom_point(size = 0.1) +
@@ -1106,8 +1110,11 @@ p_FL_NH_predict + p_FL_NH_posterior
 
 ## Study the posterior predictions
 
-::: {.callout-note icon="false" title="Synthesizing Descriptive Statistics"}
-What does the model suggest about the trend of energy burden with percent Black in Florida? How confident are you in your conclusion?
+::: {.callout-note icon="false" title="Studying Model Results"}
+- What does the model suggest about the trend of energy burden with percent Black in Florida? 
+  - (Write your response here):
+- How confident are you in your conclusion?
+  - (Write your response here):
 :::
 
 <!-- solution-begin -->
@@ -1118,6 +1125,7 @@ What does the model suggest about the trend of energy burden with percent Black 
 
 # Full USA
 
+After waiting some time, we finally get access to the full U.S. CEJS dataset. With such a large dataset, we expect to see that the results will not depend so much on our choice of prior distribution.
 
 <!-- solution-begin -->
 
@@ -1128,7 +1136,7 @@ Print the following three graphs and place them in envelopes labelled for the St
 ```{r}
 #| include: false
 #| echo: false
-#|cache: true
+#| cache: true
 # Random sample of valid observations
 df_USA <- 
   df_data %>% 
@@ -1207,7 +1215,7 @@ p_USA_MA_predict <-
     aes(y = .value, group = .draw), 
     alpha = 0.01,
     linewidth = 2.0,
-    color = "cyan",
+    color = "blue",
   ) +
   
   geom_point(size = 0.1) +
@@ -1256,7 +1264,7 @@ p_USA_MN_predict <-
     aes(y = .value, group = .draw), 
     alpha = 0.01,
     linewidth = 2.0,
-    color = "cyan",
+    color = "blue",
   ) +
   
   geom_point(size = 0.1) +
@@ -1305,7 +1313,7 @@ p_USA_NH_predict <-
     aes(y = .value, group = .draw), 
     alpha = 0.01,
     linewidth = 2.0,
-    color = "cyan",
+    color = "blue",
   ) +
   
   geom_point(size = 0.1) +
@@ -1334,5 +1342,17 @@ p_USA_NH_posterior <-
 p_USA_NH_predict + p_USA_NH_posterior 
 ```
 
+<!-- solution-end -->
 
+## Study the posterior predictions
+
+::: {.callout-note icon="false" title="Studying Model Results"}
+- What does the model suggest about the trend of energy burden with percent Black across the whole U.S.? 
+  - (Write your response here):
+- How confident are you in your conclusion?
+  - (Write your response here):
+:::
+
+<!-- solution-begin -->
+- With all three priors, we would assign a very high posterior probability to the slope being positive.
 <!-- solution-end -->
