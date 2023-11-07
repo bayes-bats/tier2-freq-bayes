@@ -1,6 +1,6 @@
 ### Context
 
-  a. __File__: `00-context.qmd`
+  a. __File__: `00-context-main.qmd`
   b. __Aims__: _Explore in 5E model_. Introduce students to data they will be using in activities and get them thinking about potential questions they may ask of/answer with the data using methods of statistical inference
   c. __Cadence__: Instructor walks through context document and discusses each section with them, focusing on the trends in the data
 
@@ -8,7 +8,7 @@
 ### Activity Introduction
   a. __Files__: 
       - Instructor-facing: `01-introduction.qmd`, `03-one-pager.qmd`
-      - Student-facing: `01-introduction.qmd`, `03-simplified-main.qmd` 
+      - Student-facing: `01-introduction.qmd`,`03-simplified-main.qmd` 
   b. __Aims__: _Engage and Explain in 5E model_. Introduce students to statistical inference broadly defined, the learning objectives for the activity, and the high-level critical differences in Frequentist/Bayesian approaches 
   c. __Cadence__: Instructor walks them through first sections with introduction/LO's and then provides warmup questions (7-10 minutes of discussion time among groups). Groups can share what they know and instructor shares high-level one pager document on differences between statistical inference paradigms. Instructor then finishes discussion with sections on research questions and hypotheses
 
@@ -28,8 +28,14 @@
 ### Activity Closing
   a. __Files__: 
       - Instructor-facing:`04-conclusion.qmd`, `03-one-pager.qmd`
-      - Student-facing: `04-conclusion.qmd`, `03-simplified-main.qmd`, `key-ideas.pptx`
+      - Student-facing: `04-conclusion.qmd`, `03-simplified-main.qmd`
   b. __Aims__: _Evaluate in 5E model_. Students should be able to articulate, through debate/discussion, the differences between the approaches. Highlight difference in starting assumptions and conclusions, despite groups using the same data
-  c. __Cadence__:  Instructor facilitates a group discussion and comparison of Frequentist/Bayesian approaches. Carefully engineer a controversy to further engage students, and highlight the importance of assumptions to statistical conclusions using the critical differences one-pager as a guide
+  c. __Cadence__:  Instructor facilitates a group discussion and comparison of Frequentist/Bayesian approaches. Carefully engineer a controversy to further engage students, and highlight the importance of assumptions to statistical conclusions using the critical differences one-pager as a guide.
+  
+---
+
+TO DO
+
+* create post activity survey, which will be an artifact associated with the conclusion
 
 

@@ -5,7 +5,7 @@ format: pdf
 
 Armed with all of that background knowledge on the CEJS dataset and on statistical inference, we can proceed with a detailed analysis of the data. In particular, we are interested in assessing the following hypothesis:
 
-  | _As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases)._
+  > _As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases)._
 
 In this part of the session you will interpret results from a statistical model fitted to datasets from different U.S. States.
  
@@ -224,7 +224,7 @@ tibble(x = seq(-25, +75, length.out = 200)) %>%
   
 - How does the slope parameter relate to our hypothesis? As a reminder, our hypothesis is:
   
-  | _As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases)._
+  > _As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases)._
   
 <!-- task-begin -->
 
@@ -260,7 +260,7 @@ df_model_MA %>%
 ::: {.callout-note icon="false" title="Questions for the Class"}
 - For Massachusetts, does the fitted model support or contradict our hypothesis? As a reminder, our hypothesis is:
 
-    | *As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).*
+    > *As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).*
     
 <!-- task-begin -->
   - (Write your response here):
