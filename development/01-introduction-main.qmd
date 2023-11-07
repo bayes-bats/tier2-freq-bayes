@@ -59,11 +59,11 @@ All statistical analyses involve making assumptions---we'll practice making and 
 
 Ahead of using data and statistical inference, we usually create theory-based _research questions_ and _hypotheses_ that help guide what we expect to find. Both are focused on an aspect of the world that we want to know more about. However, research questions tend to be open-ended, allowing for discussion on what the outcome might be and what might explain it. For example, a research question about sustainability and diverse communities may look like this:
   
-  | _Why does the projected flood risk vary among different communities in U.S. Census tracts?_
+  > _Why does the projected flood risk vary among different communities in U.S. Census tracts?_
     
 Hypotheses, on the other hand, tend to be closed-ended, articulating a certain relationship between an outcome and the things that influence that outcome. For example, one of the testable hypotheses stemming from the research question on projected flood risk may be:
 
-  | _As the population density of Hispanic communities increases (decreases), the projected flood risk increases (decreases)._
+  > _As the population density of Hispanic communities increases (decreases), the projected flood risk increases (decreases)._
   
 Note that this hypothesis is succinct and testable with the data we have. It is also directly related to our more general research question. 
 
@@ -81,11 +81,11 @@ Given the context we have on sustainability trends among disadvantaged communiti
 
 __Research Question:__ 
 
-  | _Do Black Americans experience a disproportionate level of energy expenditure?_
+  > _Do Black Americans experience a disproportionate level of energy expenditure?_
 
 __Hypothesis:__
 
-  | _As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases)._
+  > _As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases)._
 
 
 Next, we are going to test our hypothesis and answer our research question using the CEJST dataset. We will compare and discuss the results of our analyses using Frequentist and Bayesian methods to see if they align with our expectations based on the approach we took and assumptions we made. 
