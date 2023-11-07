@@ -69,7 +69,29 @@ Note that this hypothesis is succinct and testable with the data we have. It is 
 
 ## Paradigms in Statistical Inference
 
-There are a few different ways to draw conclusions about questions we have using data. We will focus on two inferential perspectives in this class: _Frequentist_ and _Bayesian_. Let's discuss the critical differences between the two paradigms with the [Critical Differences Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-one-pager-main.qmd).
+There are a few different ways to draw conclusions about questions we have using data. We will focus on two inferential perspectives in this class: _Frequentist_ and _Bayesian_. For this activity, we will discuss these differences in the context of **general inference** and **model summaries**. 
+
+For general inference, we are concerned with answering questions about a _larger_ dataset, while only having access to a _smaller_ dataset. We do this by:
+
+1. Translating our question into a mathematical model, which requires assumptions
+2. Fitting the model using data
+3. Interpreting model results in terms of our question
+
+After we have done the general inference steps above, we must think about how to translate what we have done and we have found. 
+
+* Statistical models are complex objects, so we use _model summaries_ to help.
+* Statistical models represent the _uncertainty due to limited data_.
+
+Some common summaries we use:
+
+|Point estimate | Uncertainty | Interval|
+|---------------|-------------|---------|
+|42             |4            |(42 +/- 2x4) = (34, 50) |
+
+: Common Model Summaries {.sm .bordered}
+
+
+Let's discuss the critical differences between the two paradigms with the [Critical Differences Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-simplified-main.qmd).
 
 ::: {.callout-note icon=false title="Frequentist & Bayesian Statistical Inference"}
 How are Frequentist and Bayesian approaches similar? How are they different?
