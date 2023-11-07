@@ -48,6 +48,8 @@ For general inference, we are concerned with answering questions about a _larger
 | Provides: Pr(data $|$ hypothesis) | Provides: Pr(hypothesis $|$ data) |
 | Decision based on hard cut-off | Decision based on posterior distribution |
 
+: General Inference Comparison {.sm .bordered}
+
 **Model Summaries**
 
 Statistical models are complex objects, so we use _model summaries_ to help.
@@ -61,6 +63,9 @@ Some common summaries:
 |---------------|-------------|---------|
 |42             |4            |(42 +/- 2x4) = (34, 50) |
 
+: Common Model Summaries {.sm .bordered}
+
+
 Here are the differences in how Frequentists and Bayesians get model summaries:
 
 
@@ -69,6 +74,9 @@ Here are the differences in how Frequentists and Bayesians get model summaries:
 | Maximum likelihood estimate | Maximum of the posterior density |
 | Standard error | Posterior standard deviation |
 | Confidence interval | Credible interval |
+
+: Model Summary Comparison {.sm .bordered}
+
 
 
 
