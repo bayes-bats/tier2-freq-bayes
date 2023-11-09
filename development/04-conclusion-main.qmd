@@ -31,7 +31,7 @@ Based on these preliminary trends, we used statistical inference to answer our q
 :::
 
 
-## Differences between Frequentist & Bayeisan Approaches
+## Differences between Frequentist & Bayesian Approaches
 
 There are key differences between Frequentist and Bayesian approaches. In the activity, we focused on model summaries and general inference.
 
