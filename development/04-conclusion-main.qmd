@@ -10,11 +10,11 @@ author:
 
 ## Overview
 
-In this activity, we learned more about *statistical inference* and *statistical assumptions* through the lenses of Frequentists and Bayesians. We used the [CEJST dataset](https://screeningtool.geoplatform.gov/en/) to understand general trends around sustainability and disadvantaged communities, as well as crafted specific research questions or hypotheses that we would like to rigorously test with the data we have. Our research question asked:
+In this activity, we learned more about *statistical inference* and *statistical assumptions* through the lenses of Frequentists and Bayesians. We used the [CEJST dataset](https://screeningtool.geoplatform.gov/en/) to understand general trends around sustainability and disadvantaged communities, as well as crafted specific research questions and hypotheses that we would like to rigorously test with the data we have. Our research question asked:
 
   > _Do Black Americans experience a disproportionate level of energy expenditure?_
 
-And our primary hypothesis we wanted to answer is:
+And our primary hypothesis we wanted to test is:
 
   > _As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases)._
   

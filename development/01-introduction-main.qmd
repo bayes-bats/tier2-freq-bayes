@@ -11,7 +11,7 @@ author:
 
 This activity is all about *statistical inference* and *statistical assumptions*. Both are important when you have data and want to use that data to help you better understand some phenomenon about the world. For example, in our [Context Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/00-context-main.qmd) using the CEJST dataset, we used data to understand general trends around sustainability and disadvantaged communities. However, at this point, we have not crafted specific research questions or hypotheses that we would like to rigorously test with the data we have. Nor do we know, with any degree of certainty, how "correct" the trends are that we saw in our data or all the ways that this trend could have occurred. 
 
-There are a few different ways that we can test our hypotheses using methods of statistical inference. Statistical inference allows us to take some data, create a model, and make sense of the complex world around us. Each method has a set of assumptions built into it, which influences the approach you take to answer your research questions, as well as the way you interpret your findings. In the activity that follows, you will have the opportunity to use methods of statistical inference to answer a research question and explain, based on the set of assumpted baked into your approach, your ultimate findings. 
+There are a few different ways that we can test our hypotheses using methods of statistical inference. Statistical inference allows us to take some data, create a model, and make sense of the complex world around us. Each method has a set of assumptions built into it, which influences the approach you take to answer your research questions, as well as the way you interpret your findings. In the activity that follows, you will have the opportunity to use methods of statistical inference to answer a research question and explain, based on the set of assumptions baked into your approach, your ultimate findings. 
 
 ## Learning Objectives
 
@@ -45,7 +45,7 @@ Ask yourself the following questions:
 - What do you know about frequentist and Bayesian statistics? (*Note*: It's okay if you don't know what this means!)
 :::
 
-Discuss these questions with the people at your table.
+Discuss these questions with the people around you.
 
 ## The Big Idea: Inference
 
@@ -77,7 +77,7 @@ For general inference, we are concerned with answering questions about a _larger
 2. Fitting the model using data
 3. Interpreting model results in terms of our question
 
-After we have done the general inference steps above, we must think about how to translate what we have done and we have found. 
+After we have done the general inference steps above, we must think about how to translate what we have done and what we have found. 
 
 * Statistical models are complex objects, so we use _model summaries_ to help.
 * Statistical models represent the _uncertainty due to limited data_.
