@@ -19,13 +19,13 @@ To perform inference we must:
 
 1. Translate our question into a mathematical form,
 2. fit the model using a dataset, then
-3. interpret the results in terms of our original question.
+3. interpret the results in terms of our original question and testable hypothesis.
 
 In order to accomplish (1), we must make a number of *assumptions*. Different statistical approaches use different assumptions....
 
 <!-- solution-begin -->
 
-The Frequentist and Bayesian approaches make very different assumptions about the nature of probability and models. One important distinction is that Frequentists make a *hard, binary decision* when performing a hypothesis test, while Bayesians only every *quantify a degree of belief* in a hypothesis.
+The Frequentist and Bayesian approaches make very different assumptions about the nature of probability and models. One important distinction is that Frequentists make a *hard, binary decision* when performing a hypothesis test, while Bayesians only ever *quantify a degree of belief* in a hypothesis.
 
 | Frequentist | Bayesian | 
 |-------------|----------|
