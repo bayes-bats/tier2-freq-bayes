@@ -186,20 +186,16 @@ Let's imagine three different estimates for the slope parameter $m$: These could
   
 **General inference** 
   
+::: {.callout-note icon=false title="Questions for the Class"}
 - How does the slope parameter relate to our hypothesis? As a reminder, our hypothesis is:
-  
   > _As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases)._
-  
 <!-- task-begin -->
-
   - (Write your response here):
-
 <!-- task-end -->
 <!-- solution-begin -->
-  
   - The slope parameter is directly related to our hypothesis. A positive slope is in agreement with our hypothesis.
-  
 <!-- solution-end -->
+:::
   
 Let's return to the posterior from our model for the Massachusetts data and use the same reasoning as above to make sense of the results.
 
@@ -299,12 +295,15 @@ df_MA_pred %>%
 We can use this kind of plot (predictions against observed data) as a way to sanity check the model. You'll do this in the following questions.
 
 ::: {.callout-note icon="false" title="Questions for the Class"}
-- How well does the prediction (transparent blue line) agree with the data (black dots)? Does the line follow the same general trend as the data?
-<!-- task-begin -->
+- Do all data points (black dots) land directly on the prediction (solid blue line), or do some dots land off of the line?
   - (Write your response here):
-<!-- task-end -->
+- This model represents the *overall trend* in the data well. In your own words, describe how the model fits the overall trend in the data.
+  - (Write your response here):
 <!-- solution-begin -->
-  - The prediction line tends to agree with the data.
+- Do all data points (black dots) land directly on the prediction (solid blue line), or do some dots land off of the line?
+  - No, there is variability in the data that remains unexplained by the model.
+- This model represents the *overall trend* in the data well. In your own words, describe how the model fits the overall trend in the data.
+  - While the data points exhibit a great deal of variability, their average tends to increase from left to right. More formally, their mean conditional on the predictor tends to increase.
 <!-- solution-end -->
 :::
 
@@ -312,13 +311,13 @@ Next, we will apply the same statistical modeling approach to study trends in ot
 
 # Colorado
 
-The following MLE estimates come from a random subset ($n=500$) of the census bureau tracts ($n=1249$).
+The following MLE estimates come from a random subset ($n=500$) of the census bureau tracts ($n=1{,}249$).
 
 ```{r fit-CO}
 #| include: false
 #| echo: false
 #| cache: true
-set.seed(102)
+set.seed(101)
 df_CO <- 
   df_data %>% 
   filter(
@@ -338,9 +337,15 @@ model_CO <-
 
 <!-- solution-begin -->
 ::: {.callout-note icon="false" title="Instructor Note: Sampling"}
-A finer point on estimation that we are not emphasizing in this activity is the difference between sample and population parameters. Formally, if we were to fit the model using all of the relevant CEJS data, we would have the full population---all census tracts in the state. The code above takes a uniform random subset of 500 rows from the dataset so the CI have a meaningful interpretation.
+A finer point on estimation that we are not emphasizing in this activity is the difference between sample and population parameters.
 :::
 <!-- solution-end -->
+
+## Study the results
+
+Study the fitted model results for Colorado and answer the questions below.
+
+**Model Summaries**
 
 ```{r mle-CO}
 #| warning: false
@@ -372,23 +377,7 @@ df_model_CO %>%
   knitr::kable()
 ```
 
-::: {.callout-note icon="false" title="Studying Model Results"}
-- What does the model suggest about the trend of energy burden with percent Black in Colorado? 
-  - (Write your response here):
-- How confident are you in your conclusion? Why?
-  - (Write your response here):
-:::
-
-<!-- solution-begin -->
-- What does the model suggest about the trend of energy burden with percent Black in Colorado? 
-  - Based on the Estimate, the trend is actually *negative*, which directly contradicts our hypothesis.
-- How confident are you in your conclusion? Why?
-  - One should have low confidence in these results, as the confidence interval includes zero. 
-<!-- solution-end -->
-
-## Study the predictions
-
-(Describe posterior predictions)
+**Model Predictions**
 
 ```{r}
 #| warning: false
@@ -440,7 +429,22 @@ df_CO_pred %>%
   )
 ```
 
--   How well do the posterior predictions agree with the data?
+::: {.callout-note icon="false" title="Studying Model Results"}
+- What does the model suggest about the trend of energy burden with percent Black in Colorado? 
+  - (Write your response here):
+- How well do the model predictions match the data?
+  - (Write your response here):
+- How confident are you in your conclusion? Why?
+  - (Write your response here):
+<!-- solution-begin -->
+- What does the model suggest about the trend of energy burden with percent Black in Colorado? 
+  - Based on the Estimate, the trend is actually *negative*, which directly contradicts our hypothesis.
+- How well do the model predictions match the data?
+  - The model predictions follow the general trend of the data, but there is a great deal of unexplained variability.
+- How confident are you in your conclusion? Why?
+  - One should have high confidence in these results, as the confidence interval excludes zero. 
+<!-- solution-end -->
+:::
 
 # Florida
 
@@ -483,7 +487,9 @@ model_FL <-
   )
 ```
 
+## Study the results
 
+**Model Summaries**
 
 ```{r mle-FL}
 #| warning: false
@@ -515,11 +521,7 @@ df_model_FL %>%
   knitr::kable()
 ```
 
--   Do the CI exclude zero?
-
-## Study the MLE predictions
-
-(Describe posterior predictions)
+**Model Predictions**
 
 ```{r}
 #| warning: false
@@ -572,4 +574,153 @@ df_FL_pred %>%
   )
 ```
 
--   How well do the posterior predictions agree with the data?
+::: {.callout-note icon="false" title="Studying Model Results"}
+- What does the model suggest about the trend of energy burden with percent Black in Florida? 
+  - (Write your response here):
+- How well do the model predictions match the data?
+  - (Write your response here):
+- How confident are you in your conclusion? Why?
+  - (Write your response here):
+<!-- solution-begin -->
+- What does the model suggest about the trend of energy burden with percent Black in Florida? 
+  - Based on the Estimate, the trend is *positive*, which supports our hypothesis.
+- How well do the model predictions match the data?
+  - The model predictions follow the general trend of the data, but there is a great deal of unexplained variability.
+- How confident are you in your conclusion? Why?
+  - One should have low confidence in these results, as the confidence interval includes zero. 
+<!-- solution-end -->
+:::
+
+# Full USA
+
+After waiting some time, we finally get access to the full U.S. CEJS dataset. With such a large dataset, we expect to see that the results are well-resolved (have narrow confidence intervals).
+
+```{r fit-CO}
+#| include: false
+#| echo: false
+#| cache: true
+set.seed(101)
+df_USA <- 
+  df_data %>% 
+  filter(
+    !is.na(percent_black_or_african_american_alone),
+    !is.na(energy_burden_percentile)
+  ) %>% 
+  select(energy_burden_percentile, percent_black_or_african_american_alone)
+
+model_USA <- 
+  lm(
+    data = df_USA,
+    formula = energy_burden_percentile ~ percent_black_or_african_american_alone,
+  )
+```
+
+<!-- solution-begin -->
+::: {.callout-note icon="false" title="Instructor Note: Sampling"}
+The code above does not take a subset of the CEJS data. However, there is likely measurement error within each census tract estimate, which leads to meaningful confidence intervals for the parameters.
+:::
+<!-- solution-end -->
+
+## Study the results
+
+**Model Summaries**
+
+```{r mle-FL}
+#| warning: false
+#| echo: false
+#| fig-align: center
+#| fig-height: 8
+df_model_USA <- 
+  model_USA %>% 
+  tidy() %>% 
+  mutate(
+    lower = estimate - 2 * std.error,
+    upper = estimate + 2 * std.error,
+  )
+
+df_model_USA %>% 
+  select(term, lower, estimate, upper) %>% 
+  mutate(
+    term = case_when(
+      term == "(Intercept)" ~ "Intercept",
+      term == "percent_black_or_african_american_alone" ~ "Slope"
+    )
+  ) %>% 
+  mutate(across(
+    c(lower, estimate, upper),
+    ~round(., digits = 1)
+  )) %>% 
+  
+  select(Term = term, Lower = lower, Estimate = estimate, Upper = upper) %>% 
+  knitr::kable()
+```
+
+**Model Predictions**
+
+```{r}
+#| warning: false
+#| echo: false
+#| fig-align: center
+#| fig-height: 8
+
+df_USA_pred <-  
+  tibble(percent_black_or_african_american_alone = seq(
+    min(df_USA$percent_black_or_african_american_alone),
+    max(df_USA$percent_black_or_african_american_alone),
+    length.out = 100
+  ))
+
+df_USA_pred <- 
+  bind_cols(
+    df_USA_pred,
+    predict(
+      model_USA, 
+      interval = 'confidence',
+      newdata = df_USA_pred
+    )
+  )
+
+df_USA_pred %>% 
+
+  ggplot(aes(
+    x = percent_black_or_african_american_alone,
+  )) +
+  geom_point(
+    data = df_USA,
+    mapping = aes(y = energy_burden_percentile),
+    size = 0.5
+  ) +
+  geom_ribbon(
+    aes(ymin = lwr, ymax = upr),
+    fill = "blue",
+    alpha = 1/3
+  ) +
+  geom_line(
+    aes(y = fit),
+    linewidth = 0.7,
+    color = "blue"
+  ) +
+  scale_x_continuous(labels = scales::percent) +
+  theme_minimal() +
+  labs(
+    x = "Percent Black Census Tract",
+    y = "Energy Burden Percentile",
+  )
+```
+
+::: {.callout-note icon="false" title="Studying Model Results"}
+- What does the model suggest about the trend of energy burden with percent Black in the full USA? 
+  - (Write your response here):
+- How well do the model predictions match the data?
+  - (Write your response here):
+- How confident are you in your conclusion? Why?
+  - (Write your response here):
+<!-- solution-begin -->
+- What does the model suggest about the trend of energy burden with percent Black in the full USA? 
+  - Based on the Estimate, the trend is *positive*, which supports our hypothesis.
+- How well do the model predictions match the data?
+  - The model predictions follow the general trend of the data, but there is a great deal of unexplained variability.
+- How confident are you in your conclusion? Why?
+  - One should have high confidence in these results, as the confidence interval excludes zero. 
+<!-- solution-end -->
+:::
