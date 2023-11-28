@@ -1,4 +1,4 @@
-### Context
+### Problem Context
 
   a. __File__: `00-context-main.qmd`
   b. __Aims__: _Explore in 5E model_. Introduce students to data they will be using in activities and get them thinking about potential questions they may ask of/answer with the data using methods of statistical inference
@@ -29,7 +29,7 @@
   a. __Files__: 
       - Instructor-facing:`04-conclusion.qmd`, `03-one-pager.qmd`
       - Student-facing: `04-conclusion.qmd`, `03-simplified-main.qmd`
-  b. __Aims__: _Evaluate in 5E model_. Students should be able to articulate, through debate/discussion, the differences between the approaches. Highlight difference in starting assumptions and conclusions, despite groups using the same data
+  b. __Aims__: _Evaluate in 5E model_. Students should be able to articulate, through debate/discussion, the differences between the approaches. Highlight difference in starting assumptions and conclusions, despite groups using the same data. For instructors, critical piece is being responsible for engineering "controversy" or debate in the classroom using conclusion.qmd document.
   c. __Cadence__:  Instructor facilitates a group discussion and comparison of Frequentist/Bayesian approaches. Carefully engineer a controversy to further engage students, and highlight the importance of assumptions to statistical conclusions using the simplified critical differences one pager as a guide. Instructor can rely on detailed critical difference reference guide if needed, but it is not student facing.
   
 ---
