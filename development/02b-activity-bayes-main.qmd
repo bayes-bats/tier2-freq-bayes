@@ -205,10 +205,8 @@ tibble(x = seq(-25, +75, length.out = 200)) %>%
   - (Write your response here):
 - Which posterior gives the *highest confidence* (*highest probability*) that the slope parameter is positive? How can you tell?
   - (Write your response here):
-:::
 <!-- task-end -->
 <!-- solution-begin -->
-::: {.callout-note icon=false title="Questions for the Class"}
 - Roughly, what fraction of *Posterior Distribution A* is greater than zero?
   - Precisely 57.93%, so roughly 60%
 - Roughly, what fraction of *Posterior Distribution B* is greater than zero?
@@ -217,25 +215,21 @@ tibble(x = seq(-25, +75, length.out = 200)) %>%
   - Essentially 100%
 - Which posterior gives the *highest confidence* (*highest probability*) that the slope parameter is positive? How can you tell?
   - Posterior C, as the probability is essentially 100% (as we identified above).
-:::  
 <!-- solution-end -->
+:::  
   
 **General inference** 
   
+::: {.callout-note icon=false title="Questions for the Class"}
 - How does the slope parameter relate to our hypothesis? As a reminder, our hypothesis is:
-  
   > _As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases)._
-  
 <!-- task-begin -->
-
   - (Write your response here):
-
 <!-- task-end -->
 <!-- solution-begin -->
-  
   - The slope parameter is directly related to our hypothesis. A positive slope is in agreement with our hypothesis.
-  
 <!-- solution-end -->
+:::
   
 Let's return to the posterior from our model for the Massachusetts data and use the same reasoning as above to make sense of the results.
 
@@ -312,12 +306,15 @@ df_data %>%
 We can use this kind of plot (predictions against observed data) as a way to sanity check the model. You'll do this in the following questions.
 
 ::: {.callout-note icon="false" title="Questions for the Class"}
-- How well do the posterior predictions (transparent blue lines) agree with the data (black dots)? Do they follow the same general trend as the data?
-<!-- task-begin -->
+- Do all data points (black dots) land near the predicted lines (transparent blue lines), or do some dots land far from the lines?
   - (Write your response here):
-<!-- task-end -->
+- This model represents the *overall trend* in the data well. In your own words, describe how the model fits the overall trend in the data.
+  - (Write your response here):
 <!-- solution-begin -->
-  - The posterior predictions tend to agree with the data.
+- Do all data points (black dots) land near the predicted lines (transparent blue lines), or do some dots land far from the lines?
+  - No, there is variability in the data that remains unexplained by the model.
+- This model represents the *overall trend* in the data well. In your own words, describe how the model fits the overall trend in the data.
+  - While the data points exhibit a great deal of variability, their average tends to increase from left to right. More formally, their mean conditional on the predictor tends to increase.
 <!-- solution-end -->
 :::
 
@@ -842,17 +839,20 @@ p_CO_NH_predict + p_CO_NH_posterior
 ## Study the results
 
 ::: {.callout-note icon="false" title="Studying Model Results"}
+<!-- task-begin -->
 - What does the model suggest about the trend of energy burden with percent Black in Colorado? 
+  - (Write your response here):
+- How well do the model predictions match the data?
   - (Write your response here):
 - How confident are you in your conclusion?
   - (Write your response here):
-:::
-
+<!-- task-end -->
 <!-- solution-begin -->
 -   For the MA-based prior, the posterior predictions do not match the data well. The posterior is extremely confident in a positive slope, which agrees with our hypothesis.
 -   For the MN-based prior, the posterior predictions do match the data well. The posterior is extremely confident in a negative slope, which contradicts our hypothesis.
 -   For the NH-based prior, the posterior predictions do match the data well. The posterior is quite confident in a negative slope, which contradicts our hypothesis. 
 <!-- solution-end -->
+:::
 
 # Florida
 
@@ -1103,20 +1103,23 @@ p_FL_NH_predict + p_FL_NH_posterior
 
 <!-- solution-begin -->
 
-## Study the posterior predictions
+## Study the results
 
 ::: {.callout-note icon="false" title="Studying Model Results"}
+<!-- task-begin -->
 - What does the model suggest about the trend of energy burden with percent Black in Florida? 
+  - (Write your response here):
+- How well do the model predictions match the data?
   - (Write your response here):
 - How confident are you in your conclusion?
   - (Write your response here):
-:::
-
+<!-- task-end -->
 <!-- solution-begin -->
 - With the MA-based prior, we would assign a high posterior probability to a positive slope
 - With the MN-based prior, we would assign a high posterior probability to a *negative* slope
 - With the NH-based prior, we would have an inconclusive analysis
 <!-- solution-end -->
+:::
 
 # Full USA
 
@@ -1339,15 +1342,19 @@ p_USA_NH_predict + p_USA_NH_posterior
 
 <!-- solution-end -->
 
-## Study the posterior predictions
+## Study the results
 
 ::: {.callout-note icon="false" title="Studying Model Results"}
+<!-- task-end -->
 - What does the model suggest about the trend of energy burden with percent Black across the whole U.S.? 
+  - (Write your response here):
+- How well do the model predictions match the data?
   - (Write your response here):
 - How confident are you in your conclusion?
   - (Write your response here):
-:::
-
+<!-- task-end -->
 <!-- solution-begin -->
 - With all three priors, we would assign a very high posterior probability to the slope being positive.
 <!-- solution-end -->
+:::
+
