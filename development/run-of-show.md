@@ -9,8 +9,8 @@ The activity follows 4 primary steps:
 
 This document outlines at a high level the files (artifacts), aims, and cadence to be followed for each of the steps outlined above. The run of show is also built around the _5E Model Approach_ (engage, explore, explain, elaborate, and evaluate). The 5E Model is goes through two loops throughout the activity:
 
-- The first loop is focused on the applied learning aspects of the activity
-- The second loop is focused on the conceptual learning aspects of the activity
+- The first loop is focused on the applied learning aspects of the activity, or the application of an approach focused on current issues.
+- The second loop is focused on the conceptual learning aspects of the activity, or the ownership of the results that *they* discovered.
 
 The desired goals for each loop in the 5E Model are discussed in more detail below. 
 
@@ -20,8 +20,8 @@ The desired goals for each loop in the 5E Model are discussed in more detail bel
 
   a. __File__: `00-context-main.qmd`
   b. __Aims__: 
-      - _Explore in 5E model_. Introduce students in small groups to data they will be using in activities and get them thinking about potential questions they may ask of/answer with the data using methods of statistical inference
-      - _Explore in 5E model_. 
+      - _Explore in 5E model_ (applied). Introduce students in small groups to data they will be using in activities and get them thinking about potential questions they may ask of/answer with the data using methods of statistical inference
+      - _Explore in 5E model_ (conceptual). Here.
   c. __Cadence__: Instructor walks through context document and discusses each section with them, focusing on the trends in the data
 
 
