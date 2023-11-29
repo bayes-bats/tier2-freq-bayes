@@ -728,6 +728,7 @@ p_CO_MA_posterior <-
   )
 
 p_CO_MA_predict + p_CO_MA_posterior 
+ggsave("./prep/CO_priorMA.png", bg = "white")
 ```
 
 ### MN-based Prior
@@ -780,6 +781,7 @@ p_CO_MN_posterior <-
   )
 
 p_CO_MN_predict + p_CO_MN_posterior 
+ggsave("./prep/CO_priorMN.png", bg = "white")
 ```
 
 ### NH-based Prior
@@ -832,6 +834,7 @@ p_CO_NH_posterior <-
   )
 
 p_CO_NH_predict + p_CO_NH_posterior 
+ggsave("./prep/CO_priorNH.png", bg = "white")
 ```
 
 <!-- solution-end -->
@@ -996,6 +999,7 @@ p_FL_MA_posterior <-
   )
 
 p_FL_MA_predict + p_FL_MA_posterior 
+ggsave("./prep/FL_priorMA.png", bg = "white")
 ```
 
 ### MN-based Prior
@@ -1047,6 +1051,7 @@ p_FL_MN_posterior <-
   )
 
 p_FL_MN_predict + p_FL_MN_posterior 
+ggsave("./prep/FL_priorMN.png", bg = "white")
 ```
 
 ### NH-based Prior
@@ -1098,6 +1103,7 @@ p_FL_NH_posterior <-
   )
 
 p_FL_NH_predict + p_FL_NH_posterior 
+ggsave("./prep/FL_priorNH.png", bg = "white")
 ```
 
 
@@ -1240,6 +1246,7 @@ p_USA_MA_posterior <-
   )
 
 p_USA_MA_predict + p_USA_MA_posterior
+ggsave("./prep/USA_priorMA.png", bg = "white")
 ```
 
 ### MN-based Prior
@@ -1289,6 +1296,7 @@ p_USA_MN_posterior <-
   )
 
 p_USA_MN_predict + p_USA_MN_posterior 
+ggsave("./prep/USA_priorMN.png", bg = "white")
 ```
 
 ### NH-based Prior
@@ -1338,6 +1346,7 @@ p_USA_NH_posterior <-
   )
 
 p_USA_NH_predict + p_USA_NH_posterior 
+ggsave("./prep/USA_priorNH.png", bg = "white")
 ```
 
 <!-- solution-end -->
