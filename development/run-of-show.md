@@ -7,7 +7,7 @@ The activity follows 4 primary steps:
 3. Doing the applied activity 
 4. Closing out the activity
 
-This document outlines the files (artifacts), aims, and cadence to be followed for each of the steps outlined above. The run of show is also built around the _5E Model Approach_ (engage, explore, explain, elaborate, and evaluate). The 5E Model is goes through two loops throughout the activity:
+This document outlines at a high level the files (artifacts), aims, and cadence to be followed for each of the steps outlined above. The run of show is also built around the _5E Model Approach_ (engage, explore, explain, elaborate, and evaluate). The 5E Model is goes through two loops throughout the activity:
 
 - The first loop is focused on the applied learning aspects of the activity
 - The second loop is focused on the conceptual learning aspects of the activity
