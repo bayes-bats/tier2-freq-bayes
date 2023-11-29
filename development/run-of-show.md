@@ -1,7 +1,27 @@
+# Run of Show for Activity
+
+The activity follows 4 primary steps:
+
+1. Setting the context for the real world problem the class is exploring
+2. Introducing the motivation for the activity (statistical approaches) given the context
+3. Doing the applied activity 
+4. Closing out the activity
+
+This document outlines the files (artifacts), aims, and cadence to be followed for each of the steps outlined above. The run of show is also built around the _5E Model Approach_ (engage, explore, explain, elaborate, and evaluate). The 5E Model is goes through two loops throughout the activity:
+
+- The first loop is focused on the applied learning aspects of the activity
+- The second loop is focused on the conceptual learning aspects of the activity
+
+The desired goals for each loop in the 5E Model are discussed in more detail below. 
+
+---
+
 ### Problem Context
 
   a. __File__: `00-context-main.qmd`
-  b. __Aims__: _Explore in 5E model_. Introduce students to data they will be using in activities and get them thinking about potential questions they may ask of/answer with the data using methods of statistical inference
+  b. __Aims__: 
+      - _Explore in 5E model_. Introduce students in small groups to data they will be using in activities and get them thinking about potential questions they may ask of/answer with the data using methods of statistical inference
+      - _Explore in 5E model_. 
   c. __Cadence__: Instructor walks through context document and discusses each section with them, focusing on the trends in the data
 
 
@@ -34,10 +54,6 @@
   
 ---
 
-TO DO
-
-* create post activity survey, which will be an artifact associated with the conclusion
-* Video presentation
 
 
 
