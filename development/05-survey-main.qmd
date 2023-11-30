@@ -31,10 +31,10 @@ This survey is designed to gauge where you believe your understanding of differe
 : Understanding Score Table {#tbl-understand}{.sm .bordered}
 
 The Understanding Score Table looks like this graphically:
-![](05-survey-understand-table.PNG){width=40%}
+![](05-survey-understand-table.PNG){fig-align="center" width=40%}
 
 
-The following survey has four parts: first and in the farthest left-hand column is the XXX. The second from the left column represents the type of change 
+The following survey has three parts: first and in the farthest left-hand column represents the type of change related to your _competency_ in inferential statistics approaches. _Competency_ refers to changes in knowledge, or what you know, as well as changes in skill level, or what you can do. The second and middle column indicates your understanding using @tbl-understand before you started the activity. You will put a check mark in whatever box best represents your understanding <ins>before</ins> the activity. The third and final column indicates your understanding using @tbl-understand after you completed the activity. You will put a check mark in whatever box best represents your understanding <ins>after</ins> the activity.
 
 
 
