@@ -1,5 +1,5 @@
 ---
-title: "Post-pre Survey Instrument [DRAFT]"
+title: "Post-Pre Survey Instrument [DRAFT]"
 subtitle: "Comparing Frequentist and Bayesian Approaches"
 format: html
 bibliography: bibliography.bib
@@ -8,7 +8,33 @@ author:
   - name: Zach del Rosario
 ---
 
-## Survey Design
+## Survey Design^[The instrument draft relies heavily on the sample post-pre survey developed by @kanevsky2014post.]
+
+This survey is designed to gauge where you believe your understanding of different approaches in inferential statistics was before beginning the activity to where it is after completing the activity. The items in the survey ask you to consider where you think you were before the activity, followed by where you think you are now. You will give yourself two ratings to capture this before and after reflection.
+
+**STEPS:**
+
+1. Think about how well you believe you understood inferential statistics approaches before the activity began.
+2. Give yourself a score based on @tbl-understand below to capture this understanding.
+3. Think about how well you believe you understand inferential statistics approaches after the completion of the activity. 
+4. Give yourself a score based on @tbl-understand below to capture this understanding. 
+
+| Score | Meaning | 
+|-------------|----------|
+| 0 | not adequate |
+| 1 | not really adequate, but almost okay |
+| 2 | adequate, but just barely (still okay otherwise score it 0 or 1) |
+| 3 | somewhere between minimally okay and excellent
+| 4 | excellent
+
+
+: Understanding Score Table {#tbl-understand}{.sm .bordered}
+
+The Understanding Score Table looks like this graphically:
+![](05-survey-understand-table.PNG){width=40%}
+
+
+The following survey has four parts: first and in the farthest left-hand column is the XXX. The second from the left column represents the type of change 
 
 
 
@@ -16,8 +42,8 @@ author:
 
 <!-- solution-begin  -->
 
+- This is a post-pre survey design, so it is meant to be administered at the end of the activity
 - Idea is to capture _changes in competence_ (e.g., changes in what students know and are able to do), which is based on research from @hiebert2014power
-- The survey instrument is designed using approaches outlined by @kanevsky2014post
 - Relying on 5E Model Approach [@elby2010epistemological] to achieve change
 
 <!-- solution-end  -->
