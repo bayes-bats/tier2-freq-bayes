@@ -39,12 +39,12 @@ The following survey has three parts: first and in the farthest left-hand column
 
 ::: {#tbl-panel layout-ncol=3}
 
-| Competency | Meaning |
-|------------|---------|
-| here    | here |
-| here    | here |
-| here    | here |
-| here    | here |
+| Competency |
+|------------|
+| here    |
+| here    | 
+| here    | 
+| here    | 
 
 
 : Competency {#tbl-comp}{.sm}
