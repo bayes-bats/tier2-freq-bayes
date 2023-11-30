@@ -1,0 +1,9 @@
+---
+title: "Post-pre Survey Instrument [DRAFT]"
+subtitle: "Comparing Frequentist and Bayesian Approaches"
+format: html
+author: 
+  - name: Stefani Langehennig
+  - name: Zach del Rosario
+---
+
