@@ -2,8 +2,22 @@
 title: "Post-pre Survey Instrument [DRAFT]"
 subtitle: "Comparing Frequentist and Bayesian Approaches"
 format: html
+bibliography: bibliography.bib
 author: 
   - name: Stefani Langehennig
   - name: Zach del Rosario
 ---
+
+## Survey Design
+
+
+
+---
+
+<!-- solution-begin  -->
+
+- Idea is to capture _changes in competence_ (e.g., changes in what students know and are able to do)
+- Relying on 5E Model Approach [@elby2010epistemological] to achieve change
+
+<!-- solution-end  -->
 
