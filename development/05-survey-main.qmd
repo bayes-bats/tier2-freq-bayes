@@ -16,7 +16,8 @@ author:
 
 <!-- solution-begin  -->
 
-- Idea is to capture _changes in competence_ (e.g., changes in what students know and are able to do)
+- Idea is to capture _changes in competence_ (e.g., changes in what students know and are able to do), which is based on research from @hiebert2014power
+- The survey instrument is designed using approaches outlined by @kanevsky2014post
 - Relying on 5E Model Approach [@elby2010epistemological] to achieve change
 
 <!-- solution-end  -->
