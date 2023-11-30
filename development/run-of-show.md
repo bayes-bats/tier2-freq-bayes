@@ -1,4 +1,4 @@
-# Run of Show for Activity
+# Activity Run of Show
 
 The activity follows 4 primary steps:
 
@@ -7,10 +7,18 @@ The activity follows 4 primary steps:
 3. Doing the applied activity 
 4. Closing out the activity
 
-This document outlines at a high level the files (artifacts), aims, and cadence to be followed for each of the steps outlined above. The run of show is also built around the _5E Model Approach_ (engage, explore, explain, elaborate, and evaluate). The 5E Model is goes through two loops throughout the activity:
+This document outlines at a high level the files (artifacts), aims, and cadence to be followed for each of the steps outlined above. The run of show is built around the _5E Model Approach_. The 5E Model goes as follows:
 
-- The first loop is focused on the applied learning aspects of the activity, or the application of an approach focused on current issues.
-- The second loop is focused on the conceptual learning aspects of the activity, or the ownership of the results that <ins>they</ins> discovered.
+- Engage: Get students interested
+- Explore: Students do self-directed inquiry
+- Explain: Give students conceptual tools
+- Elaborate: Let students work with the tools
+- Evaluate: Assess the learning outcomes
+
+The 5E Model goes through two loops throughout the activity:
+
+- The first loop is focused on the applied learning aspects of the activity, or the application of a statistical approach focused on current issues.
+- The second loop is focused on the conceptual learning aspects of the activity, or the ownership of the results that students discovered.
 
 The desired goals for each loop in the 5E Model are discussed in more detail below. 
 
@@ -20,8 +28,8 @@ The desired goals for each loop in the 5E Model are discussed in more detail bel
 
   a. __File__: `00-context-main.qmd`
   b. __Aims__: 
-      - _Explore in 5E model_ (applied). Introduce students in small groups to data they will be using in activities and get them thinking about potential questions they may ask of/answer with the data using methods of statistical inference
-      - _Explore in 5E model_ (conceptual). Students use critical differences one-pager (simplified) to search for explanations and for the contradiction between approaches
+      - _Engage in 5E model_ (applied). Introduce students in small groups to data they will be using in activities and get them thinking about potential questions they may ask of/answer with the data using methods of statistical inference
+      - _Engage in 5E model_ (conceptual). The different questions around the data (context) should motivate their search for an explanation using statistical approaches; 
   c. __Cadence__: Instructor walks through context document and discusses each section with them, focusing on the trends in the data
 
 
@@ -30,8 +38,8 @@ The desired goals for each loop in the 5E Model are discussed in more detail bel
       - Instructor-facing: `01-introduction.qmd`, `03-one-pager.qmd`
       - Student-facing: `01-introduction.qmd`,`03-simplified-main.qmd` 
   b. __Aims__: 
-      - _Engage and Explain in 5E model_ (applied). Introduce students to statistical inference broadly defined, the learning objectives for the activity, and the high-level critical differences in Frequentist/Bayesian approaches 
-      -  _Engage and Explain in 5E model_ (conceptual). Here
+      - _Explore and Explain in 5E model_ (applied). Introduce students to statistical inference broadly defined, the learning objectives for the activity, and the high-level critical differences in Frequentist/Bayesian approaches 
+      -  _Explore and Explain in 5E model_ (conceptual). Here
   c. __Cadence__: Instructor walks them through first sections with introduction/LO's and then provides warmup questions (7-10 minutes of discussion time among groups). Groups can share what they know and instructor shares high-level one pager simplified document on differences between statistical inference paradigms. Instructor then finishes discussion with sections on research questions and hypotheses. The detailed one pager reference guide is a support artifact for the instructor that is not student facing.
 
 
