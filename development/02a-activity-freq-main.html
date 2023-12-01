@@ -62,35 +62,87 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>Armed with all of that background knowledge on the CEJS dataset and on statistical inference, we can proceed with a detailed analysis of the data. In particular, we are interested in assessing the following hypothesis:</p>
+<blockquote class="blockquote">
+<p><em>As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).</em></p>
+</blockquote>
+<p>In this part of the session you will interpret results from a statistical model fitted to datasets from different U.S. States.</p>
 <!-- solution-begin -->
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Instructor Note: Introduction">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Instructor Note: Introduction
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>These are instructor notes; they will be removed from the student-facing assignment file.</p>
-<p>This is the <strong>Frequentist</strong> form of the activity. <!-- solution-end --></p>
+<p>This is the <strong>Frequentist</strong> form of the activity.</p>
+</div>
+</div>
+<!-- solution-end -->
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>(Preview the overview figure)</p>
+<p>Throughout this activity, you will be studying a statistical model fitted to data from the CEJS dataset. As a reminder, we are interested in the <code>Energy Burden Percentile</code> (higher values correspond to a higher burden) and the <code>Percent Black Census Tract</code> (which measures the number of people in a region who are Black).</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-overview" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="02a-activity-freq-main_files/figure-html/fig-overview-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: <strong>?(caption)</strong></figcaption>
+<figcaption class="figure-caption">Figure&nbsp;1: CEJS data for Massachusetts.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<ul>
-<li>Florida and Massachusetts have a clear positive trend; this is evidence of inequitable outcomes</li>
-<li>Colorado has a negative trend; this is a surprising result</li>
-</ul>
+<p>From this scatterplot, we can see that the energy burden seems to increase as the percent Black increases. However, we can make this rough observation more formal by using a statistical model.</p>
 </section>
 <section id="analyze-a-frequentist-model" class="level1">
 <h1>Analyze a Frequentist Model</h1>
-<p>(Introduce the Frequentist model)</p>
-<p>[ B = m P + b, ]</p>
-<p>where <span class="math inline">\(B\)</span> is the energy burden percentile, <span class="math inline">\(P\)</span> is the percent black, <span class="math inline">\(m\)</span> is the slope parameter, and <span class="math inline">\(b\)</span> is the intercept parameter.</p>
-<section id="study-the-mle-estimates" class="level2">
-<h2 class="anchored" data-anchor-id="study-the-mle-estimates">Study the MLE estimates</h2>
-<p>(Introduce the MLE estimates)</p>
+<p>To analyze the dataset, we will use the following statistical model,</p>
+<p><span class="math display">\[ B = m P + b + \epsilon \]</span></p>
+<p>where <span class="math inline">\(B\)</span> is the energy burden percentile, <span class="math inline">\(P\)</span> is the percent Black, <span class="math inline">\(m\)</span> is the slope parameter, <span class="math inline">\(b\)</span> is the intercept parameter, and <span class="math inline">\(\epsilon\)</span> is a <em>residual</em> term that represents factors not accounted in the model. The residual term is assumed to be normally distributed <span class="math inline">\(\epsilon \sim N(0, \sigma^2)\)</span> with an unknown parameter <span class="math inline">\(\sigma^2\)</span>. All three parameters are assumed to have fixed but unknown values that depend on the population we aim to study, and that we will estimate imperfectly using data.</p>
+<!-- solution-begin -->
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Instructor Note: Model Assumptions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Instructor Note: Model Assumptions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that this model makes a number of important assumptions, which students may identify and question. We recommend validating student input, but try to maintain a focus on the assumptions that are aligned with the lesson’s learning objectives. We enumerate important model assumptions, ramifications, and relevance to learning objectives here:</p>
+<ul>
+<li>The responses <span class="math inline">\(B_i\)</span> are independent when conditioned on the percent Black <span class="math inline">\(P\)</span>.
+<ul>
+<li>This is almost surely not true as there are a variety of other factors that affect one’s energy burden, such as State-level economic policies. These other factors are not entirely captured in our lone predictor (<span class="math inline">\(P\)</span>), which may manifest as association between the observed responses (<span class="math inline">\(B_i\)</span>). This will lead to an <em>omitted variable bias</em> in our estimates.</li>
+<li>While omitted variable bias is an important consideration, it is outside the learning objectives in this lesson since this assumption is shared between the Frequentist and Bayesian approaches.</li>
+</ul></li>
+<li>The structure of the response is linear; that is <span class="math inline">\(B = m P + b + \epsilon\)</span>.
+<ul>
+<li>This discounts the possibility of nonlinearity; for instance, there could be little change in the mean energy burden at small percent Black, but much larger change at higher values.</li>
+<li>While the structure of the response is an important consideration, it is outside the learning objectives in this lesson since this assumption is shared between the Frequentist and Bayesian approaches.</li>
+</ul></li>
+<li>Residuals are normally distributed <span class="math inline">\(\epsilon \sim N(0, \sigma^2)\)</span> with constant <span class="math inline">\(\sigma^2\)</span>.
+<ul>
+<li>This will never be exactly true, which we can check by inspecting the residuals. This assumptions has implications for our predictive uncertainty; for instance, assuming a constant <span class="math inline">\(\sigma^2\)</span> discounts the possibility of heteroskedasticity.</li>
+<li>While the residual distribution is an important consideration, it is outside the learning objectives in this lesson since this assumption is shared between the Frequentist and Bayesian approaches.</li>
+</ul></li>
+<li>The intercept <span class="math inline">\(b\)</span> and slope <span class="math inline">\(m\)</span> parameters are treated as fixed but unknown values.
+<ul>
+<li>This is a fundamental component of the Frequentist approach that differs from the Bayesian approach, and hence is directly related to the lesson’s learning objectives.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- solution-end -->
+<section id="study-the-estimates" class="level2">
+<h2 class="anchored" data-anchor-id="study-the-estimates">Study the estimates</h2>
+<p>Unknown parameters are often estimated using a technique called <em>maximum likelihood estimation</em> (MLE). This is an approach that is outside the scope of this activity. However, given a model and data, we can use MLE to estimate “best fit” parameter values for the intercept <span class="math inline">\(b\)</span> and slope <span class="math inline">\(m\)</span> parameters.</p>
+<p>When fitting a model, we should also assess the <em>uncertainty</em> in our estimated parameters. MLE estimates are usually reported with <em>confidence intervals</em> (CI), which represent a plausible range for the population parameter values we aim to estimate. The following table reports estimates and confidence intervals for the intercept and slope parameters using data from Massachusetts only.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
@@ -119,36 +171,135 @@ ul.task-list li input[type="checkbox"] {
 </table>
 </div>
 </div>
-<ul>
-<li>Do the CI exclude zero?</li>
-</ul>
+<p>Confidence intervals helps us determine <strong>how confident</strong> we should be in conclusions drawn from the model. The next exercise will help you assess confidence in results based on the fitted model.</p>
 </section>
 <section id="assessing-confidence" class="level2">
 <h2 class="anchored" data-anchor-id="assessing-confidence">Assessing confidence</h2>
-<p>TODO teach students how to do this through an example</p>
-</section>
-<section id="study-the-mle-predictions" class="level2">
-<h2 class="anchored" data-anchor-id="study-the-mle-predictions">Study the MLE predictions</h2>
-<p>(Describe posterior predictions)</p>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="02a-activity-freq-main_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<p>Let’s imagine three different estimates for the slope parameter <span class="math inline">\(m\)</span>: These could arise from using three different datasets to estimate the same population parameters:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Scenario</th>
+<th>Lower</th>
+<th>Estimate</th>
+<th>Upper</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>-23</td>
+<td>2</td>
+<td>+25</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>-5</td>
+<td>15</td>
+<td>+35</td>
+</tr>
+<tr class="odd">
+<td>C</td>
+<td>+5</td>
+<td>13</td>
+<td>+20</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Model summaries</strong></p>
+<!-- task-begin -->
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Questions for the Class">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Questions for the Class
 </div>
 </div>
-</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>How well do the posterior predictions agree with the data?</li>
+<li>Which scenario gives the largest estimate for the slope?
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
+<li>Does the confidence interval for Scenario A include zero? (NB. A confidence interval includes zero if <code>Lower &lt; 0 &lt; Upper</code>.)
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
+<li>Does the confidence interval for Scenario B include zero?
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
+<li>Does the confidence interval for Scenario C include zero?
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
+<li>If a confidence interval includes zero, this indicates that we <strong>cannot</strong> conclude whether the slope is positive or negative. For which scenarios can we not conclude whether the slope is positive or negative?
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
 </ul>
-</section>
-</section>
-<section id="colorado" class="level1">
-<h1>Colorado</h1>
-<section id="study-the-mle-estimates-1" class="level2">
-<h2 class="anchored" data-anchor-id="study-the-mle-estimates-1">Study the MLE estimates</h2>
-<p>(Introduce the MLE estimates)</p>
+</div>
+</div>
+<!-- task-end -->
+<!-- solution-begin -->
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Questions for the Class">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Questions for the Class
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Which scenario gives the largest estimate for the slope?
+<ul>
+<li>Scenario B</li>
+</ul></li>
+<li>Does the confidence interval for Scenario A include zero? (NB. A confidence interval includes zero if <code>Lower &lt; 0 &lt; Upper</code>.)
+<ul>
+<li>Yes</li>
+</ul></li>
+<li>Does the confidence interval for Scenario B include zero?
+<ul>
+<li>Yes</li>
+</ul></li>
+<li>Does the confidence interval for Scenario C include zero?
+<ul>
+<li>No</li>
+</ul></li>
+<li>If a confidence interval includes zero, this indicates that we <strong>cannot</strong> conclude whether the slope is positive or negative. For which scenarios can we not conclude whether the slope is positive or negative?
+<ul>
+<li>Scenarios A and B</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- solution-end -->
+<p><strong>General inference</strong></p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Questions for the Class">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Questions for the Class
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>How does the slope parameter relate to our hypothesis? As a reminder, our hypothesis is: &gt; <em>As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).</em> <!-- task-begin -->
+<ul>
+<li>(Write your response here): <!-- task-end --> <!-- solution-begin --></li>
+<li>The slope parameter is directly related to our hypothesis. A positive slope is in agreement with our hypothesis. <!-- solution-end --></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<p>Let’s return to the posterior from our model for the Massachusetts data and use the same reasoning as above to make sense of the results.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
@@ -163,46 +314,149 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Intercept</td>
-<td style="text-align: right;">24.4</td>
-<td style="text-align: right;">26.1</td>
-<td style="text-align: right;">27.8</td>
+<td style="text-align: right;">49.4</td>
+<td style="text-align: right;">50.8</td>
+<td style="text-align: right;">52.2</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Slope</td>
-<td style="text-align: right;">-48.9</td>
-<td style="text-align: right;">-24.3</td>
-<td style="text-align: right;">0.3</td>
+<td style="text-align: right;">43.1</td>
+<td style="text-align: right;">52.5</td>
+<td style="text-align: right;">61.8</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Questions for the Class">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Questions for the Class
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>Do the CI exclude zero?</li>
+<li><p>For Massachusetts, does the fitted model support or contradict our hypothesis? As a reminder, our hypothesis is:</p>
+<blockquote class="blockquote">
+<p><em>As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).</em></p>
+</blockquote></li>
 </ul>
+<!-- task-begin -->
+<ul>
+<li>(Write your response here):</li>
+<li>How confident are you in the model results? Why?
+<ul>
+<li>(Write your response here): <!-- task-end --> <!-- solution-begin --></li>
+<li>The fitted model supports our hypothesis (the estimated slope is positive).</li>
+</ul></li>
+<li>How confident are you in the model results? Why?
+<ul>
+<li>Fairly confident; the model gives a CI for the slope parameter that does not include zero. <!-- solution-end --></li>
+</ul></li>
+</ul>
+</div>
+</div>
 </section>
-<section id="study-the-mle-predictions-1" class="level2">
-<h2 class="anchored" data-anchor-id="study-the-mle-predictions-1">Study the MLE predictions</h2>
-<p>(Describe posterior predictions)</p>
+<section id="study-the-prediction" class="level2">
+<h2 class="anchored" data-anchor-id="study-the-prediction">Study the prediction</h2>
+<p>Frequentist analysis with our model <span class="math inline">\(B = m P + b + \epsilon\)</span> produces a “best-fit” line along with a “confidence band” created by the uncertainty in the estimated parameters <span class="math inline">\(m, b\)</span>. For instance, the following visualizes the maximum likelihood estimated line against the Massachusetts data. This object appears as a single best-fit line with a transparent confidence band.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="02a-activity-freq-main_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="02a-activity-freq-main_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+<p>We can use this kind of plot (predictions against observed data) as a way to sanity check the model. You’ll do this in the following questions.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Questions for the Class">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Questions for the Class
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>How well do the posterior predictions agree with the data?</li>
+<li>Do all data points (black dots) land directly on the prediction (solid blue line), or do some dots land off of the line?
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
+<li>This model represents the <em>overall trend</em> in the data well. In your own words, describe how the model fits the overall trend in the data.
+<ul>
+<li>(Write your response here): <!-- solution-begin --></li>
+</ul></li>
+<li>Do all data points (black dots) land directly on the prediction (solid blue line), or do some dots land off of the line?
+<ul>
+<li>No, there is variability in the data that remains unexplained by the model.</li>
+</ul></li>
+<li>This model represents the <em>overall trend</em> in the data well. In your own words, describe how the model fits the overall trend in the data.
+<ul>
+<li>While the data points exhibit a great deal of variability, their average tends to increase from left to right. More formally, their mean conditional on the predictor tends to increase. <!-- solution-end --></li>
+</ul></li>
 </ul>
+</div>
+</div>
+<p>Next, we will apply the same statistical modeling approach to study trends in other states.</p>
 </section>
 </section>
-<section id="florida" class="level1">
-<h1>Florida</h1>
-<section id="deal-with-limited-data" class="level2">
-<h2 class="anchored" data-anchor-id="deal-with-limited-data">Deal with Limited Data</h2>
-<p>(Spin a yarn about how FL might redact their data)</p>
+<section id="colorado" class="level1">
+<h1>Colorado</h1>
+<p>The following MLE estimates come from a random subset (<span class="math inline">\(n=500\)</span>) of the census bureau tracts (<span class="math inline">\(n=1{,}249\)</span>).</p>
+<!-- solution-begin -->
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Instructor Note: Sampling">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Instructor Note: Sampling
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A finer point on estimation that we are not emphasizing in this activity is the difference between sample and population parameters.</p>
+</div>
+</div>
+<!-- solution-end -->
+<section id="study-the-results" class="level2">
+<h2 class="anchored" data-anchor-id="study-the-results">Study the results</h2>
+<p>Study the fitted model results for Colorado and answer the questions below.</p>
+<p><strong>Model Summaries</strong></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Term</th>
+<th style="text-align: right;">Lower</th>
+<th style="text-align: right;">Estimate</th>
+<th style="text-align: right;">Upper</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Intercept</td>
+<td style="text-align: right;">25.1</td>
+<td style="text-align: right;">27.8</td>
+<td style="text-align: right;">30.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Slope</td>
+<td style="text-align: right;">-82.1</td>
+<td style="text-align: right;">-47.4</td>
+<td style="text-align: right;">-12.7</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>Model Predictions</strong></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -212,10 +466,61 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Studying Model Results">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Studying Model Results
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>What does the model suggest about the trend of energy burden with percent Black in Colorado?
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
+<li>How well do the model predictions match the data?
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
+<li>How confident are you in your conclusion? Why?
+<ul>
+<li>(Write your response here): <!-- solution-begin --></li>
+</ul></li>
+<li>What does the model suggest about the trend of energy burden with percent Black in Colorado?
+<ul>
+<li>Based on the Estimate, the trend is actually <em>negative</em>, which directly contradicts our hypothesis.</li>
+</ul></li>
+<li>How well do the model predictions match the data?
+<ul>
+<li>The model predictions follow the general trend of the data, but there is a great deal of unexplained variability.</li>
+</ul></li>
+<li>How confident are you in your conclusion? Why?
+<ul>
+<li>One should have high confidence in these results, as the confidence interval excludes zero. <!-- solution-end --></li>
+</ul></li>
+</ul>
+</div>
+</div>
 </section>
-<section id="study-the-mle-estimates-2" class="level2">
-<h2 class="anchored" data-anchor-id="study-the-mle-estimates-2">Study the MLE estimates</h2>
-<p>(Introduce the MLE estimates)</p>
+</section>
+<section id="florida" class="level1">
+<h1>Florida</h1>
+<p>In some cases, we may find that gathering more data is simply not possible. Let’s suppose that, for some reason, Florida is unwilling to provide all of their energy burden data, and instead provide only <span class="math inline">\(n=25\)</span> of their <span class="math inline">\(n=4{,}245\)</span> census tracts. In this case, the confidence intervals will tend to be very wide due (in part) to limited data.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02a-activity-freq-main_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="study-the-results-1" class="level2">
+<h2 class="anchored" data-anchor-id="study-the-results-1">Study the results</h2>
+<p><strong>Model Summaries</strong></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <table class="table table-sm table-striped small">
@@ -244,25 +549,153 @@ ul.task-list li input[type="checkbox"] {
 </table>
 </div>
 </div>
-<ul>
-<li>Do the CI exclude zero?</li>
-</ul>
-</section>
-<section id="study-the-mle-predictions-2" class="level2">
-<h2 class="anchored" data-anchor-id="study-the-mle-predictions-2">Study the MLE predictions</h2>
-<p>(Describe posterior predictions)</p>
+<p><strong>Model Predictions</strong></p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="02a-activity-freq-main_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="02a-activity-freq-main_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Studying Model Results">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Studying Model Results
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>How well do the posterior predictions agree with the data?</li>
+<li>What does the model suggest about the trend of energy burden with percent Black in Florida?
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
+<li>How well do the model predictions match the data?
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
+<li>How confident are you in your conclusion? Why?
+<ul>
+<li>(Write your response here): <!-- solution-begin --></li>
+</ul></li>
+<li>What does the model suggest about the trend of energy burden with percent Black in Florida?
+<ul>
+<li>Based on the Estimate, the trend is <em>positive</em>, which supports our hypothesis.</li>
+</ul></li>
+<li>How well do the model predictions match the data?
+<ul>
+<li>The model predictions follow the general trend of the data, but there is a great deal of unexplained variability.</li>
+</ul></li>
+<li>How confident are you in your conclusion? Why?
+<ul>
+<li>One should have low confidence in these results, as the confidence interval includes zero. <!-- solution-end --></li>
+</ul></li>
 </ul>
+</div>
+</div>
+</section>
+</section>
+<section id="full-usa" class="level1">
+<h1>Full USA</h1>
+<p>After waiting some time, we finally get access to the full U.S. CEJS dataset. With such a large dataset, we expect to see that the results are well-resolved (have narrow confidence intervals).</p>
+<!-- solution-begin -->
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Instructor Note: Sampling">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Instructor Note: Sampling
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The code above does not take a subset of the CEJS data. However, there is likely measurement error within each census tract estimate, which leads to meaningful confidence intervals for the parameters.</p>
+</div>
+</div>
+<!-- solution-end -->
+<section id="study-the-results-2" class="level2">
+<h2 class="anchored" data-anchor-id="study-the-results-2">Study the results</h2>
+<p><strong>Model Summaries</strong></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Term</th>
+<th style="text-align: right;">Lower</th>
+<th style="text-align: right;">Estimate</th>
+<th style="text-align: right;">Upper</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Intercept</td>
+<td style="text-align: right;">43.6</td>
+<td style="text-align: right;">43.8</td>
+<td style="text-align: right;">44</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Slope</td>
+<td style="text-align: right;">42.1</td>
+<td style="text-align: right;">43.0</td>
+<td style="text-align: right;">44</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>Model Predictions</strong></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02a-activity-freq-main_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Studying Model Results">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Studying Model Results
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>What does the model suggest about the trend of energy burden with percent Black in the full USA?
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
+<li>How well do the model predictions match the data?
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
+<li>How confident are you in your conclusion? Why?
+<ul>
+<li>(Write your response here): <!-- solution-begin --></li>
+</ul></li>
+<li>What does the model suggest about the trend of energy burden with percent Black in the full USA?
+<ul>
+<li>Based on the Estimate, the trend is <em>positive</em>, which supports our hypothesis.</li>
+</ul></li>
+<li>How well do the model predictions match the data?
+<ul>
+<li>The model predictions follow the general trend of the data, but there is a great deal of unexplained variability.</li>
+</ul></li>
+<li>How confident are you in your conclusion? Why?
+<ul>
+<li>One should have high confidence in these results, as the confidence interval excludes zero. <!-- solution-end --></li>
+</ul></li>
+</ul>
+</div>
+</div>
 </section>
 </section>
 

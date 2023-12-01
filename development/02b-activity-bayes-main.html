@@ -62,35 +62,90 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>Armed with all of that background knowledge on the CEJS dataset and on statistical inference, we can proceed with a detailed analysis of the data. In particular, we are interested in assessing the following hypothesis:</p>
+<blockquote class="blockquote">
+<p><em>As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).</em></p>
+</blockquote>
+<p>In this part of the session you will interpret results from a statistical model fitted to datasets from different U.S. States.</p>
 <!-- solution-begin -->
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Instructor Note: Introduction">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Instructor Note: Introduction
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>These are instructor notes; they will be removed from the student-facing assignment file.</p>
-<p>This is the <strong>Bayesian</strong> form of the activity. <!-- solution-end --></p>
+<p>This is the <strong>Bayesian</strong> form of the activity.</p>
+</div>
+</div>
+<!-- solution-end -->
 <section id="overview" class="level1">
 <h1>Overview</h1>
-<p>(Preview the overview figure)</p>
+<p>Throughout this activity, you will be studying a statistical model fitted to data from the CEJS dataset. As a reminder, we are interested in the <code>Energy Burden Percentile</code> (higher values correspond to a higher burden) and the <code>Percent Black Census Tract</code> (which measures the number of people in a region who are Black).</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div id="fig-overview" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="02b-activity-bayes-main_files/figure-html/fig-overview-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: <strong>?(caption)</strong></figcaption>
+<figcaption class="figure-caption">Figure&nbsp;1: CEJS data for Massachusetts.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<ul>
-<li>Florida and Massachusetts have a clear positive trend; this is evidence of inequitable outcomes</li>
-<li>Colorado has a negative trend; this is a surprising result</li>
-</ul>
+<p>From this scatterplot, we can see that the energy burden seems to increase as the percent Black increases. However, we can make this rough observation more formal by using a statistical model.</p>
 </section>
 <section id="analyze-a-bayesian-model" class="level1">
 <h1>Analyze a Bayesian Model</h1>
-<p>(Introduce the Bayesian model)</p>
-<p>[ B = m P + b, ]</p>
-<p>where <span class="math inline">\(B\)</span> is the energy burden percentile, <span class="math inline">\(P\)</span> is the percent black, <span class="math inline">\(m\)</span> is the slope parameter, and <span class="math inline">\(b\)</span> is the intercept parameter.</p>
+<p>To analyze the dataset, we will use the following statistical model,</p>
+<p><span class="math display">\[ B = m P + b + \epsilon \]</span></p>
+<p>where <span class="math inline">\(B\)</span> is the energy burden percentile, <span class="math inline">\(P\)</span> is the percent Black, <span class="math inline">\(m\)</span> is the slope parameter, <span class="math inline">\(b\)</span> is the intercept parameter, and <span class="math inline">\(\epsilon\)</span> is a <em>residual</em> term that represents factors not accounted in the model. The residual term is assumed to be normally distributed <span class="math inline">\(\epsilon \sim N(0, \sigma^2)\)</span> with an unknown parameter <span class="math inline">\(\sigma^2\)</span>. All three parameters have a prior distribution, defined via</p>
+<p><span class="math display">\[
+\begin{aligned} m \sim N(\mu_m, \sigma_m^2), \\ b \sim N(\mu_b, \sigma_b^2), \\ \sigma^2 \sim \text{Exponential}(1/s_y), \end{aligned}
+\]</span></p>
+<p>where <span class="math inline">\(m, b, \sigma^2\)</span> are independent.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> We will discuss how to set the prior through its parameter values <span class="math inline">\(\mu_m, \mu_b, \sigma_m^2, \sigma_b^2\)</span> later in this activity.</p>
+<!-- solution-begin -->
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Instructor Note: Model Assumptions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Instructor Note: Model Assumptions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that this model makes a number of important assumptions, which students may identify and question. We recommend validating student input, but try to maintain a focus on the assumptions that are aligned with the lesson’s learning objectives. We enumerate important model assumptions, ramifications, and relevance to learning objectives here:</p>
+<ul>
+<li>The responses <span class="math inline">\(B_i\)</span> are independent when conditioned on the percent Black <span class="math inline">\(P\)</span>.
+<ul>
+<li>This is almost surely not true as there are a variety of other factors that affect one’s energy burden, such as State-level economic policies. These other factors are not entirely captured in our lone predictor (<span class="math inline">\(P\)</span>), which may manifest as association between the observed responses (<span class="math inline">\(B_i\)</span>). This will lead to an <em>omitted variable bias</em> in our estimates.</li>
+<li>While omitted variable bias is an important consideration, it is outside the learning objectives in this lesson since this assumption is shared between the Frequentist and Bayesian approaches.</li>
+</ul></li>
+<li>The structure of the response is linear; that is <span class="math inline">\(B = m P + b + \epsilon\)</span>.
+<ul>
+<li>This discounts the possibility of nonlinearity; for instance, there could be little change in the mean energy burden at small percent Black, but much larger change at higher values.</li>
+<li>While the structure of the response is an important consideration, it is outside the learning objectives in this lesson since this assumption is shared between the Frequentist and Bayesian approaches.</li>
+</ul></li>
+<li>Residuals are normally distributed <span class="math inline">\(\epsilon \sim N(0, \sigma^2)\)</span> with constant <span class="math inline">\(\sigma^2\)</span>.
+<ul>
+<li>This will never be exactly true, which we can check by inspecting the residuals. This assumptions has implications for our predictive uncertainty; for instance, assuming a constant <span class="math inline">\(\sigma^2\)</span> discounts the possibility of heteroskedasticity.</li>
+<li>While the residual distribution is an important consideration, it is outside the learning objectives in this lesson since this assumption is shared between the Frequentist and Bayesian approaches.</li>
+</ul></li>
+<li>The intercept <span class="math inline">\(b\)</span> and slope <span class="math inline">\(m\)</span> parameters are treated as random variables with a distribution that represents our state of knowledge.
+<ul>
+<li>This is a fundamental component of the Bayesian approach, and hence is directly related to the lesson’s learning objectives.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- solution-end -->
 <section id="study-the-posterior-distribution" class="level2">
 <h2 class="anchored" data-anchor-id="study-the-posterior-distribution">Study the posterior distribution</h2>
-<p>(Introduce the posterior)</p>
+<p>Results from a Bayesian model take the form of a <em>posterior distribution</em> for the model parameters. The model has two parameters that are closely related to our hypothesis: The slope <span class="math inline">\(m\)</span> and intercept <span class="math inline">\(b\)</span> of the fitted line. “Fitting” the Bayesian model to the Massachusetts dataset will result in a posterior distribution for the parameters, with an example posterior given below:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -100,28 +155,89 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Synthesizing Descriptive Statistics">
+<p>The posterior distribution helps us determine <strong>how confident</strong> we should be in conclusions drawn from the model. The next exercise will help you assess confidence in results based on the fitted model.</p>
+</section>
+<section id="assessing-confidence" class="level2">
+<h2 class="anchored" data-anchor-id="assessing-confidence">Assessing confidence</h2>
+<p>Let’s imagine three different posterior distributions for the posterior (marginal) distribution for the slope parameter <span class="math inline">\(m\)</span>.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02b-activity-bayes-main_files/figure-html/notional-posteriors-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Model summaries</strong></p>
+<!-- task-begin -->
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Questions for the Class">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Synthesizing Descriptive Statistics
+Questions for the Class
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Which model parameter describes the <strong>trend</strong> of the energy burden? What does the posterior say about that parameter value?</p>
+<ul>
+<li>Roughly, what fraction of <em>Posterior Distribution A</em> is greater than zero?
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
+<li>Roughly, what fraction of <em>Posterior Distribution B</em> is greater than zero?
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
+<li>Roughly, what fraction of <em>Posterior Distribution C</em> is greater than zero?
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
+<li>Which posterior gives the <em>highest confidence</em> (<em>highest probability</em>) that the slope parameter is positive? How can you tell?
+<ul>
+<li>(Write your response here): <!-- task-end --> <!-- solution-begin --></li>
+</ul></li>
+<li>Roughly, what fraction of <em>Posterior Distribution A</em> is greater than zero?
+<ul>
+<li>Precisely 57.93%, so roughly 60%</li>
+</ul></li>
+<li>Roughly, what fraction of <em>Posterior Distribution B</em> is greater than zero?
+<ul>
+<li>Precisely 89.44%, so roughly 90%</li>
+</ul></li>
+<li>Roughly, what fraction of <em>Posterior Distribution C</em> is greater than zero?
+<ul>
+<li>Essentially 100%</li>
+</ul></li>
+<li>Which posterior gives the <em>highest confidence</em> (<em>highest probability</em>) that the slope parameter is positive? How can you tell?
+<ul>
+<li>Posterior C, as the probability is essentially 100% (as we identified above). <!-- solution-end --></li>
+</ul></li>
+</ul>
 </div>
 </div>
-<p>The posterior distribution helps us determine <strong>how confident</strong> we should be in conclusions drawn from the model.</p>
-</section>
-<section id="assessing-confidence" class="level2">
-<h2 class="anchored" data-anchor-id="assessing-confidence">Assessing confidence</h2>
-<p>TODO teach students how to do this through an example</p>
-</section>
-<section id="study-the-posterior-predictions" class="level2">
-<h2 class="anchored" data-anchor-id="study-the-posterior-predictions">Study the posterior predictions</h2>
-<p>(Describe posterior predictions)</p>
+<p><strong>General inference</strong></p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Questions for the Class">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Questions for the Class
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>How does the slope parameter relate to our hypothesis? As a reminder, our hypothesis is: &gt; <em>As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).</em> <!-- task-begin -->
+<ul>
+<li>(Write your response here): <!-- task-end --> <!-- solution-begin --></li>
+<li>The slope parameter is directly related to our hypothesis. A positive slope is in agreement with our hypothesis. <!-- solution-end --></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<p>Let’s return to the posterior from our model for the Massachusetts data and use the same reasoning as above to make sense of the results.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -131,16 +247,41 @@ Synthesizing Descriptive Statistics
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Questions for the Class">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Questions for the Class
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>How well do the posterior predictions agree with the data?</li>
+<li><p>For Massachusetts, does the fitted model support or contradict our hypothesis? As a reminder, our hypothesis is:</p>
+<blockquote class="blockquote">
+<p><em>As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).</em></p>
+</blockquote></li>
 </ul>
+<!-- task-begin -->
+<ul>
+<li>(Write your response here):</li>
+<li>How confident are you in the model results?
+<ul>
+<li>(Write your response here): <!-- task-end --> <!-- solution-begin --></li>
+<li>The fitted model supports our hypothesis.</li>
+</ul></li>
+<li>How confident are you in the model results?
+<ul>
+<li>The model assigns a nearly 100% probability to a positive slope, which suggests a high confidence in a positive slope. <!-- solution-end --></li>
+</ul></li>
+</ul>
+</div>
+</div>
 </section>
-</section>
-<section id="colorado" class="level1">
-<h1>Colorado</h1>
-<section id="set-a-prior" class="level2">
-<h2 class="anchored" data-anchor-id="set-a-prior">Set a prior</h2>
-<p>(Which of the following best matches the MA posterior?)</p>
+<section id="study-the-posterior-predictions" class="level2">
+<h2 class="anchored" data-anchor-id="study-the-posterior-predictions">Study the posterior predictions</h2>
+<p>Bayesian analysis does not produce a “best” line; rather, the posterior distribution implies a <em>family</em> of lines (each with a different chance). We call this the <em>posterior predictive distribution</em>. For instance, the following visualizes the posterior predictive distribution of lines against the Massachusetts data. This object appears as a “cone” with darker regions corresponding to lines with higher probability (density).</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -150,40 +291,58 @@ Synthesizing Descriptive Statistics
 </div>
 </div>
 </div>
-</section>
-<section id="study-the-posterior-predictions-1" class="level2">
-<h2 class="anchored" data-anchor-id="study-the-posterior-predictions-1">Study the posterior predictions</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="02b-activity-bayes-main_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Synthesizing Descriptive Statistics">
+<p>We can use this kind of plot (predictions against observed data) as a way to sanity check the model. You’ll do this in the following questions.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Questions for the Class">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Synthesizing Descriptive Statistics
+Questions for the Class
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>What does the model suggest about the trend of energy burden with percent Black in Colorado? How confident are you in your conclusion?</p>
+<ul>
+<li>Do all data points (black dots) land near the predicted lines (transparent blue lines), or do some dots land far from the lines?
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
+<li>This model represents the <em>overall trend</em> in the data well. In your own words, describe how the model fits the overall trend in the data.
+<ul>
+<li>(Write your response here): <!-- solution-begin --></li>
+</ul></li>
+<li>Do all data points (black dots) land near the predicted lines (transparent blue lines), or do some dots land far from the lines?
+<ul>
+<li>No, there is variability in the data that remains unexplained by the model.</li>
+</ul></li>
+<li>This model represents the <em>overall trend</em> in the data well. In your own words, describe how the model fits the overall trend in the data.
+<ul>
+<li>While the data points exhibit a great deal of variability, their average tends to increase from left to right. More formally, their mean conditional on the predictor tends to increase. <!-- solution-end --></li>
+</ul></li>
+</ul>
 </div>
 </div>
-<!-- solution-begin -->
-<p>The posterior predictions do not match the data well, due to the overconfident prior. This is a contrast with the Frequentist approach. <!-- solution-end --></p>
 </section>
 </section>
-<section id="florida" class="level1">
-<h1>Florida</h1>
-<section id="deal-with-limited-data" class="level2">
-<h2 class="anchored" data-anchor-id="deal-with-limited-data">Deal with Limited Data</h2>
-<p>(Spin a yarn about how FL might redact their data)</p>
+<section id="the-prior-distribution" class="level1">
+<h1>The Prior Distribution</h1>
+<p>Above, we glossed over how we arrive at a posterior distribution. In addition to the equation for the line we must also provide a <em>prior distribution</em> for the model’s parameters. In a Bayesian analysis the prior represents all of our <em>prior knowledge</em> about the problem.</p>
+<p>For instance, if we were confident that the slope of the Energy Burden vs Percent Black line is positive, we could represent that with a prior distribution that was tightly concentrated at a positive value (Case A below). If we were highly uncertain about the slope, we might represent this case with a prior distribution centered at zero with a very large standard deviation (Case B below).</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02b-activity-bayes-main_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="fitting-a-model-data-prior-posterior" class="level2">
+<h2 class="anchored" data-anchor-id="fitting-a-model-data-prior-posterior">Fitting a model: Data + Prior = Posterior</h2>
+<p>The mathematical details of fitting a Bayesian model are outside the scope of this activity. However, the basic “formula” is:</p>
+<p>[ + = ]</p>
+<p>Note that the Model contains both the formula for the model <span class="math inline">\(B = m P + b + \epsilon\)</span> and the prior distribution for the parameters <span class="math inline">\(m, b, \sigma^2\)</span>. With a small dataset the posterior distribution will largely depend on the prior. With a larger dataset, the posterior will depend more on the data.</p>
+<p>For instance, the following figure shows what happens when we use two different prior distributions for the slope when fitting the Massachusetts data:</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -193,42 +352,288 @@ Synthesizing Descriptive Statistics
 </div>
 </div>
 </div>
-<ul>
-<li>Given the limited data, we can’t confidently conclude that there is a positive slope</li>
-</ul>
+<p>Note that the highly uncertain Case B is shifted quite a bit more (from prior to posterior) than the Case A results. If we were to obtain a larger and larger dataset, using either prior (Case A or B) would converge to the same posterior distribution.</p>
 </section>
-<section id="study-the-posterior-predictions-2" class="level2">
-<h2 class="anchored" data-anchor-id="study-the-posterior-predictions-2">Study the posterior predictions</h2>
+<section id="three-options" class="level2">
+<h2 class="anchored" data-anchor-id="three-options">Three options</h2>
+<p>Bayesian approaches to statistics are particularly useful when we have limited data, as they allow us to incorporate prior knowledge. For the rest of the activity we’ll consider a scenario where our access to the CEJS data is limited: Suppose we are conducting our analysis while the data are actively being gathered. In this case, we may have access to the data for some states before others. In this context, we can conduct a <em>sequential</em> Bayesian analysis by using the posterior from one analysis as the prior for a new analysis.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="02b-activity-bayes-main_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="02b-activity-bayes-main_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="Synthesizing Descriptive Statistics">
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Pick a State">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Synthesizing Descriptive Statistics
+Pick a State
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>What does the model suggest about the trend of energy burden with percent Black in Florida? How confident are you in your conclusion?</p>
+<p>Study the posteriors above carefully; you will use this as a <em>prior distribution</em> for the slope for the rest of the activity. This means you will combine <em>new data</em> with a <em>prior distribution</em> to form a new <em>posterior distribution</em> for the model parameters. The <em>prior distribution</em> should reflect your beliefs about what you think the slope parameter should be.</p>
+<p>Pick <em>one state for your group</em>, then come ask the instructor for your chosen state’s packet.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="colorado" class="level1">
+<h1>Colorado</h1>
+<!-- solution-begin -->
+<section id="prep-print-co-results" class="level2">
+<h2 class="anchored" data-anchor-id="prep-print-co-results">(PREP) Print CO results</h2>
+<p>Print the following three graphs and place them in envelopes labelled for the State-based prior.</p>
+<section id="ma-based-prior" class="level3">
+<h3 class="anchored" data-anchor-id="ma-based-prior">MA-based Prior</h3>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02b-activity-bayes-main_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="mn-based-prior" class="level3">
+<h3 class="anchored" data-anchor-id="mn-based-prior">MN-based Prior</h3>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02b-activity-bayes-main_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="nh-based-prior" class="level3">
+<h3 class="anchored" data-anchor-id="nh-based-prior">NH-based Prior</h3>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02b-activity-bayes-main_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<!-- solution-end -->
+</section>
+</section>
+<section id="study-the-results" class="level2">
+<h2 class="anchored" data-anchor-id="study-the-results">Study the results</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Studying Model Results">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Studying Model Results
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<!-- task-begin -->
+<ul>
+<li>What does the model suggest about the trend of energy burden with percent Black in Colorado?
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
+<li>How well do the model predictions match the data?
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
+<li>How confident are you in your conclusion?
+<ul>
+<li>(Write your response here): <!-- task-end --> <!-- solution-begin --></li>
+</ul></li>
+<li>For the MA-based prior, the posterior predictions do not match the data well. The posterior is extremely confident in a positive slope, which agrees with our hypothesis.</li>
+<li>For the MN-based prior, the posterior predictions do match the data well. The posterior is extremely confident in a negative slope, which contradicts our hypothesis.</li>
+<li>For the NH-based prior, the posterior predictions do match the data well. The posterior is quite confident in a negative slope, which contradicts our hypothesis. <!-- solution-end --></li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="florida" class="level1">
+<h1>Florida</h1>
+<p>In some cases, we may find that gathering more data is simply not possible. Let’s suppose that, for some reason, Florida is unwilling to provide all of their energy burden data. Therefore, we must figure out what to do with only <span class="math inline">\(n=25\)</span> observations:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02b-activity-bayes-main_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Given the limited data, our results will depend much more strongly on our prior distribution.</p>
+<!-- solution-begin -->
+<section id="prep-print-fl-results" class="level2">
+<h2 class="anchored" data-anchor-id="prep-print-fl-results">(PREP) Print FL results</h2>
+<p>Print the following three graphs and place them in envelopes labelled for the State-based prior.</p>
+<section id="ma-based-prior-1" class="level3">
+<h3 class="anchored" data-anchor-id="ma-based-prior-1">MA-based Prior</h3>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02b-activity-bayes-main_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="mn-based-prior-1" class="level3">
+<h3 class="anchored" data-anchor-id="mn-based-prior-1">MN-based Prior</h3>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02b-activity-bayes-main_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="nh-based-prior-1" class="level3">
+<h3 class="anchored" data-anchor-id="nh-based-prior-1">NH-based Prior</h3>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02b-activity-bayes-main_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
 </div>
 </div>
 <!-- solution-begin -->
+</section>
+</section>
+<section id="study-the-results-1" class="level2">
+<h2 class="anchored" data-anchor-id="study-the-results-1">Study the results</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Studying Model Results">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Studying Model Results
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<!-- task-begin -->
 <ul>
-<li>With the prior, we can confidently conclude there is a positive slope <!-- solution-end --></li>
+<li>What does the model suggest about the trend of energy burden with percent Black in Florida?
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
+<li>How well do the model predictions match the data?
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
+<li>How confident are you in your conclusion?
+<ul>
+<li>(Write your response here): <!-- task-end --> <!-- solution-begin --></li>
+</ul></li>
+<li>With the MA-based prior, we would assign a high posterior probability to a positive slope</li>
+<li>With the MN-based prior, we would assign a high posterior probability to a <em>negative</em> slope</li>
+<li>With the NH-based prior, we would have an inconclusive analysis <!-- solution-end --></li>
 </ul>
+</div>
+</div>
+</section>
+</section>
+<section id="full-usa" class="level1">
+<h1>Full USA</h1>
+<p>After waiting some time, we finally get access to the full U.S. CEJS dataset. With such a large dataset, we expect to see that the results will not depend so much on our choice of prior distribution.</p>
+<!-- solution-begin -->
+<section id="prep-print-usa-results" class="level2">
+<h2 class="anchored" data-anchor-id="prep-print-usa-results">(PREP) Print USA Results</h2>
+<p>Print the following three graphs and place them in envelopes labelled for the State-based prior.</p>
+<section id="ma-based-prior-2" class="level3">
+<h3 class="anchored" data-anchor-id="ma-based-prior-2">MA-based Prior</h3>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02b-activity-bayes-main_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="mn-based-prior-2" class="level3">
+<h3 class="anchored" data-anchor-id="mn-based-prior-2">MN-based Prior</h3>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02b-activity-bayes-main_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="nh-based-prior-2" class="level3">
+<h3 class="anchored" data-anchor-id="nh-based-prior-2">NH-based Prior</h3>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="02b-activity-bayes-main_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<!-- solution-end -->
+</section>
+</section>
+<section id="study-the-results-2" class="level2">
+<h2 class="anchored" data-anchor-id="study-the-results-2">Study the results</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Studying Model Results">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Studying Model Results
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<!-- task-end -->
+<ul>
+<li>What does the model suggest about the trend of energy burden with percent Black across the whole U.S.?
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
+<li>How well do the model predictions match the data?
+<ul>
+<li>(Write your response here):</li>
+</ul></li>
+<li>How confident are you in your conclusion?
+<ul>
+<li>(Write your response here): <!-- task-end --> <!-- solution-begin --></li>
+</ul></li>
+<li>With all three priors, we would assign a very high posterior probability to the slope being positive. <!-- solution-end --></li>
+</ul>
+</div>
+</div>
 </section>
 </section>
 
-</main>
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Note that <span class="math inline">\(s_y\)</span> is determined based on the standard deviation in the observed data. This is a way of <em>autoscaling</em> the prior.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

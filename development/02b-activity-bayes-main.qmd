@@ -1,6 +1,6 @@
 ---
 title: "CEJS Activity"
-format: pdf
+format: html
 ---
 
 Armed with all of that background knowledge on the CEJS dataset and on statistical inference, we can proceed with a detailed analysis of the data. In particular, we are interested in assessing the following hypothesis:

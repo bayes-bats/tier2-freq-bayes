@@ -313,7 +313,7 @@ Next, we will apply the same statistical modeling approach to study trends in ot
 
 The following MLE estimates come from a random subset ($n=500$) of the census bureau tracts ($n=1{,}249$).
 
-```{r fit-CO}
+```{r}
 #| include: false
 #| echo: false
 #| cache: true
@@ -491,7 +491,7 @@ model_FL <-
 
 **Model Summaries**
 
-```{r mle-FL}
+```{r mle-FL2}
 #| warning: false
 #| echo: false
 #| fig-align: center
