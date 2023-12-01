@@ -93,6 +93,8 @@ Jot down 2-3 sentences for each question, as well as any remaining questions or 
 
 <!-- solution-begin  -->
 
+::: {.callout-note icon=false title="Instructor Notes: Activity Wrap-Up"}
+
 _While the conclusion document provides a fairly structured approach for closing out the activity, we anticipate this portion of the activity will be organic depending on how the instructor taught the materials and how the students received them. Simply, instructors are responsible for engineering the "controversy" in the classroom so that the open disagreement between students and their respective approaches is maximized as part of the learning experience._
 
 - At the end of the discussion, if time, have the groups share what they came up with based on their answers. 
@@ -101,6 +103,8 @@ _While the conclusion document provides a fairly structured approach for closing
   - All students started with an identical dataset and framing questions; it is the difference in their starting assumptions (i.e., a frequentist or Bayesian approach) that results in different conclusions.
   - Instructor should also consult the 5E Model Approach outlined in the `run-of-show.md` document to help facilitate this discussion
   - Takeaway point: controversy isn't resolved, however statistical results are conditional on the assumptions chosen for the analysis and implies that choosing appropriate assumptions is critical to a sound analysis
+  
+:::
 
 <!-- solution-end  -->
 

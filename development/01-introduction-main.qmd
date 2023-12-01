@@ -24,6 +24,8 @@ By the end of the activity, you should be able to:
  
 <!-- solution-begin  -->
 
+::: {.callout-note icon=false title="Instructor Notes: Introduction to Statistical Paradigms"}
+
 By the end of the activity, you should be able to:
 
 1. Evaluate multiple hypotheses using inferential statistical results.
@@ -33,6 +35,8 @@ By the end of the activity, you should be able to:
   - We ask students to think critically about *why* patterns of inequality do---or do not---appear in different states. E.g., what is different about policy in Colorado vs Florida?
 3. State the primary statistical assumptions for Frequentist and Bayesian inference, and understand how they can lead to different conclusions.
   - We will focus on the inclusion of a prior and its interaction with small/large sample size. A prior is particularly useful when we have limited data. The prior becomes less important when we have a large dataset.
+  
+:::
 
 <!-- solution-end  -->
 
