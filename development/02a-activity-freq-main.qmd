@@ -3,26 +3,17 @@ title: "CEJS Activity"
 format: html
 ---
 
-Armed with all of that background knowledge on the CEJS dataset and on statistical inference, we can proceed with a detailed analysis of the data. In particular, we are interested in assessing the following hypothesis:
-
-  > _As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases)._
-
-In this part of the session you will interpret results from a statistical model fitted to datasets from different U.S. States.
- 
 <!-- solution-begin -->
-::: {.callout-note icon="false" title="Instructor Note: Introduction"}
+
 These are instructor notes; they will be removed from the student-facing assignment file.
 
-This is the **Frequentist** form of the activity.
-:::
-<!-- solution-end -->
+This is the **Frequentist** form of the activity. <!-- solution-end -->
 
 ```{r setup}
 #| include: false
 #| echo: false
 library(tidyverse)
 library(broom)
-library(modelr)
 
 filename <- "../data/1.0-communities.csv"
 ```
@@ -38,28 +29,22 @@ df_data <-
 
 # Overview
 
-Throughout this activity, you will be studying a statistical model fitted to data from the CEJS dataset. As a reminder, we are interested in the `Energy Burden Percentile` (higher values correspond to a higher burden) and the `Percent Black Census Tract` (which measures the number of people in a region who are Black).
+(Preview the overview figure)
 
 ```{r fig-overview}
 #| warning: false
 #| echo: false
 #| fig-align: center
-#| fig-height: 3
-#| fig-cap: CEJS data for Massachusetts.
-df_MA <- 
-  df_data %>% 
-  filter(
-    state_territory == "Massachusetts",
-    !is.na(percent_black_or_african_american_alone),
-    !is.na(energy_burden_percentile),
-  )
-
-df_MA %>%   
+#| fig-height: 8
+df_data %>% 
+  filter(state_territory %in% c("Florida", "Massachusetts", "Colorado")) %>% 
+  
   ggplot(aes(
     percent_black_or_african_american_alone,
     energy_burden_percentile
   )) +
   geom_point(size = 0.1) +
+  geom_smooth(method = "lm") +
   facet_wrap(~state_territory, ncol = 2) +
   scale_x_continuous(labels = scales::percent) +
   theme_minimal() +
@@ -69,53 +54,46 @@ df_MA %>%
   )
 ```
 
-From this scatterplot, we can see that the energy burden seems to increase as the percent Black increases. However, we can make this rough observation more formal by using a statistical model.
+-   Florida and Massachusetts have a clear positive trend; this is evidence of inequitable outcomes 
+-   Colorado has a negative trend; this is a surprising result
 
 # Analyze a Frequentist Model
 
-To analyze the dataset, we will use the following statistical model,
+(Introduce the Frequentist model)
 
-$$ B = m P + b + \epsilon $$
+\[ B = m P + b, \]
 
-where $B$ is the energy burden percentile, $P$ is the percent Black, $m$ is the slope parameter, $b$ is the intercept parameter, and $\epsilon$ is a *residual* term that represents factors not accounted in the model. The residual term is assumed to be normally distributed $\epsilon \sim N(0, \sigma^2)$ with an unknown parameter $\sigma^2$. All three parameters are assumed to have fixed but unknown values that depend on the population we aim to study, and that we will estimate imperfectly using data.
+where $B$ is the energy burden percentile, $P$ is the percent black, $m$ is the slope parameter, and $b$ is the intercept parameter.
 
-<!-- solution-begin -->
+```{r fit-MA}
+#| include: false
+#| echo: false
+#| cache: true
+df_MA <- 
+  df_data %>% 
+  filter(
+    str_detect(state_territory, "Massachusetts"),
+    !is.na(percent_black_or_african_american_alone),
+    !is.na(energy_burden_percentile)
+  ) %>% 
+  select(energy_burden_percentile, percent_black_or_african_american_alone)
 
-::: {.callout-note icon="false" title="Instructor Note: Model Assumptions"}
-Note that this model makes a number of important assumptions, which students may identify and question. We recommend validating student input, but try to maintain a focus on the assumptions that are aligned with the lesson's learning objectives. We enumerate important model assumptions, ramifications, and relevance to learning objectives here:
+model_MA <- 
+  lm(
+    data = df_MA,
+    formula = energy_burden_percentile ~ percent_black_or_african_american_alone,
+  )
+```
 
--   The responses $B_i$ are independent when conditioned on the percent Black $P$.
-    -   This is almost surely not true as there are a variety of other factors that affect one's energy burden, such as State-level economic policies. These other factors are not entirely captured in our lone predictor ($P$), which may manifest as association between the observed responses ($B_i$). This will lead to an *omitted variable bias* in our estimates.
-    -   While omitted variable bias is an important consideration, it is outside the learning objectives in this lesson since this assumption is shared between the Frequentist and Bayesian approaches.
--   The structure of the response is linear; that is $B = m P + b + \epsilon$.
-    -   This discounts the possibility of nonlinearity; for instance, there could be little change in the mean energy burden at small percent Black, but much larger change at higher values.
-    -   While the structure of the response is an important consideration, it is outside the learning objectives in this lesson since this assumption is shared between the Frequentist and Bayesian approaches.
--   Residuals are normally distributed $\epsilon \sim N(0, \sigma^2)$ with constant $\sigma^2$.
-    -   This will never be exactly true, which we can check by inspecting the residuals. This assumptions has implications for our predictive uncertainty; for instance, assuming a constant $\sigma^2$ discounts the possibility of heteroskedasticity.
-    -   While the residual distribution is an important consideration, it is outside the learning objectives in this lesson since this assumption is shared between the Frequentist and Bayesian approaches.
--   The intercept $b$ and slope $m$ parameters are treated as fixed but unknown values.
-    -   This is a fundamental component of the Frequentist approach that differs from the Bayesian approach, and hence is directly related to the lesson's learning objectives.
-:::
+## Study the MLE estimates
 
-<!-- solution-end -->
-
-## Study the estimates
-
-Unknown parameters are often estimated using a technique called *maximum likelihood estimation* (MLE). This is an approach that is outside the scope of this activity. However, given a model and data, we can use MLE to estimate "best fit" parameter values for the intercept $b$ and slope $m$ parameters.
-
-When fitting a model, we should also assess the *uncertainty* in our estimated parameters. MLE estimates are usually reported with *confidence intervals* (CI), which represent a plausible range for the population parameter values we aim to estimate. The following table reports estimates and confidence intervals for the intercept and slope parameters using data from Massachusetts only.
+(Introduce the MLE estimates)
 
 ```{r mle-MA}
 #| warning: false
 #| echo: false
 #| fig-align: center
 #| fig-height: 8
-model_MA <- 
-  lm(
-    formula = energy_burden_percentile ~ percent_black_or_african_american_alone,
-    data = df_MA,
-  )
-
 df_model_MA <- 
   model_MA %>% 
   tidy() %>% 
@@ -141,112 +119,22 @@ df_model_MA %>%
   knitr::kable()
 ```
 
-Confidence intervals helps us determine **how confident** we should be in conclusions drawn from the model. The next exercise will help you assess confidence in results based on the fitted model.
+-   Do the CI exclude zero?
 
 ## Assessing confidence
 
-Let's imagine three different estimates for the slope parameter $m$: These could arise from using three different datasets to estimate the same population parameters:
+TODO teach students how to do this through an example
 
-| Scenario | Lower | Estimate | Upper |
-|----------|-------|----------|-------|
-|    A     |  -23  |     2    |  +25  |
-|    B     |   -5  |    15    |  +35  |
-|    C     |   +5  |    13    |  +20  |
+## Study the MLE predictions
 
-**Model summaries**
-
-<!-- task-begin -->
-::: {.callout-note icon=false title="Questions for the Class"}
-- Which scenario gives the largest estimate for the slope?
-  - (Write your response here):
-- Does the confidence interval for Scenario A include zero? (NB. A confidence interval includes zero if `Lower < 0 < Upper`.)
-  - (Write your response here):
-- Does the confidence interval for Scenario B include zero?
-  - (Write your response here):
-- Does the confidence interval for Scenario C include zero?
-  - (Write your response here):
-- If a confidence interval includes zero, this indicates that we **cannot** conclude whether the slope is positive or negative. For which scenarios can we not conclude whether the slope is positive or negative?
-  - (Write your response here):
-:::
-<!-- task-end -->
-<!-- solution-begin -->
-::: {.callout-note icon=false title="Questions for the Class"}
-- Which scenario gives the largest estimate for the slope?
-  - Scenario B
-- Does the confidence interval for Scenario A include zero? (NB. A confidence interval includes zero if `Lower < 0 < Upper`.)
-  - Yes
-- Does the confidence interval for Scenario B include zero?
-  - Yes
-- Does the confidence interval for Scenario C include zero?
-  - No
-- If a confidence interval includes zero, this indicates that we **cannot** conclude whether the slope is positive or negative. For which scenarios can we not conclude whether the slope is positive or negative?
-  - Scenarios A and B
-:::  
-<!-- solution-end -->
-  
-**General inference** 
-  
-::: {.callout-note icon=false title="Questions for the Class"}
-- How does the slope parameter relate to our hypothesis? As a reminder, our hypothesis is:
-  > _As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases)._
-<!-- task-begin -->
-  - (Write your response here):
-<!-- task-end -->
-<!-- solution-begin -->
-  - The slope parameter is directly related to our hypothesis. A positive slope is in agreement with our hypothesis.
-<!-- solution-end -->
-:::
-  
-Let's return to the posterior from our model for the Massachusetts data and use the same reasoning as above to make sense of the results.
-
-```{r repeat-mle-MA}
-#| warning: false
-#| echo: false
-#| fig-align: center
-#| fig-height: 8
-df_model_MA %>% 
-  select(term, lower, estimate, upper) %>% 
-  mutate(
-    term = case_when(
-      term == "(Intercept)" ~ "Intercept",
-      term == "percent_black_or_african_american_alone" ~ "Slope"
-    )
-  ) %>% 
-  mutate(across(
-    c(lower, estimate, upper),
-    ~round(., digits = 1)
-  )) %>% 
-  
-  select(Term = term, Lower = lower, Estimate = estimate, Upper = upper) %>% 
-  knitr::kable()
-```
-
-::: {.callout-note icon="false" title="Questions for the Class"}
-- For Massachusetts, does the fitted model support or contradict our hypothesis? As a reminder, our hypothesis is:
-
-    > *As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).*
-    
-<!-- task-begin -->
-  - (Write your response here):
-- How confident are you in the model results? Why?
-  - (Write your response here):
-<!-- task-end -->
-<!-- solution-begin -->
-  - The fitted model supports our hypothesis (the estimated slope is positive).
-- How confident are you in the model results? Why?
-  - Fairly confident; the model gives a CI for the slope parameter that does not include zero.
-<!-- solution-end -->
-:::
-
-## Study the prediction
-
-Frequentist analysis with our model $B = m P + b + \epsilon$ produces a "best-fit" line along with a "confidence band" created by the uncertainty in the estimated parameters $m, b$. For instance, the following visualizes the maximum likelihood estimated line against the Massachusetts data. This object appears as a single best-fit line with a transparent confidence band.
+(Describe posterior predictions)
 
 ```{r}
 #| warning: false
 #| echo: false
 #| fig-align: center
 #| fig-height: 8
+
 df_MA_pred <-  
   tibble(percent_black_or_african_american_alone = seq(
     min(df_MA$percent_black_or_african_american_alone),
@@ -254,11 +142,11 @@ df_MA_pred <-
     length.out = 100
   ))
 
-df_MA_pred <-
+df_MA_pred <- 
   bind_cols(
     df_MA_pred,
     predict(
-      model_MA,
+      model_MA, 
       interval = 'confidence',
       newdata = df_MA_pred
     )
@@ -292,32 +180,14 @@ df_MA_pred %>%
   )
 ```
 
-We can use this kind of plot (predictions against observed data) as a way to sanity check the model. You'll do this in the following questions.
-
-::: {.callout-note icon="false" title="Questions for the Class"}
-- Do all data points (black dots) land directly on the prediction (solid blue line), or do some dots land off of the line?
-  - (Write your response here):
-- This model represents the *overall trend* in the data well. In your own words, describe how the model fits the overall trend in the data.
-  - (Write your response here):
-<!-- solution-begin -->
-- Do all data points (black dots) land directly on the prediction (solid blue line), or do some dots land off of the line?
-  - No, there is variability in the data that remains unexplained by the model.
-- This model represents the *overall trend* in the data well. In your own words, describe how the model fits the overall trend in the data.
-  - While the data points exhibit a great deal of variability, their average tends to increase from left to right. More formally, their mean conditional on the predictor tends to increase.
-<!-- solution-end -->
-:::
-
-Next, we will apply the same statistical modeling approach to study trends in other states.
+-   How well do the posterior predictions agree with the data?
 
 # Colorado
 
-The following MLE estimates come from a random subset ($n=500$) of the census bureau tracts ($n=1{,}249$).
-
-```{r}
+```{r fit-CO}
 #| include: false
 #| echo: false
 #| cache: true
-set.seed(101)
 df_CO <- 
   df_data %>% 
   filter(
@@ -325,7 +195,6 @@ df_CO <-
     !is.na(percent_black_or_african_american_alone),
     !is.na(energy_burden_percentile)
   ) %>% 
-  slice_sample(n = 500) %>% # Take a random subset of the data
   select(energy_burden_percentile, percent_black_or_african_american_alone)
 
 model_CO <- 
@@ -335,17 +204,9 @@ model_CO <-
   )
 ```
 
-<!-- solution-begin -->
-::: {.callout-note icon="false" title="Instructor Note: Sampling"}
-A finer point on estimation that we are not emphasizing in this activity is the difference between sample and population parameters.
-:::
-<!-- solution-end -->
+## Study the MLE estimates
 
-## Study the results
-
-Study the fitted model results for Colorado and answer the questions below.
-
-**Model Summaries**
+(Introduce the MLE estimates)
 
 ```{r mle-CO}
 #| warning: false
@@ -377,13 +238,18 @@ df_model_CO %>%
   knitr::kable()
 ```
 
-**Model Predictions**
+-   Do the CI exclude zero?
+
+## Study the MLE predictions
+
+(Describe posterior predictions)
 
 ```{r}
 #| warning: false
 #| echo: false
 #| fig-align: center
 #| fig-height: 8
+
 df_CO_pred <-  
   tibble(percent_black_or_african_american_alone = seq(
     min(df_CO$percent_black_or_african_american_alone),
@@ -429,33 +295,20 @@ df_CO_pred %>%
   )
 ```
 
-::: {.callout-note icon="false" title="Studying Model Results"}
-- What does the model suggest about the trend of energy burden with percent Black in Colorado? 
-  - (Write your response here):
-- How well do the model predictions match the data?
-  - (Write your response here):
-- How confident are you in your conclusion? Why?
-  - (Write your response here):
-<!-- solution-begin -->
-- What does the model suggest about the trend of energy burden with percent Black in Colorado? 
-  - Based on the Estimate, the trend is actually *negative*, which directly contradicts our hypothesis.
-- How well do the model predictions match the data?
-  - The model predictions follow the general trend of the data, but there is a great deal of unexplained variability.
-- How confident are you in your conclusion? Why?
-  - One should have high confidence in these results, as the confidence interval excludes zero. 
-<!-- solution-end -->
-:::
+-   How well do the posterior predictions agree with the data?
 
 # Florida
 
-In some cases, we may find that gathering more data is simply not possible. Let's suppose that, for some reason, Florida is unwilling to provide all of their energy burden data, and instead provide only $n=25$ of their $n=4{,}245$ census tracts. In this case, the confidence intervals will tend to be very wide due (in part) to limited data.
+## Deal with Limited Data
+
+(Spin a yarn about how FL might redact their data)
 
 ```{r}
 #| warning: false
 #| echo: false
 #| fig-align: center
 #| fig-height: 8
-set.seed(103)
+set.seed(101)
 
 df_FL <- 
   df_data %>% 
@@ -487,11 +340,11 @@ model_FL <-
   )
 ```
 
-## Study the results
+## Study the MLE estimates
 
-**Model Summaries**
+(Introduce the MLE estimates)
 
-```{r mle-FL2}
+```{r mle-FL}
 #| warning: false
 #| echo: false
 #| fig-align: center
@@ -521,7 +374,11 @@ df_model_FL %>%
   knitr::kable()
 ```
 
-**Model Predictions**
+-   Do the CI exclude zero?
+
+## Study the MLE predictions
+
+(Describe posterior predictions)
 
 ```{r}
 #| warning: false
@@ -574,153 +431,4 @@ df_FL_pred %>%
   )
 ```
 
-::: {.callout-note icon="false" title="Studying Model Results"}
-- What does the model suggest about the trend of energy burden with percent Black in Florida? 
-  - (Write your response here):
-- How well do the model predictions match the data?
-  - (Write your response here):
-- How confident are you in your conclusion? Why?
-  - (Write your response here):
-<!-- solution-begin -->
-- What does the model suggest about the trend of energy burden with percent Black in Florida? 
-  - Based on the Estimate, the trend is *positive*, which supports our hypothesis.
-- How well do the model predictions match the data?
-  - The model predictions follow the general trend of the data, but there is a great deal of unexplained variability.
-- How confident are you in your conclusion? Why?
-  - One should have low confidence in these results, as the confidence interval includes zero. 
-<!-- solution-end -->
-:::
-
-# Full USA
-
-After waiting some time, we finally get access to the full U.S. CEJS dataset. With such a large dataset, we expect to see that the results are well-resolved (have narrow confidence intervals).
-
-```{r fit-CO}
-#| include: false
-#| echo: false
-#| cache: true
-set.seed(101)
-df_USA <- 
-  df_data %>% 
-  filter(
-    !is.na(percent_black_or_african_american_alone),
-    !is.na(energy_burden_percentile)
-  ) %>% 
-  select(energy_burden_percentile, percent_black_or_african_american_alone)
-
-model_USA <- 
-  lm(
-    data = df_USA,
-    formula = energy_burden_percentile ~ percent_black_or_african_american_alone,
-  )
-```
-
-<!-- solution-begin -->
-::: {.callout-note icon="false" title="Instructor Note: Sampling"}
-The code above does not take a subset of the CEJS data. However, there is likely measurement error within each census tract estimate, which leads to meaningful confidence intervals for the parameters.
-:::
-<!-- solution-end -->
-
-## Study the results
-
-**Model Summaries**
-
-```{r mle-FL}
-#| warning: false
-#| echo: false
-#| fig-align: center
-#| fig-height: 8
-df_model_USA <- 
-  model_USA %>% 
-  tidy() %>% 
-  mutate(
-    lower = estimate - 2 * std.error,
-    upper = estimate + 2 * std.error,
-  )
-
-df_model_USA %>% 
-  select(term, lower, estimate, upper) %>% 
-  mutate(
-    term = case_when(
-      term == "(Intercept)" ~ "Intercept",
-      term == "percent_black_or_african_american_alone" ~ "Slope"
-    )
-  ) %>% 
-  mutate(across(
-    c(lower, estimate, upper),
-    ~round(., digits = 1)
-  )) %>% 
-  
-  select(Term = term, Lower = lower, Estimate = estimate, Upper = upper) %>% 
-  knitr::kable()
-```
-
-**Model Predictions**
-
-```{r}
-#| warning: false
-#| echo: false
-#| fig-align: center
-#| fig-height: 8
-
-df_USA_pred <-  
-  tibble(percent_black_or_african_american_alone = seq(
-    min(df_USA$percent_black_or_african_american_alone),
-    max(df_USA$percent_black_or_african_american_alone),
-    length.out = 100
-  ))
-
-df_USA_pred <- 
-  bind_cols(
-    df_USA_pred,
-    predict(
-      model_USA, 
-      interval = 'confidence',
-      newdata = df_USA_pred
-    )
-  )
-
-df_USA_pred %>% 
-
-  ggplot(aes(
-    x = percent_black_or_african_american_alone,
-  )) +
-  geom_point(
-    data = df_USA,
-    mapping = aes(y = energy_burden_percentile),
-    size = 0.5
-  ) +
-  geom_ribbon(
-    aes(ymin = lwr, ymax = upr),
-    fill = "blue",
-    alpha = 1/3
-  ) +
-  geom_line(
-    aes(y = fit),
-    linewidth = 0.7,
-    color = "blue"
-  ) +
-  scale_x_continuous(labels = scales::percent) +
-  theme_minimal() +
-  labs(
-    x = "Percent Black Census Tract",
-    y = "Energy Burden Percentile",
-  )
-```
-
-::: {.callout-note icon="false" title="Studying Model Results"}
-- What does the model suggest about the trend of energy burden with percent Black in the full USA? 
-  - (Write your response here):
-- How well do the model predictions match the data?
-  - (Write your response here):
-- How confident are you in your conclusion? Why?
-  - (Write your response here):
-<!-- solution-begin -->
-- What does the model suggest about the trend of energy burden with percent Black in the full USA? 
-  - Based on the Estimate, the trend is *positive*, which supports our hypothesis.
-- How well do the model predictions match the data?
-  - The model predictions follow the general trend of the data, but there is a great deal of unexplained variability.
-- How confident are you in your conclusion? Why?
-  - One should have high confidence in these results, as the confidence interval excludes zero. 
-<!-- solution-end -->
-:::
+-   How well do the posterior predictions agree with the data?
