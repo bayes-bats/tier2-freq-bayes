@@ -49,8 +49,9 @@ Please feel free to ask questions if you need clarification on what the survey i
 
 
 - This is a post-pre survey design, so it is meant to be administered at the end of the activity
-- Idea is to capture _changes in competence_ (e.g., changes in what students know and are able to do), which is based on research from @hiebert2014power
+- The idea is to capture _changes in competence_ (e.g., changes in what students know and are able to do), which is based on research from @hiebert2014power
 - Relying on 5E Model Approach [@elby2010epistemological] to achieve change
+- Updates will be made to measure competencies specific to the activity.
 
 :::
 
