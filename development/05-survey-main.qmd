@@ -59,6 +59,14 @@ Please feel free to ask questions if you need clarification on what the survey i
   - Models - something about why we use them (e.g., uncertainty) (LO #3)
   - Model summaries - something about differences between two approaches (point estimates vs. posterior distribution?)(LO #3)
   - Model summaries - something about research Q/hypothesis (e.g., did it conform to your initial expectations? Open ended response on what they (think they) found? etc.) (LO #1/2)
+  
+
+**Next Steps**
+
+- Creating pre/post-pre survey to assess students' understanding _before_ they begin the activity - will be the same set of Q's as used for the post-pre survey
+- Survey will consist of three primary Q's that align with three LO's
+- Students will assess their understanding using a Likert scale + open-ended response to elaborate on their Likert response
+- Students will have the opportunity to response (open-ended) on their understanding of Bayesian/Frequentist assumptions, as well as how they're understanding of statistcal inference has evolved/developed as a result of the activity (if it has)
 
 
 
