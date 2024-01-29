@@ -58,7 +58,7 @@ c.  **Cadence**: Instructor introduces completed applied activities to groups (e
         -   Assess results relative to null: does this support our claims (research Q/hypothesis)?
 
 ### Activity Closing
-**Note:** Students will evaluate their attitudes toward statistical inference with a short survey based on the three primary learning objectives outlined in `01-introduction-qmd`. This will include 3-5 questions on a Likert scale, followed by a short answer response to elaborate more on their Likert choice. This survey is a post-pre design intended to guage their perceived change in attitudes after the activity has been implemented. See `05-survey-main.qmd` for more information on the rationale behind the survey instrument design.
+**Note:** Students will evaluate their attitudes toward statistical inference with a short survey based on the three primary learning objectives outlined in `01-introduction-qmd`. This will include 3-5 questions on a Likert scale, followed by a short answer response to elaborate more on their Likert choice. This survey is a post-pre design intended to gauge their perceived change in attitudes after the activity has been implemented. See `05-survey-main.qmd` for more information on the rationale behind the survey instrument design.
 
 a.  **Files**:
     -   Instructor-facing:`04-conclusion.qmd`, `03-one-pager.qmd`
