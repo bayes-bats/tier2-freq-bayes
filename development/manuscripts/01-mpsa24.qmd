@@ -1,6 +1,6 @@
 ---
-title: "Comparing Frequentist and Bayesian Approaches in Public Policy Learning"
-#subtitle: ""
+title: "Surprise - They're Different!"
+subtitle: "Comparing Frequentist and Bayesian Approaches in Public Policy"
 author:
   - name: Stefani Langehennig, PhD 
     orcid: 0000-0002-0897-6556
@@ -11,9 +11,9 @@ author:
     email: zdelrosario@olin.edu
     affiliation: Olin College
   - name: Mine Dogucu
-    orcid:
-    email: 
-    affiliation: 
+    orcid: 0000-0002-8007-934X
+    email: mdogucu@uci.edu
+    affiliation: University of California Irvine
 abstract: |
   Implementing quantitative methodological techniques is a crucial piece of understanding public policy. While quasi-experimental, spatial (diffusion), and mixed methods are most commonly used when teaching policy studies, little research exists on using Bayesian approaches for policy learning, or how the outcomes from traditional quantitative approaches differ from a Bayesian approach. We propose an applied learning activity for students of public policy that exposes them to Bayesian methods and explores the differences between this statistical paradigm and more commonly used approaches. We do this using a structured interrogation of the [The Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/) (CEJST) and the epistemological framings in the 5E model [@elby2010epistemological]. The activity illustrates the importance of statistical assumptions, and by extension, the impact that different quantitative methods have on understanding public policy. The goal of the study is to introduce students, instructors, and practitioners of public policy to a new way of using statistics, equipping them with the tool set and logical processes necessary to apply either approach as they see fit when studying public policy.
 number-sections: true
@@ -32,6 +32,5 @@ fontsize: 12pt
   
 - Keywords: Active Learning, Public Policy, Bayesian Statistics, Undergraduate Education
 - Research interests that best explain the proposal: Bayesian, Public Policy, Teaching Political Science
-- [My CV URL](https://steflangehennig.github.io/cv.pdf)
 
 
