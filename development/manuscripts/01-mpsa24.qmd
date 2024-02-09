@@ -16,6 +16,11 @@ author:
     affiliation: University of California Irvine
 abstract: |
   Implementing quantitative methodological techniques is a crucial piece of understanding public policy. While quasi-experimental, spatial (diffusion), and mixed methods are most commonly used when teaching policy studies, little research exists on using Bayesian approaches for policy learning, or how the outcomes from traditional quantitative approaches differ from a Bayesian approach. We propose an applied learning activity for students of public policy that exposes them to Bayesian methods and explores the differences between this statistical paradigm and more commonly used approaches. We do this using a structured interrogation of the [The Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/) (CEJST) and the epistemological framings in the 5E model [@elby2010epistemological]. The activity illustrates the importance of statistical assumptions, and by extension, the impact that different quantitative methods have on understanding public policy. The goal of the study is to introduce students, instructors, and practitioners of public policy to a new way of using statistics, equipping them with the tool set and logical processes necessary to apply either approach as they see fit when studying public policy.
+keywords:
+  - Active Learning
+  - Public Policy
+  - Bayesian Statistics
+  - Undergraduate Education
 number-sections: true
 bibliography: bibliography.bib
 geometry: margin=1in 
@@ -24,32 +29,36 @@ fontsize: 12pt
 ---
 
 ## Introduction
-here
+[motivation, justification of research, roadmap of paper]
 
 ## Background
-here
+[what's been done/current state of literature, what we're adding, why it's important]
 
-## Activity
-here
+## Applied Activity: Comparing Frequentist \& Bayesian Approaches
+We designed, implemented, and evaluated an activity that highlights the differences between Frequentist and Bayesian statistics. Our primary work included designing an activity that takes students through a structured interrogation of a dataset, with the pilot launching during spring of 2024. Aspirationally, we evaluated this activity’s impact on students’ statistical knowledge and epistemological framings (Elby & Hammer, 2010), discussed more below.
+
+The activity is focused on a real dataset - [The Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/) (CEJST) - to which groups of students are given guided statistical analysis. Students follow a structured process to analyze the dataset and interpret their results. However, we give different groups different versions of the activity: some will receive a Frequentist approach, while the others will receive a Bayesian approach. By carefully engineering the analyses to reach different conclusions, we aim to surprise students with diverging conclusions. Through a final full-group discussion, we highlight the importance of statistical assumptions, completing the comparison of Frequentist and Bayesian approaches.
+
+#### Recruitment
+
+#### Activity Materials
+
+#### Activty Steps
+
 
 ## Evaluation
 In addition to exposing students to different statistical paradigms, we are interested in students' awareness of Bayesian methods and their _epistemological framings_—their assumptions about the nature and accessibility of "truth" [@elby2010epistemological]. Using pre- and post-pre-activity surveys, we measure students’ self-reported familiarity of fundamental Bayesian ideas. Specifically, we measure their attitudes before the activity, as well as their change in attitudes after the activity, with respect to ideas around statistical inference. The reason for using a post-pre design after the activity is straightforward. The idea is to capture changes in self-perceived attitudes about a topic by asking participants to consider where they think they were before the activity, followed by where they think they are now (see @hiebert2014power). The participants give themselves two ratings to capture this before and after reflection, as shown below.
 
 
 ## Conclusion
+
+[overview of findings from evaluation (surveys) here]
+
 This activity bridges the gap between the common Frequentist approach oft taught in both undergraduate and graduate statistics classes and the Bayesian paradigm, to which many students have not been exposed. We do this using an applied approach, with an eye towards answering education research questions. While many teaching methods highlight the theoretical similarities and differences between frequentists and Bayesians, our activity moves beyond by grounding the comparison in a real-data application, as well as measuring the impact of applying both frameworks in the classroom. In doing so, we hope to introduce students to a new way of using statistics, equipping them with the tool set and logical processes necessary to apply either the frequentist or Bayesian (or both) approaches as they see fit.
 
-Our planned activity uses an active learning approach, rather than passive lecture. Active learning has been shown to result in superior learning outcomes for students, particularly those from underrepresented groups [@freeman2014active]. In this way, our proposed activity will promote broader impacts of Bayesian thinking.
+Our activity uses an active learning approach, rather than passive lecture. Active learning has been shown to result in superior learning outcomes for students, particularly those from underrepresented groups [@freeman2014active]. In this way, our proposed activity will promote broader impacts of Bayesian thinking.
 
 Our more speculative research goal—to promote more nuanced epistemological framings among students—has further potential impacts. @elby2010epistemological argue that a "sophisticated" personal epistemology is actually achieved when one has access to multiple epistemological framings and can choose to switch between them based on what is productive for the context at hand. Students who can recognize and critique the assumptions underpinning their analyses (treating them as tentative), but carry out their analyses respecting those analyses (treating them as true) will likely be more effective as practicing statisticians. Getting students to recognize the importance of assumptions—and to practice adopting different assumptions—will be a critical first step in developing these multiple epistemological framings.
 
-## Other notes
-- Submitted to Sec. 72: Research on Teaching & Learning
-- Second field listed as public policy
-- Brief overview:
-  - Students interrogate a public policy dataset and explore the differences between this paradigm and commonly used approaches. We evaluate its impact on statistical knowledge, highlighting results are conditional on the assumptions chosen for analyses.
-  
-- Keywords: Active Learning, Public Policy, Bayesian Statistics, Undergraduate Education
-- Research interests that best explain the proposal: Bayesian, Public Policy, Teaching Political Science
 
 
