@@ -33,6 +33,8 @@ fontsize: 12pt
 
 ## Background
 [what's been done/current state of literature, what we're adding, why it's important]
+- note the different methods and approached traditional used to quantitatively study public policy
+- also note the stats learning literature and where we situate epistemological framingss
 
 ## Applied Activity: Comparing Frequentist \& Bayesian Approaches
 We designed, implemented, and evaluated an activity that highlights the differences between Frequentist and Bayesian statistics. Our primary work included designing an activity that takes students through a structured interrogation of a dataset, with the pilot launching during spring of 2024. Aspirationally, we evaluated this activity’s impact on students’ statistical knowledge and epistemological framings (Elby & Hammer, 2010), discussed more below.
