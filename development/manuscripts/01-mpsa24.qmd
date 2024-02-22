@@ -32,7 +32,7 @@ fontsize: 12pt
 [motivation, justification of research, roadmap of paper]
 
 ## Background
-[what's been done/current state of literature, what we're adding, why it's important - some literature argues quantitative methods may not (see @morccol2010methods)
+[what's been done/current state of literature, what we're adding, why it's important - some literature argues quantitative methods may not still be prevalent (see @morccol2010methods)
 - note the different methods and approached traditional used to quantitatively study public policy
 - also note the stats learning literature and where we situate epistemological framingss
 
