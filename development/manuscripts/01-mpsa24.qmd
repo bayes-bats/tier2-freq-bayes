@@ -31,12 +31,15 @@ fontsize: 12pt
 ## Introduction
 [motivation, justification of research, roadmap of paper]
 
-## Background
-[what's been done/current state of literature, what we're adding, why it's important - some literature argues quantitative methods may not still be prevalent (see @morccol2010methods)
-- note the different methods and approached traditional used to quantitatively study public policy
-- also note the stats learning literature and where we situate epistemological framingss
+The study and implementation of public policy relies on a variety of methodologies to test claims and understand impacts. Traditional quantitative methods of public policy usually...
 
-## Applied Activity: Comparing Frequentist \& Bayesian Approaches
+## Background
+[what's been done/current state of literature, what we're adding, why it's important - some literature argues quantitative methods may not still be prevalent (see @morccol2010methods)]
+
+- note the different methods and approached traditional used to quantitatively study public policy
+- also note the stats learning literature and where we situate epistemological framings
+
+## Applied Activity: Comparing Frequentist & Bayesian Approaches
 We designed, implemented, and evaluated an activity that highlights the differences between Frequentist and Bayesian statistics. Our primary work included designing an activity that takes students through a structured interrogation of a dataset, with the pilot launching during spring of 2024. Aspirationally, we evaluated this activity’s impact on students’ statistical knowledge and epistemological framings [@elby2010epistemological], discussed more below.
 
 The activity is focused on a real dataset - [The Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/) (CEJST) - to which groups of students are given guided statistical analysis. Students follow a structured process to analyze the dataset and interpret their results. However, we give different groups different versions of the activity: some will receive a Frequentist approach, while the others will receive a Bayesian approach. By carefully engineering the analyses to reach different conclusions, we aim to surprise students with diverging conclusions. Through a final full-group discussion, we highlight the importance of statistical assumptions, completing the comparison of Frequentist and Bayesian approaches.
