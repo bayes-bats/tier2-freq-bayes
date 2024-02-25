@@ -33,6 +33,8 @@ fontsize: 12pt
 
 The study and implementation of public policy relies on a variety of methodologies, primarily because they are concerned with understanding both the application, practice, and impacts of those policies. While a variety of methodologies, both quantitative and qualitative, are used to understand policy, largely overlooked is the implementation of Bayesian techniques in policy learnings. 
 
+[paradigm shift among practitioners in the need for evidence-based decision-making that relies on quant methods]
+
 
 Traditional quantitative methods of public policy usually...
 
