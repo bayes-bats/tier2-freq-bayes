@@ -61,6 +61,8 @@ For both institutions, participants had to be at least 18 years of age or older 
 
 #### Activity Materials
 
+Materials for the activity are openly available on our [GitHub repository](https://github.com/bayes-bats/tier2-freq-bayes) for instructors to use. Important starter documents include the [run of show](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/run-of-show.md), which outlines at a high level the different steps of the activity, as well as the artifacts used in the activity. Further, the learning objectives and details of the activity are fleshed out in the [introduction document](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/01-introduction-main.qmd). Finally, instructors can watch a [video overview](https://www.youtube.com/watch?v=dwNLcFqQqnE) of the activity on YouTube as well. 
+
 #### Activty Steps
 
 
