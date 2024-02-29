@@ -41,6 +41,9 @@ Traditional quantitative methods of public policy usually...
 ## Background
 [what's been done/current state of literature, what we're adding, why it's important - some literature argues quantitative methods may not still be prevalent (see @morccol2010methods)]
 
+
+- broader discussion on teaching quantitative methods across different disciplines/cross-disciplinary approaches to quantitative methodology education
+  - 
 - note the different methods and approached traditional used to quantitatively study public policy
   - this can include (but is not limited to):
 - also note the stats learning literature and where we situate epistemological framings
