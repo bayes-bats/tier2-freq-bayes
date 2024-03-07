@@ -57,6 +57,8 @@ div.csl-indent {
 <link href="01-mpsa24_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="01-mpsa24_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -178,9 +180,66 @@ div.csl-indent {
 </section>
 <section id="activity-introduction" class="level4" data-number="3.1.2">
 <h4 data-number="3.1.2" class="anchored" data-anchor-id="activity-introduction"><span class="header-section-number">3.1.2</span> Activity Introduction</h4>
-<p>This portion of the activity is instructor led, with them walking students through the learning objectives and warmup questions, which in turn initiates a group-wide discussion on statistical inference. The instructor also discusses inference at a high level, offering more pointed discussion around crafting a research question and hypotheses. At this point, the instructor turns students to the simplified <a href="https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-simplified-main.qmd">critical differences one-pager</a> that introduces them to the primary differences between the Frequentist and Bayesian paradigms. To keep the exercise manageable</p>
-<p>Groups can share what they know and instructor shares high-level one pager simplified document on differences between statistical inference paradigms. Instructor then finishes discussion with sections on research questions and hypotheses. The detailed one pager reference guide is a support artifact for the instructor that is not student facing.</p>
-<p>Something here about how we provide them with the hypotheses/research question<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>This portion of the activity is instructor led, with them walking students through the learning objectives and warmup questions, which in turn initiates a group-wide discussion on statistical inference. The instructor also discusses inference at a high level, offering more pointed discussion around crafting a research question and hypotheses. At this point, the instructor turns students to the simplified <a href="https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-simplified-main.qmd">critical differences one-pager</a> that introduces them to the primary differences between the Frequentist and Bayesian paradigms. To keep the exercise manageable, we focus students’ attention on <em>general inference</em> and <em>model summaries</em>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <a href="#tbl-inf">Table&nbsp;1</a> and <a href="#tbl-summ">Table&nbsp;2</a> showcase the differences outlined in the critical differences one-pager between general inference and model summaries:</p>
+<div id="tbl-inf" class="anchored">
+<table class="table">
+<caption>Table&nbsp;1: General Inference</caption>
+<colgroup>
+<col style="width: 56%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Frequentist</th>
+<th>Bayesian</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Deduction from Pr(data <span class="math inline">\(|\)</span> H0), by setting <span class="math inline">\(\alpha\)</span> in advance</td>
+<td>Induction from Pr(<span class="math inline">\(\theta\)</span> <span class="math inline">\(|\)</span> data), starting with Pr(<span class="math inline">\(\theta\)</span>)</td>
+</tr>
+<tr class="even">
+<td>Accept H1 if Pr(data <span class="math inline">\(|\)</span> H0) &lt; <span class="math inline">\(\alpha\)</span></td>
+<td>1−<span class="math inline">\(\alpha\)</span>% of most likely parameter values fall within a 1−<span class="math inline">\(\alpha\)</span> HPD</td>
+</tr>
+<tr class="odd">
+<td>Accept H0 if Pr(data <span class="math inline">\(|\)</span> H0) ≥ <span class="math inline">\(\alpha\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-summ" class="anchored">
+<table class="table">
+<caption>Table&nbsp;2: Model Summaries</caption>
+<colgroup>
+<col style="width: 56%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Frequentist</th>
+<th>Bayesian</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Point estimates and standard errors</td>
+<td>Descriptions of the posterior distribution such as means and quantiles</td>
+</tr>
+<tr class="even">
+<td>95% confidence intervals indicating that 19/20 times the interval covers the true parameter value</td>
+<td>Highest posterior density intervals indicating region of highest posterior probability</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>1−<span class="math inline">\(\alpha\)</span>% of most likely parameter values fall within a 1−<span class="math inline">\(\alpha\)</span> HPD</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The introductory discussion of the activity wraps up with the instructor introducing the research question and associated hypothesis the class will test with their respective statistical approach. Specifically, students with will be assessing whether Black Americans experience a disproportionate level of energy expenditure using inferential statistics and the CEJST dataset.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 </section>
 <section id="activity-application" class="level4" data-number="3.1.3">
 <h4 data-number="3.1.3" class="anchored" data-anchor-id="activity-application"><span class="header-section-number">3.1.3</span> Activity Application</h4>
@@ -242,8 +301,9 @@ Hiebert, Bryan, and Kris Magnusson. 2014. <span>“The Power of Evidence: Demons
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>While we guide our students to the variables we want to explore for this implementation of the activity, instructors can modify the activity such that students explore the dataset and identify variables of interest on their own, as well as conduct the EDA and analyses in <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1200px-R_logo.svg.png" alt="R Logo" width="20" height="20" style="display:inline;"> on their own (rather than giving them the completed version as we do here).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>an extension of the activity could have the students develop those on their own. We kept the guardrails on for the pilot study.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>While we guide our students to the variables we want to explore for this implementation of the activity, instructors can modify the activity such that students explore the dataset and identify variables of interest on their own. If they know how to use statistical software, they can also conduct the EDA and analyses in <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1200px-R_logo.svg.png" alt="R Logo" width="20" height="20" style="display:inline;"> on their own, rather than giving them the completed version as we do here.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>You can access the <a href="https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-one-pager-main.qmd">full one-pager</a> that is instructor-facing on the associated GitHub repository. In addition to comparing general inference and model summaries, it also includes comparisons between fixed variables, interpreting probabilities, and model inference.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>An extension of the activity could have the students develop the research questions and hypotheses on their own. Given the activity we implemented is meant to span one class period, we provide those for the students.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main>
 <!-- /main column -->
