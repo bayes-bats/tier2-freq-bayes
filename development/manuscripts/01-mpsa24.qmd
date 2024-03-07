@@ -29,7 +29,7 @@ fontsize: 12pt
 ---
 
 ## Introduction
-Social scientists routinely make use of quantitative methods to understand the complex world around them. Approaches employed range from quasi-experimental, spatial (diffusion), and econometric techniques, to methods that are more qualitative in nature. While Bayesian approaches are not completely missing (see CITE), they are underutilized for policy learning among academics and policy specialists. 
+Social scientists routinely make use of quantitative methods to understand the complex world around them. Approaches employed range from quasi-experimental, spatial (diffusion), and econometric techniques, to methods that are more qualitative in nature. While Bayesian approaches are not completely missing from public policy and related fields (see @gill2013bayesian; @fienberg2011bayesian), they are underutilized for policy learning among academics and policy specialists. 
 
 In this paper, we propose an applied learning activity for students of public policy (though its applications extend beyond this discipline) that exposes them to Bayesian methods. The activity explores the differences between Bayesian approaches and more commonly used statistical techniques to introduce students, instructors, and practitioners to new and different ways of using statistics to investigate real-world problems. Through the application of this activity, our hope is that using these methods will equip them with the tool set and logical processes necessary to apply different quantitative approaches as they see fit when studying public policy.
 
