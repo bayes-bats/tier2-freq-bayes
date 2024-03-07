@@ -46,7 +46,7 @@ Literature review here. High-level framing:
 
 
 
-## Applied Activity: Comparing Frequentist & Bayesian Approaches
+## Applied Activity: Comparing Frequentist & Bayesian Approaches {#sec-applied-activity}
 We designed, implemented, and evaluated an activity that highlights the differences between Frequentist and Bayesian statistics. Our primary work included designing an activity that takes students through a structured interrogation of a dataset, with the pilot activity launching during spring of 2024. We evaluated this activity’s impact on students’ statistical knowledge and epistemological framings [@elby2010epistemological], discussed more below.
 
 The activity is focused on a real dataset, discussed more below, to which groups of students are given guided statistical analysis. Students follow a structured process to analyze the dataset and interpret their results. However, different groups receive different versions of the activity: some receive a Frequentist approach, while the others receive a Bayesian approach. By carefully crafting the analyses to reach different conclusions, we aim to surprise students with diverging conclusions. The activity concludes with a final full-group discussion, where we highlight the importance of statistical assumptions, completing the comparison of Frequentist and Bayesian approaches.
@@ -77,7 +77,21 @@ Materials for the activity are openly available on our [GitHub repository](https
 
 
 ## Evaluation
-In addition to exposing students to different statistical paradigms, we are interested in students' awareness of Bayesian methods and their _epistemological framings_—their assumptions about the nature and accessibility of "truth" [@elby2010epistemological]. Using pre- and post-pre-activity surveys, we measure students’ self-reported familiarity of fundamental Bayesian ideas. Specifically, we measure their attitudes before the activity, as well as their change in attitudes after the activity, with respect to ideas around statistical inference. The reason for using a post-pre design after the activity is straightforward. The idea is to capture changes in self-perceived attitudes about a topic by asking participants to consider where they think they were before the activity, followed by where they think they are now (see @hiebert2014power). The participants give themselves two ratings to capture this before and after reflection, as shown below.
+In addition to exposing students to different statistical paradigms, we are interested in students' awareness of Bayesian methods and their _epistemological framings_ — their assumptions about the nature and accessibility of "truth" [@elby2010epistemological]. Using pre- and post-pre-activity surveys, we measure students’ self-reported familiarity of fundamental Bayesian ideas. Specifically, we measure their attitudes before the activity, as well as their change in attitudes after the activity, with respect to ideas around statistical inference. The reason for using a post-pre design after the activity is straightforward. We want to capture changes in self-perceived attitudes about a topic by asking participants to consider where they think their beliefs were before the activity, followed by where they think they are now (see @hiebert2014power). The participants give themselves two ratings to capture this before and after reflection, as shown below.
+
+![](01-mpsa-survey-ex1.png){fig-align="center" width=100%}
+
+We used a similar format for each of the learning objectives outlined in @sec-applied-activity. The survey includes the following questions with Likert responses ranging from "Strongly disagree" to "Strongly agree": 
+
+1. _To what degree do you (dis) agree with the following statement: There is no uncertainty in the results of a statistical analysis._
+2. _To what degree do you (dis) agree with the following statement: The results of a statistical analysis should not depend on the analyst’s assumptions._
+3. _To what degree do you (dis) agree with the following statement: I know how to relate statistical analysis to things in the real world._
+
+Each question that is associated with a learning objectives also gives students an open-ended opportunity to elaborate on their Likert responses. The survey ends by asking students the following open-ended question:
+
+_From the activity, what did you learn about the differences between Frequentist and Bayesian statistics? Please provide as much information as you can._
+
+### Results
 
 
 ## Conclusion
