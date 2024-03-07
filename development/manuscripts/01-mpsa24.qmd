@@ -86,7 +86,7 @@ The activity is built around the aforementioned 5E Model Approach, where two loo
 
 The second loop is focused on the conceptual learning aspects of the activity, or the ownership of the results that students discovered. _Engage_ is focused on the different questions around the data (context) that should motivate their search for an explanation for outcomes using statistical approaches. _Explore_ and _explain_ capture the introduction to statistical inference broadly defined, the learning objectives for the activity, and the high-level critical differences in Frequentist and Bayesian approaches. For _elaborate_, students articulate the basic concepts of assessing and interpreting a fitted statistical model and come to conclusions related to the research question and hypotheses. Finally, _evaluate_ uses the concepts and what students learned in the application to articulate and refine their understanding of the differences between Frequentist and Bayesian approaches. 
 
-#### Problem Context {@sec-prob-context}
+#### Problem Context {#sec-prob-context}
 Given our interest in teaching students new approaches to examining real-world public policy problems, we start our activity by introducing [The Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/) (CEJST). The CEJST is the result of President Biden's Executive Order issued in January 2021. The tool is used to identify and subsequently help communities disadvantaged by the burdens stemming from climate change in government social programs. While the data covers a number of burdens (health, transportation, and workforce development, for example), we focus on the sustainability aspects of the tool for our activity, including climate change, energy, and legacy pollution burdens on communities.
 
 We begin with a straightforward explanation of the dataaset, situating it in the contemporary dialogue around climate change. Specifically, we theorize there may be a relationship between climate change burdens and minorities residing in Census tracts. By providing them with this context, we get students to think about possible questions - and by extension, hypotheses - they may be able to explore using statistical inference. 
@@ -125,7 +125,16 @@ The activity application step is the heart of the exercise. Students are assigne
 
 It is important to note that the data used for each analysis is the exact same for the groups, as is the hypothesis that the students are testing. Additionally, the students are asked to assess the same conceptual things, regardless of which activity they receive. They will use the _general inference_ and _model summaries_ comparison discussed in the @sec-activity-intro to diagnose the outputs of the models from the analyses.
 
+[TO DO]
+
 #### Activity Closing {#sec-activity-close}
+After students have had the opportunity to work through their respective applied analyses and discuss the questions in the analysis documents in groups, the groups come back together for a full-class discussion. Questions posed to the class are tied to the learning objectives in @sec-applied-activity and include:
+
+- What can we say about our hypothesis?
+- How would you answer our research question now that we have analyzed the data?
+- What can we conclude about the relationship between sustainability and disadvantaged communities? What might you recommend from a policy-making perspective?
+
+These questions are posed to the class for a few reasons. The first is so the entire class can hear the impressions of both groups regarding the statistical approach used in their analyses. The second is to play into the "controversy" or differences between the approaches to further engage students on the importance of assumptions for statistical conclusions. The instructor facilitates a debate between the two groups using the critical differences one-pager discussed in @sec-activity-intro. Each group likely thinks their conclusions are "correct" based on their analyses, however it is important to point out that the controversy cannot be resolved; rather the results from our analyses are conditional on the assumptions chosen for the analysis, implying that choosing appropriate assumptions is critical to a sound analysis.
 
 
 ## Evaluation {#sec-eval}
@@ -148,7 +157,7 @@ The post-pre survey is implemented after the activity closing, when students hav
 ### Results {#sec-results}
 Results from surveys here once activity has been implemented.
 
-Implications of the initial results if we're feeling really ambitious!
+Implications of the initial results.
 
 ## Conclusion {#sec-conclusion}
 
