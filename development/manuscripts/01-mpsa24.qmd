@@ -44,6 +44,14 @@ Literature review here. High-level framing:
   - Why it’s important/works
 - Epistemological framings/5E Model
 
+Overview of model when ready:
+
+- _Engage_: Get students interested
+- _Explore_: Students do self-directed inquiry
+- _Explain_: Give students conceptual tools
+- _Elaborate_: Let students work with the tools
+- _Evaluate_: Assess the learning outcomes
+
 
 
 ## Applied Activity: Comparing Frequentist & Bayesian Approaches {#sec-applied-activity}
@@ -54,10 +62,25 @@ The activity is focused on a real dataset, discussed more below, to which groups
 The activity learning objectives are three-fold. First, students should be able to evaluate multiple hypotheses using inferential statistics; second, students should be able to connect their evaluation of hypotheses to real-world factors; and third, students should be able to state the primary statistical assumptions for Frequentist and Bayesian inference, and understand how they can lead to different conclusions. These learning objectives stem from our overall learning goal of engineering a “classroom controversy” to motivate students to find their own understanding of how Frequentist and Bayesian assumptions can lead to different conclusions (and by extension, real-world decisionmaking).
 
 ### Activty Approach
-Given our interest in teaching students new approaches to examining real-world public policy problems, we focus our activity on [The Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/) (CEJST) that is the result of President Biden's Executive Order issued in January 2021. The tool is used to identify and subsequently help communities disadvantaged by the burdens stemming from climate change in government social programs. While the data covers a number of burdens (health, transportation, and workforce development, for example), we focus on the sustainability aspects of the tool for our activity, including climate change, energy, and legacy pollution burdens on communities.
+To implement the activity, there are four primary steps, each discussed at length below:
+
+1. Setting the context for the real world problem the class is exploring
+2. Introducing the motivation for the activity (statistical approaches) given the context
+3. Doing the applied activity
+4. Closing out the activity
+
+The activity is built around the aforementioned 5E Model Approach. For _engage_, the goal is to motivate students with current issues around climate and equity. The _explore_ stage is the opportunity in which students get to do self-directed inquiry. For this activity, that means investigating the real-world dataset provided to them in small groups. _Explain_ gives the students the conceptual tools they need to understand the different statistical approaches. Students will learn the basics of assessing and interpreting a fitted statistical model with the instructor. For _elaborate_, students get to work with the tools, meaning they apply the conceptual tools they learned to the real-world dataset. Finally, _evaluate_ involves the assessment of learning outcomes. Students get the opportunity to reflect on their understanding of the concepts and application they just did through an instructor-facilitated class discussion. 
+The 5E Model goes through two loops throughout the activity:
+
+The first loop is focused on the applied learning aspects of the activity, or the application of a statistical approach focused on current issues.
+The second loop is focused on the conceptual learning aspects of the activity, or the ownership of the results that students discovered.
+The desired goals for each loop in the 5E Model are discussed in more detail below. Note that while the instructor and student-facing files are separated in the run of show, the instructor should also review and use - as much as needed - the student-facing files as they go through the activity.
 
 
 #### Problem Context
+Given our interest in teaching students new approaches to examining real-world public policy problems, we focus our activity on [The Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/) (CEJST) that is the result of President Biden's Executive Order issued in January 2021. The tool is used to identify and subsequently help communities disadvantaged by the burdens stemming from climate change in government social programs. While the data covers a number of burdens (health, transportation, and workforce development, for example), we focus on the sustainability aspects of the tool for our activity, including climate change, energy, and legacy pollution burdens on communities.
+
+We introduce students to this tool before delving into the technical aspects of the activity. 
 
 #### Activity Introduction
 
@@ -91,8 +114,12 @@ Each question that is associated with a learning objectives also gives students 
 
 _From the activity, what did you learn about the differences between Frequentist and Bayesian statistics? Please provide as much information as you can._
 
-### Results
+The post-pre survey is implemented after the activity closing, when students have had the opportunity to talk through the outcomes of each approach with their peers and the instructor. The results of the pilot implementation at the University of Denver and Olin College of Engineering are discussed next. 
 
+### Results
+Results from surveys here once activity has been implemented.
+
+Implications of the initial results if we're feeling really ambitious!
 
 ## Conclusion
 
