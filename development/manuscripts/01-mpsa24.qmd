@@ -74,7 +74,7 @@ __Activity Materials__
 
 All materials were created using the programming language <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1200px-R_logo.svg.png" alt="R Logo" width="20" height="20" style="display:inline;"> and can be rendered in .html or .pdf format for use. The materials are openly available for instructors on our [GitHub repository](https://github.com/bayes-bats/tier2-freq-bayes). Important starter documents include the [run of show](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/run-of-show.md), which outlines at a high level the different steps of the activity, as well as the artifacts used in the activity. Further, the learning objectives and details of the activity are fleshed out in the [introduction document](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/01-introduction-main.qmd). Finally, instructors can watch a [video overview](https://www.youtube.com/watch?v=dwNLcFqQqnE) of the activity on YouTube as well.
 
-### Activty Approach
+### Activty Approach {#sec-activity-approach}
 To implement the activity, there are four steps, each discussed at length below:
 
 1. Setting the context for the real world problem the class is exploring
@@ -86,7 +86,7 @@ The activity is built around the aforementioned 5E Model Approach, where two loo
 
 The second loop is focused on the conceptual learning aspects of the activity, or the ownership of the results that students discovered. _Engage_ is focused on the different questions around the data (context) that should motivate their search for an explanation for outcomes using statistical approaches. _Explore_ and _explain_ capture the introduction to statistical inference broadly defined, the learning objectives for the activity, and the high-level critical differences in Frequentist and Bayesian approaches. For _elaborate_, students articulate the basic concepts of assessing and interpreting a fitted statistical model and come to conclusions related to the research question and hypotheses. Finally, _evaluate_ uses the concepts and what students learned in the application to articulate and refine their understanding of the differences between Frequentist and Bayesian approaches. 
 
-#### Problem Context
+#### Problem Context {@sec-prob-context}
 Given our interest in teaching students new approaches to examining real-world public policy problems, we start our activity by introducing [The Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/) (CEJST). The CEJST is the result of President Biden's Executive Order issued in January 2021. The tool is used to identify and subsequently help communities disadvantaged by the burdens stemming from climate change in government social programs. While the data covers a number of burdens (health, transportation, and workforce development, for example), we focus on the sustainability aspects of the tool for our activity, including climate change, energy, and legacy pollution burdens on communities.
 
 We begin with a straightforward explanation of the dataaset, situating it in the contemporary dialogue around climate change. Specifically, we theorize there may be a relationship between climate change burdens and minorities residing in Census tracts. By providing them with this context, we get students to think about possible questions - and by extension, hypotheses - they may be able to explore using statistical inference. 
@@ -97,7 +97,7 @@ To dig into the context of our real-world problem further, we also provide embed
 
 After students have investigated the dataset and have a more thorough understanding of the problem at hand, the instructor turns their attention to the introduction document, discussed next. 
 
-#### Activity Introduction
+#### Activity Introduction {#sec-activity-intro}
 This portion of the activity is instructor led, with them walking students through the learning objectives and warmup questions, which in turn initiates a group-wide discussion on statistical inference. The instructor also discusses inference at a high level, offering more pointed discussion around crafting a research question and hypotheses. At this point, the instructor turns students to the simplified [critical differences one-pager](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-simplified-main.qmd) that introduces them to the primary differences between the Frequentist and Bayesian paradigms. To keep the exercise manageable, we focus students' attention on _general inference_ and _model summaries_.^[You can access the [full one-pager](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-one-pager-main.qmd) that is instructor-facing on the associated GitHub repository. In addition to comparing general inference and model summaries, it also includes comparisons between fixed variables, interpreting probabilities, and model inference.] @tbl-inf and @tbl-summ showcase the differences outlined in the critical differences one-pager between general inference and model summaries:
 
 
@@ -107,7 +107,7 @@ This portion of the activity is instructor led, with them walking students throu
 | Accept H1 if Pr(data $|$ H0) < $\alpha$ | 1−$\alpha$% of most likely parameter values fall within a 1−$\alpha$ HPD
 | Accept H0 if Pr(data $|$ H0) ≥ $\alpha$|
 
-: General Inference {#tbl-inf}
+: General Inference {#tbl-inf}{.sm}
 
 
 | Frequentist | Bayesian | 
@@ -116,16 +116,19 @@ This portion of the activity is instructor led, with them walking students throu
 | 95% confidence intervals indicating that 19/20 times the interval covers the true parameter value | Highest posterior density intervals indicating region of highest posterior probability
 |           | 1−$\alpha$% of most likely parameter values fall within a 1−$\alpha$ HPD
 
-: Model Summaries {#tbl-summ}
+: Model Summaries {#tbl-summ}{.sm}
 
 The introductory discussion of the activity wraps up with the instructor introducing the research question and associated hypothesis the class will test with their respective statistical approach. Specifically, students with will be assessing whether Black Americans experience a disproportionate level of energy expenditure using inferential statistics and the CEJST dataset.^[An extension of the activity could have the students develop the research questions and hypotheses on their own. Given the activity we implemented is meant to span one class period, we provide those for the students.]
 
-#### Activity Application
+#### Activity Application {#sec-activity-app}
+The activity application step is the heart of the exercise. Students are assigned a random number generated by a random number generator and put into groups based on their number to go through an applied statistical analysis. There are two versions that are circulated: the Frequentist analysis and the Bayesian analysis. The analyses that are given to the students are complete - they only receive the output of the analysis with associated questions to help them think through the different parts of the analysis before they come to any conclusions. 
 
-#### Activity Closing
+It is important to note that the data used for each analysis is the exact same for the groups, as is the hypothesis that the students are testing. Additionally, the students are asked to assess the same conceptual things, regardless of which activity they receive. They will use the _general inference_ and _model summaries_ comparison discussed in the @sec-activity-intro to diagnose the outputs of the models from the analyses.
+
+#### Activity Closing {#sec-activity-close}
 
 
-## Evaluation
+## Evaluation {#sec-eval}
 In addition to exposing students to different statistical paradigms, we are interested in students' awareness of Bayesian methods and their _epistemological framings_ — their assumptions about the nature and accessibility of "truth" [@elby2010epistemological]. Using pre- and post-pre-activity surveys, we measure students’ self-reported familiarity of fundamental Bayesian ideas. Specifically, we measure their attitudes before the activity, as well as their change in attitudes after the activity, with respect to ideas around statistical inference. The reason for using a post-pre design after the activity is straightforward. We want to capture changes in self-perceived attitudes about a topic by asking participants to consider where they think their beliefs were before the activity, followed by where they think they are now (see @hiebert2014power). The participants give themselves two ratings to capture this before and after reflection, as shown below.
 
 ![](01-mpsa-survey-ex1.png){fig-align="center" width=100%}
@@ -142,12 +145,12 @@ _From the activity, what did you learn about the differences between Frequentist
 
 The post-pre survey is implemented after the activity closing, when students have had the opportunity to talk through the outcomes of each approach with their peers and the instructor. The results of the pilot implementation at the University of Denver and Olin College of Engineering are discussed next. 
 
-### Results
+### Results {#sec-results}
 Results from surveys here once activity has been implemented.
 
 Implications of the initial results if we're feeling really ambitious!
 
-## Conclusion
+## Conclusion {#sec-conclusion}
 
 [overview of findings from evaluation (surveys) here]
 

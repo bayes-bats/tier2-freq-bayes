@@ -159,8 +159,8 @@ div.csl-indent {
 <p>[PARAGRAPH HERE ON OLIN RECRUITMENT]</p>
 <p><strong>Activity Materials</strong></p>
 <p>All materials were created using the programming language <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1200px-R_logo.svg.png" alt="R Logo" width="20" height="20" style="display:inline;"> and can be rendered in .html or .pdf format for use. The materials are openly available for instructors on our <a href="https://github.com/bayes-bats/tier2-freq-bayes">GitHub repository</a>. Important starter documents include the <a href="https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/run-of-show.md">run of show</a>, which outlines at a high level the different steps of the activity, as well as the artifacts used in the activity. Further, the learning objectives and details of the activity are fleshed out in the <a href="https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/01-introduction-main.qmd">introduction document</a>. Finally, instructors can watch a <a href="https://www.youtube.com/watch?v=dwNLcFqQqnE">video overview</a> of the activity on YouTube as well.</p>
-<section id="activty-approach" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="activty-approach"><span class="header-section-number">3.1</span> Activty Approach</h3>
+<section id="sec-activity-approach" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="sec-activity-approach"><span class="header-section-number">3.1</span> Activty Approach</h3>
 <p>To implement the activity, there are four steps, each discussed at length below:</p>
 <ol type="1">
 <li>Setting the context for the real world problem the class is exploring</li>
@@ -170,8 +170,8 @@ div.csl-indent {
 </ol>
 <p>The activity is built around the aforementioned 5E Model Approach, where two loops of the model are working concurrently. The first loop is focused on the applied learning aspects of the activity, or the application of a statistical approach focused on current issues. For example, for <em>engage</em> the goal is to motivate students with current issues around climate and equity. The <em>explore</em> stage is the opportunity in which students get to do self-directed inquiry. For this activity, that means investigating the real-world dataset provided to them in small groups. <em>Explain</em> gives the students the conceptual tools they need to understand the different statistical approaches. Students will learn the basics of assessing and interpreting a fitted statistical model with the instructor. For <em>elaborate</em>, students get to work with the tools, meaning they apply the conceptual tools they learned to the real-world dataset. Finally, <em>evaluate</em> involves giving students the opportunity to reflect on their understanding of the concepts and application they just did through an instructor-facilitated class discussion.</p>
 <p>The second loop is focused on the conceptual learning aspects of the activity, or the ownership of the results that students discovered. <em>Engage</em> is focused on the different questions around the data (context) that should motivate their search for an explanation for outcomes using statistical approaches. <em>Explore</em> and <em>explain</em> capture the introduction to statistical inference broadly defined, the learning objectives for the activity, and the high-level critical differences in Frequentist and Bayesian approaches. For <em>elaborate</em>, students articulate the basic concepts of assessing and interpreting a fitted statistical model and come to conclusions related to the research question and hypotheses. Finally, <em>evaluate</em> uses the concepts and what students learned in the application to articulate and refine their understanding of the differences between Frequentist and Bayesian approaches.</p>
-<section id="problem-context" class="level4" data-number="3.1.1">
-<h4 data-number="3.1.1" class="anchored" data-anchor-id="problem-context"><span class="header-section-number">3.1.1</span> Problem Context</h4>
+<section id="problem-context-sec-prob-context" class="level4" data-number="3.1.1">
+<h4 data-number="3.1.1" class="anchored" data-anchor-id="problem-context-sec-prob-context"><span class="header-section-number">3.1.1</span> Problem Context {<strong>?@sec-prob-context</strong>}</h4>
 <p>Given our interest in teaching students new approaches to examining real-world public policy problems, we start our activity by introducing <a href="https://screeningtool.geoplatform.gov/en/">The Climate and Economic Justice Screening Tool</a> (CEJST). The CEJST is the result of President Biden’s Executive Order issued in January 2021. The tool is used to identify and subsequently help communities disadvantaged by the burdens stemming from climate change in government social programs. While the data covers a number of burdens (health, transportation, and workforce development, for example), we focus on the sustainability aspects of the tool for our activity, including climate change, energy, and legacy pollution burdens on communities.</p>
 <p>We begin with a straightforward explanation of the dataaset, situating it in the contemporary dialogue around climate change. Specifically, we theorize there may be a relationship between climate change burdens and minorities residing in Census tracts. By providing them with this context, we get students to think about possible questions - and by extension, hypotheses - they may be able to explore using statistical inference.</p>
 <p>To dig into the context of our real-world problem further, we also provide embedded code snippets and output from <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1200px-R_logo.svg.png" alt="R Logo" width="20" height="20" style="display:inline;"> of some high-level exploratory data analysis (EDA) for the students to review and discuss. We begin by focusing our attention on a few variables of interest for EDA. We start with the <em>energy burden percentile</em>, which captures the percentile of energy cost as well as energy-related pollution within a census tract, as well as the <em>percent of African-American or Black alone</em>, which captures the percent of African-American or Black individuals in a census tract.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The instructor walks the students through basic data wrangling, providing prompt questions to get them thinking about the substantive implications of descriptive statistics and visualizations. Below is an example of the output, which contains the code used to create the figure, as well as a short description and a prompt question for the students.</p>
@@ -182,11 +182,11 @@ div.csl-indent {
 </div>
 <p>After students have investigated the dataset and have a more thorough understanding of the problem at hand, the instructor turns their attention to the introduction document, discussed next.</p>
 </section>
-<section id="activity-introduction" class="level4" data-number="3.1.2">
-<h4 data-number="3.1.2" class="anchored" data-anchor-id="activity-introduction"><span class="header-section-number">3.1.2</span> Activity Introduction</h4>
+<section id="sec-activity-intro" class="level4" data-number="3.1.2">
+<h4 data-number="3.1.2" class="anchored" data-anchor-id="sec-activity-intro"><span class="header-section-number">3.1.2</span> Activity Introduction</h4>
 <p>This portion of the activity is instructor led, with them walking students through the learning objectives and warmup questions, which in turn initiates a group-wide discussion on statistical inference. The instructor also discusses inference at a high level, offering more pointed discussion around crafting a research question and hypotheses. At this point, the instructor turns students to the simplified <a href="https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-simplified-main.qmd">critical differences one-pager</a> that introduces them to the primary differences between the Frequentist and Bayesian paradigms. To keep the exercise manageable, we focus students’ attention on <em>general inference</em> and <em>model summaries</em>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <a href="#tbl-inf">Table&nbsp;1</a> and <a href="#tbl-summ">Table&nbsp;2</a> showcase the differences outlined in the critical differences one-pager between general inference and model summaries:</p>
 <div id="tbl-inf" class="anchored">
-<table class="table">
+<table class="table-sm small table">
 <caption>Table&nbsp;1: General Inference</caption>
 <colgroup>
 <col style="width: 56%">
@@ -215,7 +215,7 @@ div.csl-indent {
 </table>
 </div>
 <div id="tbl-summ" class="anchored">
-<table class="table">
+<table class="table-sm small table">
 <caption>Table&nbsp;2: Model Summaries</caption>
 <colgroup>
 <col style="width: 56%">
@@ -245,16 +245,18 @@ div.csl-indent {
 </div>
 <p>The introductory discussion of the activity wraps up with the instructor introducing the research question and associated hypothesis the class will test with their respective statistical approach. Specifically, students with will be assessing whether Black Americans experience a disproportionate level of energy expenditure using inferential statistics and the CEJST dataset.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 </section>
-<section id="activity-application" class="level4" data-number="3.1.3">
-<h4 data-number="3.1.3" class="anchored" data-anchor-id="activity-application"><span class="header-section-number">3.1.3</span> Activity Application</h4>
+<section id="sec-activity-app" class="level4" data-number="3.1.3">
+<h4 data-number="3.1.3" class="anchored" data-anchor-id="sec-activity-app"><span class="header-section-number">3.1.3</span> Activity Application</h4>
+<p>The activity application step is the heart of the exercise. Students are assigned a random number generated by a random number generator and put into groups based on their number to go through an applied statistical analysis. There are two versions that are circulated: the Frequentist analysis and the Bayesian analysis. The analyses that are given to the students are complete - they only receive the output of the analysis with associated questions to help them think through the different parts of the analysis before they come to any conclusions.</p>
+<p>It is important to note that the data used for each analysis is the exact same for the groups, as is the hypothesis that the students are testing. Additionally, the students are asked to assess the same conceptual things, regardless of which activity they receive. They will use the <em>general inference</em> and <em>model summaries</em> comparison discussed in the <a href="#sec-activity-intro">Section&nbsp;3.1.2</a> to diagnose the outputs of the models from the analyses.</p>
 </section>
-<section id="activity-closing" class="level4" data-number="3.1.4">
-<h4 data-number="3.1.4" class="anchored" data-anchor-id="activity-closing"><span class="header-section-number">3.1.4</span> Activity Closing</h4>
+<section id="sec-activity-close" class="level4" data-number="3.1.4">
+<h4 data-number="3.1.4" class="anchored" data-anchor-id="sec-activity-close"><span class="header-section-number">3.1.4</span> Activity Closing</h4>
 </section>
 </section>
 </section>
-<section id="evaluation" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="evaluation"><span class="header-section-number">4</span> Evaluation</h2>
+<section id="sec-eval" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="sec-eval"><span class="header-section-number">4</span> Evaluation</h2>
 <p>In addition to exposing students to different statistical paradigms, we are interested in students’ awareness of Bayesian methods and their <em>epistemological framings</em> — their assumptions about the nature and accessibility of “truth” <span class="citation" data-cites="elby2010epistemological">(<a href="#ref-elby2010epistemological" role="doc-biblioref">Elby and Hammer 2010</a>)</span>. Using pre- and post-pre-activity surveys, we measure students’ self-reported familiarity of fundamental Bayesian ideas. Specifically, we measure their attitudes before the activity, as well as their change in attitudes after the activity, with respect to ideas around statistical inference. The reason for using a post-pre design after the activity is straightforward. We want to capture changes in self-perceived attitudes about a topic by asking participants to consider where they think their beliefs were before the activity, followed by where they think they are now (see <span class="citation" data-cites="hiebert2014power">Hiebert and Magnusson (<a href="#ref-hiebert2014power" role="doc-biblioref">2014</a>)</span>). The participants give themselves two ratings to capture this before and after reflection, as shown below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -270,14 +272,14 @@ div.csl-indent {
 <p>Each question that is associated with a learning objectives also gives students an open-ended opportunity to elaborate on their Likert responses. The survey ends by asking students the following open-ended question:</p>
 <p><em>From the activity, what did you learn about the differences between Frequentist and Bayesian statistics? Please provide as much information as you can.</em></p>
 <p>The post-pre survey is implemented after the activity closing, when students have had the opportunity to talk through the outcomes of each approach with their peers and the instructor. The results of the pilot implementation at the University of Denver and Olin College of Engineering are discussed next.</p>
-<section id="results" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="results"><span class="header-section-number">4.1</span> Results</h3>
+<section id="sec-results" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="sec-results"><span class="header-section-number">4.1</span> Results</h3>
 <p>Results from surveys here once activity has been implemented.</p>
 <p>Implications of the initial results if we’re feeling really ambitious!</p>
 </section>
 </section>
-<section id="conclusion" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">5</span> Conclusion</h2>
+<section id="sec-conclusion" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="sec-conclusion"><span class="header-section-number">5</span> Conclusion</h2>
 <p>[overview of findings from evaluation (surveys) here]</p>
 <p>This activity bridges the gap between the common Frequentist approach oft taught in both undergraduate and graduate statistics classes and the Bayesian paradigm, to which many students have not been exposed. We do this using an applied approach, with an eye towards answering education research questions. While many teaching methods highlight the theoretical similarities and differences between frequentists and Bayesians, our activity moves beyond by grounding the comparison in a real-data application, as well as measuring the impact of applying both frameworks in the classroom. In doing so, we hope to introduce students to a new way of using statistics, equipping them with the tool set and logical processes necessary to apply either the frequentist or Bayesian (or both) approaches as they see fit.</p>
 <p>Our activity uses an active learning approach, rather than passive lecture. Active learning has been shown to result in superior learning outcomes for students, particularly those from underrepresented groups <span class="citation" data-cites="freeman2014active">(<a href="#ref-freeman2014active" role="doc-biblioref">Freeman et al. 2014</a>)</span>. In this way, our proposed activity will promote broader impacts of Bayesian thinking.</p>
