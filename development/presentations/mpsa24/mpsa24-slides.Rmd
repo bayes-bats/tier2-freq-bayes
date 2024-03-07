@@ -1,0 +1,111 @@
+---
+title: "Surprise - They’re Different!"
+subtitle: "Comparing Frequentist and Bayesian Approaches in Public Policy"
+author: "Stefani Langehennig, Zach del Rosario, Mine Dogucu"
+institute: "2024 Midwest Political Science Association Conference"
+date: "06 April 2024"
+output:
+  xaringan::moon_reader:
+    css: [xaringan-themer.css, "ninjutsu"]
+    lib_dir: libs
+    nature:
+      highlightStyle: solarized-light
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_accent(base_color = "#2F4F4F",
+  header_font_google = google_font("Yanone Kaffeesatz","200","300","400","500","600","700"),
+  text_font_google   = google_font("Roboto", "300", "300i","400","500"),
+  code_font_google   = google_font("Fira Mono"),
+  text_font_size = "125%", 
+  colors = c(
+  red = "#f34213",
+  purple = "#3e2f5b",
+  orange = "#ff8811",
+  green = "#136f63",
+  white = "#FFFFFF",
+  gold = "#FFD700",
+  crimson = "#8B0000"
+),
+extra_css = list(
+    ".remark-slide table" = list("display" = "table",
+                   "width" = "80%",
+                   "text-align" = "left"),
+    ".remark-slide-number" = list("display" = "%current%"),
+    ".strong" = list("font-weight" = "400"),
+    ".big" = list("font-size" = "350%",
+                  "font-family" = "Yanone Kaffeesatz",
+                  "font-weight"="400"),
+    ".small" = list("font-size" = "80%"),
+    ".large" = list("font-size" = "150%"))
+)
+
+```
+
+# Agenda
+- Inferential Statistics & Public Policy
+- Applied Activity: Comparing Frequentist & Bayesian Approaches
+- Evaluation
+- Conclusion
+
+---
+
+class: left, bottom, inverse
+.big[Inferential Statistics & Public Policy]
+
+---
+
+# Inferential Statistics & Public Policy
+
+- here
+
+---
+
+class: left, bottom, inverse
+.big[Applied Activity: Comparing Frequentist & Bayesian Approaches]
+
+---
+
+# Applied Activity: Comparing Frequentist & Bayesian Approaches
+
+- Problem context
+- Activity Application
+- Activity Closing
+
+---
+
+
+class: left, bottom, inverse
+.big[Evaluation]
+
+---
+
+# Evaluation
+
+- survey design
+- results
+
+---
+
+
+class: left, bottom, inverse
+.big[Conclusions]
+
+---
+
+# Conclusions
+
+- implications, directions for future research, etc.
+
+---
+
+class: left, bottom, inverse
+.big[Thank you! Questions?]
