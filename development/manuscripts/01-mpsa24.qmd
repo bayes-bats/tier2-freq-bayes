@@ -134,15 +134,34 @@ The activity application step is the heart of the exercise. Students are assigne
 It is important to note that the data used for each analysis is the exact same for both of the groups, as is the hypothesis that the students are testing. Additionally, the students are asked to assess the same conceptual things, regardless of which activity they receive. They will use the _general inference_ and _model summaries_ comparison discussed in the @sec-activity-intro to diagnose the outputs of the models from the analyses.
 
 __Frequentist Analysis__
+
 Both activities begin with a quick overview of the hypothesis the students are testing, as well as the different components of a statistical model. For the Frequentist model specifically, the instructor introduces the following model, where $B$ as the dependent variable (energy burden percentile), $P$ is the percent black, $m$ is the slope parameter, $b$ is the intercept parameter, and $e$ captures the error term.
 
  $${B = m P + b + e}$$
+The instructor encourages the class to think through how to interpret estimates in a linear model using Frequentist statistics, noting a number of important assumptions along the way, including that the $b$ and $m$ parameters are fixed but unknown values. This is a natural place for a number of questions to be asked of the class related to model summaries and general inference. The questions below illustrate what the class is asked for understanding model summaries in a Frequentist model, along with the associated answers:
+
+::: {.callout-note icon="false" title="Questions for the Class"}
+- Which scenario gives the largest estimate for the slope?
+  - Scenario B
+- Does the confidence interval for Scenario A include zero? (NB. A confidence interval includes zero if Lower < 0 < Upper.)
+  - Yes
+- Does the confidence interval for Scenario B include zero?
+  - Yes
+- Does the confidence interval for Scenario C include zero?
+  - No
+- If a confidence interval includes zero, this indicates that we cannot conclude whether the slope is positive or negative. For which scenarios can we not conclude whether the slope is positive or negative?
+   - Scenarios A and B 
+:::
+
+After students have revisited the concepts around model summaries and general inference for the Frequentist linear model, they move to a predictive model where they are given a number of predicted versus observed plots, show below, for the model across three states: Massachusetts, Colorado, Florida, and the entire sample of data (e.g., the United States). Additionally, they are given the intercept and slope estimates, as well as the confidence intervals for each model.  
 
 ![](01-mpsa-freq-ex1.png){fig-align="center" width=50%}
 
+Once they have seen the results for each of the states and the U.S., students are given a set of questions that encourage them to think about the model results know what they do about model summaries and general inference. At this point, the students are exploring the results of the model in their respective groups and discussing and answering the questions provided to them together.
+
 __Bayesian Analysis__
 
-[TO DO]
+The cadence of the Bayesian analysis largely mirrors the Frequentist analysis to begin.
 
 ![](01-mpsa-bayes-ex1.png){fig-align="center" width=50%}
 
