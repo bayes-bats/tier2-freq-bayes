@@ -30,8 +30,8 @@ format:
   elsevier-html:
     keep-tex: true
     journal:
-      name: Journal Name
-      formatting: preprint
+      name: 
+      formatting: doubleblind
       model: 3p
       cite-style: super
 ---
@@ -134,8 +134,9 @@ The activity application step is the heart of the exercise. Students are assigne
 It is important to note that the data used for each analysis is the exact same for both of the groups, as is the hypothesis that the students are testing. Additionally, the students are asked to assess the same conceptual things, regardless of which activity they receive. They will use the _general inference_ and _model summaries_ comparison discussed in the @sec-activity-intro to diagnose the outputs of the models from the analyses.
 
 __Frequentist Analysis__
+Both activities begin with a quick overview of the hypothesis the students are testing, as well as the different components of a statistical model. For the Frequentist model specifically, the instructor introduces the following model, where $B$ as the dependent variable (energy burden percentile), $P$ is the percent black, $m$ is the slope parameter, $b$ is the intercept parameter, and $e$ captures the error term.
 
-[TO DO]
+ $${B = m P + b + e}$$
 
 ![](01-mpsa-freq-ex1.png){fig-align="center" width=50%}
 
