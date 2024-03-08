@@ -150,7 +150,7 @@ We use these questions for a few reasons. The first is so the entire class can h
 ## Evaluation {#sec-eval}
 In addition to exposing students to different statistical paradigms, we are interested in students' awareness of Bayesian methods and their _epistemological framings_ — their assumptions about the nature and accessibility of "truth" [@elby2010epistemological]. Using pre- and post-pre-activity surveys, we measure students’ self-reported familiarity of fundamental Bayesian ideas. Specifically, we measure their attitudes before the activity, as well as their change in attitudes after the activity, with respect to ideas around statistical inference. The reason for using a post-pre design after the activity is straightforward. We want to capture changes in self-perceived attitudes about a topic by asking participants to consider where they think their beliefs were before the activity, followed by where they think they are now (see @hiebert2014power). The participants give themselves two ratings to capture this before and after reflection, as shown below.
 
-![](01-mpsa-survey-ex1.png){fig-align="center" width=100%}
+![](01-mpsa-survey-ex1.png){fig-align="center" width=75%}
 
 We used a similar format for each of the learning objectives outlined in @sec-applied-activity. The survey includes the following questions with Likert responses ranging from "Strongly disagree" to "Strongly agree": 
 
