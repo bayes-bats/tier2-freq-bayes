@@ -36,6 +36,22 @@ format:
       cite-style: super
 ---
 
+
+```{r setup}
+#| include: false
+#| echo: false
+library(tidyverse)
+library(rstanarm)
+library(bayesplot)
+library(broom.mixed)
+library(patchwork)
+
+#filename <- "../data/1.0-communities.csv"
+
+mean_Intercept_GLOBAL <- 50
+sd_Intercept_GLOBAL <- 12.5
+```
+
 ## Introduction
 Social scientists routinely make use of quantitative methods to understand the complex world around them. Approaches employed range from quasi-experimental, spatial (diffusion), and econometric techniques, to methods that are more qualitative in nature. While Bayesian approaches are not completely missing from public policy and related fields (see @gill2013bayesian; @fienberg2011bayesian), they are underutilized for policy learning among academics and policy specialists. 
 
@@ -135,9 +151,9 @@ It is important to note that the data used for each analysis is the exact same f
 
 __Frequentist Analysis__
 
-Both activities begin with a quick overview of the hypothesis the students are testing, as well as the different components of a statistical model. For the Frequentist model specifically, the instructor introduces the following model, where $B$ as the dependent variable (energy burden percentile), $P$ is the percent black, $m$ is the slope parameter, $b$ is the intercept parameter, and $e$ captures the error term.
+Both activities begin with a quick overview of the hypothesis the students are testing, as well as the different components of a statistical model. For the Frequentist model specifically, the instructor introduces the following model, where $B$ as the dependent variable (energy burden percentile), $P$ is the percent black, $m$ is the slope parameter, $b$ is the intercept parameter, and $\epsilon$ captures the error term.
 
- $${B = m P + b + e}$$
+ $${B = m P + b + \epsilon}$$
 The instructor encourages the class to think through how to interpret estimates in a linear model using Frequentist statistics, noting a number of important assumptions along the way, including that the $b$ and $m$ parameters are fixed but unknown values. This is a natural place for a number of questions to be asked of the class related to model summaries and general inference. The questions below illustrate what the class is asked for understanding model summaries in a Frequentist model, along with the associated answers:
 
 ::: {.callout-note icon="false" title="Questions for the Class"}
@@ -161,7 +177,57 @@ Once they have seen the results for each of the states and the U.S., students ar
 
 __Bayesian Analysis__
 
-The cadence of the Bayesian analysis largely mirrors the Frequentist analysis to begin.
+The cadence of the Bayesian analysis largely mirrors the Frequentist analysis to begin. Like the Frequentist groups, the Bayesian groups also revisit the hypothesis they are testing, as well as the different components of a statistical model, though this time it is a Bayesian linear model. 
+
+$$ B = m P + b + \epsilon $$
+
+where $B$ is the energy burden percentile, $P$ is the percent Black, $m$
+is the slope parameter, $b$ is the intercept parameter, and $\epsilon$
+is a *residual* term that represents factors not accounted in the model.
+The residual term is assumed to be normally distributed
+$\epsilon \sim N(0, \sigma^2)$ with an unknown parameter $\sigma^2$. All
+three parameters have a prior distribution, defined via:
+
+$$
+\begin{aligned} m \sim N(\mu_m, \sigma_m^2), \\ b \sim N(\mu_b, \sigma_b^2), \\ \sigma^2 \sim \text{Exponential}(1/s_y), \end{aligned}
+$$
+where $m, b, \sigma^2$ are independent.[^1] The class discusses how to set
+the prior through its parameter values
+$\mu_m, \mu_b, \sigma_m^2, \sigma_b^2$ later in the activity. The instructor also discusses model assumptions for the Bayesian approach, highlighting one of the fundamental differences between Frequentists and Bayesians: the intercept $b$ and slope $m$ parameters are treated as random variables with a distribution that represents our state of knowledge.
+
+As with the Frequentist analysis, there are a number of questions asked of the class related to model summaries and general inference for the Bayesian analysis. This time, however, students are shown the posterior distribution for the slope ($m$) and intercept ($b$) for a fitted model using Massachusetts data. The idea here is to get students thinking about how confident they should be in drawing conclusions from the model. After they have seen these distributions, they are shown three different posterior distributions for the slope parameter and asked a series of questions:
+
+```{r notional-posteriors}
+#| warning: false
+#| echo: false
+#| fig-align: center
+#| fig-height: 3
+tibble(x = seq(-25, +75, length.out = 200)) %>% 
+  mutate(
+    d_A = dnorm(x, mean =  1, sd =  5),
+    d_B = dnorm(x, mean = 25, sd = 20),
+    d_C = dnorm(x, mean = 25, sd =  5),
+  ) %>% 
+  pivot_longer(
+    cols = contains("d_"),
+    names_sep = "_",
+    names_to = c(".value", "Posterior")
+  ) %>% 
+  
+  ggplot(aes(x, d)) +
+  geom_line() +
+  geom_vline(xintercept = 0, linetype = "dotted") +
+  facet_grid(~Posterior, labeller = label_both) +
+  theme_minimal() +
+  labs(
+    x = "Slope Parameter",
+    y = "Posterior Density",
+  )
+```
+
+
+[^1]: Note that $s_y$ is determined based on the standard deviation in
+    the observed data. This is a way of *autoscaling* the prior.
 
 ![](01-mpsa-bayes-ex1.png){fig-align="center" width=50%}
 
