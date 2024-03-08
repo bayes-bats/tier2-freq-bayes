@@ -26,6 +26,14 @@ bibliography: bibliography.bib
 geometry: margin=1in 
 #mainfont: Calibri
 fontsize: 12pt
+format:
+  elsevier-html:
+    keep-tex: true
+    journal:
+      name: Journal Name
+      formatting: preprint
+      model: 3p
+      cite-style: super
 ---
 
 ## Introduction
@@ -156,7 +164,7 @@ We used a similar format for each of the learning objectives outlined in @sec-ap
 
 1. _To what degree do you (dis) agree with the following statement: There is no uncertainty in the results of a statistical analysis._
 2. _To what degree do you (dis) agree with the following statement: The results of a statistical analysis should not depend on the analyst’s assumptions._
-3. _To what degree do you (dis) agree with the following statement: I know how to relate statistical analysis to things in the real world._
+<!-- 3. _To what degree do you (dis) agree with the following statement: I know how to relate statistical analysis to things in the real world._ -->
 
 Each question that is associated with a learning objectives also gives students an open-ended opportunity to elaborate on their Likert responses. The survey ends by asking students the following open-ended question:
 
