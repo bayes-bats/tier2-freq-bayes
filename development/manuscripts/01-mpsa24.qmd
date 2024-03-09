@@ -173,7 +173,9 @@ After students have revisited the concepts around model summaries and general in
 
 ![](01-mpsa-freq-ex1.png){fig-align="center" width=50%}
 
-Once they have seen the results for each of the states and the U.S., students are given a set of questions that encourage them to think about the model results know what they do about model summaries and general inference. At this point, the students are exploring the results of the model in their respective groups and discussing and answering the questions provided to them together.
+![](01-mpsa-COfreq-ex1.png){fig-align="center" width=50%}
+
+Once they have seen the results for each of the states and the U.S., students are given a set of questions that encourage them to think about the model results know what they do about model summaries and general inference. At this point, the students are exploring the results of the model in their respective groups and discussing and answering together the questions provided to them.
 
 __Bayesian Analysis__
 
@@ -195,7 +197,7 @@ where $m, b, \sigma^2$ are independent.[^1] The class discusses how to set
 the prior through its parameter values
 $\mu_m, \mu_b, \sigma_m^2, \sigma_b^2$ later in the activity. The instructor also discusses model assumptions for the Bayesian approach, highlighting one of the fundamental differences between Frequentists and Bayesians: the intercept $b$ and slope $m$ parameters are treated as random variables with a distribution that represents our state of knowledge.
 
-As with the Frequentist analysis, there are a number of questions asked of the class related to model summaries and general inference for the Bayesian analysis. This time, however, students are shown the posterior distribution for the slope ($m$) and intercept ($b$) for a fitted model using Massachusetts data. The idea here is to get students thinking about how confident they should be in drawing conclusions from the model. After they have seen these distributions, they are shown three different posterior distributions for the slope parameter and asked a series of questions:
+As with the Frequentist analysis, there are a number of questions asked of the class related to model summaries and general inference for the Bayesians. This time, however, students are shown the posterior distribution for the slope ($m$) and intercept ($b$) for a fitted model using Massachusetts data. The idea here is to get students thinking about how confident they should be in drawing conclusions from the model. After they have seen the distributions for these parameters, they are shown three different posterior distributions for the slope parameter so they can make sense of the results from the posterior:
 
 ```{r notional-posteriors}
 #| warning: false
@@ -225,11 +227,55 @@ tibble(x = seq(-25, +75, length.out = 200)) %>%
   )
 ```
 
+Students are then asked a series of questions, a sample of which are below, to get them thinking about what the posterior distribution captures:
+
+::: {.callout-note icon="false" title="Questions for the Class"}
+
+-   Roughly, what fraction of *Posterior Distribution A* is greater than
+    zero?
+    -   Precisely 57.93%, so roughly 60%
+-   Roughly, what fraction of *Posterior Distribution B* is greater than
+    zero?
+    -   Precisely 89.44%, so roughly 90%
+-   Roughly, what fraction of *Posterior Distribution C* is greater than
+    zero?
+    -   Essentially 100%
+-   Which posterior gives the *highest confidence* (*highest
+    probability*) that the slope parameter is positive? How can you
+    tell?
+    -   Posterior C, as the probability is essentially 100% (as we
+        identified above).
+:::
 
 [^1]: Note that $s_y$ is determined based on the standard deviation in
     the observed data. This is a way of *autoscaling* the prior.
 
-![](01-mpsa-bayes-ex1.png){fig-align="center" width=50%}
+The students have the opportunity to look more closely at the slope parameter for Massachusetts and discuss it in the context of general inference. The students should recognize that a positive slope is in agreement with the hypothesis they are exploring before moving to the predictive portion of the Bayesian analysis, studying the posterior predictions.
+
+To further stress the differences between the two approaches, the activity notes that a prior distribution must also be provided for all of the components of the model. These priors represent all of our prior knowledge about the real-world problem the students are trying to solve. It also ties all of the pieces together - a fitted Bayesian model is comprised of the _data + prior = posterior_. The activity walks the students through hypothetical scenarios where different prior distributions are use for the slope parameter when fitting the model with the Massachusetts data. This also shows the utility of a Bayesian approach when you have limited data, as it allows us to incorporate prior knowledge, a scenario we use in the activity (e.g., we assume the CEJS data is limited). 
+
+We employ a sequential Bayesian analysis by using the posterior from one analysis as the prior for a new analysis. We provide the following to the students in the Bayesian group and have the students pick a state's prior distribution for the rest of the activity:
+
+::: {.callout-note icon="false" title="Pick a State"}
+Study the posteriors above carefully; you will use this as a *prior
+distribution* for the slope for the rest of the activity. This means you
+will combine *new data* with a *prior distribution* to form a new
+*posterior distribution* for the model parameters. The *prior
+distribution* should reflect your beliefs about what you think the slope
+parameter should be.
+
+Pick *one state for your group*, then come ask the instructor for your
+chosen state's packet.
+:::
+
+![](01-mpsa-bayesSlope-ex1.png){fig-align="center" width=75%}
+
+
+This represents a critical step in the activity for the Bayesians - they must pick their prior distribution based on their beliefs about what they think the slope parameter should be. This will subsequently be used  with new data to form a posterior distribution later in the activity. Each of the results are placed in an envelope, only to be opened once selected by a group. The following figure represents an example of the sequential Bayesian analysis used in the full activity that students will have to choose from and interpret. On the left are the results showing the fitted lines and slope posteriors for Florida using priors from Massachusetts, Minnesota, and New Hampshire. On the right are the results showing the fitted lines and slope posteriors for Colorado, also using priors from Massachusetts, Minnesota, and New Hampshire.
+
+
+![](01-mpsa-bayescomp.png){fig-align="center" width=100%}
+
 
 #### Activity Closing {#sec-activity-close}
 After students have had the opportunity to work through their respective applied analyses and discuss the questions in the associated document, the groups come back together for a full-class discussion. In addition to students jotting down any remaining questions they may have about each of the following questions, they are posed to the whole class for discussion and are tied to the learning objectives in @sec-applied-activity:
