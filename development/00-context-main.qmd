@@ -9,8 +9,10 @@ author:
 
 Before starting the activity, please use this QR code to access a survey. Even if you choose not to participate in the associated study, you are still welcome to do the activity!
 
-![](./images/bit.ly_olin-bats-pre.png){width=80%} <!-- Olin survey -->
+![](./images/bit.ly_olin-bats-pre.png){width=60% fig-align="center"} <!-- Olin survey -->
 <!-- ![](./images/bit.ly_du-bats-pre.png){width=80%} Replace with Denver survey -->
+
+**Please do not move on until your instructor tells you to.**
 
 \newpage
 ## Overview
@@ -23,7 +25,7 @@ To set the stage for this activity, we are going to use the CEJST data to explor
 
 ## Dataset
 
-The data used for this analysis comes from the [CEJS website](https://screeningtool.geoplatform.gov/en/downloads). The columns (variables) we are most interested in for better understanding these data are:
+The data used for this analysis comes from the [CEJST website](https://screeningtool.geoplatform.gov/en/downloads). The columns (variables) we are most interested in for better understanding these data are:
 
 -   The *energy burden percentile*, which captures the percentile of energy cost as well as energy-related pollution within a census tract.
 -   The *percent of African-American or Black alone*, which captures the percent of African-American or Black individuals in a census tract. 
@@ -37,23 +39,15 @@ First, we will load our data and clean up the variable names using the various p
 # Import tidyverse
 library(tidyverse)
 
-# Load CEJS data and create a new dataframe called 'df_raw'
+# Load CEJST data and create a new dataframe called 'df_raw'
 filename <- "../data/1.0-communities.csv"
 df_raw <- read_csv(filename)
 
 ```
 
 ```{r}
-# Take a look at the first few rows of data
-head(df_raw)
-```
-
-Upon first glance, we can see the column names may need to be changed because there are spaces, slashes, etc. in them. Once we have the data loaded, we can use the `janitor` package to clean up the names of our columns so they are easier to read and use in our analyses.
-
-```{r}
 #| warning: false
 #| output: false
-
 
 # Create a new dataframe called 'df_data' with new column names
 df_data <- 
@@ -72,7 +66,7 @@ df_data %>%
   head(3)
 ```
 
-You will notice that we have eliminated spaces and other formats so our columns are now easier to work with (using `janitor::clean_names()`). We will focus on a few columns in this dataset:
+We will focus on a few columns in this dataset:
 
 - `census_tract_2010_id`: Each row in this dataset corresponds to a *census tract*; this is a small geographic region of the U.S. chosen to represent a consistent number of persons. Census tracts contain about 4000 people, though may contain as few as 1200 and as many as 8000 people.
 - `percent_black_or_african_american_alone`: This reports the percent of people in the census tract who are Black or African American.
@@ -95,11 +89,13 @@ df_small <-
 glimpse(df_small)
 
 ```
+
 Let's use this subset to get our measures of spread and central tendency. 
 
 ```{r}
 summary(df_small)
 ```
+
 ::: {.callout-note icon=false title="Synthesizing Descriptive Statistics"}
 What are some take-aways from our descriptive statistics for our variables of interest? Anything concerning or interesting?
 :::
@@ -108,7 +104,10 @@ Next, we can plot the percent of Black or African-Americans against the energy b
 
 ```{r}
 #| warning: false
-
+#| echo: false
+#| fig-align: center
+#| fig-height: 3
+#| fig-cap: Basic scatterplot of the CEJST data.
 # Plot relationship
 p <- df_small %>% 
   ggplot(aes(
@@ -118,11 +117,11 @@ p <- df_small %>%
   geom_hex() +
   xlab("% Black or African-American in Census Tract") + 
   ylab("Energy Burden Percentile in Census Tract") +
-  geom_smooth()
+  geom_smooth() +
+  theme_minimal()
 
 # Remove legend
 p + theme(legend.position = "none") 
-
 ```
 
 As the figure shows, there is a positive relationship between the percent of Black or African-Americans living in a census tract and the energy burden percentile in the respective census tract. 
