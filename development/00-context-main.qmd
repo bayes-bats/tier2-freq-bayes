@@ -1,12 +1,18 @@
 ---
-title: "Sustainability Trends Among Disadvantaged Communities"
+title: "00 Sustainability Trends Among Disadvantaged Communities"
 subtitle: "Exploring the Climate and Economic Justice Screening Tool (CEJST) Data"
-format: html
+format: pdf
 author: 
   - name: Stefani Langehennig
   - name: Zach del Rosario
 ---
 
+Before starting the activity, please use this QR code to access a survey. Even if you choose not to participate in the associated study, you are still welcome to do the activity!
+
+![](./images/bit.ly_olin-bats-pre.png) <!-- Olin survey -->
+<!-- ![](./images/bit.ly_du-bats-pre.png) <!-- Replace with Denver survey --> -->
+
+\newpage
 ## Overview
 
 As climate change continues to impact the world in which we live, numerous initiatives have been started to better understand the influence it has on individuals and communities. One of those initiatives stems directly from an Executive Order (EO) issued by President Joe Biden in January 2021. The EO resulted in the Council on Environmental Quality creating a tool by which the public can track various burdens across a number of communities. The primary aim of the tool is identify and subsequently help communities disadvantaged by these burdens in government social programs.
@@ -53,16 +59,20 @@ Upon first glance, we can see the column names may need to be changed because th
 df_data <- 
   df_raw %>%
   janitor::clean_names()
-
-# Take a look at the updated data
-glimpse(df_data)
-
-# Check out new column names only
-colnames(df_data)
-
 ```
 
-You will notice that we have eliminated spaces and other formats so our columns are now easier to work with. We will focus on a few columns in this dataset:
+```{r}
+# Select only those columns we'll use in this activity
+df_data %>%
+  select(
+    census_tract_2010_id, 
+    percent_black_or_african_american_alone, 
+    energy_burden_percentile
+  ) %>%
+  head(3)
+```
+
+You will notice that we have eliminated spaces and other formats so our columns are now easier to work with (using `janitor::clean_names()`). We will focus on a few columns in this dataset:
 
 - `census_tract_2010_id`: Each row in this dataset corresponds to a *census tract*; this is a small geographic region of the U.S. chosen to represent a consistent number of persons. Census tracts contain about 4000 people, though may contain as few as 1200 and as many as 8000 people.
 - `percent_black_or_african_american_alone`: This reports the percent of people in the census tract who are Black or African American.
@@ -129,4 +139,7 @@ We now have a better understanding of sustainability trends among disadvantaged 
 How might the trend differ by state? Why do you think they will or will not differ from the overall trend observed above?
 :::
 
-With this information in hand, we will use these data, as well as other variables in the CEJST dataset, to formulate hypotheses. We will test our hypotheses in both a frequentist and Bayesian framework, comparing the application of both approaches across the different stages of our analysis with the end goal being general inference. Let's take a look at the [Introductory Discussion](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/01-introduction-main.qmd) for our activity to learn more.   
+With this information in hand, we will use these data, as well as other variables in the CEJST dataset, to formulate hypotheses. We will test our hypotheses in both a frequentist and Bayesian framework, comparing the application of both approaches across the different stages of our analysis with the end goal being general inference. 
+
+**Coming up next**: When the instructor tells you, please start working through `01 Introduction to Different Statistical Paradigms` with the other students at your table. **Please do not move on until your instructor tells you to.**
+

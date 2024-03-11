@@ -1,13 +1,13 @@
 ---
-title: "Activity Wrap-Up"
+title: "04 Activity Wrap-Up"
 subtitle: "Comparing Frequentist and Bayesian Approaches"
-format: html
+format: pdf
 author:
   - name: Stefani Langehennig
   - name: Zach del Rosario
 ---
 
-
+\newpage
 ## Overview
 
 In this activity, we learned more about *statistical inference* and *statistical assumptions* through the lenses of Frequentists and Bayesians. We used the [CEJST dataset](https://screeningtool.geoplatform.gov/en/) to understand general trends around sustainability and disadvantaged communities, as well as crafted specific research questions and hypotheses that we would like to rigorously test with the data we have. Our research question asked:
@@ -29,7 +29,6 @@ Based on these preliminary trends, we used statistical inference to answer our q
 - How would you answer our research question now that we have analyzed the data?
 - What can we conclude about the relationship between sustainability and disadvantaged communities? What might you recommend from a policy-making perspective?
 :::
-
 
 ## Differences between Frequentist & Bayesian Approaches
 
@@ -107,4 +106,13 @@ _While the conclusion document provides a fairly structured approach for closing
 
 :::
 
+**Coming up next**: When the instructor tells you, please flip to the last page of this activity and follow the QR code link to a post-activity survey. **Please do not move on until your instructor tells you to.**
+
 <!-- solution-end  -->
+
+\newpage
+
+Please use this QR code to access the post-activity survey.
+
+![](./images/bit.ly_olin-bats-post.png) <!-- Olin survey -->
+<!-- ![](./images/bit.ly_du-bats-post.png) <!-- Denver survey --> -->

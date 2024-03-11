@@ -1,6 +1,6 @@
 ---
-title: "Key Ideas"
-format: html
+title: "03 One Page Summary"
+format: pdf
 author: 
   - name: Stefani Langehennig
   - name: Zach del Rosario
@@ -8,12 +8,15 @@ author:
 
 ## Overview
 
+You can use this one-page summary throughout the activity as a reference! You won't need it until `02 CEJST Activity`, though.
+
 <!-- solution-begin -->
 - This summarizes two points from the 03-one-pager-main.qmd document
 - It does not mention two statistical paradigms, so as not to draw too much attention to Frequentist vs Bayes... yet!
 <!-- solution-end -->
 
-*General Inference*: Inference is all about *cautiously* answering questions about a larger dataset while only having access to a smaller dataset. For instance, we may be interested in national trends, but may only have access to data from a handful of U.S. states. 
+::: {.callout-note icon="false" title="General Inference"}
+Inference is all about *cautiously* answering questions about a larger dataset while only having access to a smaller dataset. For instance, we may be interested in national trends, but may only have access to data from a handful of U.S. states. 
 
 To perform inference we must: 
 
@@ -22,6 +25,7 @@ To perform inference we must:
 3. interpret the results in terms of our original question and testable hypothesis.
 
 In order to accomplish (1), we must make a number of *assumptions*. Different statistical approaches use different assumptions....
+:::
 
 <!-- solution-begin -->
 
@@ -35,7 +39,13 @@ The Frequentist and Bayesian approaches make very different assumptions about th
 
 <!-- solution-end -->
 
-*Model Summaries*: Statistical models are complex objects, so we use *model summaries* to help make sense of them.
+::: {.callout-note icon="false" title="Model Summaries"}
+Statistical models are complex objects, so we use *model summaries* to help make sense of them. These include:
+
+- Summaries such as (point) estimates
+- Intervals, such as confidence intervals
+
+:::
 
 <!-- solution-begin -->
 
