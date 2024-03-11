@@ -1,4 +1,11 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Activity Run of Show
+
+For convenience, here's a link to our [video overview](https://www.youtube.com/watch?v=dwNLcFqQqnE). Long link: `https://www.youtube.com/watch?v=dwNLcFqQqnE`
 
 The activity follows 4 primary steps:
 
