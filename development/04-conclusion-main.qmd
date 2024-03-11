@@ -18,18 +18,28 @@ And our primary hypothesis we wanted to test is:
 
   > _As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases)._
 
-To test this, we focused on the Energy Burden Percentile as our dependent variable and Percent Black Census Tract as our primary independent variable in our models. We examined some descriptive statistics to get a better sense of the trends in our data and to help us better understand the relationship between these two variables.
-
-Our initial data exploration found that there is a clear positive trend between the population of Black Americans and the level of energy burden in their respective Census tract for Florida and Massachusetts. However, Colorado has a negative trend, which is somewhat surprising given the results of the other two states. The results from our exploratory analysis suggests there are inequitable outcomes between the states.
-
-Based on these preliminary trends, we used statistical inference to answer our questions. Some students received an analysis completed in the Frequentist framework, while some students received an analysis completed in the Bayesian framework.
+Let's discuss what we've found as a class:
 
 ::: {.callout-note icon=false title="Questions for the Class"}
-- What can we say about our hypothesis?
+- What can we say about our hypothesis? Does it depend on U.S. State?
 - How would you answer our research question now that we have analyzed the data?
 - What can we conclude about the relationship between sustainability and disadvantaged communities? What might you recommend from a policy-making perspective?
+- **Can** we make sound policy decisions, based on what we've seen so far?
 :::
 
+<!-- solution-begin -->
+::: {.callout-note icon=false title="Instructor Tips"}
+- Deliberately call on students from frequentist **and** Bayesian groups.
+- Try to highlight the differences in the students' findings:
+  - "Did anyone find a negative trend for Colorado? Did anyone find a positive trend?"
+  - "Why might these be different?"
+- Emphasize that you can't start making sound policy decisions until you understand discrepancies in your analysis.
+:::
+<!-- solution-end -->
+
+**NOTE:** Please do not go on to the next page until your instructor tells you to!
+
+\newpage
 ## Differences between Frequentist & Bayesian Approaches
 
 There are key differences between Frequentist and Bayesian approaches. In the activity, we focused on model summaries and general inference.
@@ -80,7 +90,7 @@ Here are the differences between how Frequentists and Bayesians get model summar
 
 ### Applying the Differences
 
-With the remainder of class time, separate into groups of 2-3 people, where each group should have at least 1 person who did the Frequentist analysis and 1 person who did the Bayesian analysis. Using the [Critical Differences Reference Guide](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-simplified-main.qmd), discuss the following:
+With the remainder of class time, separate into groups of 2-3 people, where each group should have at least 1 person who did the Frequentist analysis and 1 person who did the Bayesian analysis. Using the critical differences listed on the previous page, discuss the following:
 
 - How do our modeling choices affect our outcomes of interest based on the assumptions we know about both approaches? Are the results for our hypothesis different? If so, how?
 - How do we interpret the coefficients ($m$ and $b$) in both the Frequentist and Bayesian models?
@@ -90,7 +100,7 @@ Jot down 2-3 sentences for each question, as well as any remaining questions or 
 
 ---
 
-<!-- solution-begin  -->
+<!-- solution-begin -->
 
 ::: {.callout-note icon=false title="Instructor Notes: Activity Wrap-Up"}
 
@@ -108,11 +118,13 @@ _While the conclusion document provides a fairly structured approach for closing
 
 **Coming up next**: When the instructor tells you, please flip to the last page of this activity and follow the QR code link to a post-activity survey. **Please do not move on until your instructor tells you to.**
 
-<!-- solution-end  -->
+<!-- solution-end -->
+
+**NOTE**: Please do not flip to the last page until your instructor tells you to.
 
 \newpage
 
 Please use this QR code to access the post-activity survey.
 
-![](./images/bit.ly_olin-bats-post.png){width=80%} <!-- Olin survey -->
-<!-- ![](./images/bit.ly_du-bats-post.png){width=80%} Denver survey -->
+![](./images/bit.ly_olin-bats-post.png){width=60% fig-align="center"} <!-- Olin survey -->
+<!-- ![](./images/bit.ly_du-bats-post.png){width=60%} Denver survey -->
