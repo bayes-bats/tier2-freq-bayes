@@ -23,7 +23,7 @@ By the end of the activity, you should be able to:
 3. State the primary statistical assumptions for Frequentist and Bayesian inference, and understand how they can lead to different conclusions
 
  
-<!-- solution-begin  -->
+<!-- solution-begin -->
 
 ::: {.callout-note icon=false title="Instructor Notes: Introduction to Statistical Paradigms"}
 
@@ -39,7 +39,7 @@ By the end of the activity, you should be able to:
   
 :::
 
-<!-- solution-end  -->
+<!-- solution-end -->
 
 ## Before We Begin...
 
