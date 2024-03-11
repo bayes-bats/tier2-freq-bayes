@@ -12,10 +12,9 @@ This is the **Frequentist** form of the activity.
 <!-- solution-end -->
 \newpage
 
-Armed with all of that background knowledge on the CEJS dataset and on statistical inference, we can proceed with a detailed analysis of the data. In particular, we are interested in assessing the following hypothesis:
+Armed with all of that background knowledge on the CEJST dataset and on statistical inference, we can proceed with a detailed analysis of the data. In particular, we are interested in assessing the following hypothesis:
 
-> *As the population of Black Americans increases (decreases), the level
-> of energy expenditure increases (decreases).*
+> *As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).*
 
 In this part of the session you will interpret results from a statistical model fitted to datasets from different U.S. States.
 
@@ -39,14 +38,14 @@ df_data <-
 
 # Overview
 
-Throughout this activity, you will be studying a statistical model fitted to data from the CEJS dataset. As a reminder, we are interested in the `Energy Burden Percentile` (higher values correspond to a higher burden) and the `Percent Black Census Tract` (which measures the number of people in a region who are Black).
+Throughout this activity, you will be studying a statistical model fitted to data from the CEJST dataset. As a reminder, we are interested in the `Energy Burden Percentile` (higher values correspond to a higher burden) and the `Percent Black Census Tract` (which measures the number of people in a region who are Black).
 
 ```{r fig-overview}
 #| warning: false
 #| echo: false
 #| fig-align: center
 #| fig-height: 3
-#| fig-cap: CEJS data for Massachusetts.
+#| fig-cap: CEJST data for Massachusetts.
 df_data %>% 
   filter(state_territory == "Massachusetts") %>% 
   
@@ -228,7 +227,10 @@ When studying a confidence interval, we should assume the value we are trying to
 **General inference**
 
 ::: {.callout-note icon="false" title="Questions for the Class"}
--   How does the slope parameter relate to our hypothesis? As a reminder, our hypothesis is: \> *As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).* 
+-   How does the slope parameter relate to our hypothesis? As a reminder, our hypothesis is: 
+
+> *As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).* 
+
 <!-- task-begin -->
     -   (Write your response here): 
 <!-- task-end -->
@@ -261,14 +263,14 @@ df_model_MA %>%
 ```
 
 ::: {.callout-note icon="false" title="Questions for the Class"}
--   For Massachusetts, does the fitted model support or contradict our
-    hypothesis? As a reminder, our hypothesis is:
+As a reminder, our hypothesis is:
 
-    > *As the population of Black Americans increases (decreases), the
-    > level of energy expenditure increases (decreases).*
+> *As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).*
 
 <!-- task-begin -->
--   (Write your response here):
+-   For Massachusetts, does the fitted model support or contradict our
+    hypothesis? 
+    -   (Write your response here):
 -   How confident are you in the model results?
     -   (Write your response here): 
 <!-- task-end -->
@@ -353,10 +355,11 @@ The model should fit the data reasonably well; otherwise, we should *distrust* i
 
 ## Data rollout
 
-For the rest of the activity we'll consider a scenario where our access to the CEJS data is limited: Suppose we are conducting our analysis while the data are actively being gathered. In this case, we may have access to the data for some states before others. In this context, this means we'll study some of the individual states before we study the full USA.
+For the rest of the activity we'll consider a scenario where our access to the CEJST data is limited: Suppose we are conducting our analysis while the data are actively being gathered. In this case, we may have access to the data for some states before others. In this context, this means we'll study some of the individual states before we study the full USA.
 
 Armed with this fundamental understanding of statistical inference, we can now apply these ideas to study data from the other states!
 
+\newpage
 # Colorado
 
 ```{r fit-CO}
@@ -518,6 +521,7 @@ df_FL %>%
 
 Given the limited data, we'd expect more uncertainty in our estimates. This will be reflected as a wider confidence interval.
 
+\newpage
 ## Study the results
 
 ```{r fit-FL}
@@ -536,7 +540,7 @@ model_FL <-
 #| warning: false
 #| echo: false
 #| fig-align: center
-#| fig-height: 8
+#| fig-height: 3
 df_model_FL <- 
   model_FL %>% 
   tidy() %>% 
@@ -635,34 +639,20 @@ df_FL_pred %>%
 <!-- solution-end -->
 :::
 
+\clearpage
 # Full USA
 
-After waiting some time, we finally get access to the full U.S. CEJS dataset. With such a large dataset, we expect to see that the results will not depend so much on our choice of prior distribution.
+After waiting some time, we finally get access to the full U.S. CEJST dataset.
 
 ```{r}
-#| warning: false
+#| include: false
 #| echo: false
-#| fig-align: center
-#| fig-height: 3
-#| fig-cap: Data for full USA.
+#| cache: true
 # Random sample of valid observations
 df_USA <- 
   df_data %>% 
   filter(!is.na(percent_black_or_african_american_alone)) %>% 
   slice_sample(n = 10000)
-# Plot
-df_USA %>% 
-  ggplot(aes(
-    percent_black_or_african_american_alone,
-    energy_burden_percentile
-  )) +
-  geom_point(size = 1.0) +
-  scale_x_continuous(labels = scales::percent) +
-  theme_minimal() +
-  labs(
-    x = "Percent Black Census Tract",
-    y = "Energy Burden Percentile",
-  )
 ```
 
 ## Study the results

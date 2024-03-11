@@ -1,6 +1,6 @@
 ---
 title: "02 CEJST Activity"
-pdf: pdf
+format: pdf
 ---
 
 <!-- solution-begin -->
@@ -12,10 +12,9 @@ This is the **Bayesian** form of the activity.
 <!-- solution-end -->
 \newpage
 
-Armed with all of that background knowledge on the CEJS dataset and on statistical inference, we can proceed with a detailed analysis of the data. In particular, we are interested in assessing the following hypothesis:
+Armed with all of that background knowledge on the CEJST dataset and on statistical inference, we can proceed with a detailed analysis of the data. In particular, we are interested in assessing the following hypothesis:
 
-> *As the population of Black Americans increases (decreases), the level
-> of energy expenditure increases (decreases).*
+> *As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).*
 
 In this part of the session you will interpret results from a statistical model fitted to datasets from different U.S. States.
 
@@ -46,7 +45,7 @@ df_data <-
 # Overview
 
 Throughout this activity, you will be studying a statistical model
-fitted to data from the CEJS dataset. As a reminder, we are interested
+fitted to data from the CEJST dataset. As a reminder, we are interested
 in the `Energy Burden Percentile` (higher values correspond to a higher
 burden) and the `Percent Black Census Tract` (which measures the number
 of people in a region who are Black).
@@ -56,7 +55,7 @@ of people in a region who are Black).
 #| echo: false
 #| fig-align: center
 #| fig-height: 3
-#| fig-cap: CEJS data for Massachusetts.
+#| fig-cap: CEJST data for Massachusetts.
 df_data %>% 
   filter(state_territory == "Massachusetts") %>% 
   
@@ -238,7 +237,11 @@ tibble(x = seq(-25, +75, length.out = 200)) %>%
 **General inference**
 
 ::: {.callout-note icon="false" title="Questions for the Class"}
--   How does the slope parameter relate to our hypothesis? As a reminder, our hypothesis is: \> *As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).* <!-- task-begin -->
+-   How does the slope parameter relate to our hypothesis? As a reminder, our hypothesis is: 
+
+> *As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).* 
+
+<!-- task-begin -->
     -   (Write your response here): 
 <!-- task-end -->
 <!-- solution-begin -->
@@ -268,15 +271,14 @@ df_model_MA %>%
 ```
 
 ::: {.callout-note icon="false" title="Questions for the Class"}
--   For Massachusetts, does the fitted model support or contradict our
-    hypothesis? As a reminder, our hypothesis is:
+As a reminder, our hypothesis is:
 
-    > *As the population of Black Americans increases (decreases), the
-    > level of energy expenditure increases (decreases).*
+> *As the population of Black Americans increases (decreases), the level of energy expenditure increases (decreases).*
 
 <!-- task-begin -->
-
--   (Write your response here):
+-   For Massachusetts, does the fitted model support or contradict our
+    hypothesis? 
+    -   (Write your response here):
 -   How confident are you in the model results?
     -   (Write your response here): 
 <!-- task-end -->
@@ -616,7 +618,9 @@ sd_Slope_NH <-
 
 ## Three options
 
-Bayesian approaches to statistics are particularly useful when we have limited data, as they allow us to incorporate prior knowledge. For the rest of the activity we'll consider a scenario where our access to the CEJS data is limited: Suppose we are conducting our analysis while the data are actively being gathered. In this case, we may have access to the data for some states before others. In this context, we can conduct a *sequential* Bayesian analysis by using the posterior from one analysis as the prior for a new analysis.
+Bayesian approaches to statistics are particularly useful when we have limited data, as they allow us to incorporate prior knowledge. For the rest of the activity we'll consider a scenario where our access to the CEJST data is limited: Suppose we are conducting our analysis while the data are actively being gathered. In this case, we may have access to the data for some states before others. In this context, we can conduct a *sequential* Bayesian analysis by using the posterior from one analysis as the prior for a new analysis.
+
+\clearpage
 
 ```{r}
 #| warning: false
@@ -654,6 +658,7 @@ Pick *one state for your group*, then come ask the instructor for your chosen st
 
 Armed with this fundamental understanding of statistical inference, we can now apply these ideas to study data from the other states!
 
+\newpage
 # Colorado
 
 <!-- solution-begin -->
@@ -894,6 +899,8 @@ ggsave("./prep/priorNH_CO.png", bg = "white")
 
 ## Study the results
 
+(Look at the packet you got from the instructor to answer the following questions.)
+
 ::: {.callout-note icon="false" title="Studying Model Results"}
 <!-- task-begin -->
 -   What does the model suggest about the trend of energy burden with
@@ -917,6 +924,7 @@ ggsave("./prep/priorNH_CO.png", bg = "white")
 <!-- solution-end -->
 :::
 
+\newpage
 # Florida
 
 In some cases, we may find that gathering more data is simply not possible. Let's suppose that, for some reason, Florida is unwilling to provide all of their energy burden data. Therefore, we must figure out what to do with only $n=25$ observations:
@@ -1168,9 +1176,12 @@ p_FL_NH_predict + p_FL_NH_posterior
 ggsave("./prep/priorNH_FL.png", bg = "white")
 ```
 
-<!-- solution-begin -->
+<!-- solution-end -->
 
+\newpage
 ## Study the results
+
+(Look at the packet you got from the instructor to answer the following questions.)
 
 ::: {.callout-note icon="false" title="Studying Model Results"}
 <!-- task-begin -->
@@ -1191,9 +1202,10 @@ ggsave("./prep/priorNH_FL.png", bg = "white")
 <!-- solution-end -->
 :::
 
+\newpage
 # Full USA
 
-After waiting some time, we finally get access to the full U.S. CEJS dataset. With such a large dataset, we expect to see that the results will not depend so much on our choice of prior distribution.
+After waiting some time, we finally get access to the full U.S. CEJST dataset. With such a large dataset, we expect to see that the results will not depend so much on our choice of prior distribution.
 
 <!-- solution-begin -->
 
@@ -1417,6 +1429,8 @@ ggsave("./prep/priorNH_USA.png", bg = "white")
 <!-- solution-end -->
 
 ## Study the results
+
+(Look at the packet you got from the instructor to answer the following questions.)
 
 ::: {.callout-note icon="false" title="Studying Model Results"}
 <!-- task-end -->
