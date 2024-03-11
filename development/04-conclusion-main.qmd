@@ -114,5 +114,5 @@ _While the conclusion document provides a fairly structured approach for closing
 
 Please use this QR code to access the post-activity survey.
 
-![](./images/bit.ly_olin-bats-post.png) <!-- Olin survey -->
-<!-- ![](./images/bit.ly_du-bats-post.png) <!-- Denver survey --> -->
+![](./images/bit.ly_olin-bats-post.png){width=80%} <!-- Olin survey -->
+<!-- ![](./images/bit.ly_du-bats-post.png){width=80%} Denver survey -->
