@@ -68,13 +68,6 @@ Literature review here. High-level framing:
   - Why it’s important/works
 - Epistemological framings/5E Model
 
-Overview of model when ready:
-
-- _Engage_: Get students interested
-- _Explore_: Students do self-directed inquiry
-- _Explain_: Give students conceptual tools
-- _Elaborate_: Let students work with the tools
-- _Evaluate_: Assess the learning outcomes
 
 
 
