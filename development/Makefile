@@ -40,5 +40,21 @@ endif
 	-e '/<!-- solution-(begin|end)/d' \
 	< $< > $@
 
+freq:
+	pdfunite 00-context-assignment.pdf \
+		01-introduction-assignment.pdf \
+		02a-activity-freq-assignment.pdf \
+		03-simplified-assignment.pdf \
+		04-conclusion-assignment.pdf \
+		99-full-freq.pdf
+
+bayes:
+	pdfunite 00-context-assignment.pdf \
+		01-introduction-assignment.pdf \
+		02a-activity-freq-assignment.pdf \
+		03-simplified-assignment.pdf \
+		04-conclusion-assignment.pdf \
+		99-full-bayes.pdf
+
 clean:
 	rm -f *assignment.qmd *solution.qmd

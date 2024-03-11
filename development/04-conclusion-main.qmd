@@ -128,3 +128,4 @@ Please use this QR code to access the post-activity survey.
 
 ![](./images/bit.ly_olin-bats-post.png){width=60% fig-align="center"} <!-- Olin survey -->
 <!-- ![](./images/bit.ly_du-bats-post.png){width=60%} Denver survey -->
+

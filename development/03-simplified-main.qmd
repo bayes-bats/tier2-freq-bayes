@@ -58,3 +58,6 @@ Frequentist and Bayesian models are constructed from different assumptions, so t
 |           | 1−$\alpha$% of most likely parameter values fall within a 1−$\alpha$ HPD
 
 <!-- solution-end -->
+
+\newpage
+(This page intentionally left blank)

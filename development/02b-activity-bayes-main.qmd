@@ -1448,3 +1448,6 @@ ggsave("./prep/priorNH_USA.png", bg = "white")
 :::
 
 **Coming up next**: When the instructor tells you, please start working through `04 Activity Wrap-up` with the other students at your table. **Please do not move on until your instructor tells you to.**
+
+\newpage
+(This page intentionally left blank)
