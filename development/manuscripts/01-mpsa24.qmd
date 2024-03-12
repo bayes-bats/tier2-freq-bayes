@@ -68,9 +68,9 @@ One of the primary points stressed in the research advocating for Bayesian infer
 
 At its most basic level, epistemology is concerned with the methods and theories that help understand knowledge origins and acquisition. Epistemological framings are created from personal cognitive resources, such as beliefs, that are activated among individuals conditional on the context they are in [@elby2010epistemological, p.3]. These cognitive resources provide a framework with which individuals can form their understanding of the "nature of knowledge, knowing, and learning", and are often variable and something that the person may not be aware of [@elby2010epistemological, p.4]. An epistemological frame is when individual resources that are reinforced by one another (e.g., "locally coherent") are activated and lead to knowledge stability [@elby2010epistemological, p.6]. Simply, these frames are the expectations that someone brings to different experiences and scenarios, which in turn influences their actions. 
 
-In the context of the classroom, epistemological frames organize activities in the classroom for students, which in turn affects their knowledge and learning. Our goal is to activate students' epistemological frames by structuring our activity around the 5E Model proposed by @duran20045e. The 5E Model is based on constructivist pedagogies and rests on the notion of inquiry-based teaching, or having students discover information on their own without the direct help of instructors [@duran20045e; @uno1999handbook].
+In the context of the classroom, epistemological frames organize activities in the classroom for students, which in turn affects their knowledge and learning. Students who can recognize and critique the assumptions underpinning their analyses (treating them as tentative), but carry out their analyses respecting those analyses (treating them as true) will likely be more effective as practicing statisticians in their discipline. Getting students to recognize the importance of assumptions—and to practice adopting different assumptions—will be a critical first step in developing these multiple epistemological framings.
 
-We implement the 5E model in the applied activity, which is captured in the figure below:
+Our goal is to activate students' epistemological frames by structuring our activity around the 5E Model proposed by @duran20045e. The 5E Model is based on constructivist pedagogies and rests on the notion of inquiry-based teaching, or having students discover information on their own without the direct help of instructors [@duran20045e; @uno1999handbook]. The 5E model is captured in the following figure:
 
 :::{#fig-5E}
 ![](01-mpsa-5E.png){fig-align="center" width=75%}
@@ -78,14 +78,7 @@ We implement the 5E model in the applied activity, which is captured in the figu
 The 5E Instructional Model
 :::
 
--	_Engage_: Get students interested
-- _Explore_: Students do self-directed inquiry
--	_Explain_: Give students conceptual tools
--	_Elaborate_: Let students work with the tools
--	_Evaluate_: Assess the learning outcomes
-
-
-Students who can recognize and critique the assumptions underpinning their analyses (treating them as tentative), but carry out their analyses respecting those analyses (treating them as true) will likely be more effective as practicing statisticians. Getting students to recognize the importance of assumptions—and to practice adopting different assumptions—will be a critical first step in developing these multiple epistemological framings.
+We discuss the 5E model more in @sec-activity-approach, however each of the E's can be thought of as such: _Engage_: Get students interested; _Explore_: Students do self-directed inquiry;	_Explain_: Give students conceptual tools; _Elaborate_: Let students work with the tools; and _Evaluate_: Assess the learning outcomes. We turn next to the applied activity, where students compare Frequentist and Bayesian approaches.
 
 ## Applied Activity: Comparing Frequentist & Bayesian Approaches {#sec-applied-activity}
 To alleviate some of the challenges that come with teaching different techniques of statistical inference, scholars have compared Frequentist and Bayesian approaches to one another, highlighting where they are similar and when they diverge [@samaniego2010comparison]. We designed, implemented, and evaluated an activity that does just this, using a public policy example to guide our comparison. Our primary work included designing an activity that takes students through a structured interrogation of a dataset, with the pilot activity launching during spring of 2024. The activity is designed to take place during one or two class sessions. We evaluated this activity’s impact on students’ statistical knowledge and epistemological framings using the 5E Model [@elby2010epistemological], discussed more below.
