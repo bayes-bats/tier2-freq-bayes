@@ -52,7 +52,9 @@ In this paper, we propose an applied learning activity for students of public po
 What follows is an in-depth examination of how teaching different quantitative methods results in a more robust understanding of public policy. We start by reviewing the research to date on cross-disciplinary approaches to using quantitative methods, as well as how this influences students’ assumptions about their own learning using the epistemological framings in the 5E Model [@elby2010epistemological; @duran20045e]. Next, we introduce our applied activity and describe its implementation in the classroom. We then discuss our findings from implementing the activity, followed by our conclusions from the study. 
 
 ## Statistical Inference for Non-Statistics Disciplines
-Conveying complex concepts and analytical techniques is one of the most challenging aspects of teaching [@bates2007teaching]. In addition to distilling topics down to make them accessible to all students, instructors are frequently tasked with ensuring that the topics learned in class translate “out in the wild” when students enter their respective professions. This is true in the social sciences and other non-statistics disciplines, like public policy, where students are tasked with translating what they know into evidence-based practices. While the theories underpinning non-statistics subjects can be challenging to understand, layering the quantitative methods typically needed to test research questions on top of these theories can create added challenges. Too often the methods and theories, alongside the question of usefulness outside of the academy, make it difficult to link analysis and policy practices together [@connelly2021translating]. What is more, students who are not statistics majors frequently become anxious and tend to avoid quantitative methods unless the methods are contextualized and the connection between their subject and technical approach seems clear [@gunn2017embedding]. Nonetheless, quantitative methods - particularly statistical inference - are a must for social science students. Most students take at least a one to three class sequence on quantitative methods as undergraduates. These usually include some form of research methods, followed by an applied class that teaches traditional Frequentist statistical inference (for example, Null Hypothesis Significance Testing (NHST)).
+Conveying complex concepts and analytical techniques is one of the most challenging aspects of teaching [@bates2007teaching]. In addition to distilling topics down to make them accessible to all students, instructors are frequently tasked with ensuring that the topics learned in class translate “out in the wild” when students enter their respective professions. This is true in the social sciences and other non-statistics disciplines, like public policy, where students are tasked with translating what they know into evidence-based practices. While the theories underpinning non-statistics subjects can be challenging to understand, layering the quantitative methods typically needed to test research questions on top of these theories can create added challenges. Too often the methods and theories, alongside the question of usefulness outside of the academy, make it difficult to link analysis and policy practices together [@connelly2021translating]. 
+
+What is more, students who are not statistics majors frequently become anxious and tend to avoid quantitative methods unless the methods are contextualized and the connection between their subject and technical approach seems clear [@gunn2017embedding]. Nonetheless, quantitative methods - particularly statistical inference - are a must for social science students. Most students take at least a one to three class sequence on quantitative methods as undergraduates. These usually include some form of research methods, followed by an applied class that teaches traditional Frequentist statistical inference (for example, Null Hypothesis Significance Testing (NHST)).
 
 Though they are commonly overlooked relative to other forms of statistical inference, Bayesian approaches do make an appearance in the social sciences. For example, @jackman2000estimation offers Bayesian simulation using Markov chain Monte Carlo (MCMC) algorithms as a unifying quantitative solution to estimating models across several contexts in political science [see also @jackman2000estimationAJPS; @jackman2004bayesian; @jackman2009bayesian]. @shor2007bayesian compare simulations of Bayesian multilevel models to other standard estimators for hierarchical data to showcase the Bayesian model’s flexibility and robustness in time-series cross-sectional data, which are commonly used in political science. Still others use in-person interviews to form elicited priors to better understand trust in judicial systems, bridging the gap between qualitative information and empirical models [@gill2005elicited]. Even in the realm of law, scholars are utilizing techniques such as Bayes factors to buttress forensic evidence in expert testimony in court cases [@kadane2024using].
 
@@ -60,12 +62,22 @@ In public policy, Bayesian techniques have been used to analyze the most critica
 
 Given academics and practitioners outside of statistics use Bayesian techniques for their own work, a handful have tried to incorporate Bayesian philosophy and principles into how estimation is taught among their students. For instance, @gill2013bayesian offer an accessible introduction to Bayesian analysis for students of public administration and policy, arguing that understanding the theoretical differences between the two approaches is critical, and that Bayesian techniques are more appropriate for the discipline. @wagner2005bayesian make a similar argument, stressing that Bayesian inference is "better suited" for answering public policy questions, showcasing their application on educational outcomes in public schools. Indeed, they even go so far as to say that the traditional statistical inference methods taught in public administration and policy programs is “defective and should be replaced [@wagner2005bayesian, p. 5]" because they are borrowed from other disciplines and do not necessarily fit their research challenges. Finally, @luque2023bayesian use a series of different scenarios to demonstrate ways in which to incorporate Bayesian methods into real-world social inquiries. They do this by way of inferential comparisons between Frequentists and Bayesians, underscoring  the differences between the two approaches both theoretically and in practice.
 
+### Activating Epistemological Frames
+
 One of the primary points stressed in the research advocating for Bayesian inference in non-statistics disciplines is not to simply introduce another applied tool without much thought; rather, offering different philosophies and theoretical approaches in addition to the tool is crucial to employing effective analytical practices. Simply, being able to choose and understand the impact of the methodologies used when approaching a real-world problem is critical. In social science quantitative methodology teachings, intellectual development often starts with a “surface approach”, where students memorize and repeat facts that inform them, rather than engaging with or reflecting on the approaches they have learned [@entwistle1997contrasting; @bates2007teaching]. Our goal, in addition to offering a Bayesian learning activity, is to move beyond the surface approach, empowering students with the knowledge to choose between different statistical approaches based on what is productive for the context at hand. This starts with epistemological framings, or the nature of knowledge and understanding among students [@elby2010epistemological].
 
-At its most basic level, epistemology is concerned with the methods and theories that help understand knowledge origins and acquisition. Epistemological framings are created from personal cognitive resources, such as beliefs, that are activated among individuals conditional on the context they are in [@elby2010epistemological, p.3]. These cognitive resources provide a framework with which individuals can form their understanding of the "nature of knowledge, knowing, and learning", and is often variable and something that the person may not be aware of [@elby2010epistemological, p.4]. 
+At its most basic level, epistemology is concerned with the methods and theories that help understand knowledge origins and acquisition. Epistemological framings are created from personal cognitive resources, such as beliefs, that are activated among individuals conditional on the context they are in [@elby2010epistemological, p.3]. These cognitive resources provide a framework with which individuals can form their understanding of the "nature of knowledge, knowing, and learning", and are often variable and something that the person may not be aware of [@elby2010epistemological, p.4]. An epistemological frame is when individual resources that are reinforced by one another (e.g., "locally coherent") are activated and lead to knowledge stability [@elby2010epistemological, p.6]. Simply, these frames are the expectations that someone brings to different experiences and scenarios, which in turn influences their actions. 
 
+In the context of the classroom, epistemological frames organize activities in the classroom for students, which in turn affects their knowledge and learning. Our goal is to activate students' epistemological frames by structuring our activity around the 5E Model proposed by @duran20045e. The 5E Model is based on constructivist pedagogies and rests on the notion of inquiry-based teaching, or having students discover information on their own without the direct help of instructors [@duran20045e; @uno1999handbook].
 
-We structure the activity that follows around the 5E Model based on constructivist pedagogies [@duran20045e] is as follows:
+We implement the 5E model in the applied activity, which is captured in the figure below:
+
+:::{#fig-5E}
+![](01-mpsa-5E.png){fig-align="center" width=75%}
+
+The 5E Instructional Model
+:::
+
 -	_Engage_: Get students interested
 - _Explore_: Students do self-directed inquiry
 -	_Explain_: Give students conceptual tools
@@ -114,7 +126,12 @@ We begin with a straightforward explanation of the dataaset, situating it in the
 
 To dig into the context of our real-world problem further, we also provide embedded code snippets and output from `R` of some high-level exploratory data analysis (EDA) for the students to review and discuss. We begin by focusing our attention on a few variables of interest for EDA. We start with the _energy burden percentile_, which captures the percentile of energy cost as well as energy-related pollution within a census tract, as well as the _percent of African-American or Black alone_, which captures the percent of African-American or Black individuals in a census tract.^[While we guide our students to the variables we want to explore for this implementation of the activity, instructors can modify the activity such that students explore the dataset and identify variables of interest on their own. If they know how to use statistical software, they can also conduct the EDA and analyses in `R` on their own, rather than giving them the completed version as we do here.] The instructor walks the students through basic data wrangling, providing prompt questions to get them thinking about the substantive implications of descriptive statistics and visualizations. Below is an example of the output, which contains the code used to create the figure, as well as a short description and a prompt question for the students.
 
+:::{#fig-context}
 ![](01-mpsa-context-ex1.png){fig-align="center" width=75%}
+
+Example of Context Document
+:::
+
 
 After students have investigated the dataset and have a more thorough understanding of the problem at hand, the instructor turns their attention to the introduction document, discussed next. 
 
@@ -166,11 +183,22 @@ The instructor encourages the class to think through how to interpret estimates 
    - Scenarios A and B 
 :::
 
-After students have revisited the concepts around model summaries and general inference for the Frequentist linear model, they move to a predictive model where they are given a number of predicted versus observed plots, show below, for the model across three states: Massachusetts, Colorado, Florida, and the entire sample of data (e.g., the United States). Additionally, they are given the intercept and slope estimates, as well as the confidence intervals for each model.  
+After students have revisited the concepts around model summaries and general inference for the Frequentist linear model, they move to a predictive model where they are given a number of predicted versus observed plots, show below, for the model across three states: Massachusetts, Colorado, Florida, and the entire sample of data (e.g., the United States).  
 
+:::{#fig-freq1}
 ![](01-mpsa-freq-ex1.png){fig-align="center" width=50%}
 
-![](01-mpsa-COfreq-ex1.png){fig-align="center" width=50%}
+Example Trend from Frequentist Analysis
+:::
+
+Additionally, they are given the intercept and slope estimates, as well as the confidence intervals for each model.
+
+:::{#fig-freq2}
+![](01-mpsa-COfreq-ex1.png){fig-align="center" width=70%}
+
+Example Model Summary from Frequentist Analysis
+:::
+
 
 Once they have seen the results for each of the states and the U.S., students are given a set of questions that encourage them to think about the model results know what they do about model summaries and general inference. At this point, the students are exploring the results of the model in their respective groups and discussing and answering together the questions provided to them.
 
@@ -196,7 +224,7 @@ $\mu_m, \mu_b, \sigma_m^2, \sigma_b^2$ later in the activity. The instructor als
 
 As with the Frequentist analysis, there are a number of questions asked of the class related to model summaries and general inference for the Bayesians. This time, however, students are shown the posterior distribution for the slope ($m$) and intercept ($b$) for a fitted model using Massachusetts data. The idea here is to get students thinking about how confident they should be in drawing conclusions from the model. After they have seen the distributions for these parameters, they are shown three different posterior distributions for the slope parameter so they can make sense of the results from the posterior:
 
-```{r notional-posteriors}
+```{r notional-posteriors, fig.cap = "Figure 4: Notational Slope Posteriors for Bayesian Analysis"}
 #| warning: false
 #| echo: false
 #| fig-align: center
@@ -265,14 +293,19 @@ Pick *one state for your group*, then come ask the instructor for your
 chosen state's packet.
 :::
 
+:::{#fig-slopes2}
 ![](01-mpsa-bayesSlope-ex1.png){fig-align="center" width=75%}
 
+Example Posterior Choices from Bayesian Analysis
+:::
 
 This represents a critical step in the activity for the Bayesians - they must pick their prior distribution based on their beliefs about what they think the slope parameter should be. This will subsequently be used  with new data to form a posterior distribution later in the activity. Each of the results are placed in an envelope, only to be opened once selected by a group. The following figure represents an example of the sequential Bayesian analysis used in the full activity that students will have to choose from and interpret. On the left are the results showing the fitted lines and slope posteriors for Florida using priors from Massachusetts, Minnesota, and New Hampshire. On the right are the results showing the fitted lines and slope posteriors for Colorado, also using priors from Massachusetts, Minnesota, and New Hampshire.
 
-
+:::{#fig-comparison}
 ![](01-mpsa-bayescomp.png){fig-align="center" width=100%}
 
+Comparison with Different Priors from Bayesian Analysis
+:::
 
 #### Activity Closing {#sec-activity-close}
 After students have had the opportunity to work through their respective applied analyses and discuss the questions in the associated document, the groups come back together for a full-class discussion. In addition to students jotting down any remaining questions they may have about each of the following questions, they are posed to the whole class for discussion and are tied to the learning objectives in @sec-applied-activity:
@@ -287,7 +320,11 @@ We use these questions for a few reasons. The first is so the entire class can h
 ## Evaluation {#sec-eval}
 In addition to exposing students to different statistical paradigms, we are interested in students' awareness of Bayesian methods and their _epistemological framings_ — their assumptions about the nature and accessibility of "truth" [@elby2010epistemological]. Using pre- and post-pre-activity surveys, we measure students’ self-reported familiarity of fundamental Bayesian ideas. Specifically, we measure their attitudes before the activity, as well as their change in attitudes after the activity, with respect to ideas around statistical inference. The reason for using a post-pre design after the activity is straightforward. We want to capture changes in self-perceived attitudes about a topic by asking participants to consider where they think their beliefs were before the activity, followed by where they think they are now (see @hiebert2014power). The participants give themselves two ratings to capture this before and after reflection, as shown below.
 
+:::{#fig-survey1}
 ![](01-mpsa-survey-ex1.png){fig-align="center" width=75%}
+
+Example of Post-Pre Survey Used in Activity
+:::
 
 We used a similar format for each of the learning objectives outlined in @sec-applied-activity. The survey includes the following questions with Likert responses ranging from "Strongly disagree" to "Strongly agree": 
 
