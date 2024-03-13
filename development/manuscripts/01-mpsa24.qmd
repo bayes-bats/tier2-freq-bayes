@@ -75,7 +75,7 @@ Our goal is to activate students' epistemological frames by structuring our acti
 :::{#fig-5E}
 ![](01-mpsa-5E.png){fig-align="center" width=75%}
 
-The 5E Instructional Model
+The 5E Instructional Model (as seen in @duran20045e, p.52)
 :::
 
 We discuss the 5E model more in @sec-activity-approach, however each of the E's can be thought of as such: _Engage_: Get students interested; _Explore_: Students do self-directed inquiry;	_Explain_: Give students conceptual tools; _Elaborate_: Let students work with the tools; and _Evaluate_: Assess the learning outcomes. We turn next to the applied activity, where students compare Frequentist and Bayesian approaches.
