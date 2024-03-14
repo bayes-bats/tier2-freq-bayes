@@ -311,19 +311,27 @@ We use these questions for a few reasons. The first is so the entire class can h
 
 
 ## Evaluation {#sec-eval}
-In addition to exposing students to different statistical paradigms, we are interested in students' awareness of Bayesian methods and their _epistemological framings_ — their assumptions about the nature and accessibility of "truth" [@elby2010epistemological]. Using pre- and post-pre-activity surveys, we measure students’ self-reported familiarity of fundamental Bayesian ideas. Specifically, we measure their attitudes before the activity, as well as their change in attitudes after the activity, with respect to ideas around statistical inference. The reason for using a post-pre design after the activity is straightforward. We want to capture changes in self-perceived attitudes about a topic by asking participants to consider where they think their beliefs were before the activity, followed by where they think they are now (see @hiebert2014power). The participants give themselves two ratings to capture this before and after reflection, as shown below.
+In addition to exposing students to different statistical paradigms, we are interested in students' awareness of Bayesian methods and their _epistemological framings_ — their assumptions about the nature and accessibility of "truth" [@elby2010epistemological]. Using pre- and post-pre-activity surveys, we measure students’ self-reported familiarity of fundamental Bayesian ideas. Specifically, we measure their attitudes before the activity, as well as their change in attitudes after the activity, with respect to ideas around statistical inference. The pre-activity survey contains the consent form required by IRB, as well as a series of questions with Likert and open-ended responses that look like the following:
+
+:::{#fig-survey2}
+![](01-mpsa-survey-ex0.png){fig-align="center" width=75%}
+
+Example of Pre-Activity Survey
+:::
+
+Once the activity is complete, we use a post-pre survey. The reason for using a post-pre design after the activity is straightforward. We want to capture changes in self-perceived attitudes about a topic by asking participants to consider where they think their beliefs were before the activity, followed by where they think they are now (see @hiebert2014power). The participants give themselves two ratings to capture this before and after reflection, as shown below.
 
 :::{#fig-survey1}
 ![](01-mpsa-survey-ex1.png){fig-align="center" width=75%}
 
-Example of Post-Pre Survey Used in Activity
+Example of Post-Pre-Activity Survey
 :::
 
 We used a similar format for each of the learning objectives outlined in @sec-applied-activity. The survey includes the following questions with Likert responses ranging from "Strongly disagree" to "Strongly agree": 
 
 1. _To what degree do you (dis) agree with the following statement: There is no uncertainty in the results of a statistical analysis._
 2. _To what degree do you (dis) agree with the following statement: The results of a statistical analysis should not depend on the analyst’s assumptions._
-<!-- 3. _To what degree do you (dis) agree with the following statement: I know how to relate statistical analysis to things in the real world._ -->
+3. _To what degree do you (dis) agree with the following statement: I know how to relate statistical analysis to things in the real world._ 
 
 Each question that is associated with a learning objectives also gives students an open-ended opportunity to elaborate on their Likert responses. The survey ends by asking students the following open-ended question:
 
