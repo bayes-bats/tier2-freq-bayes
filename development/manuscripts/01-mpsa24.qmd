@@ -27,8 +27,8 @@ affiliations:
     name: Assistant Professor, University of California Irvine
 filters:
   - authors-block
-#abstract: |
- # Implementing quantitative methodological techniques is a crucial piece of understanding public policy. While quasi-experimental, spatial (diffusion), and mixed methods are most commonly used when teaching policy studies, little research exists on using Bayesian approaches for policy learning, or how the outcomes from traditional quantitative approaches differ from a Bayesian approach. We propose an applied learning activity for students of public policy that exposes them to Bayesian methods and explores the differences between this statistical paradigm and more commonly used approaches. We do this using a structured interrogation of the [The Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/) (CEJST) and the epistemological framings in the 5E model [@elby2010epistemological; @duran20045e]. The activity illustrates the importance of statistical assumptions, and by extension, the impact that different quantitative methods have on understanding public policy. The goal of the study is to introduce students, instructors, and practitioners of public policy to a new way of using statistics, equipping them with the tool set and logical processes necessary to apply either approach as they see fit when studying public policy.
+abstract: |
+  Implementing quantitative methodological techniques is a crucial piece of understanding public policy. While quasi-experimental, spatial (diffusion), and mixed methods are most commonly used when teaching policy studies, little research exists on using Bayesian approaches for policy learning, or how the outcomes from traditional quantitative approaches differ from a Bayesian approach. We propose an applied learning activity for students of public policy that exposes them to Bayesian methods and explores the differences between this statistical paradigm and more commonly used approaches. We do this using a structured interrogation of the [The Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/) (CEJST) and the epistemological framings in the 5E model [@elby2010epistemological; @duran20045e]. The activity illustrates the importance of statistical assumptions, and by extension, the impact that different quantitative methods have on understanding public policy. The goal of the study is to introduce students, instructors, and practitioners of public policy to a new way of using statistics, equipping them with the tool set and logical processes necessary to apply either approach as they see fit when studying public policy.
 #keywords:
 #  - Active Learning
 #  - Public Policy
@@ -110,9 +110,9 @@ The activity learning objectives are three-fold. First, students should be able 
 
 __Recruitment__
 
-The work for this manuscript was completed under an IRB exempt protocol (number 2156277) approved by the University of Denver IRB. It is designed for use in a classroom for non-statistics majors. To pilot the activity among students before disseminating widely, we implemented the activity with two distinct populations at our respective institutions. Students from the University of Denver Daniels College of Business who participated in the activity are undergraduates who have various majors ranging from Marketing to Business Ethics and Legal Studies, while students recruited from Olin College of Engineering are undergraduates who have focus on a variety of engineering-related topics. After completion of the pilot study, we plan to disseminate and implement this activity with other non-statistics undergraduates, including students of public policy and political science.
+The work for this manuscript was completed under an IRB exempt protocol (number 2156277) approved by the University of Denver IRB. It is designed for use in a classroom for non-statistics majors. To pilot the activity among students before disseminating widely, we implemented the activity with two distinct populations at our respective institutions. Students from the University of Denver Daniels College of Business who participated in the activity are undergraduates - typically freshmen and sophomores - who have various majors ranging from Marketing to Business Ethics and Legal Studies. Students recruited from Olin College of Engineering - a small liberal arts-flavored university in Massachusetts - are undergraduates who have focus on a variety of engineering-related topics. After completion of the pilot study, we plan to disseminate and implement this activity with other non-statistics undergraduates, including students of public policy and political science.
 
-For both institutions, participants had to be at least 18 years of age or older and must have completed at least one entry-level statistics course. At the University of Denver, all students enrolled in a business school major must complete three courses that are part of their statistics sequence (INFO 1010, 1020, and 2020). At DU, the activity was introduced to students currently enrolled in a Winter 2024 quarter INFO 1020 course. The activity was run during normal class time as a typical lecture; however, students did not receive a grade for the activity and had the option to opt out if they so chose. Similarly, the activity was run during normal class time at Olin with undergraduate students currently enrolled in the Introduction to Data Science course. Students at Olin also had the choice to participate or opt out if they so chose. Students at both institutions were not compensated for participating in the activity.
+For both institutions, participants had to be at least 18 years of age or older and must have completed at least one entry-level statistics course. At the University of Denver, all students enrolled in a business school major must complete three courses that are part of their statistics sequence (INFO 1010, 1020, and 2020). Here, the activity was introduced to students currently enrolled in a Winter 2024 quarter INFO 1020 course. The activity was run during normal class time as a typical lecture; however, students did not receive a grade for the activity and had the option to opt out if they so chose. Similarly, the activity was run during normal class time at Olin with undergraduate students currently enrolled in the Introduction to Data Science course. Students at Olin also had the choice to participate or opt out if they so chose. Students at both institutions were not compensated for participating in the activity. Both populations were exposed to topics such as visualization, data wrangling, and basics of frequentist statistics (e.g., confidence intervals, hypothesis testing, etc.).
 
 __Activity Materials__
 
@@ -360,13 +360,19 @@ _From the activity, what did you learn about the differences between Frequentist
 The post-pre survey is implemented after the activity closing, when students have had the opportunity to talk through the outcomes of each approach with their peers and the instructor. The results of the pilot implementation at the University of Denver and Olin College of Engineering are discussed next. 
 
 ### Results {#sec-results}
-For the pre-activity survey, 17 students at the University of Denver completed the questions. The results varied across the battery of questions asked of the students. Most interesting was the response about the importance of assumptions...
+_University of Denver_
+
+For the pre-activity survey, 17 students completed the questions. While The results varied across the battery of questions asked, the responses... Most interesting was the response about the importance of assumptions...
 [short write up here]
 [short write up on short answer responses if anything good]
 
 For the post-pre activity survey, 12 students at the University of Denver completed the questions.
 [short write up here]
 [short write up on short answer responses if anything good]
+
+_Olin College of Engineering_
+
+[results here]
 
 
 ## Discussion {#sec-discussion}
