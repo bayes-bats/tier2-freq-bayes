@@ -359,21 +359,36 @@ _From the activity, what did you learn about the differences between Frequentist
 
 The post-pre survey is implemented after the activity closing, when students have had the opportunity to talk through the outcomes of each approach with their peers and the instructor. The results of the pilot implementation at the University of Denver and Olin College of Engineering are discussed next. 
 
-### Results {#sec-results}
-_University of Denver_
+### Preliminary Results {#sec-results}
+What follows are the preliminary results from the activity's implementation. At the University of Denver, there were n=12 pairs of valid pre- and post-pre responses. At Olin, there were n=25 pairs of valid responses across the surveys. The results for each question are shown below. 
 
-For the pre-activity survey, 17 students completed the questions. While The results varied across the battery of questions asked, the responses... Most interesting was the response about the importance of assumptions...
-[short write up here]
-[short write up on short answer responses if anything good]
+::: {#fig-Q1 layout-ncol=2 fig-align="center"}
 
-For the post-pre activity survey, 12 students at the University of Denver completed the questions.
-[short write up here]
-[short write up on short answer responses if anything good]
+![](q1-combined.png){width=100%}
 
-_Olin College of Engineering_
+Question 1 - To what degree do you (dis) agree with the following statement: There is no uncertainty in the results of a statistical analysis.
+:::
 
-[results here]
+::: {#fig-Q2 layout-ncol=2 fig-align="center"}
 
+![](q2-combined.png){width=100%}
+
+Question 2 - To what degree do you (dis) agree with the following statement: The results of a statistical analysis should not depend on the analyst’s assumptions.
+:::
+
+For questions 2, students...
+
+::: {#fig-Q3 layout-ncol=2 fig-align="center"}
+
+![](q3-combined.png){width=100%}
+
+Question 3 - To what degree do you (dis) agree with the following statement: I know how to relate statistical analysis to things in the real world.
+:::
+
+Question 3...and the students,,,
+
+
+Of interest are the responses to the qualitative, open-ended question #4 in the post-activity survey. Recall the question asked, _"From the activity, what did you learn about the differences between Frequentist and Bayesian statistics? Please provide as much information as you can."_ Responses ranged from simplistic, including "Frequentists aren’t based on things or data from before while Bayesian is." to succinct, such as "Bayesian has a prior model, frequenting just takes the data as is." to relatively sophisticated: "The approaches are fundamentally different — Frequentists look at data alone while Bayesians consider prior information models in conjunction with their data. Both methods are valid modeling techniques, but Bayesian may be more useful to use when working with fewer data points (assuming a good prior is chosen) to help overcome deficiencies of minimal data." Finally, there were incorrect answers to this question. For example, one student stated that "Understanding how you use prior assumptions to shape new assumptions based on new data vs creating a new assumption for each new dataset."
 
 ## Discussion {#sec-discussion}
 This activity bridges the gap between the common Frequentist approach oft taught in both undergraduate and graduate statistics classes and the Bayesian paradigm, to which many students have not been exposed. We do this using an applied approach, with an eye towards answering education research questions. While many teaching methods highlight the theoretical similarities and differences between Frequentists and Bayesians, our activity moves beyond by grounding the comparison in a real-data application, as well as measuring the impact of applying both frameworks in the classroom. In doing so, we hope to introduce students to a new way of using statistics, equipping them with the tool set and logical processes necessary to apply either the Frequentist or Bayesian (or both) approaches as they see fit.
