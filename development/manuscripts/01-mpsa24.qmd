@@ -40,11 +40,11 @@ geometry: margin=1in
 #mainfont: Calibri
 fontsize: 12pt
 format:
-  html: 
-    number-sections: true
-  #pdf: 
+  #html: 
     #number-sections: true
-    #fig-pos: "H"
+  pdf: 
+    #number-sections: true
+    fig-pos: "H"
     #keep-tex: true
 ---
 
@@ -110,7 +110,7 @@ The activity learning objectives are three-fold. First, students should be able 
 
 __Recruitment__
 
-The work for this manuscript was completed under an IRB exempt protocol (number 2156277) approved by the University of Denver IRB. It is designed for use in a classroom for non-statistics majors. To pilot the activity among students before disseminating widely, we implemented the activity with two distinct populations at our respective institutions. Students from the University of Denver Daniels College of Business who participated in the activity are undergraduates - typically freshmen and sophomores - who have various majors ranging from Marketing to Business Ethics and Legal Studies. Students recruited from Olin College of Engineering - a small liberal arts-flavored university in Massachusetts - are undergraduates who have focus on a variety of engineering-related topics. After completion of the pilot study, we plan to disseminate and implement this activity with other non-statistics undergraduates, including students of public policy and political science.
+The work for this manuscript was completed under an IRB exempt protocol (number 2156277) approved by the University of Denver IRB. It is designed for use in a classroom for non-statistics majors. To pilot the activity among students before disseminating widely, we implemented the activity with two distinct populations at our respective institutions. Students from the University of Denver (DU) Daniels College of Business who participated in the activity are undergraduates - typically freshmen and sophomores - who have various majors ranging from Marketing to Business Ethics and Legal Studies. Students recruited from Olin College of Engineering - a small liberal arts-flavored university in Massachusetts - are undergraduates who have focus on a variety of engineering-related topics. After completion of the pilot study, we plan to disseminate and implement this activity with other non-statistics undergraduates, including students of public policy and political science.
 
 For both institutions, participants had to be at least 18 years of age or older and must have completed at least one entry-level statistics course. At the University of Denver, all students enrolled in a business school major must complete three courses that are part of their statistics sequence (INFO 1010, 1020, and 2020). Here, the activity was introduced to students currently enrolled in a Winter 2024 quarter INFO 1020 course. The activity was run during normal class time as a typical lecture; however, students did not receive a grade for the activity and had the option to opt out if they so chose. Similarly, the activity was run during normal class time at Olin with undergraduate students currently enrolled in the Introduction to Data Science course. Students at Olin also had the choice to participate or opt out if they so chose. Students at both institutions were not compensated for participating in the activity. Both populations were exposed to topics such as visualization, data wrangling, and basics of frequentist statistics (e.g., confidence intervals, hypothesis testing, etc.).
 
@@ -360,35 +360,38 @@ _From the activity, what did you learn about the differences between Frequentist
 The post-pre survey is implemented after the activity closing, when students have had the opportunity to talk through the outcomes of each approach with their peers and the instructor. The results of the pilot implementation at the University of Denver and Olin College of Engineering are discussed next. 
 
 ### Preliminary Results {#sec-results}
-What follows are the preliminary results from the activity's implementation. At the University of Denver, there were n=12 pairs of valid pre- and post-pre responses. At Olin, there were n=25 pairs of valid responses across the surveys. The results for each question are shown below. 
+What follows are the preliminary results from the activity's implementation. At the University of Denver (responses on the left), there were n=12 pairs of valid pre- and post-pre responses. At Olin (responses on the right), there were n=25 pairs of valid responses across the surveys. The results for each question are shown below. For the DU responses on the left, the x-axis illustrates the Likert scale responses, while the y-axis represents the response for the pre-activity survey, the response for the pre-activity self-assessment in the post-activity survey, and the response for the post-activity self-assessment in the post-activity survey. The Olin responses on the right showcase the same information, albeit with the axes flipped and with the pre- and post-activity responses connected by lines. Each point on both figures represents one respondent. 
 
-::: {#fig-Q1 layout-ncol=2 fig-align="center"}
+::: {#fig-Q1 fig-align="center"}
 
 ![](q1-combined.png){width=100%}
 
 Question 1 - To what degree do you (dis) agree with the following statement: There is no uncertainty in the results of a statistical analysis.
 :::
 
-::: {#fig-Q2 layout-ncol=2 fig-align="center"}
+For question one, students generally disagreed with the notion that there is not uncertainty associated with the results of statistical analysis across the different survey stages, though it is difficult to take away many meaningful insights from this particular question. Interestingly, a few respondents from DU trended towards the agree answers after the activity, suggesting they may have assumed Bayesians do not account for uncertainty in their results. Olin students' responses generally conform with what we would expect after the activity.
+
+::: {#fig-Q2 fig-align="center"}
 
 ![](q2-combined.png){width=100%}
 
 Question 2 - To what degree do you (dis) agree with the following statement: The results of a statistical analysis should not depend on the analyst’s assumptions.
 :::
 
-For questions 2, students...
+Question two had more variation with respect to the answers provided by both groups of students. Again, it is hard to discern many meaningful patterns around the pre- and post-activity battery of questions. We partially attribute this to poor question wording. We plan to change the question such that it reads "the results of a statistical analysis DO NOT depend on the analyst's assumptions" rather than what it is now. 
 
-::: {#fig-Q3 layout-ncol=2 fig-align="center"}
+::: {#fig-Q3 fig-align="center"}
 
 ![](q3-combined.png){width=100%}
 
 Question 3 - To what degree do you (dis) agree with the following statement: I know how to relate statistical analysis to things in the real world.
 :::
 
-Question 3...and the students,,,
+The third Likert question has students reflect on whether they know how to relate statistical analysis to things in the real world. For most students across the board, there was not a huge shift in attitudes. While there are a few students who appear to go between strongly and somewhat agree on this question, students perceive themselves as having a decent grasp of how to apply statistics to real-world problems. 
 
+Of interest are the responses to the open-ended question four in the post-activity survey. Recall the question asked, _"From the activity, what did you learn about the differences between Frequentist and Bayesian statistics? Please provide as much information as you can."_ Responses ranged from simplistic, including "Frequentists aren’t based on things or data from before while Bayesian is." to succinct, such as "Bayesian has a prior model, frequenting just takes the data as is." to relatively sophisticated: "The approaches are fundamentally different — Frequentists look at data alone while Bayesians consider prior information models in conjunction with their data. Both methods are valid modeling techniques, but Bayesian may be more useful to use when working with fewer data points (assuming a good prior is chosen) to help overcome deficiencies of minimal data." Finally, there were incorrect answers to this question. For example, one student stated that "Understanding how you use prior assumptions to shape new assumptions based on new data vs creating a new assumption for each new dataset."
 
-Of interest are the responses to the qualitative, open-ended question #4 in the post-activity survey. Recall the question asked, _"From the activity, what did you learn about the differences between Frequentist and Bayesian statistics? Please provide as much information as you can."_ Responses ranged from simplistic, including "Frequentists aren’t based on things or data from before while Bayesian is." to succinct, such as "Bayesian has a prior model, frequenting just takes the data as is." to relatively sophisticated: "The approaches are fundamentally different — Frequentists look at data alone while Bayesians consider prior information models in conjunction with their data. Both methods are valid modeling techniques, but Bayesian may be more useful to use when working with fewer data points (assuming a good prior is chosen) to help overcome deficiencies of minimal data." Finally, there were incorrect answers to this question. For example, one student stated that "Understanding how you use prior assumptions to shape new assumptions based on new data vs creating a new assumption for each new dataset."
+It is important to note that these results should be interpreted with caution. While the survey questions are informative to a degree, the qualitative, open-ended responses are providing far more insight into the learners' attitudes about inferential statistics and how their understanding changed over the course of the activity. Given the small sample size, we anticipate more robust findings after more iterations of the activity have been implemented.
 
 ## Discussion {#sec-discussion}
 This activity bridges the gap between the common Frequentist approach oft taught in both undergraduate and graduate statistics classes and the Bayesian paradigm, to which many students have not been exposed. We do this using an applied approach, with an eye towards answering education research questions. While many teaching methods highlight the theoretical similarities and differences between Frequentists and Bayesians, our activity moves beyond by grounding the comparison in a real-data application, as well as measuring the impact of applying both frameworks in the classroom. In doing so, we hope to introduce students to a new way of using statistics, equipping them with the tool set and logical processes necessary to apply either the Frequentist or Bayesian (or both) approaches as they see fit.
