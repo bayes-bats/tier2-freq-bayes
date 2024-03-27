@@ -24,7 +24,7 @@ affiliations:
   - id: 2
     name: Assistant Professor, Olin College of Engineering
   - id: 3
-    name: Assistant Professor, University of California Irvine
+    name: Associate Professor, University of California Irvine
 filters:
   - authors-block
 abstract: |
@@ -40,11 +40,11 @@ geometry: margin=1in
 #mainfont: Calibri
 fontsize: 12pt
 format:
-  #html: 
+  html: 
+    number-sections: true
+  #pdf: 
     #number-sections: true
-  pdf: 
-    #number-sections: true
-    fig-pos: "H"
+    #fig-pos: "H"
     #keep-tex: true
 ---
 
