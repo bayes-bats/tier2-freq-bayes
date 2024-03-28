@@ -28,7 +28,7 @@ affiliations:
 filters:
   - authors-block
 abstract: |
-  Implementing quantitative methodological techniques is a crucial piece of understanding public policy. While quasi-experimental, spatial (diffusion), and mixed methods are most commonly used when teaching policy studies, little research exists on using Bayesian approaches for policy learning, or how the outcomes from traditional quantitative approaches differ from a Bayesian approach. We propose an applied learning activity for students of public policy that exposes them to Bayesian methods and explores the differences between this statistical paradigm and more commonly used approaches. We do this using a structured interrogation of the [The Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/) (CEJST) and the epistemological framings in the 5E model [@elby2010epistemological; @duran20045e]. The activity illustrates the importance of statistical assumptions, and by extension, the impact that different quantitative methods have on understanding public policy. The goal of the study is to introduce students, instructors, and practitioners of public policy to a new way of using statistics, equipping them with the tool set and logical processes necessary to apply either approach as they see fit when studying public policy.
+  Implementing quantitative methodological techniques is a crucial piece of understanding public policy. While quasi-experimental, spatial (diffusion), and mixed methods are most commonly used when teaching policy studies, little research exists on using Bayesian approaches for policy learning, or how the outcomes from traditional quantitative approaches differ from a Bayesian approach. We propose an applied learning activity for students of public policy that exposes them to Bayesian methods and explores the differences between this statistical paradigm and more commonly used approaches. We do this using a structured interrogation of the [The Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/) (CEJST) and the epistemological framings in the 5E model [@elby2010epistemological; @duran20045e]. The activity illustrates the importance of statistical assumptions, and by extension, the impact that different quantitative methods have on understanding public policy. The goal of the study is to introduce students, instructors, and practitioners of public policy to a new way of using statistics, equipping them with the tool set and logical processes necessary to apply either approach as they see fit when studying public policy.^[Working paper: please do not cite without permission of the authors.]
 #keywords:
 #  - Active Learning
 #  - Public Policy
@@ -40,11 +40,11 @@ geometry: margin=1in
 #mainfont: Calibri
 fontsize: 12pt
 format:
-  html: 
-    number-sections: true
-  #pdf: 
+  #html: 
     #number-sections: true
-    #fig-pos: "H"
+  pdf: 
+    #number-sections: true
+    fig-pos: "H"
     #keep-tex: true
 ---
 
@@ -394,7 +394,7 @@ Of interest are the responses to the open-ended question four in the post-activi
 It is important to note that these results should be interpreted with caution. While the survey questions are informative to a degree, the qualitative, open-ended responses are providing far more insight into the learners' attitudes about inferential statistics and how their understanding changed over the course of the activity. Given the small sample size, we anticipate more robust findings after more iterations of the activity have been implemented.
 
 ## Discussion {#sec-discussion}
-This activity bridges the gap between the common Frequentist approach oft taught in both undergraduate and graduate statistics classes and the Bayesian paradigm, to which many students have not been exposed. We do this using an applied approach, with an eye towards answering education research questions. While many teaching methods highlight the theoretical similarities and differences between Frequentists and Bayesians, our activity moves beyond by grounding the comparison in a real-data application, as well as measuring the impact of applying both frameworks in the classroom. In doing so, we hope to introduce students to a new way of using statistics, equipping them with the tool set and logical processes necessary to apply either the Frequentist or Bayesian (or both) approaches as they see fit.
+This activity bridges the gap between the common Frequentist approach oft taught in both undergraduate and graduate quantitative methods classes and the Bayesian paradigm, to which many students have not been exposed. We believe that non-statistics disciplines, such as public policy, are an arena with which Bayesian methods can be very beneficial. To bridge the gap, we use an applied approach, with an eye towards answering education research questions. While many teaching methods highlight the theoretical similarities and differences between Frequentists and Bayesians, our activity moves beyond by grounding the comparison in a real-data application, as well as measuring the impact of applying both frameworks in the classroom. In doing so, we hope to introduce students to a new way of using statistics, equipping them with the tool set and logical processes necessary to apply either the Frequentist or Bayesian (or both) approaches as they see fit.
 
 Our activity uses an active learning approach, rather than passive lecture. Active learning has been shown to result in superior learning outcomes for students, particularly those from underrepresented groups [@freeman2014active]. We do this by structuring our activity around the 5E Model proposed by @duran20045e, which activates students' epistemological frames. The 5E Model is based on inquiry-based teaching, where students _engage, explore, explain, elaborate, and evaluate_ statistical assumptions in an applied setting in order to promote broader impacts of inferential thinking with respect to statistics.
 
