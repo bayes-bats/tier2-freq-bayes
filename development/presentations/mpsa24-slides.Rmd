@@ -46,7 +46,7 @@ extra_css = list(
                   "font-family" = "Yanone Kaffeesatz",
                   "font-weight"="400"),
     ".small" = list("font-size" = "80%"),
-    ".large" = list("font-size" = "150%"))
+    ".large" = list("font-size" = "180%"))
 )
 
 ```
@@ -63,7 +63,6 @@ class: left, bottom, inverse
 .big[Statistical Inference in Social Science Classrooms]
 
 ---
-
 # Statistical Inference in Social Science Classrooms
 
 - Traditional Frequentist methods (NHST) are taught in social science classrooms, particularly public policy and political science.
@@ -75,9 +74,6 @@ class: left, bottom, inverse
 - Bayesian methods provide an intutive, and perhaps more appropriate, approach for answering public policy questions (Gill & Witko 2013; Wagner & Gill 2005) 
 
 ---
-
----
-
 # Statistical Inference in Social Science Classrooms
 
 .pull-left[
@@ -93,9 +89,6 @@ knitr::include_graphics("01-mpsa-5E.png")
 - point two
 - points three
 ]
-
-
----
 
 ---
 #  Statistical Inference in Social Science Classrooms
@@ -114,30 +107,20 @@ __Activity Learning Goals:__
 __Overall Goal:__
 
 Engineer a “classroom controversy” to motivate students to find their own understanding of (3).
-
-
 ---
-
 
 class: left, bottom, inverse
 .big[Applied Activity: Comparing Frequentist & Bayesian Approaches]
 
 ---
-
 # Applied Activity: Comparing Frequentist & Bayesian Approaches
 
 - The Big Idea
 
 ---
-
----
-
 # Applied Activity: Comparing Frequentist & Bayesian Approaches
 
 - Problem context and introduction
-
-
----
 
 ---
 
@@ -149,12 +132,9 @@ class: left, bottom, inverse
 
 ---
 
----
-
 # Applied Activity: Comparing Frequentist & Bayesian Approaches
 
 - Activity closing
-
 
 ---
 
@@ -171,14 +151,11 @@ class: left, bottom, inverse
 
 ---
 
----
-
 # Evaluation
 
 - results - meh
 
 ---
-
 
 class: left, bottom, inverse
 .big[Discussion]
