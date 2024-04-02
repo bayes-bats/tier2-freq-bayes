@@ -130,21 +130,42 @@ class: left, bottom, inverse
 ---
 # Applied Activity: Comparing Frequentist & Bayesian Approaches
 
-- Problem context and introduction
+__Context__
+
+- Dataset: [Climate and Economic Justice Screening Tool (CEJST)](https://screeningtool.geoplatform.gov/en/#3/33.47/-97.5) 
+  - Executive Order issued by President Biden in January 2021
+  - U.S. Census tract level data on dozens of indicators
+
+- Research Question: Do Black Americans experience a disproportionate level of energy burden?
+
+```{r, echo=FALSE, out.width="35%", fig.align='center'}
+knitr::include_graphics("01-mpsa-context.png")
+```
+
+---
+# Applied Activity: Comparing Frequentist & Bayesian Approaches
+
+__Introduction__
+
+- Here
 
 ---
 
 # Applied Activity: Comparing Frequentist & Bayesian Approaches
 
-- Activity Application
+__Activity Application__
 
-- Bayes and Frequentist Versions
+- Here
+
+
 
 ---
 
 # Applied Activity: Comparing Frequentist & Bayesian Approaches
 
-- Activity closing
+__Activity Closing__
+
+- Here
 
 ---
 
