@@ -77,17 +77,17 @@ class: left, bottom, inverse
 # Statistical Inference in Social Science Classrooms
 
 .pull-left[
-Activating Epistemological Frames
-
-```{r, echo=FALSE, out.width="60%", fig.cap="The 5E Instructional Model"}
+```{r, echo=FALSE, out.width="80%", fig.align='center', fig.cap="The 5E Instructional Model (Duran & Duran 2004)"}
 knitr::include_graphics("01-mpsa-5E.png")
 ```
 ]
 
-.pull-right[Some text here about the model:
-- point one
-- point two
-- points three
+.pull-right[Activating epistemological frames:
+- _Engage._ Get students interested
+- _Explore._ Students do self-directed inquiry
+- _Explain._ Give students conceptual tools
+- _Elaborate._ Let students work with the tools
+- _Evaluate._ Assess the learning outcomes
 ]
 
 ---
@@ -115,7 +115,17 @@ class: left, bottom, inverse
 ---
 # Applied Activity: Comparing Frequentist & Bayesian Approaches
 
-- The Big Idea
+- Students were recruited for the pilot version of the activity from the University of Denver and Olin College of Engineering.
+
+- __Activity cadence:__
+
+  $\rightarrow$ Problem Context 
+  
+  $\rightarrow$ Activity Introduction
+  
+  $\rightarrow$ Activity Application 
+  
+  $\rightarrow$ Activity Closing
 
 ---
 # Applied Activity: Comparing Frequentist & Bayesian Approaches
