@@ -51,7 +51,7 @@ extra_css = list(
 ```
 
 # Agenda
-- Inferential Statistics & Public Policy
+- Statistical Inference in Non-Statistics Classrooms
 - Applied Activity: Comparing Frequentist & Bayesian Approaches
 - Evaluation
 - Conclusion
