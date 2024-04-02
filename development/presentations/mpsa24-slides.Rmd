@@ -51,21 +51,44 @@ extra_css = list(
 ```
 
 # Agenda
-- Statistical Inference in Non-Statistics Classrooms
+- Statistical Inference in Social Science Classrooms
 - Applied Activity: Comparing Frequentist & Bayesian Approaches
 - Evaluation
-- Conclusion
+- Discussion
 
 ---
 
 class: left, bottom, inverse
-.big[Inferential Statistics & Public Policy]
+.big[Statistical Inference in Social Science Classrooms]
 
 ---
 
-# Inferential Statistics & Public Policy
+# Statistical Inference in Social Science Classrooms
 
-- here
+- Traditional Frequentist methods typically used in social science classrooms, particularly public policy and political science
+
+- more here
+
+---
+
+---
+
+# Statistical Inference in Social Science Classrooms
+
+.pull-left[
+Activating Epistemological Frames
+
+```{r, echo=FALSE, out.width="60%", fig.cap="The 5E Instructional Model"}
+knitr::include_graphics("01-mpsa-5E.png")
+```
+]
+
+.pull-right[Some text here about the model:
+- point one
+- point two
+- points three
+]
+
 
 ---
 
@@ -97,7 +120,7 @@ class: left, bottom, inverse
 
 
 class: left, bottom, inverse
-.big[Conclusions]
+.big[Discussion]
 
 ---
 
