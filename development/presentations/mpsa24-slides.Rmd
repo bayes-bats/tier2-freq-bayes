@@ -17,6 +17,7 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+library(fontawesome)
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
@@ -65,9 +66,13 @@ class: left, bottom, inverse
 
 # Statistical Inference in Social Science Classrooms
 
-- Traditional Frequentist methods typically used in social science classrooms, particularly public policy and political science
+- Traditional Frequentist methods (NHST) are taught in social science classrooms, particularly public policy and political science.
 
-- more here
+- Two considerations:
+  1. Teaching quantitative methods alongside substantive theories is hard (Connelly et al. 2021; Gunn 2017; Bates & Jenkins 2007)
+  2. Different methods produce different outcomes (Luque & Sosa 2023; Gill & Witko 2013)
+  
+- Bayesian methods provide an intutive, and perhaps more appropriate, approach for answering public policy questions (Gill & Witko 2013; Wagner & Gill 2005) 
 
 ---
 
@@ -91,6 +96,28 @@ knitr::include_graphics("01-mpsa-5E.png")
 
 
 ---
+
+---
+#  Statistical Inference in Social Science Classrooms
+
+__The Big Idea:__ 
+
+Introduce an applied learning activity for students of public policy
+that exposes them to Bayesian methods + explores the differences between
+this statistical paradigm and more commonly used approaches.
+
+__Activity Learning Goals:__
+1. Evaluate hypotheses with inferential statistical models
+2. Connect (1) with real-world factors
+3. Understand how Frequentists vs. Bayesian assumptions can lead to different conclusions
+
+__Overall Goal:__
+
+Engineer a “classroom controversy” to motivate students to find their own understanding of (3).
+
+
+---
+
 
 class: left, bottom, inverse
 .big[Applied Activity: Comparing Frequentist & Bayesian Approaches]
@@ -164,5 +191,19 @@ class: left, bottom, inverse
 
 ---
 
-class: left, bottom, inverse
-.big[Thank you! Questions?]
+# .large[Thank you!]
+
+`r fa(name = "envelope-open")` <a href="mailto:stefani.langehennig@du.edu">Email</a>
+
+`r fa(name = "desktop")`  <a href="https://steflangehennig.github.io/">Website</a>
+
+`r fa(name = "linkedin")` <a href="https://linkedin.com/in/stefani-langehennig-phd-418820144">LinkedIn</a>
+        
+`r fa(name = "github")` <a href="https://github.com/steflangehennig">GitHub</a>
+
+`r fa(name = "orcid")` <a href="https://orcid.org/0000-0002-0897-6556">ORCID</a>
+
+
+
+
+
