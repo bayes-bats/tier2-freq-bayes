@@ -99,9 +99,35 @@ class: left, bottom, inverse
 
 # Applied Activity: Comparing Frequentist & Bayesian Approaches
 
-- Problem context
+- The Big Idea
+
+---
+
+---
+
+# Applied Activity: Comparing Frequentist & Bayesian Approaches
+
+- Problem context and introduction
+
+
+---
+
+---
+
+# Applied Activity: Comparing Frequentist & Bayesian Approaches
+
 - Activity Application
-- Activity Closing
+
+- Bayes and Frequentist Versions
+
+---
+
+---
+
+# Applied Activity: Comparing Frequentist & Bayesian Approaches
+
+- Activity closing
+
 
 ---
 
@@ -115,6 +141,14 @@ class: left, bottom, inverse
 
 - survey design
 - results
+
+---
+
+---
+
+# Evaluation
+
+- results - meh
 
 ---
 
