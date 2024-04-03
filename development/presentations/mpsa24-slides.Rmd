@@ -136,7 +136,7 @@ __Context__
   - Executive Order issued by President Biden in January 2021
   - U.S. Census tract level data on dozens of indicators
 
-- Research Question: Do Black Americans experience a disproportionate level of energy burden?
+- Exploratory data analysis (EDA)
 
 ```{r, echo=FALSE, out.width="35%", fig.align='center'}
 knitr::include_graphics("01-mpsa-context.png")
@@ -147,17 +147,52 @@ knitr::include_graphics("01-mpsa-context.png")
 
 __Introduction__
 
-- Here
+- Students review and discuss ideas around statistical inference 
+
+- Research Question: Do Black Americans experience a disproportionate level of energy burden?
+
+- Critical differences one-pager
+
+.pull-left[
+```{r, echo=FALSE, out.width="90%", fig.align='center'}
+knitr::include_graphics("01-mpsa-tab1.png")
+```
+
+]
+
+.pull-right[
+```{r, echo=FALSE, out.width="90%", fig.align='center'}
+knitr::include_graphics("01-mpsa-tab2.png")
+```
+
+]
 
 ---
 
 # Applied Activity: Comparing Frequentist & Bayesian Approaches
 
-__Activity Application__
+__Activity Application__: There's a catch!
 
-- Here
+.pull-left[Frequentist version:
+1. Overview of a Frequentist statistical model
+2. Assessing estimates and confidence
+3. Outcomes across different states
+
+```{r, echo=FALSE, out.width="45%", fig.align='center'}
+knitr::include_graphics("01-mpsa-freq.png")
+```
+]
 
 
+.pull-right[Bayesian version:
+1. Overview of a Bayesian statistical model 
+2. Assessing posteriors and confidence
+3. Outcomes...pick a state for the prior
+
+```{r, echo=FALSE, out.width="45%", fig.align='center'}
+knitr::include_graphics("01-mpsa-bayes.png")
+```
+]
 
 ---
 
@@ -165,7 +200,11 @@ __Activity Application__
 
 __Activity Closing__
 
-- Here
+- Students come together for a full class discussion about the conclusions they draw from their respective analysis.
+
+- There's an apparent controversy here - students from the groups will have come to different conclusions.
+
+- Students finish the activity by "jigsawing" and discussing the differences between general inference and model summaries for Frequentists and Bayesians.
 
 ---
 
@@ -177,14 +216,20 @@ class: left, bottom, inverse
 
 # Evaluation
 
-- survey design
-- results
+- Pre- and post-pre-survey designs were used to assess students' attitudes and awareness about statistical inference. 
+
+- Goal: capture changes in self-perceived attitudes about a topic by asking them to consider where they think their beliefs were _before_ the activity, followed by where they think they are _now_ (Hiebert & Magnusson 2014).
+
+
+```{r, echo=FALSE, out.width="45%", fig.align='center'}
+knitr::include_graphics("01-mpsa-survey-ex1.png")
+```
 
 ---
 
 # Evaluation
 
-- results - meh
+- Did the activity work? Sort of, we think.
 
 ---
 
