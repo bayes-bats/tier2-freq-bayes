@@ -234,7 +234,7 @@ class: left, bottom, inverse
 
 ---
 
-# Conclusions
+# Discussion
 
 - Bayesian methods are another possibility that non-statistics disciplines should consider both in the classroom and in the wild.
 
