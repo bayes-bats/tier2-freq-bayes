@@ -63,7 +63,7 @@ class: left, bottom, inverse
   1. Teaching quantitative methods alongside substantive theories is hard (Connelly et al. 2021; Gunn 2017; Bates & Jenkins 2007)
   2. Different methods produce different outcomes (Luque & Sosa 2023; Gill & Witko 2013)
   
-- Bayesian methods provide an intutive, and perhaps more appropriate, approach for answering public policy questions (Gill & Witko 2013; Wagner & Gill 2005) 
+- Bayesian methods provide an intuitive, and perhaps more appropriate, approach for answering public policy questions (Gill & Witko 2013; Wagner & Gill 2005) 
 
 ---
 # Statistical Inference in Social Science Classrooms
