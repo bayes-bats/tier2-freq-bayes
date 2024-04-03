@@ -51,14 +51,6 @@ extra_css = list(
 
 ```
 
-# Agenda
-- Statistical Inference in Social Science Classrooms
-- Applied Activity: Comparing Frequentist & Bayesian Approaches
-- Evaluation
-- Discussion
-
----
-
 class: left, bottom, inverse
 .big[Statistical Inference in Social Science Classrooms]
 
@@ -229,7 +221,11 @@ knitr::include_graphics("01-mpsa-survey-ex1.png")
 
 # Evaluation
 
-- Did the activity work? Sort of, we think.
+- Perceived attitudes about inferential statistics, both before and after the activity, were a bit of a mixed bag. 
+
+- While the results for the Likert battery were "noisy", the open-ended responses were somewhat illuminating.
+
+- More work to be done here...
 
 ---
 
@@ -240,7 +236,13 @@ class: left, bottom, inverse
 
 # Conclusions
 
-- implications, directions for future research, etc.
+- Bayesian methods are another possibility that non-statistics disciplines should consider both in the classroom and in the wild.
+
+- Using an applied, student-driven approach, this activity moves beyond simple comparisons by using an activity with a real-data application.
+
+- Some evidence that the goal of equipping them with the tools & logical processes necessary to apply either approach as they see fit was met.
+
+- Next steps
 
 ---
 
