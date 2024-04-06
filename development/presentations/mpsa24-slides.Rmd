@@ -107,7 +107,7 @@ class: left, bottom, inverse
 ---
 # Applied Activity: Comparing Frequentist & Bayesian Approaches
 
-- Students were recruited for the pilot version of the activity from the University of Denver and Olin College of Engineering.
+- Students who participated in the pilot version of the activity are from the University of Denver and Olin College of Engineering.
 
 - __Activity cadence:__
 
