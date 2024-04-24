@@ -40,9 +40,9 @@ geometry: margin=1in
 #mainfont: Calibri
 fontsize: 12pt
 format:
-  #html: 
+  html: 
     #number-sections: true
-  pdf: 
+  #pdf: 
     #number-sections: true
     fig-pos: "H"
     #keep-tex: true
@@ -139,7 +139,7 @@ Important to this approach is the role of the student. While the instructor is t
 #### Problem Context {#sec-prob-context}
 Given our interest in teaching students new approaches to examining real-world public policy problems, we start our activity by introducing [The Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/) (CEJST). The CEJST is the result of President Biden's Executive Order issued in January 2021. The tool is used to identify and subsequently help communities disadvantaged by the burdens stemming from climate change in government social programs. While the data covers a number of burdens (health, transportation, and workforce development, for example), we focus on the sustainability aspects of the tool for our activity, including climate change, energy, and legacy pollution burdens on communities.
 
-We begin with a straightforward explanation of the dataaset, situating it in the contemporary dialogue around climate change. Specifically, we theorize there may be a relationship between climate change burdens and minorities residing in Census tracts. By providing them with this context, we get students to think about possible questions - and by extension, hypotheses - they may be able to explore using statistical inference. 
+We begin with a straightforward explanation of the dataset, situating it in the contemporary dialogue around climate change. Specifically, we theorize there may be a relationship between climate change burdens and minorities residing in Census tracts. By providing them with this context, we get students to think about possible questions - and by extension, hypotheses - they may be able to explore using statistical inference. 
 
 To dig into the context of our real-world problem further, we also provide embedded code snippets and output from `R` of some high-level exploratory data analysis (EDA) for the students to review and discuss. We begin by focusing our attention on a few variables of interest for EDA. We start with the _energy burden percentile_, which captures the percentile of energy cost as well as energy-related pollution within a census tract, as well as the _percent of African-American or Black alone_, which captures the percent of African-American or Black individuals in a census tract.^[While we guide our students to the variables we want to explore for this implementation of the activity, instructors can modify the activity such that students explore the dataset and identify variables of interest on their own. If they know how to use statistical software, they can also conduct the EDA and analyses in `R` on their own, rather than giving them the completed version as we do here.] The instructor walks the students through basic data wrangling, providing prompt questions to get them thinking about the substantive implications of descriptive statistics and visualizations. Below is an example of the output, which contains the code used to create the figure, as well as a short description and a prompt question for the students.
 
