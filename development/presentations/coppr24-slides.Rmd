@@ -52,10 +52,10 @@ extra_css = list(
 ```
 
 class: left, bottom, inverse
-.big[Statistical Inference in Social Science Classrooms]
+.big[Statistical Inference in Public Policy Classrooms]
 
 ---
-# Statistical Inference in Social Science Classrooms
+# Statistical Inference in Public Policy Classrooms
 
 - Traditional Frequentist methods (NHST) are taught in social science classrooms, particularly public policy and political science.
 
@@ -66,7 +66,7 @@ class: left, bottom, inverse
 - Bayesian methods provide an intuitive, and perhaps more appropriate, approach for answering public policy questions (Gill & Witko 2013; Wagner & Gill 2005) 
 
 ---
-# Statistical Inference in Social Science Classrooms
+# Statistical Inference in Public Policy Classrooms
 
 .pull-left[
 ```{r, echo=FALSE, out.width="80%", fig.align='center', fig.cap="The 5E Instructional Model (Duran & Duran 2004)"}
@@ -83,7 +83,7 @@ knitr::include_graphics("01-mpsa-5E.png")
 ]
 
 ---
-#  Statistical Inference in Social Science Classrooms
+#  Statistical Inference in Public Policy Classrooms
 
 __The Big Idea:__ 
 
