@@ -206,7 +206,7 @@ class: left, bottom, inverse
 
 ---
 
-# Evaluation
+# Evaluation 
 
 - Pre- and post-pre-survey designs were used to assess students' attitudes and awareness about statistical inference. 
 
