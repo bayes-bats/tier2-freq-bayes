@@ -40,9 +40,9 @@ geometry: margin=1in
 #mainfont: Calibri
 fontsize: 12pt
 format:
-  html: 
+  #html: 
     #number-sections: true
-  #pdf: 
+  pdf: 
     #number-sections: true
     fig-pos: "H"
     #keep-tex: true
