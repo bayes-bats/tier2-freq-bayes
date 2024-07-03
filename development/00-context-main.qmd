@@ -9,7 +9,7 @@ author:
 
 Before starting the activity, please use this QR code to access a survey. Even if you choose not to participate in the associated study, you are still welcome to do the activity!
 
-![](./images/bit.ly_olin-bats-pre.png){width=60% fig-align="center"} <!-- Olin survey -->
+![](bayes-presurvey-SL.png){width=60% fig-align="center"} <!-- Olin/DU survey -->
 <!-- ![](./images/bit.ly_du-bats-pre.png){width=80%} Replace with Denver survey -->
 
 **Please do not move on until your instructor tells you to.**

@@ -11,3 +11,6 @@ Encoding: UTF-8
 
 RnwWeave: Sweave
 LaTeX: pdfLaTeX
+
+BuildType: Makefile
+MakefilePath: C:/Users/Stefani.Langehennig/OneDrive - University of Denver/Documents/misc/prof-dev/BATS-app/tier-2/tier2-freq-bayes/development

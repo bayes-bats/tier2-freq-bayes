@@ -1,0 +1,294 @@
+---
+title: "Surprise - They're Different!"
+subtitle: "Comparing Frequentist and Bayesian Instructional Approaches"
+abstract: |
+  Implementing quantitative methodological techniques is a crucial piece of public policy and political science instruction. While Frequentists statistics are most commonly used when teaching quantitative methods in the social sciences, little research exists on using Bayesian approaches in the classroom, or how the outcomes from traditional quantitative approaches differ from a Bayesian approach. We propose an applied learning activity for students of political science and public policy that exposes them to Bayesian methods and explores the differences between this statistical paradigm and more commonly used approaches. We do this using a structured interrogation of the [The Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/) (CEJST) and the epistemological framings in the 5E model [@elby2010epistemological; @duran20045e]. The activity illustrates the importance of statistical assumptions, and by extension, the impact that using different quantitative methods has on real-world outcomes. The goal of the study is to introduce students, instructors, and practitioners to a new way of using statistics, equipping them with the tool set and logical processes necessary to apply either approach as they interrogate social science problems.
+#keywords:
+#  - Active Learning
+#  - Public Policy
+#  - Bayesian Statistics
+#  - Undergraduate Education
+#number-sections: true
+bibliography: bibliography.bib
+geometry: margin=1in 
+#mainfont: Calibri
+fontsize: 12pt
+format:
+  #wordcount-html: default
+  html: 
+    #number-sections: true
+  #pdf: 
+    #number-sections: true
+    fig-pos: "H"
+    #keep-tex: true
+---
+
+
+```{r setup}
+#| include: false
+#| echo: false
+library(tidyverse)
+library(rstanarm)
+library(bayesplot)
+library(broom.mixed)
+library(patchwork)
+knitr::opts_chunk$set(fig.pos = "H", out.extra = "")
+
+#filename <- "../data/1.0-communities.csv"
+
+mean_Intercept_GLOBAL <- 50
+sd_Intercept_GLOBAL <- 12.5
+```
+
+## Introduction
+Social scientists routinely make use of quantitative methods to understand the complex world around them. Approaches employed range from quasi-experimental, spatial diffusion, and econometric techniques, to methods that are more qualitative in nature. While Bayesian approaches are not completely missing from political science and public policy [see @gill2013bayesian; @fienberg2011bayesian], they are underutilized as a method taught among social science academics and practitioners. This omission is for a few reasons. First, scholars and practitioners in government and public policy spaces often are not exposed to Bayesian methods when they are taught quantitative techniques [@gill2013bayesian]. Thus, the lack of familiarity or the "mindset shift" required for learning the methods means Bayesian techniques are not a regular tool in their toolkit [@ferrari2022teaching]. Second, the reliance on infusing subjective priors into the methodological approach tends to be questioned by non-statisticians who have received more traditional Frequentist training in their disciplines [@fienberg2011bayesian; @freedman1997some].
+
+To remedy this, we propose an applied learning activity for students of public policy and political science that exposes them to Bayesian methods, focusing on both the theoretical and practical underpinnings of the approach. The activity explores the differences between Bayesian approaches and more commonly used statistical techniques to introduce students, instructors, and practitioners to new and different ways of using statistics to investigate real-world problems. Through the application of this activity, these methods will equip different audiences with the tool set and logical processes necessary to apply different quantitative approaches when studying political science and policy problems. More importantly, using this activity in social science classrooms will encourage students to interrogate and challenge differences in the assumptions made, and outcomes produced, in the statistical approaches they are taught.
+
+What follows is an in-depth examination of how teaching different quantitative methods results in a more robust way of interrogating political science and public policy problems. We start by reviewing the research to date on cross-disciplinary approaches to using quantitative methods, as well as how this influences students’ assumptions about their own learning using the epistemological framings in the 5E Model [@elby2010epistemological; @duran20045e]. Next, we introduce our applied activity and describe its implementation in the classroom. We conclude with a discussion on the importance of incorporating Bayesian statistics into non-statistics classrooms, as well as extensions of the activity. 
+
+## Statistical Inference for Social Scientists
+Conveying complex concepts and analytical techniques is one of the most challenging aspects of teaching [@bates2007teaching]. In addition to distilling topics down to make them accessible to all students, instructors are frequently tasked with ensuring that the topics learned in class translate “out in the wild” when students enter their respective professions. This is true in the social sciences and other non-statistics disciplines, where students are tasked with translating what they know into evidence-based practices. While the theories underpinning non-statistics subjects can be challenging to understand, layering the quantitative methods typically needed to test research questions on top of these theories can create added challenges. Too often the methods and theories, alongside the question of usefulness outside of the academy, make it difficult to link analysis and political and policy practices together [@connelly2021translating]. 
+
+What is more, students who are not statistics majors frequently become anxious and tend to avoid quantitative methods unless the methods are contextualized and the connection between their subject and technical approach seems clear [@gunn2017embedding]. Nonetheless, quantitative methods-particularly statistical inference-are a must for social science students. Most students take at least a one to three class sequence on quantitative methods as undergraduates. These usually include some form of research methods, followed by an applied class that teaches traditional Frequentist statistical inference (for example, Null Hypothesis Significance Testing (NHST)).
+
+Some political science and public policy scholars have tried to incorporate Bayesian philosophy and principles into how estimation is taught among their students. For instance, @ferrari2022teaching proposes implementing a basic four-step modeling approach that gets students to shift their thinking from Frequentist to Bayesian. Similarly, @gill2013bayesian offer an accessible introduction to Bayesian analysis for students of public administration and policy, arguing that understanding the theoretical differences between the two approaches is critical, and that Bayesian techniques are more appropriate for the discipline. @wagner2005bayesian make a similar argument, stressing that Bayesian inference is "better suited" for answering public policy questions, showcasing their application on educational outcomes in public schools. Indeed, they even go so far as to say that the traditional statistical inference methods taught in public administration and policy programs is “defective and should be replaced [@wagner2005bayesian, p. 5]" because they are borrowed from other disciplines and do not necessarily fit their research challenges. Finally, @luque2023bayesian use a series of different scenarios to demonstrate ways in which to incorporate Bayesian methods into real-world social inquiries. They do this by way of inferential comparisons between Frequentists and Bayesians, underscoring  the differences between the two approaches both theoretically and in practice.
+
+### Activating Epistemological Frames
+
+One of the primary points stressed in the research advocating for Bayesian inference in non-statistics classrooms is not to simply introduce another applied tool without much thought; rather, offering different philosophies and theoretical approaches in addition to the tool is crucial to employing effective analytical practices. In social science quantitative methodology teachings, intellectual development often starts with a “surface approach”, where students memorize and repeat facts that inform them, rather than engaging with or reflecting on the approaches they have learned [@entwistle1997contrasting; @bates2007teaching]. Our goal, in addition to offering a Bayesian learning activity, is to move beyond the surface approach, empowering students with the knowledge to choose between different statistical approaches based on what is productive for the context at hand. This starts with epistemological framings, or the nature of knowledge and understanding among students [@elby2010epistemological].
+
+At its most basic level, epistemology is concerned with the methods and theories that help understand knowledge origins and acquisition. Epistemological framings are created from personal cognitive resources, such as beliefs, that are activated among individuals conditional on the context they are in [@elby2010epistemological, p.3]. These cognitive resources provide a framework with which individuals can form their understanding of the "nature of knowledge, knowing, and learning", and are often variable and something that the person may not be aware of [@elby2010epistemological, p.4]. An epistemological frame is when individual resources that are reinforced by one another are activated and lead to knowledge stability [@elby2010epistemological, p.6]. These frames are the expectations that someone brings to different experiences and scenarios, which in turn influences their actions. 
+
+In the context of the classroom, epistemological frames organize activities in the classroom for students, which in turn affects their knowledge and learning. Students who can recognize and critique the assumptions underpinning their analyses (treating them as tentative), but carry out their analyses respecting those analyses (treating them as true) will likely be more effective as practicing statisticians in their discipline. Getting students to recognize the importance of assumptions—and to practice adopting different assumptions—is a critical first step in developing these multiple epistemological framings.
+
+The goal of our activity is to activate students' epistemological frames by structuring it around the 5E Model proposed by @duran20045e. The 5E Model is based on constructivist pedagogies and rests on the notion of inquiry-based teaching, or having students discover information on their own without the direct help of instructors [@duran20045e; @uno1999handbook]. The 5E model is captured in the following figure:
+
+:::{#fig-5E fig-align="center"}
+![](01-mpsa-5E.png){width=75%}
+
+The 5E Instructional Model (as seen in @duran20045e, p.52)
+:::
+
+Each of the E's represent: _Engage_: Get students interested; _Explore_: Students do self-directed inquiry;	_Explain_: Give students conceptual tools; _Elaborate_: Let students work with the tools; and _Evaluate_: Assess the learning outcomes. We turn next to the applied activity, where students compare Frequentist and Bayesian approaches as applied to a real-world problem.
+
+## Applied Activity: Comparing Frequentist & Bayesian Approaches {#sec-applied-activity}
+To alleviate some of the challenges that come with teaching different techniques of statistical inference, scholars have compared Frequentist and Bayesian approaches to one another, highlighting where they are similar and when they diverge [@samaniego2010comparison; @ferrari2022teaching]. We do something similar, using a public policy example to guide our comparison. The activity is focused on a real dataset, and students follow a structured process to analyze the dataset and interpret their results. However, different groups receive different versions of the activity: some receive a Frequentist approach, while the others receive a Bayesian approach. By carefully crafting the analyses to reach different conclusions, the aim is to surprise students with diverging conclusions. The activity concludes with a final full-group discussion, where the importance of statistical assumptions are highlighted, completing the comparison of Frequentist and Bayesian approaches.
+
+The activity learning objectives are three-fold. First, students should be able to evaluate multiple hypotheses using inferential statistics; second, students should be able to connect their evaluation of hypotheses to real-world factors; and third, students should be able to state the primary statistical assumptions for Frequentist and Bayesian inference, and understand how they can lead to different conclusions. These learning objectives stem from our overall learning goal of engineering a “classroom controversy” to motivate students to find their own understanding of how Frequentist and Bayesian assumptions can lead to different conclusions (and by extension, real-world decision-making).
+
+__Activity Materials__
+
+All materials were created using the programming language `R` and can be rendered in .html or .pdf format for use. The materials are openly available for instructors on our [GitHub repository](https://github.com/bayes-bats/tier2-freq-bayes). Important starter documents include the [run of show](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/run-of-show.md), which outlines at a high level the different steps of the activity, as well as the artifacts used in the activity. Further, the learning objectives and details of the activity are fleshed out in the [introduction document](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/01-introduction-main.qmd). The complete applied activity documents for both the Bayesian and Frequentist approaches are in the [activity development](https://github.com/bayes-bats/tier2-freq-bayes/tree/main/development) folder in the GitHub repository. Instructors can watch a [video overview](https://www.youtube.com/watch?v=dwNLcFqQqnE) of the activity on YouTube, and can use the [Makefile](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/Makefile) available in our repository to compile both student and instructor-facing artifacts, the latter of which contains solutions and other notes for running the activity.
+
+### Activity Approach {#sec-activity-approach}
+To implement the activity, there are four steps:
+
+1. Setting the context for the real world problem the class is exploring
+2. Introducing the motivation for the activity (statistical approaches) given the context
+3. Doing the applied activity
+4. Closing out the activity
+
+Using the 5E Model, we focus on the applied learning aspects of the activity, or the application of a statistical approach on current issues. For example, for _engage_ the goal is to motivate students with current issues around climate and equity. The _explore_ stage is the opportunity in which students get to do self-directed inquiry. For this activity, that means investigating the real-world dataset provided to them in small groups. _Explain_ gives the students the conceptual tools they need to understand the different statistical approaches. Students will learn the basics of assessing and interpreting a fitted statistical model. For _elaborate_, students get to work with the tools, meaning they apply the conceptual tools they learned to the real-world dataset. Finally, _evaluate_ involves giving students the opportunity to reflect on their understanding of the concepts and application they just did through an instructor-facilitated class discussion. 
+
+Important to this approach is the role of the student. While the instructor is there to facilitate questions and the general cadence of the activity, the onus is on students to work through each of the steps of the activity. This is a fundamental tenant of the 5E model, where inquiry-based learning is key to students discovering information and learning.
+
+#### Problem Context {#sec-prob-context}
+We start our activity by introducing [The Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/) (CEJST). The CEJST is the result of President Biden's Executive Order 14008 issued in January 2021. The tool is used to identify and subsequently help communities disadvantaged by the burdens stemming from climate change in government social programs. While the data covers a number of burdens, we focus on the sustainability aspects of the tool for our activity, including climate change, energy, and legacy pollution burdens on communities.
+
+We begin with a straightforward explanation of the dataset, situating it in the contemporary dialogue around climate change. Specifically, we theorize there may be a relationship between climate change burdens and minorities residing in Census tracts. By providing them with this context, we get students to think about possible questions and hypotheses they may be able to explore using statistical inference. 
+
+To dig into the context of our real-world problem further, we also provide embedded code snippets and output from `R` of some high-level exploratory data analysis (EDA) for the students to review and discuss. We begin by focusing our attention on a few variables of interest for EDA. We start with the _energy burden percentile_, which captures the percentile of energy cost as well as energy-related pollution within a census tract, as well as the _percent of African-American or Black alone_, which captures the percent of African-American or Black individuals in a census tract.^[While we guide our students to the variables we want to explore for this implementation of the activity, instructors can modify the activity such that students explore the dataset and identify variables of interest on their own. If they know how to use statistical software, they can also conduct the EDA and analyses in `R` on their own, rather than giving them the completed version as we do here.] After students have investigated the dataset and have a more thorough understanding of the problem at hand, the students turn their attention to the introduction document. 
+
+#### Activity Introduction {#sec-activity-intro}
+This portion of the activity starts with the instructor walking students through the learning objectives and warm-up questions, which in turn initiates a group-wide discussion on statistical inference. The instructor has the students discuss inference at a high level, offering a more pointed discussion if needed around crafting a research question and hypotheses. At this point, the instructor turns students to the simplified [critical differences one-pager](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-simplified-main.qmd) that introduces them to the primary differences between the Frequentist and Bayesian paradigms. To keep the exercise manageable, we focus students' attention on _general inference_ and _model summaries_.^[You can access the [full one-pager](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-one-pager-main.qmd) that is instructor-facing on the associated GitHub repository. In addition to comparing general inference and model summaries, it also includes comparisons between fixed variables, interpreting probabilities, and model inference.] @tbl-inf and @tbl-summ showcase the critical differences one-pager containing information on general inference and model summaries:
+
+
+| Frequentist | Bayesian | 
+|-------------|----------|
+| Deduction from Pr(data $|$ H0), by setting $\alpha$ in advance | Induction from Pr($\theta$ $|$ data), starting with Pr($\theta$) 
+| Accept H1 if Pr(data $|$ H0) < $\alpha$ | 1−$\alpha$% of most likely parameter values fall within a 1−$\alpha$ HPD
+| Accept H0 if Pr(data $|$ H0) ≥ $\alpha$|
+
+: General Inference {#tbl-inf}{.sm}
+
+
+| Frequentist | Bayesian | 
+|-------------|----------|
+| Point estimates and standard errors | Descriptions of the posterior distribution such as means and quantiles
+| 95% confidence intervals indicating that 19/20 times the interval covers the true parameter value | Highest posterior density intervals indicating region of highest posterior probability
+|           | 1−$\alpha$% of most likely parameter values fall within a 1−$\alpha$ HPD
+
+: Model Summaries {#tbl-summ}{.sm}
+
+The introductory discussion of the activity wraps up by introducing the research question and associated hypothesis the class will test with their respective statistical approach.^[An extension of the activity could have the students develop the research questions and hypotheses on their own. Given the activity we implemented is meant to span one class period, we provide those for the students.]
+
+#### Activity Application {#sec-activity-app}
+For the activity application, students are assigned a number generated by a random number generator and put into groups to go through an applied statistical analysis. There are two versions that are circulated: the Frequentist analysis and the Bayesian analysis. The analyses that are given to the students are already completed-they only receive the output of the analysis with associated questions to help them think through the different parts of the analysis before they come to any conclusions. 
+
+The data used for each analysis is the exact same for both of the groups, as is the hypothesis that the students are testing. Additionally, the students are asked to assess the same conceptual things, regardless of which statistical approach they receive. They will use the _general inference_ and _model summaries_ comparison discussed in the @sec-activity-intro to diagnose the outputs of the models from the analyses.
+
+__Frequentist Analysis__
+
+Both activities begin with a quick overview of the hypothesis the students are testing, as well as the different components of a statistical model. For the Frequentist model, the analysis document introduces the following model, where $B$ as the dependent variable (energy burden percentile), $P$ is the percent black, $m$ is the slope parameter, $b$ is the intercept parameter, and $\epsilon$ captures the error term.
+
+ $${B = m P + b + \epsilon}$$
+The instructor encourages the class to think through how to interpret estimates in a linear model using Frequentist statistics, noting a number of important assumptions along the way in questions are asked about the model, including that the $b$ and $m$ parameters are fixed but unknown values. This is a natural place for a number of questions to be asked of the class related to model summaries and general inference. The questions below illustrate what the class is asked for understanding model summaries in a Frequentist model, along with the associated answers:
+
+::: {.callout-note icon="false" title="Questions for the Class"}
+- Which scenario gives the largest estimate for the slope?
+  - Scenario B
+- Does the confidence interval for Scenario A include zero? (NB. A confidence interval includes zero if Lower < 0 < Upper.)
+  - Yes
+- Does the confidence interval for Scenario B include zero?
+  - Yes
+- Does the confidence interval for Scenario C include zero?
+  - No
+- If a confidence interval includes zero, this indicates that we cannot conclude whether the slope is positive or negative. For which scenarios can we not conclude whether the slope is positive or negative?
+   - Scenarios A and B 
+:::
+
+After students have revisited the concepts around model summaries and general inference for the Frequentist linear model, they move to a predictive model where they are given a number of predicted versus observed value plots, show below, for the model across three states: Massachusetts, Colorado, Florida, and the entire sample of data (e.g., the U.S.).  
+
+:::{#fig-freq1 fig-align="center"}
+![](01-mpsa-freq-ex1.png){width=50%}
+
+Example Trend from Frequentist Analysis
+:::
+
+Additionally, they are given the intercept and slope estimates, as well as the confidence intervals for each model.
+
+:::{#fig-freq2 fig-align="center"}
+![](01-mpsa-COfreq-ex1.png){width=70%}
+
+Example Model Summary from Frequentist Analysis
+:::
+
+
+Once they have seen the results for each of the states and the U.S., students are given a set of questions that encourage them to think about the model results knowing what they do about model summaries and general inference. At this point, the students are exploring the results of the model in their respective groups and discussing and answering together the questions provided to them.
+
+__Bayesian Analysis__
+
+The cadence of the Bayesian analysis largely mirrors the Frequentist analysis to begin. Like the Frequentist groups, the Bayesian groups also revisit the hypothesis they are testing, as well as the different components of a statistical model, though this time it is a Bayesian linear model. 
+
+$$ B = m P + b + \epsilon $$
+
+where $B$ is the energy burden percentile, $P$ is the percent Black, $m$
+is the slope parameter, $b$ is the intercept parameter, and $\epsilon$
+is a *residual* term that represents factors not accounted for in the model.
+The residual term is assumed to be normally distributed
+$\epsilon \sim N(0, \sigma^2)$ with an unknown parameter $\sigma^2$. All
+three parameters have a prior distribution, defined via:
+
+$$
+\begin{aligned} m \sim N(\mu_m, \sigma_m^2), \\ b \sim N(\mu_b, \sigma_b^2), \\ \sigma^2 \sim \text{Exponential}(1/s_y), \end{aligned}
+$$
+where $m, b, \sigma^2$ are independent. The class discusses how to set
+the prior through its parameter values
+$\mu_m, \mu_b, \sigma_m^2, \sigma_b^2$ later in the activity. The instructor also discusses model assumptions for the Bayesian approach at a high level, stressing one of the fundamental differences between Frequentists and Bayesians: the intercept $b$ and slope $m$ parameters are treated as random variables with a distribution that represents our state of knowledge.
+
+As with the Frequentist analysis, there are a number of questions asked of the class related to model summaries and general inference for the Bayesians. This time, however, students are shown the posterior distribution for the slope ($m$) and intercept ($b$) for a fitted model using Massachusetts data. The idea here is to get students thinking about how confident they should be in drawing conclusions from the model. After they have seen the distributions for these parameters, they are shown three different posterior distributions for the slope parameter so they can make sense of the results from the posterior:
+
+```{r notional-posteriors, fig.cap = "Figure 4: Notational Slope Posteriors for Bayesian Analysis"}
+#| warning: false
+#| echo: false
+#| fig-align: center
+#| fig-height: 3
+tibble(x = seq(-25, +75, length.out = 200)) %>% 
+  mutate(
+    d_A = dnorm(x, mean =  1, sd =  5),
+    d_B = dnorm(x, mean = 25, sd = 20),
+    d_C = dnorm(x, mean = 25, sd =  5),
+  ) %>% 
+  pivot_longer(
+    cols = contains("d_"),
+    names_sep = "_",
+    names_to = c(".value", "Posterior")
+  ) %>% 
+  
+  ggplot(aes(x, d)) +
+  geom_line() +
+  geom_vline(xintercept = 0, linetype = "dotted") +
+  facet_grid(~Posterior, labeller = label_both) +
+  theme_minimal() +
+  labs(
+    x = "Slope Parameter",
+    y = "Posterior Density",
+  )
+```
+
+Students are then asked a series of questions, a sample of which are below, to get them thinking about what the posterior distribution captures:
+
+::: {.callout-note icon="false" title="Questions for the Class"}
+
+-   Roughly, what fraction of *Posterior Distribution A* is greater than
+    zero?
+    -   Precisely 57.93%, so roughly 60%
+-   Roughly, what fraction of *Posterior Distribution B* is greater than
+    zero?
+    -   Precisely 89.44%, so roughly 90%
+-   Roughly, what fraction of *Posterior Distribution C* is greater than
+    zero?
+    -   Essentially 100%
+-   Which posterior gives the *highest confidence* (*highest
+    probability*) that the slope parameter is positive? How can you
+    tell?
+    -   Posterior C, as the probability is essentially 100% (as we
+        identified above).
+:::
+
+The students have the opportunity to look more closely at the slope parameter for Massachusetts and discuss it in the context of general inference. The students should recognize that a positive slope is in agreement with the hypothesis they are exploring before moving to the predictive portion of the Bayesian analysis, studying the posterior predictions.
+
+To further stress the differences between the two approaches, the activity notes that a prior distribution must also be provided for all of the components of the model. These priors represent all of our prior knowledge about the real-world problem the students are trying to solve. It also ties all of the pieces together, importantly that a fitted Bayesian model is comprised of the _data + prior = posterior_. The activity walks the students through hypothetical scenarios where different prior distributions are used for the slope parameter when fitting the model with the Massachusetts data. This also shows the utility of a Bayesian approach when you have limited data, as it allows us to incorporate prior knowledge, a scenario we use in the activity.
+
+We employ a sequential Bayesian analysis by using the posterior from one analysis as the prior for a new analysis. We provide the following to the students in the Bayesian group and have the students pick a state's prior distribution for the rest of the activity:
+
+::: {.callout-note icon="false" title="Pick a State"}
+Study the posteriors above carefully; you will use this as a *prior
+distribution* for the slope for the rest of the activity. This means you
+will combine *new data* with a *prior distribution* to form a new
+*posterior distribution* for the model parameters. The *prior
+distribution* should reflect your beliefs about what you think the slope
+parameter should be.
+
+Pick *one state for your group*, then come ask the instructor for your
+chosen state's packet.
+:::
+
+:::{#fig-slopes2 fig-align="center"}
+![](01-mpsa-bayesSlope-ex1.png){width=75%}
+
+Example Posterior Choices from Bayesian Analysis
+:::
+
+This represents a critical step in the activity for the Bayesians: they must pick their prior distribution based on their beliefs about what they think the slope parameter should be. This will subsequently be used  with new data to form a posterior distribution later in the activity. Each of the results are placed in an envelope, only to be opened once selected by a group. The following figure represents an example of the sequential Bayesian analysis used in the full activity that students will have to choose from and interpret. On the left are the results showing the fitted lines and slope posteriors for Florida using priors from Massachusetts, Minnesota, and New Hampshire. On the right are the results showing the fitted lines and slope posteriors for Colorado, also using priors from Massachusetts, Minnesota, and New Hampshire.
+
+:::{#fig-comparison fig-pos="H" fig-align="center"}
+![](01-mpsa-bayescomp.png){width=100%}
+
+Comparison with Different Priors from Bayesian Analysis
+:::
+
+#### Activity Closing {#sec-activity-close}
+Once done with the applied portion, groups come back together for a full-class discussion. In addition to students jotting down any remaining questions they may have about each of the following questions, they are posed to the whole class for discussion and are tied to the learning objectives in @sec-applied-activity:
+
+- What can we say about our hypothesis?
+- How would you answer our research question now that we have analyzed the data?
+- What can we conclude about the relationship between sustainability and disadvantaged communities? What might you recommend from a policy-making perspective?
+
+We use these questions for a few reasons. The first is so the entire class can hear the impressions of both groups regarding the statistical approach used in their analyses. The second is to play into the "controversy" or differences between the approaches to further engage students on the importance of assumptions for statistical conclusions. The instructor facilitates a debate between the two groups using the critical differences one-pager discussed in @sec-activity-intro. Each group likely thinks their conclusions are "correct" based on their analyses, however it is important to point out that the controversy cannot be resolved; rather, the results from our analyses are conditional on the assumptions chosen, implying that choosing appropriate assumptions is critical to a sound analysis.
+
+## Discussion {#sec-discussion}
+This activity bridges the gap between the common Frequentist approach oft taught in both undergraduate quantitative methods classes and the Bayesian paradigm, to which many students have not been exposed. We believe that non-statistics disciplines, such as political science and public policy, are an arena with which Bayesian methods can be very beneficial. To bridge this gap, we use an applied approach with real world data. While many teaching methods highlight the theoretical similarities and differences between Frequentists and Bayesians, our activity moves beyond this by grounding the comparison in a real-data application. In doing so, we hope to introduce students to a new way of using statistics, equipping them with the tool set and logical processes necessary to apply either the Frequentist or Bayesian (or both) approaches as they see fit.
+
+Our activity uses an active learning approach, rather than relying on passive lecture. Active learning has been shown to result in superior learning outcomes for students, particularly those from underrepresented groups [@freeman2014active]. We do this by structuring our activity around the 5E Model proposed by @duran20045e, which activates students' epistemological frames. The 5E Model is based on inquiry-based teaching, where students _engage, explore, explain, elaborate, and evaluate_ statistical assumptions in an applied setting in order to promote broader impacts of inferential thinking with respect to statistics.
+
+The activity described here is intended as a “minimum viable activity.” Future avenues for extending this work include having students swap groups. Students in this activity only have the chance to engage deeply with only one of the two paradigms—Frequentist or Bayesian. A simple extension of the activity would be to have students re-do their analysis, but switch their approach. This will enable a more nuanced comparison between Frequentist and Bayesian techniques, which would add depth to the learning outcomes for students. The second extension is to create an interactive dashboard. Our initial design for the activity relies on students’ ability to code in `R`. While this is feasible in many institutional contexts, it would limit the portability of the activity to contexts where programming skill is not so common. Thus, a no-code version of the activity would make it more accessible. Another extension of the activity would be providing additional contexts and datasets. Our initial work uses a single context and dataset for the activity, however this could be re-designed to use a different context, which would promote the generalizability and impact of the activity.
+
+Finally, our more speculative research goal—to promote more nuanced epistemological framings among students—has further potential impacts, which a survey implemented to the class before and after the activity may capture. @elby2010epistemological argue that a "sophisticated" personal epistemology is actually achieved when one has access to multiple epistemological framings and can choose to switch between them based on what is productive for the context at hand. Students who can recognize and critique the assumptions underpinning their analyses, but carry out their analyses respecting those analyses, will likely be more effective as practicing statisticians. Getting students to recognize the importance of assumptions—and to practice adopting different assumptions—will be a critical first step in developing these multiple epistemological framings. 
+
+## References
+
+::: {#refs}
+:::
+

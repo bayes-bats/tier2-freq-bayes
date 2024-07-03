@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Surprise - They’re Different!</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="ps-psci-manuscript-anon_files/libs/clipboard/clipboard.min.js"></script>
+<script src="ps-psci-manuscript-anon_files/libs/quarto-html/quarto.js"></script>
+<script src="ps-psci-manuscript-anon_files/libs/quarto-html/popper.min.js"></script>
+<script src="ps-psci-manuscript-anon_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="ps-psci-manuscript-anon_files/libs/quarto-html/anchor.min.js"></script>
+<link href="ps-psci-manuscript-anon_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="ps-psci-manuscript-anon_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="ps-psci-manuscript-anon_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="ps-psci-manuscript-anon_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="ps-psci-manuscript-anon_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Surprise - They’re Different!</h1>
+<p class="subtitle lead">Comparing Frequentist and Bayesian Instructional Approaches</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Abstract</div>
+    <p>Implementing quantitative methodological techniques is a crucial piece of public policy and political science instruction. While Frequentists statistics are most commonly used when teaching quantitative methods in the social sciences, little research exists on using Bayesian approaches in the classroom, or how the outcomes from traditional quantitative approaches differ from a Bayesian approach. We propose an applied learning activity for students of political science and public policy that exposes them to Bayesian methods and explores the differences between this statistical paradigm and more commonly used approaches. We do this using a structured interrogation of the <a href="https://screeningtool.geoplatform.gov/en/">The Climate and Economic Justice Screening Tool</a> (CEJST) and the epistemological framings in the 5E model <span class="citation" data-cites="elby2010epistemological duran20045e">(<a href="#ref-elby2010epistemological" role="doc-biblioref">Elby and Hammer 2010</a>; <a href="#ref-duran20045e" role="doc-biblioref">Duran and Duran 2004</a>)</span>. The activity illustrates the importance of statistical assumptions, and by extension, the impact that using different quantitative methods has on real-world outcomes. The goal of the study is to introduce students, instructors, and practitioners to a new way of using statistics, equipping them with the tool set and logical processes necessary to apply either approach as they interrogate social science problems.</p>
+  </div>
+</div>
+
+</header>
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Social scientists routinely make use of quantitative methods to understand the complex world around them. Approaches employed range from quasi-experimental, spatial diffusion, and econometric techniques, to methods that are more qualitative in nature. While Bayesian approaches are not completely missing from political science and public policy <span class="citation" data-cites="gill2013bayesian fienberg2011bayesian">(see <a href="#ref-gill2013bayesian" role="doc-biblioref">Gill and Witko 2013</a>; <a href="#ref-fienberg2011bayesian" role="doc-biblioref">Fienberg 2011</a>)</span>, they are underutilized as a method taught among social science academics and practitioners. This omission is for a few reasons. First, scholars and practitioners in government and public policy spaces often are not exposed to Bayesian methods when they are taught quantitative techniques <span class="citation" data-cites="gill2013bayesian">(<a href="#ref-gill2013bayesian" role="doc-biblioref">Gill and Witko 2013</a>)</span>. Thus, the lack of familiarity or the “mindset shift” required for learning the methods means Bayesian techniques are not a regular tool in their toolkit <span class="citation" data-cites="ferrari2022teaching">(<a href="#ref-ferrari2022teaching" role="doc-biblioref"><strong>ferrari2022teaching?</strong></a>)</span>. Second, the reliance on infusing subjective priors into the methodological approach tends to be questioned by non-statisticians who have received more traditional Frequentist training in their disciplines <span class="citation" data-cites="fienberg2011bayesian freedman1997some">(<a href="#ref-fienberg2011bayesian" role="doc-biblioref">Fienberg 2011</a>; <a href="#ref-freedman1997some" role="doc-biblioref">Freedman 1997</a>)</span>.</p>
+<p>To remedy this, we propose an applied learning activity for students of public policy and political science that exposes them to Bayesian methods, focusing on both the theoretical and practical underpinnings of the approach. The activity explores the differences between Bayesian approaches and more commonly used statistical techniques to introduce students, instructors, and practitioners to new and different ways of using statistics to investigate real-world problems. Through the application of this activity, these methods will equip different audiences with the tool set and logical processes necessary to apply different quantitative approaches when studying political science and policy problems. More importantly, using this activity in social science classrooms will encourage students to interrogate and challenge differences in the assumptions made, and outcomes produced, in the statistical approaches they are taught.</p>
+<p>What follows is an in-depth examination of how teaching different quantitative methods results in a more robust way of interrogating political science and public policy problems. We start by reviewing the research to date on cross-disciplinary approaches to using quantitative methods, as well as how this influences students’ assumptions about their own learning using the epistemological framings in the 5E Model <span class="citation" data-cites="elby2010epistemological duran20045e">(<a href="#ref-elby2010epistemological" role="doc-biblioref">Elby and Hammer 2010</a>; <a href="#ref-duran20045e" role="doc-biblioref">Duran and Duran 2004</a>)</span>. Next, we introduce our applied activity and describe its implementation in the classroom. We conclude with a discussion on the importance of incorporating Bayesian statistics into non-statistics classrooms, as well as extensions of the activity.</p>
+</section>
+<section id="statistical-inference-for-social-scientists" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-inference-for-social-scientists">Statistical Inference for Social Scientists</h2>
+<p>Conveying complex concepts and analytical techniques is one of the most challenging aspects of teaching <span class="citation" data-cites="bates2007teaching">(<a href="#ref-bates2007teaching" role="doc-biblioref">Bates and Jenkins 2007</a>)</span>. In addition to distilling topics down to make them accessible to all students, instructors are frequently tasked with ensuring that the topics learned in class translate “out in the wild” when students enter their respective professions. This is true in the social sciences and other non-statistics disciplines, where students are tasked with translating what they know into evidence-based practices. While the theories underpinning non-statistics subjects can be challenging to understand, layering the quantitative methods typically needed to test research questions on top of these theories can create added challenges. Too often the methods and theories, alongside the question of usefulness outside of the academy, make it difficult to link analysis and political and policy practices together <span class="citation" data-cites="connelly2021translating">(<a href="#ref-connelly2021translating" role="doc-biblioref">Connelly et al. 2021</a>)</span>.</p>
+<p>What is more, students who are not statistics majors frequently become anxious and tend to avoid quantitative methods unless the methods are contextualized and the connection between their subject and technical approach seems clear <span class="citation" data-cites="gunn2017embedding">(<a href="#ref-gunn2017embedding" role="doc-biblioref">Gunn 2017</a>)</span>. Nonetheless, quantitative methods-particularly statistical inference-are a must for social science students. Most students take at least a one to three class sequence on quantitative methods as undergraduates. These usually include some form of research methods, followed by an applied class that teaches traditional Frequentist statistical inference (for example, Null Hypothesis Significance Testing (NHST)).</p>
+<p>Some political science and public policy scholars have tried to incorporate Bayesian philosophy and principles into how estimation is taught among their students. For instance, <span class="citation" data-cites="ferrari2022teaching">(<a href="#ref-ferrari2022teaching" role="doc-biblioref"><strong>ferrari2022teaching?</strong></a>)</span> proposes implementing a basic four-step modeling approach that gets students to shift their thinking from Frequentist to Bayesian. Similarly, <span class="citation" data-cites="gill2013bayesian">Gill and Witko (<a href="#ref-gill2013bayesian" role="doc-biblioref">2013</a>)</span> offer an accessible introduction to Bayesian analysis for students of public administration and policy, arguing that understanding the theoretical differences between the two approaches is critical, and that Bayesian techniques are more appropriate for the discipline. <span class="citation" data-cites="wagner2005bayesian">Wagner and Gill (<a href="#ref-wagner2005bayesian" role="doc-biblioref">2005</a>)</span> make a similar argument, stressing that Bayesian inference is “better suited” for answering public policy questions, showcasing their application on educational outcomes in public schools. Indeed, they even go so far as to say that the traditional statistical inference methods taught in public administration and policy programs is “defective and should be replaced <span class="citation" data-cites="wagner2005bayesian">(<a href="#ref-wagner2005bayesian" role="doc-biblioref">Wagner and Gill 2005, 5</a>)</span>” because they are borrowed from other disciplines and do not necessarily fit their research challenges. Finally, <span class="citation" data-cites="luque2023bayesian">Luque and Sosa (<a href="#ref-luque2023bayesian" role="doc-biblioref">2023</a>)</span> use a series of different scenarios to demonstrate ways in which to incorporate Bayesian methods into real-world social inquiries. They do this by way of inferential comparisons between Frequentists and Bayesians, underscoring the differences between the two approaches both theoretically and in practice.</p>
+<section id="activating-epistemological-frames" class="level3">
+<h3 class="anchored" data-anchor-id="activating-epistemological-frames">Activating Epistemological Frames</h3>
+<p>One of the primary points stressed in the research advocating for Bayesian inference in non-statistics classrooms is not to simply introduce another applied tool without much thought; rather, offering different philosophies and theoretical approaches in addition to the tool is crucial to employing effective analytical practices. In social science quantitative methodology teachings, intellectual development often starts with a “surface approach”, where students memorize and repeat facts that inform them, rather than engaging with or reflecting on the approaches they have learned <span class="citation" data-cites="entwistle1997contrasting bates2007teaching">(<a href="#ref-entwistle1997contrasting" role="doc-biblioref">Entwistle 1997</a>; <a href="#ref-bates2007teaching" role="doc-biblioref">Bates and Jenkins 2007</a>)</span>. Our goal, in addition to offering a Bayesian learning activity, is to move beyond the surface approach, empowering students with the knowledge to choose between different statistical approaches based on what is productive for the context at hand. This starts with epistemological framings, or the nature of knowledge and understanding among students <span class="citation" data-cites="elby2010epistemological">(<a href="#ref-elby2010epistemological" role="doc-biblioref">Elby and Hammer 2010</a>)</span>.</p>
+<p>At its most basic level, epistemology is concerned with the methods and theories that help understand knowledge origins and acquisition. Epistemological framings are created from personal cognitive resources, such as beliefs, that are activated among individuals conditional on the context they are in <span class="citation" data-cites="elby2010epistemological">(<a href="#ref-elby2010epistemological" role="doc-biblioref">Elby and Hammer 2010, 3</a>)</span>. These cognitive resources provide a framework with which individuals can form their understanding of the “nature of knowledge, knowing, and learning”, and are often variable and something that the person may not be aware of <span class="citation" data-cites="elby2010epistemological">(<a href="#ref-elby2010epistemological" role="doc-biblioref">Elby and Hammer 2010, 4</a>)</span>. An epistemological frame is when individual resources that are reinforced by one another are activated and lead to knowledge stability <span class="citation" data-cites="elby2010epistemological">(<a href="#ref-elby2010epistemological" role="doc-biblioref">Elby and Hammer 2010, 6</a>)</span>. These frames are the expectations that someone brings to different experiences and scenarios, which in turn influences their actions.</p>
+<p>In the context of the classroom, epistemological frames organize activities in the classroom for students, which in turn affects their knowledge and learning. Students who can recognize and critique the assumptions underpinning their analyses (treating them as tentative), but carry out their analyses respecting those analyses (treating them as true) will likely be more effective as practicing statisticians in their discipline. Getting students to recognize the importance of assumptions—and to practice adopting different assumptions—is a critical first step in developing these multiple epistemological framings.</p>
+<p>The goal of our activity is to activate students’ epistemological frames by structuring it around the 5E Model proposed by <span class="citation" data-cites="duran20045e">Duran and Duran (<a href="#ref-duran20045e" role="doc-biblioref">2004</a>)</span>. The 5E Model is based on constructivist pedagogies and rests on the notion of inquiry-based teaching, or having students discover information on their own without the direct help of instructors <span class="citation" data-cites="duran20045e uno1999handbook">(<a href="#ref-duran20045e" role="doc-biblioref">Duran and Duran 2004</a>; <a href="#ref-uno1999handbook" role="doc-biblioref">Uno 1999</a>)</span>. The 5E model is captured in the following figure:</p>
+<div id="fig-5E" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="01-mpsa-5E.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: The 5E Instructional Model (as seen in <span class="citation" data-cites="duran20045e">Duran and Duran (<a href="#ref-duran20045e" role="doc-biblioref">2004</a>)</span>, p.52)</figcaption>
+</figure>
+</div>
+<p>Each of the E’s represent: <em>Engage</em>: Get students interested; <em>Explore</em>: Students do self-directed inquiry; <em>Explain</em>: Give students conceptual tools; <em>Elaborate</em>: Let students work with the tools; and <em>Evaluate</em>: Assess the learning outcomes. We turn next to the applied activity, where students compare Frequentist and Bayesian approaches as applied to a real-world problem.</p>
+</section>
+</section>
+<section id="sec-applied-activity" class="level2">
+<h2 class="anchored" data-anchor-id="sec-applied-activity">Applied Activity: Comparing Frequentist &amp; Bayesian Approaches</h2>
+<p>To alleviate some of the challenges that come with teaching different techniques of statistical inference, scholars have compared Frequentist and Bayesian approaches to one another, highlighting where they are similar and when they diverge <span class="citation" data-cites="samaniego2010comparison ferrari2022teaching">(<a href="#ref-samaniego2010comparison" role="doc-biblioref">Samaniego 2010</a>; <a href="#ref-ferrari2022teaching" role="doc-biblioref"><strong>ferrari2022teaching?</strong></a>)</span>. We do something similar, using a public policy example to guide our comparison. The activity is focused on a real dataset, and students follow a structured process to analyze the dataset and interpret their results. However, different groups receive different versions of the activity: some receive a Frequentist approach, while the others receive a Bayesian approach. By carefully crafting the analyses to reach different conclusions, the aim is to surprise students with diverging conclusions. The activity concludes with a final full-group discussion, where the importance of statistical assumptions are highlighted, completing the comparison of Frequentist and Bayesian approaches.</p>
+<p>The activity learning objectives are three-fold. First, students should be able to evaluate multiple hypotheses using inferential statistics; second, students should be able to connect their evaluation of hypotheses to real-world factors; and third, students should be able to state the primary statistical assumptions for Frequentist and Bayesian inference, and understand how they can lead to different conclusions. These learning objectives stem from our overall learning goal of engineering a “classroom controversy” to motivate students to find their own understanding of how Frequentist and Bayesian assumptions can lead to different conclusions (and by extension, real-world decision-making).</p>
+<p><strong>Activity Materials</strong></p>
+<p>All materials were created using the programming language <code>R</code> and can be rendered in .html or .pdf format for use. The materials are openly available for instructors on our <a href="https://github.com/bayes-bats/tier2-freq-bayes">GitHub repository</a>. Important starter documents include the <a href="https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/run-of-show.md">run of show</a>, which outlines at a high level the different steps of the activity, as well as the artifacts used in the activity. Further, the learning objectives and details of the activity are fleshed out in the <a href="https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/01-introduction-main.qmd">introduction document</a>. The complete applied activity documents for both the Bayesian and Frequentist approaches are in the <a href="https://github.com/bayes-bats/tier2-freq-bayes/tree/main/development">activity development</a> folder in the GitHub repository. Instructors can watch a <a href="https://www.youtube.com/watch?v=dwNLcFqQqnE">video overview</a> of the activity on YouTube, and can use the <a href="https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/Makefile">Makefile</a> available in our repository to compile both student and instructor-facing artifacts, the latter of which contains solutions and other notes for running the activity.</p>
+<section id="sec-activity-approach" class="level3">
+<h3 class="anchored" data-anchor-id="sec-activity-approach">Activity Approach</h3>
+<p>To implement the activity, there are four steps:</p>
+<ol type="1">
+<li>Setting the context for the real world problem the class is exploring</li>
+<li>Introducing the motivation for the activity (statistical approaches) given the context</li>
+<li>Doing the applied activity</li>
+<li>Closing out the activity</li>
+</ol>
+<p>Using the 5E Model, we focus on the applied learning aspects of the activity, or the application of a statistical approach on current issues. For example, for <em>engage</em> the goal is to motivate students with current issues around climate and equity. The <em>explore</em> stage is the opportunity in which students get to do self-directed inquiry. For this activity, that means investigating the real-world dataset provided to them in small groups. <em>Explain</em> gives the students the conceptual tools they need to understand the different statistical approaches. Students will learn the basics of assessing and interpreting a fitted statistical model. For <em>elaborate</em>, students get to work with the tools, meaning they apply the conceptual tools they learned to the real-world dataset. Finally, <em>evaluate</em> involves giving students the opportunity to reflect on their understanding of the concepts and application they just did through an instructor-facilitated class discussion.</p>
+<p>Important to this approach is the role of the student. While the instructor is there to facilitate questions and the general cadence of the activity, the onus is on students to work through each of the steps of the activity. This is a fundamental tenant of the 5E model, where inquiry-based learning is key to students discovering information and learning.</p>
+<section id="sec-prob-context" class="level4">
+<h4 class="anchored" data-anchor-id="sec-prob-context">Problem Context</h4>
+<p>We start our activity by introducing <a href="https://screeningtool.geoplatform.gov/en/">The Climate and Economic Justice Screening Tool</a> (CEJST). The CEJST is the result of President Biden’s Executive Order 14008 issued in January 2021. The tool is used to identify and subsequently help communities disadvantaged by the burdens stemming from climate change in government social programs. While the data covers a number of burdens, we focus on the sustainability aspects of the tool for our activity, including climate change, energy, and legacy pollution burdens on communities.</p>
+<p>We begin with a straightforward explanation of the dataset, situating it in the contemporary dialogue around climate change. Specifically, we theorize there may be a relationship between climate change burdens and minorities residing in Census tracts. By providing them with this context, we get students to think about possible questions and hypotheses they may be able to explore using statistical inference.</p>
+<p>To dig into the context of our real-world problem further, we also provide embedded code snippets and output from <code>R</code> of some high-level exploratory data analysis (EDA) for the students to review and discuss. We begin by focusing our attention on a few variables of interest for EDA. We start with the <em>energy burden percentile</em>, which captures the percentile of energy cost as well as energy-related pollution within a census tract, as well as the <em>percent of African-American or Black alone</em>, which captures the percent of African-American or Black individuals in a census tract.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> After students have investigated the dataset and have a more thorough understanding of the problem at hand, the students turn their attention to the introduction document.</p>
+</section>
+<section id="sec-activity-intro" class="level4">
+<h4 class="anchored" data-anchor-id="sec-activity-intro">Activity Introduction</h4>
+<p>This portion of the activity starts with the instructor walking students through the learning objectives and warm-up questions, which in turn initiates a group-wide discussion on statistical inference. The instructor has the students discuss inference at a high level, offering a more pointed discussion if needed around crafting a research question and hypotheses. At this point, the instructor turns students to the simplified <a href="https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-simplified-main.qmd">critical differences one-pager</a> that introduces them to the primary differences between the Frequentist and Bayesian paradigms. To keep the exercise manageable, we focus students’ attention on <em>general inference</em> and <em>model summaries</em>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <a href="#tbl-inf">Table&nbsp;1</a> and <a href="#tbl-summ">Table&nbsp;2</a> showcase the critical differences one-pager containing information on general inference and model summaries:</p>
+<div id="tbl-inf" class="anchored">
+<table class="table-sm small table">
+<caption>Table&nbsp;1: General Inference</caption>
+<colgroup>
+<col style="width: 56%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Frequentist</th>
+<th>Bayesian</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Deduction from Pr(data <span class="math inline">\(|\)</span> H0), by setting <span class="math inline">\(\alpha\)</span> in advance</td>
+<td>Induction from Pr(<span class="math inline">\(\theta\)</span> <span class="math inline">\(|\)</span> data), starting with Pr(<span class="math inline">\(\theta\)</span>)</td>
+</tr>
+<tr class="even">
+<td>Accept H1 if Pr(data <span class="math inline">\(|\)</span> H0) &lt; <span class="math inline">\(\alpha\)</span></td>
+<td>1−<span class="math inline">\(\alpha\)</span>% of most likely parameter values fall within a 1−<span class="math inline">\(\alpha\)</span> HPD</td>
+</tr>
+<tr class="odd">
+<td>Accept H0 if Pr(data <span class="math inline">\(|\)</span> H0) ≥ <span class="math inline">\(\alpha\)</span></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tbl-summ" class="anchored">
+<table class="table-sm small table">
+<caption>Table&nbsp;2: Model Summaries</caption>
+<colgroup>
+<col style="width: 56%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Frequentist</th>
+<th>Bayesian</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Point estimates and standard errors</td>
+<td>Descriptions of the posterior distribution such as means and quantiles</td>
+</tr>
+<tr class="even">
+<td>95% confidence intervals indicating that 19/20 times the interval covers the true parameter value</td>
+<td>Highest posterior density intervals indicating region of highest posterior probability</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>1−<span class="math inline">\(\alpha\)</span>% of most likely parameter values fall within a 1−<span class="math inline">\(\alpha\)</span> HPD</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The introductory discussion of the activity wraps up by introducing the research question and associated hypothesis the class will test with their respective statistical approach.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+</section>
+<section id="sec-activity-app" class="level4">
+<h4 class="anchored" data-anchor-id="sec-activity-app">Activity Application</h4>
+<p>For the activity application, students are assigned a number generated by a random number generator and put into groups to go through an applied statistical analysis. There are two versions that are circulated: the Frequentist analysis and the Bayesian analysis. The analyses that are given to the students are already completed-they only receive the output of the analysis with associated questions to help them think through the different parts of the analysis before they come to any conclusions.</p>
+<p>The data used for each analysis is the exact same for both of the groups, as is the hypothesis that the students are testing. Additionally, the students are asked to assess the same conceptual things, regardless of which statistical approach they receive. They will use the <em>general inference</em> and <em>model summaries</em> comparison discussed in the <a href="#sec-activity-intro">Section&nbsp;3.1.2</a> to diagnose the outputs of the models from the analyses.</p>
+<p><strong>Frequentist Analysis</strong></p>
+<p>Both activities begin with a quick overview of the hypothesis the students are testing, as well as the different components of a statistical model. For the Frequentist model, the analysis document introduces the following model, where <span class="math inline">\(B\)</span> as the dependent variable (energy burden percentile), <span class="math inline">\(P\)</span> is the percent black, <span class="math inline">\(m\)</span> is the slope parameter, <span class="math inline">\(b\)</span> is the intercept parameter, and <span class="math inline">\(\epsilon\)</span> captures the error term.</p>
+<p><span class="math display">\[{B = m P + b + \epsilon}\]</span> The instructor encourages the class to think through how to interpret estimates in a linear model using Frequentist statistics, noting a number of important assumptions along the way in questions are asked about the model, including that the <span class="math inline">\(b\)</span> and <span class="math inline">\(m\)</span> parameters are fixed but unknown values. This is a natural place for a number of questions to be asked of the class related to model summaries and general inference. The questions below illustrate what the class is asked for understanding model summaries in a Frequentist model, along with the associated answers:</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Questions for the Class">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Questions for the Class
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Which scenario gives the largest estimate for the slope?
+<ul>
+<li>Scenario B</li>
+</ul></li>
+<li>Does the confidence interval for Scenario A include zero? (NB. A confidence interval includes zero if Lower &lt; 0 &lt; Upper.)
+<ul>
+<li>Yes</li>
+</ul></li>
+<li>Does the confidence interval for Scenario B include zero?
+<ul>
+<li>Yes</li>
+</ul></li>
+<li>Does the confidence interval for Scenario C include zero?
+<ul>
+<li>No</li>
+</ul></li>
+<li>If a confidence interval includes zero, this indicates that we cannot conclude whether the slope is positive or negative. For which scenarios can we not conclude whether the slope is positive or negative?
+<ul>
+<li>Scenarios A and B</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<p>After students have revisited the concepts around model summaries and general inference for the Frequentist linear model, they move to a predictive model where they are given a number of predicted versus observed value plots, show below, for the model across three states: Massachusetts, Colorado, Florida, and the entire sample of data (e.g., the U.S.).</p>
+<div id="fig-freq1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="01-mpsa-freq-ex1.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Example Trend from Frequentist Analysis</figcaption>
+</figure>
+</div>
+<p>Additionally, they are given the intercept and slope estimates, as well as the confidence intervals for each model.</p>
+<div id="fig-freq2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="01-mpsa-COfreq-ex1.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Example Model Summary from Frequentist Analysis</figcaption>
+</figure>
+</div>
+<p>Once they have seen the results for each of the states and the U.S., students are given a set of questions that encourage them to think about the model results knowing what they do about model summaries and general inference. At this point, the students are exploring the results of the model in their respective groups and discussing and answering together the questions provided to them.</p>
+<p><strong>Bayesian Analysis</strong></p>
+<p>The cadence of the Bayesian analysis largely mirrors the Frequentist analysis to begin. Like the Frequentist groups, the Bayesian groups also revisit the hypothesis they are testing, as well as the different components of a statistical model, though this time it is a Bayesian linear model.</p>
+<p><span class="math display">\[ B = m P + b + \epsilon \]</span></p>
+<p>where <span class="math inline">\(B\)</span> is the energy burden percentile, <span class="math inline">\(P\)</span> is the percent Black, <span class="math inline">\(m\)</span> is the slope parameter, <span class="math inline">\(b\)</span> is the intercept parameter, and <span class="math inline">\(\epsilon\)</span> is a <em>residual</em> term that represents factors not accounted for in the model. The residual term is assumed to be normally distributed <span class="math inline">\(\epsilon \sim N(0, \sigma^2)\)</span> with an unknown parameter <span class="math inline">\(\sigma^2\)</span>. All three parameters have a prior distribution, defined via:</p>
+<p><span class="math display">\[
+\begin{aligned} m \sim N(\mu_m, \sigma_m^2), \\ b \sim N(\mu_b, \sigma_b^2), \\ \sigma^2 \sim \text{Exponential}(1/s_y), \end{aligned}
+\]</span> where <span class="math inline">\(m, b, \sigma^2\)</span> are independent. The class discusses how to set the prior through its parameter values <span class="math inline">\(\mu_m, \mu_b, \sigma_m^2, \sigma_b^2\)</span> later in the activity. The instructor also discusses model assumptions for the Bayesian approach at a high level, stressing one of the fundamental differences between Frequentists and Bayesians: the intercept <span class="math inline">\(b\)</span> and slope <span class="math inline">\(m\)</span> parameters are treated as random variables with a distribution that represents our state of knowledge.</p>
+<p>As with the Frequentist analysis, there are a number of questions asked of the class related to model summaries and general inference for the Bayesians. This time, however, students are shown the posterior distribution for the slope (<span class="math inline">\(m\)</span>) and intercept (<span class="math inline">\(b\)</span>) for a fitted model using Massachusetts data. The idea here is to get students thinking about how confident they should be in drawing conclusions from the model. After they have seen the distributions for these parameters, they are shown three different posterior distributions for the slope parameter so they can make sense of the results from the posterior:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ps-psci-manuscript-anon_files/figure-html/notional-posteriors-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure 4: Notational Slope Posteriors for Bayesian Analysis</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Students are then asked a series of questions, a sample of which are below, to get them thinking about what the posterior distribution captures:</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Questions for the Class">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Questions for the Class
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Roughly, what fraction of <em>Posterior Distribution A</em> is greater than zero?
+<ul>
+<li>Precisely 57.93%, so roughly 60%</li>
+</ul></li>
+<li>Roughly, what fraction of <em>Posterior Distribution B</em> is greater than zero?
+<ul>
+<li>Precisely 89.44%, so roughly 90%</li>
+</ul></li>
+<li>Roughly, what fraction of <em>Posterior Distribution C</em> is greater than zero?
+<ul>
+<li>Essentially 100%</li>
+</ul></li>
+<li>Which posterior gives the <em>highest confidence</em> (<em>highest probability</em>) that the slope parameter is positive? How can you tell?
+<ul>
+<li>Posterior C, as the probability is essentially 100% (as we identified above).</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<p>The students have the opportunity to look more closely at the slope parameter for Massachusetts and discuss it in the context of general inference. The students should recognize that a positive slope is in agreement with the hypothesis they are exploring before moving to the predictive portion of the Bayesian analysis, studying the posterior predictions.</p>
+<p>To further stress the differences between the two approaches, the activity notes that a prior distribution must also be provided for all of the components of the model. These priors represent all of our prior knowledge about the real-world problem the students are trying to solve. It also ties all of the pieces together, importantly that a fitted Bayesian model is comprised of the <em>data + prior = posterior</em>. The activity walks the students through hypothetical scenarios where different prior distributions are used for the slope parameter when fitting the model with the Massachusetts data. This also shows the utility of a Bayesian approach when you have limited data, as it allows us to incorporate prior knowledge, a scenario we use in the activity.</p>
+<p>We employ a sequential Bayesian analysis by using the posterior from one analysis as the prior for a new analysis. We provide the following to the students in the Bayesian group and have the students pick a state’s prior distribution for the rest of the activity:</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Pick a State">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pick a State
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Study the posteriors above carefully; you will use this as a <em>prior distribution</em> for the slope for the rest of the activity. This means you will combine <em>new data</em> with a <em>prior distribution</em> to form a new <em>posterior distribution</em> for the model parameters. The <em>prior distribution</em> should reflect your beliefs about what you think the slope parameter should be.</p>
+<p>Pick <em>one state for your group</em>, then come ask the instructor for your chosen state’s packet.</p>
+</div>
+</div>
+<div id="fig-slopes2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="01-mpsa-bayesSlope-ex1.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;4: Example Posterior Choices from Bayesian Analysis</figcaption>
+</figure>
+</div>
+<p>This represents a critical step in the activity for the Bayesians: they must pick their prior distribution based on their beliefs about what they think the slope parameter should be. This will subsequently be used with new data to form a posterior distribution later in the activity. Each of the results are placed in an envelope, only to be opened once selected by a group. The following figure represents an example of the sequential Bayesian analysis used in the full activity that students will have to choose from and interpret. On the left are the results showing the fitted lines and slope posteriors for Florida using priors from Massachusetts, Minnesota, and New Hampshire. On the right are the results showing the fitted lines and slope posteriors for Colorado, also using priors from Massachusetts, Minnesota, and New Hampshire.</p>
+<div id="fig-comparison" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="01-mpsa-bayescomp.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption class="figure-caption">Figure&nbsp;5: Comparison with Different Priors from Bayesian Analysis</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-activity-close" class="level4">
+<h4 class="anchored" data-anchor-id="sec-activity-close">Activity Closing</h4>
+<p>Once done with the applied portion, groups come back together for a full-class discussion. In addition to students jotting down any remaining questions they may have about each of the following questions, they are posed to the whole class for discussion and are tied to the learning objectives in <a href="#sec-applied-activity">Section&nbsp;3</a>:</p>
+<ul>
+<li>What can we say about our hypothesis?</li>
+<li>How would you answer our research question now that we have analyzed the data?</li>
+<li>What can we conclude about the relationship between sustainability and disadvantaged communities? What might you recommend from a policy-making perspective?</li>
+</ul>
+<p>We use these questions for a few reasons. The first is so the entire class can hear the impressions of both groups regarding the statistical approach used in their analyses. The second is to play into the “controversy” or differences between the approaches to further engage students on the importance of assumptions for statistical conclusions. The instructor facilitates a debate between the two groups using the critical differences one-pager discussed in <a href="#sec-activity-intro">Section&nbsp;3.1.2</a>. Each group likely thinks their conclusions are “correct” based on their analyses, however it is important to point out that the controversy cannot be resolved; rather, the results from our analyses are conditional on the assumptions chosen, implying that choosing appropriate assumptions is critical to a sound analysis.</p>
+</section>
+</section>
+</section>
+<section id="sec-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="sec-discussion">Discussion</h2>
+<p>This activity bridges the gap between the common Frequentist approach oft taught in both undergraduate quantitative methods classes and the Bayesian paradigm, to which many students have not been exposed. We believe that non-statistics disciplines, such as political science and public policy, are an arena with which Bayesian methods can be very beneficial. To bridge this gap, we use an applied approach with real world data. While many teaching methods highlight the theoretical similarities and differences between Frequentists and Bayesians, our activity moves beyond this by grounding the comparison in a real-data application. In doing so, we hope to introduce students to a new way of using statistics, equipping them with the tool set and logical processes necessary to apply either the Frequentist or Bayesian (or both) approaches as they see fit.</p>
+<p>Our activity uses an active learning approach, rather than relying on passive lecture. Active learning has been shown to result in superior learning outcomes for students, particularly those from underrepresented groups <span class="citation" data-cites="freeman2014active">(<a href="#ref-freeman2014active" role="doc-biblioref">Freeman et al. 2014</a>)</span>. We do this by structuring our activity around the 5E Model proposed by <span class="citation" data-cites="duran20045e">Duran and Duran (<a href="#ref-duran20045e" role="doc-biblioref">2004</a>)</span>, which activates students’ epistemological frames. The 5E Model is based on inquiry-based teaching, where students <em>engage, explore, explain, elaborate, and evaluate</em> statistical assumptions in an applied setting in order to promote broader impacts of inferential thinking with respect to statistics.</p>
+<p>The activity described here is intended as a “minimum viable activity.” Future avenues for extending this work include having students swap groups. Students in this activity only have the chance to engage deeply with only one of the two paradigms—Frequentist or Bayesian. A simple extension of the activity would be to have students re-do their analysis, but switch their approach. This will enable a more nuanced comparison between Frequentist and Bayesian techniques, which would add depth to the learning outcomes for students. The second extension is to create an interactive dashboard. Our initial design for the activity relies on students’ ability to code in <code>R</code>. While this is feasible in many institutional contexts, it would limit the portability of the activity to contexts where programming skill is not so common. Thus, a no-code version of the activity would make it more accessible. Another extension of the activity would be providing additional contexts and datasets. Our initial work uses a single context and dataset for the activity, however this could be re-designed to use a different context, which would promote the generalizability and impact of the activity.</p>
+<p>Finally, our more speculative research goal—to promote more nuanced epistemological framings among students—has further potential impacts, which a survey implemented to the class before and after the activity may capture. <span class="citation" data-cites="elby2010epistemological">Elby and Hammer (<a href="#ref-elby2010epistemological" role="doc-biblioref">2010</a>)</span> argue that a “sophisticated” personal epistemology is actually achieved when one has access to multiple epistemological framings and can choose to switch between them based on what is productive for the context at hand. Students who can recognize and critique the assumptions underpinning their analyses, but carry out their analyses respecting those analyses, will likely be more effective as practicing statisticians. Getting students to recognize the importance of assumptions—and to practice adopting different assumptions—will be a critical first step in developing these multiple epistemological framings.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-bates2007teaching" class="csl-entry" role="listitem">
+Bates, Stephen R, and Laura Jenkins. 2007. <span>“Teaching and Learning Ontology and Epistemology in Political Science.”</span> <em>Politics</em> 27 (1): 55–63.
+</div>
+<div id="ref-connelly2021translating" class="csl-entry" role="listitem">
+Connelly, Steve, Dave Vanderhoven, Robert Rutherfoord, Liz Richardson, and Peter Matthews. 2021. <span>“Translating Research for Policy: The Importance of Equivalence, Function, and Loyalty.”</span> <em>Humanities and Social Sciences Communications</em> 8 (1): 1–11.
+</div>
+<div id="ref-duran20045e" class="csl-entry" role="listitem">
+Duran, Lena Ballone, and Emilio Duran. 2004. <span>“The 5E Instructional Model: A Learning Cycle Approach for Inquiry-Based Science Teaching.”</span> <em>Science Education Review</em> 3 (2): 49–58.
+</div>
+<div id="ref-elby2010epistemological" class="csl-entry" role="listitem">
+Elby, Andrew, and David Hammer. 2010. <span>“Epistemological Resources and Framing: A Cognitive Framework for Helping Teachers Interpret and Respond to Their Students’ Epistemologies.”</span> <em>Personal Epistemology in the Classroom: Theory, Research, and Implications for Practice</em> 4 (1): 409–34.
+</div>
+<div id="ref-entwistle1997contrasting" class="csl-entry" role="listitem">
+Entwistle, Noel. 1997. <span>“Contrasting Perspectives on Learning.”</span> <em>The Experience of Learning</em> 2: 3–22.
+</div>
+<div id="ref-fienberg2011bayesian" class="csl-entry" role="listitem">
+Fienberg, Stephen E. 2011. <span>“Bayesian Models and Methods in Public Policy and Government Settings.”</span>
+</div>
+<div id="ref-freedman1997some" class="csl-entry" role="listitem">
+Freedman, David. 1997. <span>“Some Issues in the Foundation of Statistics.”</span> <em>Topics in the Foundation of Statistics</em>, 19–39.
+</div>
+<div id="ref-freeman2014active" class="csl-entry" role="listitem">
+Freeman, Scott, Sarah L Eddy, Miles McDonough, Michelle K Smith, Nnadozie Okoroafor, Hannah Jordt, and Mary Pat Wenderoth. 2014. <span>“Active Learning Increases Student Performance in Science, Engineering, and Mathematics.”</span> <em>Proceedings of the National Academy of Sciences</em> 111 (23): 8410–15.
+</div>
+<div id="ref-gill2013bayesian" class="csl-entry" role="listitem">
+Gill, Jeff, and Christopher Witko. 2013. <span>“Bayesian Analytical Methods: A Methodological Prescription for Public Administration.”</span> <em>Journal of Public Administration Research and Theory</em> 23 (2): 457–94.
+</div>
+<div id="ref-gunn2017embedding" class="csl-entry" role="listitem">
+Gunn, Andrew. 2017. <span>“Embedding Quantitative Methods by Stealth in Political Science: Developing a Pedagogy for Psephology.”</span> <em>Teaching Public Administration</em> 35 (3): 301–20.
+</div>
+<div id="ref-luque2023bayesian" class="csl-entry" role="listitem">
+Luque, Carolina, and Juan Sosa. 2023. <span>“Bayesian Analysis for Social Science Research.”</span> <em>arXiv Preprint arXiv:2306.11966</em>.
+</div>
+<div id="ref-samaniego2010comparison" class="csl-entry" role="listitem">
+Samaniego, Francisco J. 2010. <em>A Comparison of the Bayesian and Frequentist Approaches to Estimation</em>. Vol. 24. Springer.
+</div>
+<div id="ref-uno1999handbook" class="csl-entry" role="listitem">
+Uno, Gordon E. 1999. <span>“Handbook on Teaching Undergraduate Science Courses: A Survival Training Manual.”</span> <em>(No Title)</em>.
+</div>
+<div id="ref-wagner2005bayesian" class="csl-entry" role="listitem">
+Wagner, Kevin, and Jeff Gill. 2005. <span>“Bayesian Inference in Public Administration Research: Substantive Differences from Somewhat Different Assumptions.”</span> <em>International Journal of Public Administration</em> 28 (1-2): 5–35.
+</div>
+</div>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>While we guide our students to the variables we want to explore for this implementation of the activity, instructors can modify the activity such that students explore the dataset and identify variables of interest on their own. If they know how to use statistical software, they can also conduct the EDA and analyses in <code>R</code> on their own, rather than giving them the completed version as we do here.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>You can access the <a href="https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-one-pager-main.qmd">full one-pager</a> that is instructor-facing on the associated GitHub repository. In addition to comparing general inference and model summaries, it also includes comparisons between fixed variables, interpreting probabilities, and model inference.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>An extension of the activity could have the students develop the research questions and hypotheses on their own. Given the activity we implemented is meant to span one class period, we provide those for the students.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
