@@ -20,3 +20,6 @@ pdfs:
 	cd development; make bayes
 	cp development/99-full-freq.pdf freq/.
 	cp development/99-full-bayes.pdf bayes/.
+	cp development/99-postMA.pdf bayes/.
+	cp development/99-postMN.pdf bayes/.
+	cp development/99-postNH.pdf bayes/.
