@@ -1,10 +1,13 @@
 SRC := $(wildcard *main.qmd)
 ASSIGNMENTS := $(subst main,assignment,$(SRC))
 SOLUTIONS := $(subst main,solution,$(SRC))
+PDFS := $(subst qmd,pdf,$(ASSIGNMENTS))
 OS := $(shell uname)
 # ${RSTUDIO_PASS} # Set in environment variables
 
 all: ${ASSIGNMENTS} ${SOLUTIONS}
+
+pdfs: ${PDFS}
 
 ifeq ($(OS),Darwin)
 %assignment.qmd: %main.qmd
@@ -39,6 +42,9 @@ endif
 	-e '/# solution-(begin|end)/d' \
 	-e '/<!-- solution-(begin|end)/d' \
 	< $< > $@
+
+%assignment.pdf: %assignment.qmd
+	quarto render $<
 
 freq:
 	pdfunite 00-context-assignment.pdf \
