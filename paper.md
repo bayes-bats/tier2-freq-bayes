@@ -92,6 +92,8 @@ Going into the activity, I prepared a short (~5 minute) lecture on the CEJST dat
 
 I used the following timings to facilitate the activity, calling out instructions such as "You should be finishing up 01 Introduction and moving on to the 02 Activity."
 
+|    | Phase                               | Time   |
+|----|-------------------------------------|--------|
 |    | Lecture                             | 5 min  |
 | 00 | Context                             | 5 min  |
 | 01 | Introduction                        | 10 min |
