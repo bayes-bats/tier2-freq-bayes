@@ -106,7 +106,7 @@ The "key points" that I added (beyond the activity notebooks) were the introduct
 
 I noticed that the groups in the Bayesian arm tended to progress a fair bit slower; this is likely because the Bayesian analysis involved distributions, while the frequentist analysis presented confidence intervals and point estimates (simpler mathematical objects). As a facilitator, I had to invent additional tasks for the frequentist groups
 
-**Langehennig**: TODO
+**Langehennig**: Similar to del Rosario, I ran the activity using the pure paper approach at the University of Denver in an introductory undergraduate business school statistics class. I also used the timings outlined above given the activity took place during a normally scheduled lecture. The students were separated into two groups using a random number generator, resulting in four 3-person Frequentist groups and four 3-person Bayesian groups. The students were given their respective packets and worked together on the activity, with Frequentists on one side of the room and Bayesians on the other.
 
 # Acknowledgements
 
