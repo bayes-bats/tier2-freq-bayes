@@ -37,13 +37,13 @@ Far from being an academic distinction, modern students must have a minimal comp
 
 # Our Story
 
-This activity was developed under the NSF-funded project *Bayes BATS* [^1]. The third author (Dogucu), as co-PI on this NSF grant, recruited the first and second authors (del Rosario and Langehennig) to participate in a multi-day Bayesian statistics faculty boot camp aimed at developing and disseminating Bayesian statistics educational materials. Through discussions at the workshop, del Rosario and Langehennig came up with the idea to generate a "classroom controversy" to highlight the differences between frequentist and Bayesian statistics. With continued mentorship from Dogucu, the three developed the proposed activity.
+This activity was developed under the NSF-funded project *Bayes BATS* [^1]. The third author (Dogucu), as PI on this NSF grant, recruited the first and second authors (del Rosario and Langehennig) to participate in a week-long boot camp for STEM faculty aimed at developing and disseminating Bayesian statistics educational materials. Through discussions at the boot camp, del Rosario and Langehennig came up with the idea to generate a "classroom controversy" to highlight the differences between frequentist and Bayesian statistics. With continued mentorship from Dogucu, the three developed the proposed activity.
 
 [1]: IUSE: EHR, Grant No.s #2215879, #2215920, and #2215709
 
 # Learning Module
 
-In this section we briefly describe the learning module. Overall, the module is a one-class activity (~100 minutes) that explores the Climate and Economic Justice Screening Tool (CEJST) dataset using in-class (R) Quarto notebooks, small-group discussions, and full-class discussions. For instructors and learners in less-resourced environments, it is possible to run this activity in a "pure paper" form (see Practical Tips below).
+In this section we briefly describe the learning module. Overall, the module is a one-class activity (~100 minutes) that explores the [Climate and Economic Justice Screening Tool (CEJST) dataset using in-class (R) Quarto documents, small-group discussions, and full-class discussions. For instructors and learners in less-resourced environments, it is possible to run this activity in a "pure paper" form (see Practical Tips below).
 
 In addition to this paper, we have recorded a [video overview](https://www.youtube.com/watch?v=dwNLcFqQqnE) of the activity and written a [run-of-show](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/run-of-show.md) document
 
@@ -61,26 +61,26 @@ The activity learning goals are stated directly for students in the [01-introduc
 
 ## Contents
 
-The activity is divided into several Quarto notebooks, written in the R programming language:
+The activity is divided into several Quarto documents, written in the R programming language:
 
-(First 5E Loop)
-- [00-context](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/00-context-main.qmd): Introduces the CEJST dataset
-- [01-introduction](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/01-introduction-main.qmd): Introduces the ideas of statistical paradigms, inference, and answering research questions with statistics
-- `02-activity` is the bulk of the activity. It comes in two version:
-  - [02a-activity-freq](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02a-activity-freq-main.qmd): Frequentist version
-  - [02b-activity-bayes](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02b-activity-bayes-main.qmd): Bayesian version
-- [03-simplified](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-one-pager-main.qmd): A short reference guide to differences between frequentist and Bayesian approaches
-(Second 5E Loop)
-- [04-conclusion](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/04-conclusion-main.qmd): The moment the "productive controversy" is revealed and discussed
+(First 5E Loop)  
+- [00-context](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/00-context-main.qmd): Introduces the CEJST dataset  
+- [01-introduction](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/01-introduction-main.qmd): Introduces the ideas of statistical paradigms, inference, and answering research questions with statistics  
+- `02-activity` is the bulk of the activity. It comes in two version:  
+  - [02a-activity-freq](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02a-activity-freq-main.qmd): Frequentist version    
+  - [02b-activity-bayes](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02b-activity-bayes-main.qmd): Bayesian version  
+- [03-simplified](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-one-pager-main.qmd): A short reference guide to differences between frequentist and Bayesian approaches  
+(Second 5E Loop)  
+- [04-conclusion](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/04-conclusion-main.qmd): The moment the "productive controversy" is revealed and discussed  
 - [05-survey](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/05-survey-main.qmd): An optional survey to measure student learning
 
 ## Practical Tips
 
 - The activity is intended to be run in a single class session (~100 minutes) with students in groups of ~4.
   - Since the activity *strongly relies* on there being two versions (frequentist and Bayesian) of the activity "in play", it is wise to pre-assign students to groups and distribute the two versions to roughly half the class (either via your LMS, or with paper handouts).
-- The Quarto notebooks are quite detailed, which should allow the instructor to focus on classroom observation and management. Make sure to review all notebooks before running the activity to "get a sense" of the activity.
+- The Quarto documents are quite detailed, which should allow the instructor to focus on classroom observation and management. Make sure to review all documents before running the activity to "get a sense" of the activity.
 - The repository includes a `Makefile` that automates the "assembly" of the learning materials:
-  - Code approach: Run `make code` from the root directory to assemble all of the notebooks in the `freq/` and `bayes/` folders.
+  - Code approach: Run `make code` from the root directory to assemble all of the documents in the `freq/` and `bayes/` folders.
   - "Pure paper" approach: Run `make pdfs` from the root directory to create print-ready PDFs for the `freq/` and `bayes/` versions. Note that this requires the [Quarto CLI tool](https://quarto.org/docs/get-started/).
     - For the `bayes/` version of the activity, this will also produce "posterior pamphlets" {`99-postMA.pdf`, `99-postMN.pdf`, `99-postNH.pdf`} to enable students in the "pure paper" approach to see the result of their choice of prior.
 
@@ -88,7 +88,7 @@ The activity is divided into several Quarto notebooks, written in the R programm
 
 **del Rosario**: I ran this with the "pure paper" approach in a colleague's Data Science class at Olin College of Engineering. In this approach, I printed two copies of the activity packet for each 4-person group: This required pairs to work together to make sense of the activity. I also printed several copies of each "posterior pamphlet" to enable each group in the Bayesian arm of the activity to make their choice of prior.
 
-Going into the activity, I prepared a short (~5 minute) lecture on the CEJST dataset, including a sketch of the EDA graph from the [00-context](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/00-context-main.qmd) notebook. My aim with this lecture was to use provocative questions to help students draw connections between the data and the context ("What does energy burden have to do with sustainability?"), basic comprehension of the statistical questions ("What does a positive association between energy burden and percent Black mean?"), and the heart of statistical inference ("Should we blindly trust this curve?").
+Going into the activity, I prepared a short (~5 minute) lecture on the CEJST dataset, including a sketch of the EDA graph from the [00-context](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/00-context-main.qmd) document. My aim with this lecture was to use provocative questions to help students draw connections between the data and the context ("What does energy burden have to do with sustainability?"), basic comprehension of the statistical questions ("What does a positive association between energy burden and percent Black mean?"), and the heart of statistical inference ("Should we blindly trust this curve?").
 
 I used the following timings to facilitate the activity, calling out instructions such as "You should be finishing up 01 Introduction and moving on to the 02 Activity."
 
@@ -102,7 +102,7 @@ I used the following timings to facilitate the activity, calling out instruction
 | 04 | Conclusion: Facilitated discussion   | 10 min |
 |    | Conclusion: Small group discussions | 15 min |
 
-The "key points" that I added (beyond the activity notebooks) were the introductory lecture and facilitated discussion. Using my observations during the CEJST activity, I was able to find groups that had opposite conclusions. I asked for their permission to call on them during the facilitated discussion, which allowed me to unambiguously highlight the "productive controversy". I found this to be a highly effective way to get students engaged: Students talked animatedly in the small group discussion about their different approaches.
+The "key points" that I added (beyond the activity documents) were the introductory lecture and facilitated discussion. Using my observations during the CEJST activity, I was able to find groups that had opposite conclusions. I asked for their permission to call on them during the facilitated discussion, which allowed me to unambiguously highlight the "productive controversy". I found this to be a highly effective way to get students engaged: Students talked animatedly in the small group discussion about their different approaches.
 
 I noticed that the groups in the Bayesian arm tended to progress a fair bit slower; this is likely because the Bayesian analysis involved distributions, while the frequentist analysis presented confidence intervals and point estimates (simpler mathematical objects). As a facilitator, I had to invent additional tasks for the frequentist groups.
 
