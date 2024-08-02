@@ -43,7 +43,7 @@ This activity was developed under the NSF-funded project *Bayes BATS* [^1]. The 
 
 # Learning Module
 
-In this section we briefly describe the learning module. Overall, the module is a one-class activity (~100 minutes) that explores the Climate and Economic Justice Screening Tool (CEJST) dataset using in-class (R) Quarto notebooks, small-group discussions, and full-class discussions. For instructors and learners in less-resourced environments, it is possible to run this activity in a "pure paper" form (see Practical Tips below).
+In this section we briefly describe the learning module. Overall, the module is a one-class activity (~100 minutes) that explores the [Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/#3/33.47/-97.5) (CEJST) dataset using in-class (R) Quarto notebooks, small-group discussions, and full-class discussions. For instructors and learners in less-resourced environments, it is possible to run this activity in a "pure paper" form (see Practical Tips below).
 
 In addition to this paper, we have recorded a [video overview](https://www.youtube.com/watch?v=dwNLcFqQqnE) of the activity and written a [run-of-show](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/run-of-show.md) document
 
