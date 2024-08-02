@@ -84,6 +84,8 @@ The activity is divided into several Quarto notebooks, written in the R programm
   - "Pure paper" approach: Run `make pdfs` from the root directory to create print-ready PDFs for the `freq/` and `bayes/` versions. Note that this requires the [Quarto CLI tool](https://quarto.org/docs/get-started/).
     - For the `bayes/` version of the activity, this will also produce "posterior pamphlets" {`99-postMA.pdf`, `99-postMN.pdf`, `99-postNH.pdf`} to enable students in the "pure paper" approach to see the result of their choice of prior.
 
+For computational reproducibility, session info from a successful build of the activity materials is provided in [this file](https://raw.githubusercontent.com/bayes-bats/tier2-freq-bayes/main/session-info).
+
 ## Our Experiences
 
 **del Rosario**: I ran this with the "pure paper" approach in a colleague's Data Science class at Olin College of Engineering. In this approach, I printed two copies of the activity packet for each 4-person group: This required pairs to work together to make sense of the activity. I also printed several copies of each "posterior pamphlet" to enable each group in the Bayesian arm of the activity to make their choice of prior.
