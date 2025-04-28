@@ -49,24 +49,24 @@ endif
 freq:
 	pdfunite 00-context-assignment.pdf \
 		01-introduction-assignment.pdf \
-		02a-activity-freq-assignment.pdf \
-		03-simplified-assignment.pdf \
+		02-simplified-assignment.pdf \
+		03a-activity-freq-assignment.pdf \
 		04-conclusion-assignment.pdf \
 		99-full-freq.pdf
 
 bayes:
 	pdfunite 00-context-assignment.pdf \
 		01-introduction-assignment.pdf \
-		02b-activity-bayes-assignment.pdf \
-		03-simplified-assignment.pdf \
+		02-simplified-assignment.pdf \
+		03b-activity-bayes-assignment.pdf \
 		04-conclusion-assignment.pdf \
 		99-full-bayes.pdf
 
 bayesenv:
 	pdfunite 00-context-assignment.pdf \
 		01-introduction-assignment.pdf \
-		02a-activity-bayes-assignment.pdf \
-		03-simplified-assignment.pdf \
+		02-simplified-assignment.pdf \
+		03a-activity-bayes-assignment.pdf \
 		04-conclusion-assignment.pdf \
 		99-full-bayes-env.pdf
 

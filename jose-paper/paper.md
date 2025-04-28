@@ -2,7 +2,7 @@
 title: 'Productive Controversy: A Classroom Activity to Contrast Frequentist and Bayesian Paradigms'
 tags:
   - statistics education
-  - bayesian statistics
+  - Bayesian statistics
   - assumptions
   - paradigms
   - constructivism
@@ -43,7 +43,7 @@ This activity was developed under the NSF-funded project *Bayes BATS* [^1]. The 
 
 # Learning Module
 
-In this section we briefly describe the learning module. Overall, the module is a one-class activity (~100 minutes) that explores the Climate and Economic Justice Screening Tool (CJEST) dataset using in-class (R) Quarto notebooks, small-group discussions, and full-class discussions. For instructors and learners in less-resourced environments, it is possible to run this activity in a "pure paper" form (see Practical Tips below).
+In this section we briefly describe the learning module. Overall, the module is a one-class activity (~100 minutes) that explores the [Climate and Economic Justice Screening Tool](https://screeningtool.geoplatform.gov/en/#3/33.47/-97.5) (CEJST) dataset using in-class (R) Quarto notebooks, small-group discussions, and full-class discussions. For instructors and learners in less-resourced environments, it is possible to run this activity in a "pure paper" form (see Practical Tips below).
 
 In addition to this paper, we have recorded a [video overview](https://www.youtube.com/watch?v=dwNLcFqQqnE) of the activity and written a [run-of-show](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/run-of-show.md) document
 
@@ -61,7 +61,7 @@ The activity learning goals are stated directly for students in the [01-introduc
 
 ## Contents
 
-The activity is divided into several quarto notebooks, written in the R programming language:
+The activity is divided into several Quarto notebooks, written in the R programming language:
 
 (First 5E Loop)
 - [00-context](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/00-context-main.qmd): Introduces the CEJST dataset
@@ -78,11 +78,13 @@ The activity is divided into several quarto notebooks, written in the R programm
 
 - The activity is intended to be run in a single class session (~100 minutes) with students in groups of ~4.
   - Since the activity *strongly relies* on there being two versions (frequentist and Bayesian) of the activity "in play", it is wise to pre-assign students to groups and distribute the two versions to roughly half the class (either via your LMS, or with paper handouts).
-- The quarto notebooks are quite detailed, which should allow the instructor to focus on classroom observation and management. Make sure to review all notebooks before running the activity to "get a sense" of the activity.
+- The Quarto notebooks are quite detailed, which should allow the instructor to focus on classroom observation and management. Make sure to review all notebooks before running the activity to "get a sense" of the activity.
 - The repository includes a `Makefile` that automates the "assembly" of the learning materials:
   - Code approach: Run `make code` from the root directory to assemble all of the notebooks in the `freq/` and `bayes/` folders.
   - "Pure paper" approach: Run `make pdfs` from the root directory to create print-ready PDFs for the `freq/` and `bayes/` versions. Note that this requires the [Quarto CLI tool](https://quarto.org/docs/get-started/).
     - For the `bayes/` version of the activity, this will also produce "posterior pamphlets" {`99-postMA.pdf`, `99-postMN.pdf`, `99-postNH.pdf`} to enable students in the "pure paper" approach to see the result of their choice of prior.
+
+For computational reproducibility, session info from a successful build of the activity materials is provided in [this file](https://raw.githubusercontent.com/bayes-bats/tier2-freq-bayes/main/session-info).
 
 ## Our Experiences
 
@@ -99,7 +101,7 @@ I used the following timings to facilitate the activity, calling out instruction
 | 01 | Introduction                        | 10 min |
 | 02 | CEJST Activity                      | 40 min |
 | 03 | Simplified 1-pager                  |        |
-| 04 | Conclusion: Faciliated discussion   | 10 min |
+| 04 | Conclusion: Facilitated discussion   | 10 min |
 |    | Conclusion: Small group discussions | 15 min |
 
 The "key points" that I added (beyond the activity notebooks) were the introductory lecture and facilitated discussion. Using my observations during the CEJST activity, I was able to find groups that had opposite conclusions. I asked for their permission to call on them during the facilitated discussion, which allowed me to unambiguously highlight the "productive controversy". I found this to be a highly effective way to get students engaged: Students talked animatedly in the small group discussion about their different approaches.
@@ -108,14 +110,14 @@ I noticed that the groups in the Bayesian arm tended to progress a fair bit slow
 
 **Langehennig**: Similar to del Rosario, I ran the activity using the pure paper approach at the University of Denver in an introductory undergraduate business school statistics class. I used the order and timings outlined above during a normally scheduled lecture. The students were separated into two groups using a random number generator, resulting in four 3-person Frequentist groups and four 3-person Bayesian groups. The students were given their respective packets and worked together on the activity, with Frequentists on one side of the room and Bayesians on the other side. The Bayesians had the additional printed artifact with the various posteriors for their activity that they needed to come collect once they arrived at the "02 Activity" phase.
 
-To start the activity, we had a class-wide discussion on the dataset being used by pulling from the [00-context](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/00-context-main.qmd) and [01-introduction](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/01-introduction-main.qmd) documents. This not only introduced the real-world context in which we would be working, but also got the students to think more critically about the connection between choosing and using statistical methods to answer practical questions. I gave them the opportunity to ask questions about both documents before turning to the applied activity. 
+To start the activity, we had a class-wide discussion on the dataset being used by pulling from the [00-context](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/00-context-main.qmd) and [01-introduction](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/01-introduction-main.qmd) documents. This not only introduced the real-world context in which we would be working, but also got the students to think more critically about the connection between choosing and using statistical methods to answer practical questions. I gave them the opportunity to ask questions about both documents before turning to the applied activity.
 
-Once this initial class-wide discussion was complete, the students turned to the CEJST activity and worked together while I circulated the room, answering any lingering clarifying or topical questions related to the activity. On the Bayesian side, groups debated the differences in outcomes for the analysis conditional on the posterior pamphlet they chose. The groups noticed that other groups were coming to different conclusions around them, so I encouraged them to think about why that was the case. As del Rosario experienced, students on the Bayesian side took longer to complete the activity relative to their Frequentist peers. Since the Frequentists finished sooner, I had them collect their conclusions, write them down, and distill three primary takeways from their analysis to share with the class during concluding facilitated discussion.
+Once this initial class-wide discussion was complete, the students turned to the CEJST activity and worked together while I circulated the room, answering any lingering clarifying or topical questions related to the activity. On the Bayesian side, groups debated the differences in outcomes for the analysis conditional on the posterior pamphlet they chose. The groups noticed that other groups were coming to different conclusions around them, so I encouraged them to think about why that was the case. As del Rosario experienced, students on the Bayesian side took longer to complete the activity relative to their Frequentist peers. Since the Frequentists finished sooner, I had them collect their conclusions, write them down, and distill three primary takeaways from their analysis to share with the class during concluding facilitated discussion.
 
-During both the facilitated and small-group discussions, the students not only had spirited debates about whether there is a "right" or "correct" statistical technique to use for the problem, but also had a number of questions for me about the best way to justify their choices when using statistical inference. 
+During both the facilitated and small-group discussions, the students not only had spirited debates about whether there is a "right" or "correct" statistical technique to use for the problem, but also had a number of questions for me about the best way to justify their choices when using statistical inference.
 
 
-# Acknowledgements
+# Acknowledgments
 
 This material is based upon work supported by the National Science Foundation under Grant No.s #2215879, #2215920, and #2215709.
 
