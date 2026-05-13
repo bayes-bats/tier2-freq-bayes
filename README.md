@@ -1,6 +1,10 @@
 # Productive Controversy: A Classroom Activity to Contrast Frequentist and Bayesian Paradigms
 
-A single-class activity that introduces the differences between frequentist and Bayesian inference. This was designed for use in undrgraduate data science or statistics courses where students have some exposure to linear models and statistical inference.
+A single-class activity that introduces the differences between frequentist and Bayesian inference.
+
+This was designed for use in undrgraduate data science or statistics courses where students have some exposure to linear models (fitting and interpreting) and statistical inference (population vs. sample). Students need not have more formalized training, such as maximum likelihood estimation (MLE) for linear modeling, nor null hypothesis significance testing (NHST). This activity could be scaffolded by first giving students an applied introduction to linear modeling. Please see the [Our Experiences](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/jose-paper/paper.md#our-experiences) section of our JOSE paper for two concrete examples of activity material use in two different classroom contexts.
+
+As a quick introduction to the activity materials, please see the following:
 
 - [Video overview](https://www.youtube.com/watch?v=dwNLcFqQqnE)
 - [Run-of-show document](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/run-of-show.md)
