@@ -6,6 +6,8 @@ A single-class activity that introduces the differences between frequentist and 
 - [Run-of-show document](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/run-of-show.md)
 - Learning Objectives are detailed in the [01-introduction document](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/01-introduction-main.qmd)
 
+The activity can be run either using paper printouts or digitally using Quarto notebooks. Please see the [Practical Tips](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/jose-paper/paper.md#practical-tips) section of our JOSE paper for more details.
+
 Session info from a successful build of the activity materials are available in [this file](https://raw.githubusercontent.com/bayes-bats/tier2-freq-bayes/main/session-info). Please see [this page](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/CONTRIBUTING.md) for guidelines on how to contribute, report issues, or seek support with the materials.
 
 This activity was created by Stefani Langehennig and Zachary del Rosario as part of the [Bayes BATS](https://www.stat.uci.edu/bayes-bats/materials.html) program, with mentorship and advising from Mine Dogucu.
