@@ -49,7 +49,7 @@ endif
 freq:
 	pdfunite 00-context-assignment.pdf \
 		01-introduction-assignment.pdf \
-		02-simplified-assignment.pdf \
+		02-one-pager-assignment.pdf \
 		03a-activity-freq-assignment.pdf \
 		04-conclusion-assignment.pdf \
 		99-full-freq.pdf
@@ -57,7 +57,7 @@ freq:
 bayes:
 	pdfunite 00-context-assignment.pdf \
 		01-introduction-assignment.pdf \
-		02-simplified-assignment.pdf \
+		02-one-pager-assignment.pdf \
 		03b-activity-bayes-assignment.pdf \
 		04-conclusion-assignment.pdf \
 		99-full-bayes.pdf
@@ -65,10 +65,10 @@ bayes:
 bayesenv:
 	pdfunite 00-context-assignment.pdf \
 		01-introduction-assignment.pdf \
-		02-simplified-assignment.pdf \
+		02-one-pager-assignment.pdf \
 		03a-activity-bayes-assignment.pdf \
 		04-conclusion-assignment.pdf \
 		99-full-bayes-env.pdf
 
 clean:
-	rm -f *assignment.qmd *solution.qmd
+	rm -f *assignment.qmd *solution.qmd *assignment.pdf

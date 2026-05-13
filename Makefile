@@ -3,13 +3,13 @@ code:
 	# Frequentist activity
 	cp development/00-context-assignment.qmd freq/.
 	cp development/01-introduction-assignment.qmd freq/.
-	cp development/02-simplified-assignment.qmd freq/.
+	cp development/02-one-pager-assignment.qmd freq/.
 	cp development/03a-activity-freq-assignment.qmd freq/03-activity-assignment.qmd
 	cp development/04-conclusion-assignment.qmd freq/.
 	# Bayesian activity
 	cp development/00-context-assignment.qmd bayes/.
 	cp development/01-introduction-assignment.qmd bayes/.
-	cp development/02-simplified-assignment.qmd bayes/.
+	cp development/02-one-pager-assignment.qmd bayes/.
 	cp development/03b-activity-bayes-assignment.qmd bayes/03-activity-assignment.qmd
 	cp development/04-conclusion-assignment.qmd bayes/.
 
