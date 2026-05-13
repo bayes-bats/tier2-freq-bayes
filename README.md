@@ -22,19 +22,15 @@ For digital materials, you will need to first process the files to generate the 
 
 For the digital materials, note that this repository uses the [renv](https://rstudio.github.io/renv/articles/renv.html) package to provide a lockfile. So long as you have `renv` installed, you should be able to use `renv::restore()` to install all required packages for the activity.
 
-## Getting Help
+## Community Guidelines / Getting Help
 
-Session info from a successful build of the activity materials are available in [this file](https://raw.githubusercontent.com/bayes-bats/tier2-freq-bayes/main/session-info). Please see [this page](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/CONTRIBUTING.md) for guidelines on how to contribute, report issues, or seek support with the materials.
+Please see [this page](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/CONTRIBUTING.md) for guidelines on how to contribute, report issues, or seek support with the materials.
 
 ## Statement of Need
 
 As a discipline, statistics is quite special. While most quantitative sciences operate under a single *paradigm* (a set of common, unchallenged assumptions), statistics has two: frequentist and Bayesian. That statisticians operate under two paradigms *that sometimes give different results* is disturbing to some practicing scientists. Many students do not even get a chance to observe this controversy: A recent survey of high-ranking institutions found that only ~30% offer *any* Bayesian statistics course.
 
 Far from being an academic distinction, modern students must have a minimal comprehension of the importance of paradigmatic differences. For students to become practicing statisticians, they must develop a skeptical disposition, particularly towards statistical assumptions. For students to be productive and active citizens, they must have foundational statistical literacy. A foundational component of statistical literacy is the basic understanding that quantitative results are based on analytic assumptions. Our proposed activity is a constructivist approach to generate a *productive controversy* that highlights this fundamental insight.
-
-## Community Guidelines
-
-For guidelines on contributing, reporting issues, or seeking support, please see [this page](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/CONTRIBUTING.md).
 
 ## Acknowledgements
 
