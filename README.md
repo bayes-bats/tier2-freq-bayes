@@ -10,9 +10,19 @@ As a quick introduction to the activity materials, please see the following:
 - [Run-of-show document](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/run-of-show.md)
 - Learning Objectives are detailed in the [01-introduction document](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/01-introduction-main.qmd)
 
-The activity can be run either using paper printouts or digitally using Quarto notebooks. Please see the [Practical Tips](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/jose-paper/paper.md#practical-tips) section of our JOSE paper for more details.
+## Preparing the Activity Materials
+
+The activity can be run either using paper printouts or digitally using Quarto notebooks. Please see the [Practical Tips](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/jose-paper/paper.md#practical-tips) section of our JOSE paper for more details. Note that running the activity using Quarto notebooks assumes familiarity with certain programming tools, namely, the command line interface and the R programming language.
+
+For paper materials, please see the [full-activity](https://github.com/bayes-bats/tier2-freq-bayes/tree/main/full-activity) directory. The frequentist version is called `99-full-freq.pdf`, while the Bayesian version is called `99-full-bayes.pdf`. Note that you should also print several copies of the Bayesian posterior options (`99-postMA.pdf`, `99-postMN.pdf`, `99-postNH.pdf`)---enough such that each group of students doing the Bayesian form of the activity can select any of the three.
+
+For digital materials, you will need to first process the files to generate the assignment and solution versions. You can do this by first [downloading](https://github.com/bayes-bats/tier2-freq-bayes/archive/refs/heads/main.zip) (or cloning) the repository, and run the `Makefile` from the root directory (`tier2-freq-bayes`) with the command `make`. This will generate `*-assignment.qmd` files in the `freq/` and `bayes/` subdirectories, corresponding to the frequentist and Bayesian forms of the activity.
+
+## Getting Help
 
 Session info from a successful build of the activity materials are available in [this file](https://raw.githubusercontent.com/bayes-bats/tier2-freq-bayes/main/session-info). Please see [this page](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/CONTRIBUTING.md) for guidelines on how to contribute, report issues, or seek support with the materials.
+
+## Acknowledgements
 
 This activity was created by Stefani Langehennig and Zachary del Rosario as part of the [Bayes BATS](https://www.stat.uci.edu/bayes-bats/materials.html) program, with mentorship and advising from Mine Dogucu.
 
