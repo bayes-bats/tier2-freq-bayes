@@ -4,13 +4,15 @@ A single-class activity that introduces the differences between frequentist and 
 
 This was designed for use in undrgraduate data science or statistics courses where students have some exposure to linear models (fitting and interpreting) and statistical inference (population vs. sample). Students need not have more formalized training, such as maximum likelihood estimation (MLE) for linear modeling, nor null hypothesis significance testing (NHST). This activity could be scaffolded by first giving students an applied introduction to linear modeling. Please see the [Our Experiences](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/jose-paper/paper.md#our-experiences) section of our JOSE paper for two concrete examples of activity material use in two different classroom contexts.
 
+## Usage
+
 As a quick introduction to the activity materials, please see the following:
 
 - [Video overview](https://www.youtube.com/watch?v=dwNLcFqQqnE)
 - [Run-of-show document](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/run-of-show.md)
 - Learning Objectives are detailed in the [01-introduction document](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/01-introduction-main.qmd)
 
-## Preparing the Activity Materials
+## Preparing the Activity Materials ("Installation")
 
 The activity can be run either using paper printouts or digitally using Quarto notebooks. Please see the [Practical Tips](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/jose-paper/paper.md#practical-tips) section of our JOSE paper for more details. Note that running the activity using Quarto notebooks assumes familiarity with certain programming tools, namely, the command line interface and the R programming language.
 
@@ -23,6 +25,16 @@ For the digital materials, note that this repository uses the [renv](https://rst
 ## Getting Help
 
 Session info from a successful build of the activity materials are available in [this file](https://raw.githubusercontent.com/bayes-bats/tier2-freq-bayes/main/session-info). Please see [this page](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/CONTRIBUTING.md) for guidelines on how to contribute, report issues, or seek support with the materials.
+
+## Statement of Need
+
+As a discipline, statistics is quite special. While most quantitative sciences operate under a single *paradigm* (a set of common, unchallenged assumptions), statistics has two: frequentist and Bayesian. That statisticians operate under two paradigms *that sometimes give different results* is disturbing to some practicing scientists. Many students do not even get a chance to observe this controversy: A recent survey of high-ranking institutions found that only ~30% offer *any* Bayesian statistics course.
+
+Far from being an academic distinction, modern students must have a minimal comprehension of the importance of paradigmatic differences. For students to become practicing statisticians, they must develop a skeptical disposition, particularly towards statistical assumptions. For students to be productive and active citizens, they must have foundational statistical literacy. A foundational component of statistical literacy is the basic understanding that quantitative results are based on analytic assumptions. Our proposed activity is a constructivist approach to generate a *productive controversy* that highlights this fundamental insight.
+
+## Community Guidelines
+
+For guidelines on contributing, reporting issues, or seeking support, please see [this page](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/CONTRIBUTING.md).
 
 ## Acknowledgements
 
