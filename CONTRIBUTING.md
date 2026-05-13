@@ -4,7 +4,7 @@ This project is open source, and we welcome contributions: adaptations/translati
 
 ### Contributor Agreement
 
-By contributing, you agree that we may redistribute your work under [our license](LICENSE.md). In exchange, we will address your issues and/or assess your change proposal as promptly as we can.
+By contributing, you agree that we may redistribute your work under [our license](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/LICENSE). In exchange, we will address your issues and/or assess your change proposal as promptly as we can.
 
 ### How to Contribute
 
