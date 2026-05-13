@@ -66,10 +66,10 @@ The activity is divided into several Quarto notebooks, written in the R programm
 (First 5E Loop)
 - [00-context](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/00-context-main.qmd): Introduces the CEJST dataset
 - [01-introduction](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/01-introduction-main.qmd): Introduces the ideas of statistical paradigms, inference, and answering research questions with statistics
-- `02-activity` is the bulk of the activity. It comes in two version:
-  - [02a-activity-freq](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02a-activity-freq-main.qmd): Frequentist version
-  - [02b-activity-bayes](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02b-activity-bayes-main.qmd): Bayesian version
-- [03-simplified](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03-one-pager-main.qmd): A short reference guide to differences between frequentist and Bayesian approaches
+- [02-one-pager](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/02-one-pager-main.qmd): A short reference guide to differences between frequentist and Bayesian approaches
+- The 03 file is the bulk of the activity. It comes in two version:
+  - [03a-activity-freq](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03a-activity-freq-main.qmd): Frequentist version
+  - [03b-activity-bayes](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03b-activity-bayes-main.qmd): Bayesian version
 (Second 5E Loop)
 - [04-conclusion](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/04-conclusion-main.qmd): The moment the "productive controversy" is revealed and discussed
 - [05-survey](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/05-survey-main.qmd): An optional survey to measure student learning
