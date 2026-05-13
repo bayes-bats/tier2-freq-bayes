@@ -18,6 +18,8 @@ For paper materials, please see the [full-activity](https://github.com/bayes-bat
 
 For digital materials, you will need to first process the files to generate the assignment and solution versions. You can do this by first [downloading](https://github.com/bayes-bats/tier2-freq-bayes/archive/refs/heads/main.zip) (or cloning) the repository, and run the `Makefile` from the root directory (`tier2-freq-bayes`) with the command `make`. This will generate `*-assignment.qmd` files in the `freq/` and `bayes/` subdirectories, corresponding to the frequentist and Bayesian forms of the activity.
 
+For the digital materials, note that this repository uses the [renv](https://rstudio.github.io/renv/articles/renv.html) package to provide a lockfile. So long as you have `renv` installed, you should be able to use `renv::restore()` to install all required packages for the activity.
+
 ## Getting Help
 
 Session info from a successful build of the activity materials are available in [this file](https://raw.githubusercontent.com/bayes-bats/tier2-freq-bayes/main/session-info). Please see [this page](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/CONTRIBUTING.md) for guidelines on how to contribute, report issues, or seek support with the materials.
