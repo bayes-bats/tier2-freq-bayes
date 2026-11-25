@@ -72,7 +72,7 @@ The activity is divided into several Quarto notebooks, written in the R programm
   - [03b-activity-bayes](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/03b-activity-bayes-main.qmd): Bayesian version
 (Second 5E Loop)
 - [04-conclusion](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/04-conclusion-main.qmd): The moment the "productive controversy" is revealed and discussed
-- [05-survey](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/05-survey-main.qmd): An optional survey to measure student learning
+- [05-survey](https://github.com/bayes-bats/tier2-freq-bayes/blob/main/development/05-survey.docx): An optional survey to measure student learning
 
 ## Practical Tips
 
