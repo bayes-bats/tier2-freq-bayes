@@ -39,7 +39,7 @@ Far from being an academic distinction, modern students must have a minimal comp
 
 This activity was developed under the NSF-funded project *Bayes BATS* [^1]. The third author (Dogucu), as co-PI on this NSF grant, recruited the first and second authors (del Rosario and Langehennig) to participate in a multi-day Bayesian statistics faculty boot camp aimed at developing and disseminating Bayesian statistics educational materials. Through discussions at the workshop, del Rosario and Langehennig came up with the idea to generate a "classroom controversy" to highlight the differences between frequentist and Bayesian statistics. With continued mentorship from Dogucu, the three developed the proposed activity.
 
-[1]: IUSE: EHR, Grant No.s #2215879, #2215920, and #2215709
+[^1]: IUSE: EHR, Grant No.s #2215879, #2215920, and #2215709
 
 # Learning Module
 
